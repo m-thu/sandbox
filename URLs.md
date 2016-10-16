@@ -46,6 +46,4 @@
 
 [The Desktop Muon Detector](https://arxiv.org/abs/1606.01196)
 
-<https://yurichev.com/writings/z3_rockey.pdf>
-
 <https://yurichev.com/tmp/SAT_SMT_DRAFT.pdf>
