@@ -47,3 +47,5 @@
 [The Desktop Muon Detector](https://arxiv.org/abs/1606.01196)
 
 <https://yurichev.com/tmp/SAT_SMT_DRAFT.pdf>
+
+<https://blog.lizzie.io/linux-containers-in-500-loc.html>
