@@ -49,3 +49,5 @@
 <https://yurichev.com/tmp/SAT_SMT_DRAFT.pdf>
 
 <https://blog.lizzie.io/linux-containers-in-500-loc.html>
+
+<https://codewords.recurse.com/issues/two/git-from-the-inside-out>
