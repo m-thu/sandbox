@@ -275,10 +275,5 @@ void init()
 		r_host[i].x = rnd() * 50.f;
 		r_host[i].y = rnd() * 50.f;
 		r_host[i].z = rnd() * 50.f;
-
-		/* acceleration */
-		a_host[i].x = 0.1f;
-		a_host[i].y = -0.2f;
-		a_host[i].z = 0.3f;
 	}
 }
