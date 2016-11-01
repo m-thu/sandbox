@@ -128,7 +128,7 @@ int main()
 
 	/* set RH resolution to 12 bit, T resolution to 14 bit */
 	reg = read_user_register(fd);
-	reg &= ~RH_12_T_14;
+	reg &= ~RH_11_T_11;
 	write_user_register(fd, reg);
 	reg = read_user_register(fd);
 	printf("User register: %02x\n\n", reg);
@@ -166,7 +166,7 @@ uint64_t read_serial(int fd)
 
 	ioctl_data.msgs = msg;
 	ioctl_data.nmsgs = 2;
-	
+
 	if (ioctl(fd, I2C_RDWR, &ioctl_data) < 0) {
 		perror("ioctl");
 		exit(EXIT_FAILURE);
@@ -196,7 +196,7 @@ uint64_t read_serial(int fd)
 		perror("ioctl");
 		exit(EXIT_FAILURE);
 	}
-	
+
 	res |= (uint64_t)data[0]<<8 | (uint64_t)data[1]
 	       | (uint64_t)data[3]<<56 | (uint64_t)data[4]<<48;
 
