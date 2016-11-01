@@ -51,3 +51,5 @@
 <https://blog.lizzie.io/linux-containers-in-500-loc.html>
 
 <https://codewords.recurse.com/issues/two/git-from-the-inside-out>
+
+<https://dberard.com/home-built-stm/>
