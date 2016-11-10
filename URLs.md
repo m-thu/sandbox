@@ -1,5 +1,9 @@
 <https://yurichev.com/blog>
 
+<http://blog.svenbrauch.de/tag/hydrogen-line/>
+
+<https://codexgalactic.com/2016/05/21/5-qubit-quantum-computing-simulator/>, <https://github.com/corbett/QuantumComputing>
+
 [V7/x86 - x86 port of UNIX V7](http://www.nordier.com/v7x86/index.html)
 
 <https://magcius.github.io/xplain/article/index.html>
