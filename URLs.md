@@ -69,3 +69,5 @@
 <http://files.righto.com/files/ken-shirriff-supercon.pdf>
 
 <https://schedule2013.rmll.info/IMG/pdf/rfid-practice.pdf>, <http://www.mulliner.org/nfc/>, <https://www.emsec.rub.de/media/crypto/attachments/files/2010/04/timo_kasper___embedded_security_analysis_of_rfid_devices.pdf>
+
+<http://ludovic.rousseau.free.fr/softwares/pcsc-tools/>
