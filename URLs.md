@@ -1,75 +1,87 @@
-<https://yurichev.com/blog>
+## Unsorted
 
-<http://blog.svenbrauch.de/tag/hydrogen-line/>
+* <https://yurichev.com/blog>
 
-<https://codexgalactic.com/2016/05/21/5-qubit-quantum-computing-simulator/>, <https://github.com/corbett/QuantumComputing>
+* <http://blog.svenbrauch.de/tag/hydrogen-line/>
 
-[V7/x86 - x86 port of UNIX V7](http://www.nordier.com/v7x86/index.html)
+* <https://codexgalactic.com/2016/05/21/5-qubit-quantum-computing-simulator/>, <https://github.com/corbett/QuantumComputing>
 
-<https://magcius.github.io/xplain/article/index.html>
+* [V7/x86 - x86 port of UNIX V7](http://www.nordier.com/v7x86/index.html)
 
-[Reverse Engineering a NAND Flash Device Management Algorithm](http://joshuawise.com/projects/ndfslave)
+* <https://magcius.github.io/xplain/article/index.html>
 
-[64-bit Linux Return-Oriented Programming](https://crypto.stanford.edu/~blynn/rop/)
+* [Reverse Engineering a NAND Flash Device Management Algorithm](http://joshuawise.com/projects/ndfslave)
 
-<http://hansklav.home.xs4all.nl/rpn/index.html>
+* [64-bit Linux Return-Oriented Programming](https://crypto.stanford.edu/~blynn/rop/)
 
-<https://web.archive.org/web/20061008153930/http://algebrafx2.earthforge.com/>
+* <http://hansklav.home.xs4all.nl/rpn/index.html>
 
-<http://megaprocessor.com/>
+* <https://web.archive.org/web/20061008153930/http://algebrafx2.earthforge.com/>
 
-<http://labs.domipheus.com/blog/tpu-series-quick-links/>
+* <http://megaprocessor.com/>
 
-<http://n2pk.com/>
+* <http://labs.domipheus.com/blog/tpu-series-quick-links/>
 
-[Software Defined Radio and the RTL-SDR USB Dongle](http://www.eas.uccs.edu/~mwickert/ece4670/lecture_notes/Lab6.pdf)
+* <http://n2pk.com/>
 
-[Designing an Intel 80386SX development board](https://blog.lse.epita.fr//articles/77-lsepc-intro.html)
+* [Software Defined Radio and the RTL-SDR USB Dongle](http://www.eas.uccs.edu/~mwickert/ece4670/lecture_notes/Lab6.pdf)
 
-[ARM: Assembly Language Programming](http://arantxa.ii.uam.es/~gdrivera/sed/docs/ARMBook.pdf)
+* [Designing an Intel 80386SX development board](https://blog.lse.epita.fr//articles/77-lsepc-intro.html)
 
-[ARM assembler in Raspberry Pi](http://thinkingeek.com/arm-assembler-raspberry-pi/)
+* [ARM: Assembly Language Programming](http://arantxa.ii.uam.es/~gdrivera/sed/docs/ARMBook.pdf)
 
-[Writing your own startup code for Cortex-M](https://community.arm.com/docs/DOC-8769)
+* [ARM assembler in Raspberry Pi](http://thinkingeek.com/arm-assembler-raspberry-pi/)
 
-[Let's code a TCP/IP stack, 1: Ethernet & ARP](http://www.saminiir.com/lets-code-tcp-ip-stack-1-ethernet-arp/)
+* [Writing your own startup code for Cortex-M](https://community.arm.com/docs/DOC-8769)
 
-<http://c9x.me/compile/bib/>
+* [Let's code a TCP/IP stack, 1: Ethernet & ARP](http://www.saminiir.com/lets-code-tcp-ip-stack-1-ethernet-arp/)
 
-[Design of the RISC-V Instruction Set Architecture](https://people.eecs.berkeley.edu/~waterman/papers/phd-thesis.pdf)
+* <http://c9x.me/compile/bib/>
 
-<https://eklitzke.org/article-index>
+* [Design of the RISC-V Instruction Set Architecture](https://people.eecs.berkeley.edu/~waterman/papers/phd-thesis.pdf)
 
-<https://www.reddit.com/r/tech_talks/>
+* <https://eklitzke.org/article-index>
 
-<https://lab.whitequark.org/>
+* <https://www.reddit.com/r/tech_talks/>
 
-[PRU tips: Understanding the BeagleBone's built-in microcontrollers ](http://www.righto.com/2016/08/pru-tips-understanding-beaglebones.html)
+* <https://lab.whitequark.org/>
 
-[How to run C programs on the BeagleBone's PRU microcontrollers](http://www.righto.com/2016/09/how-to-run-c-programs-on-beaglebones.html)
+* [PRU tips: Understanding the BeagleBone's built-in microcontrollers ](http://www.righto.com/2016/08/pru-tips-understanding-beaglebones.html)
 
-[The Desktop Muon Detector](https://arxiv.org/abs/1606.01196)
+* [How to run C programs on the BeagleBone's PRU microcontrollers](http://www.righto.com/2016/09/how-to-run-c-programs-on-beaglebones.html)
 
-<https://yurichev.com/tmp/SAT_SMT_DRAFT.pdf>
+* [The Desktop Muon Detector](https://arxiv.org/abs/1606.01196)
 
-<https://blog.lizzie.io/linux-containers-in-500-loc.html>
+* <https://yurichev.com/tmp/SAT_SMT_DRAFT.pdf>
 
-<https://codewords.recurse.com/issues/two/git-from-the-inside-out>
+* <https://blog.lizzie.io/linux-containers-in-500-loc.html>
 
-<https://dberard.com/home-built-stm/>
+* <https://codewords.recurse.com/issues/two/git-from-the-inside-out>
 
-<http://kasper-oswald.de/chameleonmini/>, [Implementation Attacks: From Theory to Practice](http://www-brs.ub.ruhr-uni-bochum.de/netahtml/HSS/Diss/OswaldDavid/diss.pdf), [SECURITY ANALYSIS OF PERVASIVE WIRELESS DEVICES](https://www.emsec.rub.de/media/attachments/files/2012/11/timo_phd_thesis.pdf)
+* <https://dberard.com/home-built-stm/>
 
-<http://ebrombaugh.studionebula.com/radio/iceRadio/index.html>
+* <http://ebrombaugh.studionebula.com/radio/iceRadio/index.html>
 
-[Darling macOS translation layer for Linux](https://www.darlinghq.org/)
+* [Darling macOS translation layer for Linux](https://www.darlinghq.org/)
 
-<https://www.evilsocket.net/2014/02/11/on-windows-syscall-mechanism-and-syscall-numbers-extraction-methods/>
+* <https://www.evilsocket.net/2014/02/11/on-windows-syscall-mechanism-and-syscall-numbers-extraction-methods/>
 
-<http://files.righto.com/files/ken-shirriff-supercon.pdf>
+* <http://files.righto.com/files/ken-shirriff-supercon.pdf>
 
-<https://schedule2013.rmll.info/IMG/pdf/rfid-practice.pdf>, <http://www.mulliner.org/nfc/>, <https://www.emsec.rub.de/media/crypto/attachments/files/2010/04/timo_kasper___embedded_security_analysis_of_rfid_devices.pdf>
+* <https://www.happyassassin.net/2014/01/25/uefi-boot-how-does-that-actually-work-then/>
 
-<http://ludovic.rousseau.free.fr/softwares/pcsc-tools/>
+## NFC, RFID, Smartcards
 
-<https://www.happyassassin.net/2014/01/25/uefi-boot-how-does-that-actually-work-then/>
+* <http://kasper-oswald.de/chameleonmini/>, [Implementation Attacks: From Theory to Practice](http://www-brs.ub.ruhr-uni-bochum.de/netahtml/HSS/Diss/OswaldDavid/diss.pdf), [SECURITY ANALYSIS OF PERVASIVE WIRELESS DEVICES](https://www.emsec.rub.de/media/attachments/files/2012/11/timo_phd_thesis.pdf)
+
+* <https://schedule2013.rmll.info/IMG/pdf/rfid-practice.pdf>, <http://www.mulliner.org/nfc/>, <https://www.emsec.rub.de/media/crypto/attachments/files/2010/04/timo_kasper___embedded_security_analysis_of_rfid_devices.pdf>
+
+* <http://ludovic.rousseau.free.fr/softwares/pcsc-tools/>
+
+* [Proximity Security System](https://courses.cit.cornell.edu/ee476/FinalProjects/s2006/cjr37/Website/index.htm)
+
+* [How to Build a Low-Cost, Extended-Range RFID Skimmer](http://www.eng.tau.ac.il/~yash/kw-usenix06/index.html)
+
+* [Proximity Cards](http://cq.cx/prox.pl)
+
+* [OPEN RFID Tag](http://www.t4f.org/projects/open-rfid-tag/introduction-to-the-open-rfid-tag/)
