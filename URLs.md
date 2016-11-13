@@ -72,6 +72,8 @@
 
 * <https://github.com/AnthonyCalandra/modern-cpp-features>
 
+* <https://helentronica.com/blog/>
+
 ## NFC, RFID, Smartcards
 
 * <http://kasper-oswald.de/chameleonmini/>, [Implementation Attacks: From Theory to Practice](http://www-brs.ub.ruhr-uni-bochum.de/netahtml/HSS/Diss/OswaldDavid/diss.pdf), [SECURITY ANALYSIS OF PERVASIVE WIRELESS DEVICES](https://www.emsec.rub.de/media/attachments/files/2012/11/timo_phd_thesis.pdf)
