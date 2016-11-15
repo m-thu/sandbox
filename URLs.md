@@ -76,6 +76,52 @@
 
 * [Under development open hardware microwave (500 MHz to 10 GHz) vector network analyzer](https://github.com/loxodes/vna)
 
+* [mermaid -- Generation of diagrams and flowcharts from text in a similar manner as markdown](http://knsv.github.io/mermaid/#mermaid)
+
+## EDA
+
+* [gEDA: gschem, pcb, library, gerbv, icarus, gtkwave](http://geda-project.org/)
+
+* [Open Circuit Design: Magic, XCircuit, IRSIM, Netgen, Qrouter, Qflow, PCB](http://opencircuitdesign.com/)
+
+* [KiCad EDA](http://kicad-pcb.org/)
+
+* [Qucs project: Quite Universal Circuit Simulator](http://qucs.sourceforge.net/)
+
+* [Gnucap: GNU Circuit Analysis Package](http://www.gnucap.org/dokuwiki/doku.php?id=gnucap:start)
+
+* [ngspice](http://ngspice.sourceforge.net/)
+
+* [Icarus Verilog](http://iverilog.icarus.com/)
+
+* [Yosys Open SYnthesis Suite](http://www.clifford.at/yosys/)
+
+* [Project IceStorm](http://www.clifford.at/icestorm/)
+
+* [GTKWave](http://gtkwave.sourceforge.net/)
+
+* [Verilator](http://www.veripool.org/wiki/verilator)
+
+* [Covered - Verilog Code Coverage Analyzer](http://covered.sourceforge.net/)
+
+* [Electric](https://www.gnu.org/software/electric/)
+
+* [GHDL](http://ghdl.free.fr/)
+
+* [ABC: A System for Sequential Synthesis and Verification](https://people.eecs.berkeley.edu/~alanmi/abc/)
+
+* [GNU Octave](http://www.gnu.org/software/octave/)
+
+* [Gnuplot](http://www.gnuplot.info/)
+
+* [Maxima, a Computer Algebra System](http://maxima.sourceforge.net/)
+
+* [wxMaxima](http://andrejv.github.io/wxmaxima/)
+
+* [The R Project for Statistical Computing](https://www.r-project.org/)
+
+* [OpenSCAD: The Programmers Solid 3D CAD Modeller](http://www.openscad.org/)
+
 ## NFC, RFID, Smartcards
 
 * <http://kasper-oswald.de/chameleonmini/>, [Implementation Attacks: From Theory to Practice](http://www-brs.ub.ruhr-uni-bochum.de/netahtml/HSS/Diss/OswaldDavid/diss.pdf), [SECURITY ANALYSIS OF PERVASIVE WIRELESS DEVICES](https://www.emsec.rub.de/media/attachments/files/2012/11/timo_phd_thesis.pdf)
