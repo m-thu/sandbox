@@ -78,6 +78,8 @@
 
 * [mermaid -- Generation of diagrams and flowcharts from text in a similar manner as markdown](http://knsv.github.io/mermaid/#mermaid)
 
+* [Computer Vision: Algorithms and Applications](http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf)
+
 ## EDA
 
 * [gEDA: gschem, pcb, library, gerbv, icarus, gtkwave](http://geda-project.org/)
@@ -103,6 +105,8 @@
 * [Verilator](http://www.veripool.org/wiki/verilator)
 
 * [Covered - Verilog Code Coverage Analyzer](http://covered.sourceforge.net/)
+
+* [Verilog to Routing](https://verilogtorouting.org/)
 
 * [Electric](https://www.gnu.org/software/electric/)
 
