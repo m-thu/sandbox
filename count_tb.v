@@ -4,6 +4,8 @@
 // Run with: vvp count_tb.vvp
 // GTKWave: gtkwave count.vcd
 
+`timescale 1 ns / 1 ps
+
 module count_tb();
 	localparam COUNTER_BITS = 3;
 
@@ -31,8 +33,11 @@ module count_tb();
 
 	always #1 clock = ~clock;
 
-	count #(.COUNTER_WIDTH(COUNTER_BITS))
-	c(.rst(reset),
-	  .clk(clock),
-	  .cnt(counter));
+	count #(
+                .COUNTER_WIDTH(COUNTER_BITS))
+	c (
+		.rst(reset),
+		.clk(clock),
+		.cnt(counter)
+	);
 endmodule
