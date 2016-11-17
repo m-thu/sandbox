@@ -1,4 +1,4 @@
-## Unsorted
+### Unsorted
 
 * <https://yurichev.com/blog>
 
@@ -80,7 +80,9 @@
 
 * [Computer Vision: Algorithms and Applications](http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf)
 
-## EDA
+* [UEFI reverse engineering tools](https://github.com/jethrogb/uefireverse)
+
+### EDA
 
 * [gEDA: gschem, pcb, library, gerbv, icarus, gtkwave](http://geda-project.org/)
 
@@ -108,7 +110,7 @@
 
 * [Verilog to Routing](https://verilogtorouting.org/)
 
-* [Electric](https://www.gnu.org/software/electric/)
+* [Electric](http://www.staticfreesoft.com/), <https://www.gnu.org/software/electric/electric.html>
 
 * [GHDL](http://ghdl.free.fr/)
 
@@ -126,7 +128,7 @@
 
 * [OpenSCAD: The Programmers Solid 3D CAD Modeller](http://www.openscad.org/)
 
-## NFC, RFID, Smartcards
+### NFC, RFID, Smartcards
 
 * <http://kasper-oswald.de/chameleonmini/>, [Implementation Attacks: From Theory to Practice](http://www-brs.ub.ruhr-uni-bochum.de/netahtml/HSS/Diss/OswaldDavid/diss.pdf), [SECURITY ANALYSIS OF PERVASIVE WIRELESS DEVICES](https://www.emsec.rub.de/media/attachments/files/2012/11/timo_phd_thesis.pdf)
 
@@ -141,3 +143,11 @@
 * [Proximity Cards](http://cq.cx/prox.pl)
 
 * [OPEN RFID Tag](http://www.t4f.org/projects/open-rfid-tag/introduction-to-the-open-rfid-tag/)
+
+### Verilog
+
+* [Complex Digital Systems](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-884-complex-digital-systems-spring-2005/lecture-notes/)
+
+* [Introduction to Verilog](http://www.physi.uni-heidelberg.de/~angelov/VHDL/VHDL_SS09_Teil10.pdf)
+
+* [FPGA Prototyping by Verilog Examples](http://academic.csuohio.edu/chu_p/rtl/fpga_vlog.html)
