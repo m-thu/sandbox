@@ -1,153 +1,85 @@
 ### Unsorted
 
 * <https://yurichev.com/blog>
-
 * <http://blog.svenbrauch.de/tag/hydrogen-line/>
-
 * <https://codexgalactic.com/2016/05/21/5-qubit-quantum-computing-simulator/>, <https://github.com/corbett/QuantumComputing>
-
 * [V7/x86 - x86 port of UNIX V7](http://www.nordier.com/v7x86/index.html)
-
 * <https://magcius.github.io/xplain/article/index.html>
-
 * [Reverse Engineering a NAND Flash Device Management Algorithm](http://joshuawise.com/projects/ndfslave)
-
 * [64-bit Linux Return-Oriented Programming](https://crypto.stanford.edu/~blynn/rop/)
-
 * <http://hansklav.home.xs4all.nl/rpn/index.html>
-
 * <https://web.archive.org/web/20061008153930/http://algebrafx2.earthforge.com/>
-
 * <http://megaprocessor.com/>
-
 * <http://labs.domipheus.com/blog/tpu-series-quick-links/>
-
 * <http://n2pk.com/>
-
 * [Software Defined Radio and the RTL-SDR USB Dongle](http://www.eas.uccs.edu/~mwickert/ece4670/lecture_notes/Lab6.pdf)
-
 * [Designing an Intel 80386SX development board](https://blog.lse.epita.fr//articles/77-lsepc-intro.html)
-
 * [ARM: Assembly Language Programming](http://arantxa.ii.uam.es/~gdrivera/sed/docs/ARMBook.pdf)
-
 * [ARM assembler in Raspberry Pi](http://thinkingeek.com/arm-assembler-raspberry-pi/)
-
 * [Writing your own startup code for Cortex-M](https://community.arm.com/docs/DOC-8769)
-
 * [Let's code a TCP/IP stack, 1: Ethernet & ARP](http://www.saminiir.com/lets-code-tcp-ip-stack-1-ethernet-arp/)
-
 * <http://c9x.me/compile/bib/>
-
 * [Design of the RISC-V Instruction Set Architecture](https://people.eecs.berkeley.edu/~waterman/papers/phd-thesis.pdf)
-
 * <https://eklitzke.org/article-index>
-
 * <https://www.reddit.com/r/tech_talks/>
-
 * <https://lab.whitequark.org/>
-
 * [PRU tips: Understanding the BeagleBone's built-in microcontrollers ](http://www.righto.com/2016/08/pru-tips-understanding-beaglebones.html)
-
 * [How to run C programs on the BeagleBone's PRU microcontrollers](http://www.righto.com/2016/09/how-to-run-c-programs-on-beaglebones.html)
-
 * [The Desktop Muon Detector](https://arxiv.org/abs/1606.01196)
-
 * <https://yurichev.com/tmp/SAT_SMT_DRAFT.pdf>
-
 * <https://blog.lizzie.io/linux-containers-in-500-loc.html>
-
 * <https://codewords.recurse.com/issues/two/git-from-the-inside-out>
-
 * <https://dberard.com/home-built-stm/>
-
 * <http://ebrombaugh.studionebula.com/radio/iceRadio/index.html>
-
 * [Darling macOS translation layer for Linux](https://www.darlinghq.org/)
-
 * <https://www.evilsocket.net/2014/02/11/on-windows-syscall-mechanism-and-syscall-numbers-extraction-methods/>
-
 * <http://files.righto.com/files/ken-shirriff-supercon.pdf>
-
 * <https://www.happyassassin.net/2014/01/25/uefi-boot-how-does-that-actually-work-then/>
-
 * <https://github.com/AnthonyCalandra/modern-cpp-features>
-
 * <https://helentronica.com/blog/>
-
 * [Under development open hardware microwave (500 MHz to 10 GHz) vector network analyzer](https://github.com/loxodes/vna)
-
 * [mermaid -- Generation of diagrams and flowcharts from text in a similar manner as markdown](http://knsv.github.io/mermaid/#mermaid)
-
 * [Computer Vision: Algorithms and Applications](http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf)
-
 * [UEFI reverse engineering tools](https://github.com/jethrogb/uefireverse)
 
 ### EDA
 
 * [gEDA: gschem, pcb, library, gerbv, icarus, gtkwave](http://geda-project.org/)
-
 * [Open Circuit Design: Magic, XCircuit, IRSIM, Netgen, Qrouter, Qflow, PCB](http://opencircuitdesign.com/)
-
 * [KiCad EDA](http://kicad-pcb.org/)
-
 * [Qucs project: Quite Universal Circuit Simulator](http://qucs.sourceforge.net/)
-
 * [Gnucap: GNU Circuit Analysis Package](http://www.gnucap.org/dokuwiki/doku.php?id=gnucap:start)
-
 * [ngspice](http://ngspice.sourceforge.net/)
-
 * [Icarus Verilog](http://iverilog.icarus.com/)
-
 * [Yosys Open SYnthesis Suite](http://www.clifford.at/yosys/)
-
 * [Project IceStorm](http://www.clifford.at/icestorm/)
-
 * [GTKWave](http://gtkwave.sourceforge.net/)
-
 * [Verilator](http://www.veripool.org/wiki/verilator)
-
 * [Covered - Verilog Code Coverage Analyzer](http://covered.sourceforge.net/)
-
 * [Verilog to Routing](https://verilogtorouting.org/)
-
 * [Electric](http://www.staticfreesoft.com/), <https://www.gnu.org/software/electric/electric.html>
-
 * [GHDL](http://ghdl.free.fr/)
-
 * [ABC: A System for Sequential Synthesis and Verification](https://people.eecs.berkeley.edu/~alanmi/abc/)
-
 * [GNU Octave](http://www.gnu.org/software/octave/)
-
 * [Gnuplot](http://www.gnuplot.info/)
-
 * [Maxima, a Computer Algebra System](http://maxima.sourceforge.net/)
-
 * [wxMaxima](http://andrejv.github.io/wxmaxima/)
-
 * [The R Project for Statistical Computing](https://www.r-project.org/)
-
 * [OpenSCAD: The Programmers Solid 3D CAD Modeller](http://www.openscad.org/)
 
 ### NFC, RFID, Smartcards
 
+* RFID Systems: [Lecture Notes RFID-Systems](http://rfid-systems.at/Seite11.html), [Lecture Notes RF Basics and Components](http://rfid-systems.at/Seite13.html)
 * <http://kasper-oswald.de/chameleonmini/>, [Implementation Attacks: From Theory to Practice](http://www-brs.ub.ruhr-uni-bochum.de/netahtml/HSS/Diss/OswaldDavid/diss.pdf), [SECURITY ANALYSIS OF PERVASIVE WIRELESS DEVICES](https://www.emsec.rub.de/media/attachments/files/2012/11/timo_phd_thesis.pdf)
-
 * <https://schedule2013.rmll.info/IMG/pdf/rfid-practice.pdf>, <http://www.mulliner.org/nfc/>, <https://www.emsec.rub.de/media/crypto/attachments/files/2010/04/timo_kasper___embedded_security_analysis_of_rfid_devices.pdf>
-
 * <http://ludovic.rousseau.free.fr/softwares/pcsc-tools/>
-
 * [Proximity Security System](https://courses.cit.cornell.edu/ee476/FinalProjects/s2006/cjr37/Website/index.htm)
-
 * [How to Build a Low-Cost, Extended-Range RFID Skimmer](http://www.eng.tau.ac.il/~yash/kw-usenix06/index.html)
-
 * [Proximity Cards](http://cq.cx/prox.pl)
-
 * [OPEN RFID Tag](http://www.t4f.org/projects/open-rfid-tag/introduction-to-the-open-rfid-tag/)
 
 ### Verilog
 
 * [Complex Digital Systems](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-884-complex-digital-systems-spring-2005/lecture-notes/)
-
 * [Introduction to Verilog](http://www.physi.uni-heidelberg.de/~angelov/VHDL/VHDL_SS09_Teil10.pdf)
-
 * [FPGA Prototyping by Verilog Examples](http://academic.csuohio.edu/chu_p/rtl/fpga_vlog.html)
