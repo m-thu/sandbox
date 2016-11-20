@@ -84,6 +84,7 @@
 * [How to Build a Low-Cost, Extended-Range RFID Skimmer](http://www.eng.tau.ac.il/~yash/kw-usenix06/index.html)
 * [Proximity Cards](http://cq.cx/prox.pl)
 * [OPEN RFID Tag](http://www.t4f.org/projects/open-rfid-tag/introduction-to-the-open-rfid-tag/)
+* <http://demo.skora.net/NFC_Talk.pdf>
 
 ### Verilog
 
