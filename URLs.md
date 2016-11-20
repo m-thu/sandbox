@@ -1,3 +1,10 @@
+#### Table of Contents
+
+- [Unsorted](#unsorted)
+- [EDA](#eda)
+- [NFC, RFID, Smartcards](#nfc-rfid-smartcards)
+- [Verilog](#verilog)
+
 ### Unsorted
 
 * <https://yurichev.com/blog>
@@ -83,3 +90,4 @@
 * [Complex Digital Systems](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-884-complex-digital-systems-spring-2005/lecture-notes/)
 * [Introduction to Verilog](http://www.physi.uni-heidelberg.de/~angelov/VHDL/VHDL_SS09_Teil10.pdf)
 * [FPGA Prototyping by Verilog Examples](http://academic.csuohio.edu/chu_p/rtl/fpga_vlog.html)
+* <http://www.clifford.at/papers/2007/verilog/slides.pdf>
