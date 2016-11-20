@@ -1,0 +1,12 @@
+# LaTeX
+*.aux
+*.log
+*.toc
+hdl.pdf
+
+# Verilog
+*.vvp
+*.vcd
+
+# vim
+*.swp
