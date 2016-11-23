@@ -48,6 +48,8 @@
 * [mermaid -- Generation of diagrams and flowcharts from text in a similar manner as markdown](http://knsv.github.io/mermaid/#mermaid)
 * [Computer Vision: Algorithms and Applications](http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf)
 * [UEFI reverse engineering tools](https://github.com/jethrogb/uefireverse)
+* [Advancing exploitation: a scriptless 0day exploit against Linux desktops](http://scarybeastsecurity.blogspot.de/2016/11/0day-exploit-advancing-exploitation.html)
+* [Vim Visual Cheat Sheet](https://people.csail.mit.edu/vgod/vim/vim-cheat-sheet-en.pdf)
 
 ### EDA
 
