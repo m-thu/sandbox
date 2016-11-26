@@ -50,6 +50,7 @@
 * [UEFI reverse engineering tools](https://github.com/jethrogb/uefireverse)
 * [Advancing exploitation: a scriptless 0day exploit against Linux desktops](http://scarybeastsecurity.blogspot.de/2016/11/0day-exploit-advancing-exploitation.html)
 * [Vim Visual Cheat Sheet](https://people.csail.mit.edu/vgod/vim/vim-cheat-sheet-en.pdf)
+* <https://www.bastibl.net/projects/>
 
 ### EDA
 
