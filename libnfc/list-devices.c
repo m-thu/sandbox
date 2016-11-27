@@ -10,15 +10,19 @@ static const int MAX_DEVICES = 32;
 
 int main()
 {
-	nfc_context *context;
+	nfc_context *context = NULL;
 	nfc_connstring connstrings[MAX_DEVICES];
 	nfc_device *dev;
 	const nfc_modulation_type *supported_mt;
 	const nfc_baud_rate *supported_br;
-
 	int err = EXIT_SUCCESS;
 
 	nfc_init(&context);
+	if (context == NULL) {
+		printf("Error initializing libnfc!\n");
+		err = EXIT_FAILURE;
+		goto error;
+	}
 	printf("libnfc version: %s\n", nfc_version());
 	
 	for (size_t i = 0; i < nfc_list_devices(context, connstrings, MAX_DEVICES); ++i) {
@@ -81,6 +85,7 @@ int main()
 	}
 
 error:
-	nfc_exit(context);
+	if (context)
+		nfc_exit(context);
 	return err;
 }
