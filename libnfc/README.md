@@ -1,5 +1,5 @@
-libnfc
-------
+Libnfc tools
+------------
 
 Install libnfc:
 ```sh
@@ -15,6 +15,11 @@ Install udev rule for ACR122U and blacklist `nfc` and `pn533` modules:
 sudo cp 80-acr122u.rules /etc/udev/rules.d/
 sudo cp blacklist-pn533.conf /etc/modprobe.d/
 ```
+
+Tools:
+* [list-devices](list-devices.c): Lists all connected devices supported by libnfc
+* [list-tags](list-tags.c): Lists all tags in vicinity of reader
+* [dump-girogo](dump-girogo.c): Dumps girogo cards
 
 ### Resources
 * [Libnfc - NFC Tools](http://nfc-tools.org/index.php?title=Libnfc)
