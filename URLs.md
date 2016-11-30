@@ -88,6 +88,7 @@
 * [Proximity Cards](http://cq.cx/prox.pl)
 * [OPEN RFID Tag](http://www.t4f.org/projects/open-rfid-tag/introduction-to-the-open-rfid-tag/)
 * <http://demo.skora.net/NFC_Talk.pdf>
+* [Linux RFID/NFC userspace test application](https://github.com/pcacjr/nfc-example)
 
 ### Verilog
 
