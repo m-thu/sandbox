@@ -4,6 +4,7 @@
 - [EDA](#eda)
 - [NFC, RFID, Smartcards](#nfc-rfid-smartcards)
 - [Verilog](#verilog)
+- [Linux](#linux)
 
 ### Unsorted
 
@@ -96,3 +97,12 @@
 * [Introduction to Verilog](http://www.physi.uni-heidelberg.de/~angelov/VHDL/VHDL_SS09_Teil10.pdf)
 * [FPGA Prototyping by Verilog Examples](http://academic.csuohio.edu/chu_p/rtl/fpga_vlog.html)
 * <http://www.clifford.at/papers/2007/verilog/slides.pdf>
+
+### Linux
+
+* [Linux Device Drivers, Third Edition](https://lwn.net/Kernel/LDD3/)
+* [Linux Kernel Development (3rd Edition)](https://www.rlove.org)
+* [Linux System Programming, 2nd Edition](http://shop.oreilly.com/product/0636920026891.do)
+* [The Linux Programming Interface](https://www.nostarch.com/tlpi)
+* [Unix Power Tools, 3rd Edition](http://shop.oreilly.com/product/9780596003302.do)
+* [Expert C Programming: Deep C Secrets](https://books.google.de/books/about/Expert_C_Programming.html?id=4vm2xK3yn34C)
