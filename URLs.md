@@ -77,6 +77,7 @@
 * [wxMaxima](http://andrejv.github.io/wxmaxima/)
 * [The R Project for Statistical Computing](https://www.r-project.org/)
 * [OpenSCAD: The Programmers Solid 3D CAD Modeller](http://www.openscad.org/)
+* [Elmer FEM](https://www.csc.fi/web/elmer), [Elmer Community Portal](http://www.elmerfem.org/)
 
 ### NFC, RFID, Smartcards
 
