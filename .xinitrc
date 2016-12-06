@@ -16,5 +16,6 @@ fi
 # exec startxfce4
 # ...or the Window Manager of your choice
 xrdb -merge ~/.Xresources
+setxkbmap -option caps:escape
 #exec awesome
 exec wmaker
