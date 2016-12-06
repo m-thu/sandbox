@@ -10,3 +10,11 @@ hdl.pdf
 
 # vim
 *.swp
+
+# C
+*.o
+*.ko
+*.lib
+*.a
+*.so
+*.so.*
