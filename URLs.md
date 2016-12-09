@@ -100,6 +100,7 @@
 * [Introduction to Verilog](http://www.physi.uni-heidelberg.de/~angelov/VHDL/VHDL_SS09_Teil10.pdf)
 * [FPGA Prototyping by Verilog Examples](http://academic.csuohio.edu/chu_p/rtl/fpga_vlog.html)
 * <http://www.clifford.at/papers/2007/verilog/slides.pdf>
+* [Verilog-AMS Examples using SMASH](http://cmosedu.com/cmos1/verilog_ams/verilog_ams.htm)
 
 ### Linux
 
