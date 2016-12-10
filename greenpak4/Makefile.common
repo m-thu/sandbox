@@ -1,0 +1,24 @@
+YOSYS = yosys
+GP4PAR = gp4par
+GP4PROG = gp4prog
+VERILATOR = verilator
+
+all : $(PROJECT).txt
+
+$(PROJECT).json : $(SOURCE)
+	$(YOSYS) -p 'read_verilog $(SOURCE)' \
+	-p 'synth_greenpak4 -part $(PART) -json $(PROJECT).json'
+
+%.txt : %.json
+	$(GP4PAR) $< -o $@
+
+emulate : $(PROJECT).txt
+	$(GP4PROG) --verbose --emulate $(PROJECT).txt
+
+lint :
+	$(VERILATOR) --lint-only $(SOURCE)
+
+clean :
+	rm -f *.txt *.json
+
+.PHONY : clean emulate lint all

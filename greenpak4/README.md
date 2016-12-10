@@ -1,6 +1,14 @@
 Silego GreenPAK 4
 =================
 
+Build OpenFPGA:
+```sh
+sudo apt-get install libjson-c-dev
+git clone --recursive https://github.com/azonenberg/openfpga.git
+cd openfpga && mkdir build && cd build
+cmake .. && make && sudo make install
+```
+
 Silego Resources:
 * [GreenPAK 4 Programmable Mixed-signal Matrix](http://www.silego.com/products/greenpak4.html)
 * [GreenPAK Designer](http://www.silego.com/softdoc/software.html)
@@ -16,3 +24,4 @@ Open FPGA Resources:
 * [Open Verilog flow for Silego GreenPak4 programmable logic devices](http://siliconexposed.blogspot.de/2016/05/open-verilog-flow-for-silego-greenpak4.html)
 * <https://github.com/azonenberg/openfpga/>
 * [GreenPak4 HDL Place-And-Route User Guide](http://thanatos.virtual.antikernel.net/unlisted/gp4-hdl.pdf)
+* [Yosys Manual](http://www.clifford.at/yosys/files/yosys_manual.pdf)
