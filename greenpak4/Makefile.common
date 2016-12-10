@@ -10,10 +10,10 @@ $(PROJECT).json : $(SOURCE)
 	-p 'synth_greenpak4 -part $(PART) -json $(PROJECT).json'
 
 %.txt : %.json
-	$(GP4PAR) $< -o $@
+	$(GP4PAR) $< -o $@ -p $(PART)
 
 emulate : $(PROJECT).txt
-	$(GP4PROG) -v 3.3 --emulate $(PROJECT).txt
+	$(GP4PROG) -v 3.3 --emulate $(PROJECT).txt $(NETS)
 
 lint :
 	$(VERILATOR) --lint-only $(SOURCE)
