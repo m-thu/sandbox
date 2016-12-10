@@ -23,5 +23,4 @@ Parts included with GreenPAK 4 Development Board:
 Open FPGA Resources:
 * [Open Verilog flow for Silego GreenPak4 programmable logic devices](http://siliconexposed.blogspot.de/2016/05/open-verilog-flow-for-silego-greenpak4.html)
 * <https://github.com/azonenberg/openfpga/>
-* [GreenPak4 HDL Place-And-Route User Guide](http://thanatos.virtual.antikernel.net/unlisted/gp4-hdl.pdf)
 * [Yosys Manual](http://www.clifford.at/yosys/files/yosys_manual.pdf)
