@@ -52,6 +52,7 @@
 * [Advancing exploitation: a scriptless 0day exploit against Linux desktops](http://scarybeastsecurity.blogspot.de/2016/11/0day-exploit-advancing-exploitation.html)
 * [Vim Visual Cheat Sheet](https://people.csail.mit.edu/vgod/vim/vim-cheat-sheet-en.pdf)
 * <https://www.bastibl.net/projects/>
+* <https://www.nayuki.io/recent-pages/>
 
 ### EDA
 
@@ -110,3 +111,4 @@
 * [The Linux Programming Interface](https://www.nostarch.com/tlpi)
 * [Unix Power Tools, 3rd Edition](http://shop.oreilly.com/product/9780596003302.do)
 * [Expert C Programming: Deep C Secrets](https://books.google.de/books/about/Expert_C_Programming.html?id=4vm2xK3yn34C)
+* [Searchable Linux Syscall Table for x86 and x86_64](https://filippo.io/linux-syscall-table/)
