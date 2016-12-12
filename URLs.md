@@ -102,6 +102,7 @@
 * [FPGA Prototyping by Verilog Examples](http://academic.csuohio.edu/chu_p/rtl/fpga_vlog.html)
 * <http://www.clifford.at/papers/2007/verilog/slides.pdf>
 * [Verilog-AMS Examples using SMASH](http://cmosedu.com/cmos1/verilog_ams/verilog_ams.htm)
+* [Standard Gotchas -- Subtleties in the Verilog and SystemVerilog Standards That Every Engineer Should Know](http://www.lcdm-eng.com/papers/snug06_Verilog%20Gotchas%20Part1.pdf)
 
 ### Linux
 
