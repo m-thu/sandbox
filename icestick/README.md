@@ -22,8 +22,15 @@ Family Name: iCE40
 Device Name: iCE40HX1K
 ```
 
-Resources:
+Lattice resources:
 * [iCEstick Evaluation Kit](http://www.latticesemi.com/icestick)
 * [iCEstick User Manual](http://www.latticesemi.com/icestick)
 * [Lattice iCEcube2(tm)](http://www.latticesemi.com/Products/DesignSoftwareAndIP/FPGAandLDS/iCEcube2.aspx)
 * [Lattice Diamond Programmer version 3.0](http://www.latticesemi.com/Products/DesignSoftwareAndIP/ProgrammingAndConfigurationSw/Programmer.aspx)
+* [Lattice iCE40 LP/HX Family Datasheet](http://www.latticesemi.com/~/media/LatticeSemi/Documents/DataSheets/iCE/iCE40LPHXFamilyDataSheet.pdf)
+* [Lattice iCE Technology Library](http://www.latticesemi.com/~/media/LatticeSemi/Documents/TechnicalBriefs/SBTICETechnologyLibrary201504.pdf)
+
+Other resources:
+* [Yosys Open SYnthesis Suite](http://www.clifford.at/yosys/)
+* [Project IceStorm](http://www.clifford.at/icestorm/)
+* [Arachne-pnr](https://github.com/cseed/arachne-pnr)
