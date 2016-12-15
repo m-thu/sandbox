@@ -71,6 +71,7 @@
 * [Verilog to Routing](https://verilogtorouting.org/)
 * [Electric](http://www.staticfreesoft.com/), <https://www.gnu.org/software/electric/electric.html>
 * [GHDL](http://ghdl.free.fr/)
+* [NVC VHDL compiler and simulator](https://github.com/nickg/nvc)
 * [ABC: A System for Sequential Synthesis and Verification](https://people.eecs.berkeley.edu/~alanmi/abc/)
 * [GNU Octave](http://www.gnu.org/software/octave/)
 * [Gnuplot](http://www.gnuplot.info/)
