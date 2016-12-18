@@ -53,6 +53,7 @@
 * [Vim Visual Cheat Sheet](https://people.csail.mit.edu/vgod/vim/vim-cheat-sheet-en.pdf)
 * <https://www.bastibl.net/projects/>
 * <https://www.nayuki.io/recent-pages/>
+* [Writing a SAT Solver](http://andrew.gibiansky.com/blog/verification/writing-a-sat-solver/)
 
 ### EDA
 
