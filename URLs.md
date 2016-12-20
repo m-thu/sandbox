@@ -63,6 +63,7 @@
 * [Qucs project: Quite Universal Circuit Simulator](http://qucs.sourceforge.net/)
 * [Gnucap: GNU Circuit Analysis Package](http://www.gnucap.org/dokuwiki/doku.php?id=gnucap:start)
 * [ngspice](http://ngspice.sourceforge.net/)
+* [Xyce -- Parallel electronic simulation](https://xyce.sandia.gov/)
 * [Icarus Verilog](http://iverilog.icarus.com/)
 * [Yosys Open SYnthesis Suite](http://www.clifford.at/yosys/)
 * [Project IceStorm](http://www.clifford.at/icestorm/)
@@ -73,6 +74,7 @@
 * [Electric](http://www.staticfreesoft.com/), <https://www.gnu.org/software/electric/electric.html>
 * [GHDL](http://ghdl.free.fr/)
 * [NVC VHDL compiler and simulator](https://github.com/nickg/nvc)
+* [The FreeHDL Project (VHDL)](http://www.freehdl.seul.org/)
 * [ABC: A System for Sequential Synthesis and Verification](https://people.eecs.berkeley.edu/~alanmi/abc/)
 * [GNU Octave](http://www.gnu.org/software/octave/)
 * [Gnuplot](http://www.gnuplot.info/)
@@ -105,6 +107,7 @@
 * <http://www.clifford.at/papers/2007/verilog/slides.pdf>
 * [Verilog-AMS Examples using SMASH](http://cmosedu.com/cmos1/verilog_ams/verilog_ams.htm)
 * [Standard Gotchas -- Subtleties in the Verilog and SystemVerilog Standards That Every Engineer Should Know](http://www.lcdm-eng.com/papers/snug06_Verilog%20Gotchas%20Part1.pdf)
+* <http://asic-world.com/verilog/index.html>
 
 ### Linux
 
