@@ -55,6 +55,7 @@
 * <https://www.nayuki.io/recent-pages/>
 * [Writing a SAT Solver](http://andrew.gibiansky.com/blog/verification/writing-a-sat-solver/)
 * <http://nullprogram.com/index/>
+* [Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)
 
 ### EDA
 
