@@ -54,6 +54,7 @@
 * <https://www.bastibl.net/projects/>
 * <https://www.nayuki.io/recent-pages/>
 * [Writing a SAT Solver](http://andrew.gibiansky.com/blog/verification/writing-a-sat-solver/)
+* <http://nullprogram.com/index/>
 
 ### EDA
 
