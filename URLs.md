@@ -56,6 +56,7 @@
 * [Writing a SAT Solver](http://andrew.gibiansky.com/blog/verification/writing-a-sat-solver/)
 * <http://nullprogram.com/index/>
 * [Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)
+* [https://jumpespjump.blogspot.de/2014/02/hacking-windows-95-part-1.html](https://jumpespjump.blogspot.de/2014/02/hacking-windows-95-part-1.html), [Hacking Windows 95, part 2](https://jumpespjump.blogspot.de/2014/05/hacking-windows-95-part-2.html)
 
 ### EDA
 
