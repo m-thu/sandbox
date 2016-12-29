@@ -56,7 +56,9 @@
 * [Writing a SAT Solver](http://andrew.gibiansky.com/blog/verification/writing-a-sat-solver/)
 * <http://nullprogram.com/index/>
 * [Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)
-* [https://jumpespjump.blogspot.de/2014/02/hacking-windows-95-part-1.html](https://jumpespjump.blogspot.de/2014/02/hacking-windows-95-part-1.html), [Hacking Windows 95, part 2](https://jumpespjump.blogspot.de/2014/05/hacking-windows-95-part-2.html)
+* [Hacking Windows 95, part 1](http://jumpespjump.blogspot.de/2014/02/hacking-windows-95-part-1.html), [Hacking Windows 95, part 2](http://jumpespjump.blogspot.de/2014/05/hacking-windows-95-part-2.html)
+* [Windows X86 System Call Table (NT/2000/XP/2003/Vista/2008/7/8/10)](http://j00ru.vexillium.org/ntapi/), [Windows X86-64 System Call Table (XP/2003/Vista/2008/7/2012/8/10)](http://j00ru.vexillium.org/ntapi_64/)
+* [IBM 3270 terminal emulator](http://x3270.bgp.nu/)
 
 ### EDA
 
