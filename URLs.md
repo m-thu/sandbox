@@ -59,6 +59,8 @@
 * [Hacking Windows 95, part 1](http://jumpespjump.blogspot.de/2014/02/hacking-windows-95-part-1.html), [Hacking Windows 95, part 2](http://jumpespjump.blogspot.de/2014/05/hacking-windows-95-part-2.html)
 * [Windows X86 System Call Table (NT/2000/XP/2003/Vista/2008/7/8/10)](http://j00ru.vexillium.org/ntapi/), [Windows X86-64 System Call Table (XP/2003/Vista/2008/7/2012/8/10)](http://j00ru.vexillium.org/ntapi_64/)
 * [IBM 3270 terminal emulator](http://x3270.bgp.nu/)
+* <http://www.sigidwiki.com/wiki/Signal_Identification_Guide>
+* <http://www.pagetable.com/>
 
 ### EDA
 
@@ -91,6 +93,7 @@
 * [Elmer FEM](https://www.csc.fi/web/elmer), [Elmer Community Portal](http://www.elmerfem.org/)
 * [SystemC](http://accellera.org/downloads/standards/systemc)
 * [GDL - GNU Data Language](http://gnudatalanguage.sourceforge.net/)
+* [ROOT Data Analysis Framework](https://root.cern/)
 
 ### NFC, RFID, Smartcards
 
