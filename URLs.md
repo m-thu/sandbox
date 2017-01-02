@@ -61,6 +61,7 @@
 * [IBM 3270 terminal emulator](http://x3270.bgp.nu/)
 * <http://www.sigidwiki.com/wiki/Signal_Identification_Guide>
 * <http://www.pagetable.com/>
+* [Using the RTL2832 GPIO port](http://lea.hamradio.si/~s57uuu/mischam/rtlsdr/ports.html)
 
 ### EDA
 
