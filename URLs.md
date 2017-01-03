@@ -62,6 +62,7 @@
 * <http://www.sigidwiki.com/wiki/Signal_Identification_Guide>
 * <http://www.pagetable.com/>
 * [Using the RTL2832 GPIO port](http://lea.hamradio.si/~s57uuu/mischam/rtlsdr/ports.html)
+* [The Definitive C++ Book Guide and List](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list)
 
 ### EDA
 
