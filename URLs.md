@@ -63,6 +63,7 @@
 * <http://www.pagetable.com/>
 * [Using the RTL2832 GPIO port](http://lea.hamradio.si/~s57uuu/mischam/rtlsdr/ports.html)
 * [The Definitive C++ Book Guide and List](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list)
+* [Implementing Regular Expressions](https://swtch.com/~rsc/regexp/)
 
 ### EDA
 
