@@ -66,6 +66,13 @@
 * [Implementing Regular Expressions](https://swtch.com/~rsc/regexp/)
 * [Papers We Love](https://github.com/papers-we-love/papers-we-love)
 * <https://more-magic.org/>
+* [RFM95W 868/915Mhz RF Transceiver Module](http://www.hoperf.com/rf_transceiver/lora/RFM95W.html)
+* [ANALYSING THE BITSTREAM OF ALTERA'S MAX-V CPLDS](https://lse.epita.fr/lse-summer-week-2016/slides/lse-summer-week-2016-07-maxv_cpld.pdf)
+* [From the bitstream to the netlist](http://www.fabienm.eu/flf/wp-content/uploads/2014/11/Note2008.pdf)
+* [Attack Methodologies on Security Chips](http://hardwear.io/wp-content/uploads/2015/10/Attack-Methodologies-on-Security-Chips-Marcus-Janke-Peter-Laackmann.pdf)
+* [Decoupling Techniques](http://www.analog.com/media/en/training-seminars/tutorials/MT-101.pdf)
+* [Advances and Challenges in Reconfigurable Computing](http://settrans.net/~rah/misc/Wawrzynek-Reconfig-101214.pdf)
+* [THE SECRET WORLD OF OSCILLOSCOPE PROBES](http://dfad.com.au/links/THE%20SECRET%20WORLD%20OF%20PROBES%20OCt09.pdf)
 
 ### EDA
 
@@ -85,6 +92,7 @@
 * [Verilog to Routing](https://verilogtorouting.org/)
 * [Electric](http://www.staticfreesoft.com/), <https://www.gnu.org/software/electric/electric.html>
 * [GHDL](http://ghdl.free.fr/)
+* [VHDL synthesis (based on ghdl)](https://github.com/tgingold/ghdlsynth-beta)
 * [NVC VHDL compiler and simulator](https://github.com/nickg/nvc)
 * [The FreeHDL Project (VHDL)](http://www.freehdl.seul.org/)
 * [ABC: A System for Sequential Synthesis and Verification](https://people.eecs.berkeley.edu/~alanmi/abc/)
