@@ -29,3 +29,9 @@ make
 make check
 sudo make install
 ```
+
+### Enable serial console on Raspberry Pi 3
+
+```sh
+echo enable_uart=1 >>/boot/config.txt
+```
