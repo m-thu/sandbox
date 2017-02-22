@@ -74,6 +74,7 @@
 * [Advances and Challenges in Reconfigurable Computing](http://settrans.net/~rah/misc/Wawrzynek-Reconfig-101214.pdf)
 * [THE SECRET WORLD OF OSCILLOSCOPE PROBES](http://dfad.com.au/links/THE%20SECRET%20WORLD%20OF%20PROBES%20OCt09.pdf)
 * [Calculator Forensics](http://www.rskey.org/~mwsebastian/miscprj/forensics.htm)
+* <http://wm.ite.pl/articles/>
 
 ### EDA
 
