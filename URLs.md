@@ -75,6 +75,7 @@
 * [THE SECRET WORLD OF OSCILLOSCOPE PROBES](http://dfad.com.au/links/THE%20SECRET%20WORLD%20OF%20PROBES%20OCt09.pdf)
 * [Calculator Forensics](http://www.rskey.org/~mwsebastian/miscprj/forensics.htm)
 * <http://wm.ite.pl/articles/>
+* [Satellite Based IP Content Delivery Network](https://recon.cx/2017/brussels/resources/slides/RECON-BRX-2017-Reverse_Engineering_Satellite_Based_IP_Content_Distribution.pdf)
 
 ### EDA
 
