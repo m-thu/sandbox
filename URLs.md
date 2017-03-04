@@ -76,6 +76,7 @@
 * [Calculator Forensics](http://www.rskey.org/~mwsebastian/miscprj/forensics.htm)
 * <http://wm.ite.pl/articles/>
 * [Satellite Based IP Content Delivery Network](https://recon.cx/2017/brussels/resources/slides/RECON-BRX-2017-Reverse_Engineering_Satellite_Based_IP_Content_Distribution.pdf)
+* <http://dmitry.gr/index.php?r=05.Projects>
 
 ### EDA
 
