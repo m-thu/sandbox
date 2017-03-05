@@ -35,3 +35,11 @@ sudo make install
 ```sh
 echo enable_uart=1 >>/boot/config.txt
 ```
+
+### Using Android Studio with IBus version < 1.5.11
+
+[IDEA-78860: Keyboard input sometimes is blocked when IBus is active](https://youtrack.jetbrains.com/issue/IDEA-78860)
+
+```sh
+export IBUS_ENABLE_SYNC_MODE=1
+```
