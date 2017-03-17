@@ -78,6 +78,7 @@
 * [Satellite Based IP Content Delivery Network](https://recon.cx/2017/brussels/resources/slides/RECON-BRX-2017-Reverse_Engineering_Satellite_Based_IP_Content_Distribution.pdf)
 * <http://dmitry.gr/index.php?r=05.Projects>
 * [Reverse Engineering Samsung S6 SBOOT - Part I](http://blog.quarkslab.com/reverse-engineering-samsung-s6-sboot-part-i.html)
+* [Attacking Nexus 9 with Malicious Headphones](https://alephsecurity.com/2017/03/08/nexus9-fiq-debugger/)
 
 ### EDA
 
