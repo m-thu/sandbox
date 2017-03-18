@@ -43,3 +43,9 @@ echo enable_uart=1 >>/boot/config.txt
 ```sh
 export IBUS_ENABLE_SYNC_MODE=1
 ```
+
+### Orange Pi One
+
+* [Allwinner A31 and Allwinner H3 SoC baremetal application](https://github.com/skristiansson/ar100-info)
+* [Open firmware for Allwinner H3 SoC](https://github.com/megous/h3-firmware)
+* <https://github.com/megous/h3-ar100-firmware-decompiler>
