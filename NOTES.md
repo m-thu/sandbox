@@ -49,3 +49,6 @@ export IBUS_ENABLE_SYNC_MODE=1
 * [Allwinner A31 and Allwinner H3 SoC baremetal application](https://github.com/skristiansson/ar100-info)
 * [Open firmware for Allwinner H3 SoC](https://github.com/megous/h3-firmware)
 * <https://github.com/megous/h3-ar100-firmware-decompiler>
+* <http://www.orangepi.org/orangepione/>
+* [Installing Debian on Allwinner](https://wiki.debian.org/InstallingDebianOn/Allwinner)
+* [armbian - Linux for ARM development boards](https://www.armbian.com/download/)
