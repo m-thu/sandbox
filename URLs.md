@@ -86,6 +86,7 @@
 * [Build Your Own Text Editor](http://viewsourcecode.org/snaptoken/kilo/)
 * [Homemade GPS Receiver](http://www.aholme.co.uk/GPS/Main.htm), <http://www.aholme.co.uk/Projects.htm>
 * [Software Foundations](https://www.cis.upenn.edu/~bcpierce/sf/current/index.html)
+* [Multi-OS Engine – Technology Preview](https://software.intel.com/en-us/multi-os-engine)
 
 ### EDA
 
