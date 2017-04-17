@@ -87,6 +87,7 @@
 * [Homemade GPS Receiver](http://www.aholme.co.uk/GPS/Main.htm), <http://www.aholme.co.uk/Projects.htm>
 * [Software Foundations](https://www.cis.upenn.edu/~bcpierce/sf/current/index.html)
 * [Multi-OS Engine – Technology Preview](https://software.intel.com/en-us/multi-os-engine)
+* <http://conference.hitb.org/hitbsecconf2017ams/materials/D1T4%20-%20Marc%20Newlin%20and%20Matt%20Knight%20-%20So%20You%20Want%20to%20Hack%20Radios.pdf>
 
 ### EDA
 
