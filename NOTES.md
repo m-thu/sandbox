@@ -16,7 +16,7 @@ Go to definition of word under cursor in current function: `gd`
 
 Go to definition in current file: `gD`
 
-### Install SystemC
+### Installing SystemC
 
 ```sh
 wget http://accellera.org/images/downloads/standards/systemc/systemc-2.3.1a.tar.gz
@@ -52,3 +52,16 @@ export IBUS_ENABLE_SYNC_MODE=1
 * <http://www.orangepi.org/orangepione/>
 * [Installing Debian on Allwinner](https://wiki.debian.org/InstallingDebianOn/Allwinner)
 * [armbian - Linux for ARM development boards](https://www.armbian.com/download/)
+
+### Installing Coq on Ubuntu 14.04
+
+```sh
+wget https://coq.inria.fr/distrib/V8.6/files/coq-8.6.tar.gz
+tar xzf coq-8.6.tar.gz && cd cd coq-8.6
+sudo apt-get install ocaml ocaml-findlib camlp5 liblablgtk2-ocaml-dev liblablgtksourceview2-ocaml-dev
+./configure && make world && sudo make install && sudo make clean-ide
+
+coqtop # Coq toplevel
+coqc   # Coq compiler
+coqide # Coq IDE
+```
