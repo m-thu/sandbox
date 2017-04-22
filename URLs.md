@@ -5,22 +5,21 @@
 - [NFC, RFID, Smartcards](#nfc-rfid-smartcards)
 - [Verilog](#verilog)
 - [Linux](#linux)
+- [Formal Verification](#formal-verification)
+- [RF, SDR](#rf-sdr)
 
 ### Unsorted
 
 * <https://yurichev.com/blog>
-* <http://blog.svenbrauch.de/tag/hydrogen-line/>
 * <https://codexgalactic.com/2016/05/21/5-qubit-quantum-computing-simulator/>, <https://github.com/corbett/QuantumComputing>
 * [V7/x86 - x86 port of UNIX V7](http://www.nordier.com/v7x86/index.html)
 * <https://magcius.github.io/xplain/article/index.html>
 * [Reverse Engineering a NAND Flash Device Management Algorithm](http://joshuawise.com/projects/ndfslave)
-* [64-bit Linux Return-Oriented Programming](https://crypto.stanford.edu/~blynn/rop/)
 * <http://hansklav.home.xs4all.nl/rpn/index.html>
 * <https://web.archive.org/web/20061008153930/http://algebrafx2.earthforge.com/>
 * <http://megaprocessor.com/>
 * <http://labs.domipheus.com/blog/tpu-series-quick-links/>
 * <http://n2pk.com/>
-* [Software Defined Radio and the RTL-SDR USB Dongle](http://www.eas.uccs.edu/~mwickert/ece4670/lecture_notes/Lab6.pdf)
 * [Designing an Intel 80386SX development board](https://blog.lse.epita.fr//articles/77-lsepc-intro.html)
 * [ARM: Assembly Language Programming](http://arantxa.ii.uam.es/~gdrivera/sed/docs/ARMBook.pdf)
 * [ARM assembler in Raspberry Pi](http://thinkingeek.com/arm-assembler-raspberry-pi/)
@@ -34,18 +33,13 @@
 * [PRU tips: Understanding the BeagleBone's built-in microcontrollers ](http://www.righto.com/2016/08/pru-tips-understanding-beaglebones.html)
 * [How to run C programs on the BeagleBone's PRU microcontrollers](http://www.righto.com/2016/09/how-to-run-c-programs-on-beaglebones.html)
 * [The Desktop Muon Detector](https://arxiv.org/abs/1606.01196)
-* <https://yurichev.com/tmp/SAT_SMT_DRAFT.pdf>
-* <https://blog.lizzie.io/linux-containers-in-500-loc.html>
 * <https://codewords.recurse.com/issues/two/git-from-the-inside-out>
 * <https://dberard.com/home-built-stm/>
-* <http://ebrombaugh.studionebula.com/radio/iceRadio/index.html>
-* [Darling macOS translation layer for Linux](https://www.darlinghq.org/)
 * <https://www.evilsocket.net/2014/02/11/on-windows-syscall-mechanism-and-syscall-numbers-extraction-methods/>
 * <http://files.righto.com/files/ken-shirriff-supercon.pdf>
 * <https://www.happyassassin.net/2014/01/25/uefi-boot-how-does-that-actually-work-then/>
 * <https://github.com/AnthonyCalandra/modern-cpp-features>
 * <https://helentronica.com/blog/>
-* [Under development open hardware microwave (500 MHz to 10 GHz) vector network analyzer](https://github.com/loxodes/vna)
 * [mermaid -- Generation of diagrams and flowcharts from text in a similar manner as markdown](http://knsv.github.io/mermaid/#mermaid)
 * [Computer Vision: Algorithms and Applications](http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf)
 * [UEFI reverse engineering tools](https://github.com/jethrogb/uefireverse)
@@ -59,14 +53,11 @@
 * [Hacking Windows 95, part 1](http://jumpespjump.blogspot.de/2014/02/hacking-windows-95-part-1.html), [Hacking Windows 95, part 2](http://jumpespjump.blogspot.de/2014/05/hacking-windows-95-part-2.html)
 * [Windows X86 System Call Table (NT/2000/XP/2003/Vista/2008/7/8/10)](http://j00ru.vexillium.org/ntapi/), [Windows X86-64 System Call Table (XP/2003/Vista/2008/7/2012/8/10)](http://j00ru.vexillium.org/ntapi_64/)
 * [IBM 3270 terminal emulator](http://x3270.bgp.nu/)
-* <http://www.sigidwiki.com/wiki/Signal_Identification_Guide>
 * <http://www.pagetable.com/>
-* [Using the RTL2832 GPIO port](http://lea.hamradio.si/~s57uuu/mischam/rtlsdr/ports.html)
 * [The Definitive C++ Book Guide and List](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list)
 * [Implementing Regular Expressions](https://swtch.com/~rsc/regexp/)
 * [Papers We Love](https://github.com/papers-we-love/papers-we-love)
 * <https://more-magic.org/>
-* [RFM95W 868/915Mhz RF Transceiver Module](http://www.hoperf.com/rf_transceiver/lora/RFM95W.html)
 * [ANALYSING THE BITSTREAM OF ALTERA'S MAX-V CPLDS](https://lse.epita.fr/lse-summer-week-2016/slides/lse-summer-week-2016-07-maxv_cpld.pdf)
 * [From the bitstream to the netlist](http://www.fabienm.eu/flf/wp-content/uploads/2014/11/Note2008.pdf)
 * [Attack Methodologies on Security Chips](http://hardwear.io/wp-content/uploads/2015/10/Attack-Methodologies-on-Security-Chips-Marcus-Janke-Peter-Laackmann.pdf)
@@ -84,10 +75,7 @@
 * <http://newandroidbook.com/AIvI-M-RL1.pdf>
 * [USB-C for Engineers, Part 1](https://www.reclaimerlabs.com/blog/2016/12/31/usb-c-for-engineers-part-1), [USB-C for Engineers, Part 2](https://www.reclaimerlabs.com/blog/2017/1/12/usb-c-for-engineers-part-2), [USB-C for Engineers, Part 3](https://www.reclaimerlabs.com/blog/2017/2/1/usb-c-for-engineers-part-3)
 * [Build Your Own Text Editor](http://viewsourcecode.org/snaptoken/kilo/)
-* [Homemade GPS Receiver](http://www.aholme.co.uk/GPS/Main.htm), <http://www.aholme.co.uk/Projects.htm>
-* [Software Foundations](https://www.cis.upenn.edu/~bcpierce/sf/current/index.html)
 * [Multi-OS Engine – Technology Preview](https://software.intel.com/en-us/multi-os-engine)
-* <http://conference.hitb.org/hitbsecconf2017ams/materials/D1T4%20-%20Marc%20Newlin%20and%20Matt%20Knight%20-%20So%20You%20Want%20to%20Hack%20Radios.pdf>
 
 ### EDA
 
@@ -155,3 +143,33 @@
 * [Unix Power Tools, 3rd Edition](http://shop.oreilly.com/product/9780596003302.do)
 * [Expert C Programming: Deep C Secrets](https://books.google.de/books/about/Expert_C_Programming.html?id=4vm2xK3yn34C)
 * [Searchable Linux Syscall Table for x86 and x86_64](https://filippo.io/linux-syscall-table/)
+* [64-bit Linux Return-Oriented Programming](https://crypto.stanford.edu/~blynn/rop/)
+* <https://blog.lizzie.io/linux-containers-in-500-loc.html>
+* [Darling macOS translation layer for Linux](https://www.darlinghq.org/)
+
+### Formal Verification
+
+* [Software Foundations](https://www.cis.upenn.edu/~bcpierce/sf/current/index.html)
+* [The Coq Proof Assistant](https://coq.inria.fr/)
+* [Isabelle](https://isabelle.in.tum.de/)
+* [CBMC - Bounded Model Checking for Software](http://www.cprover.org/cbmc/)
+* [ESBMC (Efficient SMT-Based Context-Bounded Model Checker)](http://www.esbmc.org/)
+* [The Z3 Theorem Prover](https://github.com/Z3Prover/z3)
+* [The Yices SMT Solver](http://yices.csl.sri.com/)
+* [Boolector](http://fmv.jku.at/boolector/)
+* [ABC - A System for Sequential Synthesis and Verification](https://people.eecs.berkeley.edu/~alanmi/abc/)
+* [Avy](https://arieg.bitbucket.io/avy/)
+* <http://svn.clifford.at/handicraft/2017/tttm/README>
+* <https://yurichev.com/tmp/SAT_SMT_DRAFT.pdf>
+
+### RF, SDR
+
+* [Software Defined Radio and the RTL-SDR USB Dongle](http://www.eas.uccs.edu/~mwickert/ece4670/lecture_notes/Lab6.pdf)
+* <http://blog.svenbrauch.de/tag/hydrogen-line/>
+* <http://ebrombaugh.studionebula.com/radio/iceRadio/index.html>
+* [Under development open hardware microwave (500 MHz to 10 GHz) vector network analyzer](https://github.com/loxodes/vna)
+* <http://www.sigidwiki.com/wiki/Signal_Identification_Guide>
+* [Using the RTL2832 GPIO port](http://lea.hamradio.si/~s57uuu/mischam/rtlsdr/ports.html)
+* [RFM95W 868/915Mhz RF Transceiver Module](http://www.hoperf.com/rf_transceiver/lora/RFM95W.html)
+* [Homemade GPS Receiver](http://www.aholme.co.uk/GPS/Main.htm), <http://www.aholme.co.uk/Projects.htm>
+* <http://conference.hitb.org/hitbsecconf2017ams/materials/D1T4%20-%20Marc%20Newlin%20and%20Matt%20Knight%20-%20So%20You%20Want%20to%20Hack%20Radios.pdf>
