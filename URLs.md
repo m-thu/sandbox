@@ -76,6 +76,7 @@
 * [USB-C for Engineers, Part 1](https://www.reclaimerlabs.com/blog/2016/12/31/usb-c-for-engineers-part-1), [USB-C for Engineers, Part 2](https://www.reclaimerlabs.com/blog/2017/1/12/usb-c-for-engineers-part-2), [USB-C for Engineers, Part 3](https://www.reclaimerlabs.com/blog/2017/2/1/usb-c-for-engineers-part-3)
 * [Build Your Own Text Editor](http://viewsourcecode.org/snaptoken/kilo/)
 * [Multi-OS Engine – Technology Preview](https://software.intel.com/en-us/multi-os-engine)
+* [C-Reduce](https://embed.cs.utah.edu/creduce/)
 
 ### EDA
 
