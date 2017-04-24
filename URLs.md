@@ -77,6 +77,7 @@
 * [Build Your Own Text Editor](http://viewsourcecode.org/snaptoken/kilo/)
 * [Multi-OS Engine – Technology Preview](https://software.intel.com/en-us/multi-os-engine)
 * [C-Reduce](https://embed.cs.utah.edu/creduce/)
+* [Adventures in Time, part 1: Interfacing an Oven Controlled Crystal Oscillator to a Computer Running NetBSD](https://contraptnns.blogspot.de/2017/04/adventures-in-time-part-1-interfacing.html)
 
 ### EDA
 
