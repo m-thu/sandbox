@@ -1,0 +1,5 @@
+*.blif
+*.asc
+*.bin
+*.vcd
+*.vvp
