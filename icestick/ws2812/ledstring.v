@@ -15,7 +15,8 @@ module ledstring #(
 	// T_reset: > 50 us
 	localparam T_WAIT = 250e-3;
 	//localparam T_WAIT = 1e-6; // for testbench
-	localparam N_WAIT = $ceil(T_WAIT * F_CLK);
+	//localparam N_WAIT = $ceil(T_WAIT * F_CLK);
+	localparam N_WAIT = 12_000_000;
 	// Counter width for delay
 	localparam CNT = $clog2($rtoi($ceil(T_WAIT * F_CLK)));
 
@@ -35,7 +36,7 @@ module ledstring #(
 	reg [23:0] data;
 
 	ws2812_tx #(
-		.F_CLK(F_CLK)
+		//.F_CLK(F_CLK)
 	) ws2812 (
 		.clk(clk),
 		.rst(rst),
