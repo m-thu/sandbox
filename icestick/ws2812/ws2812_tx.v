@@ -31,13 +31,13 @@ module ws2812_tx #(
 
 	localparam
 	           // Bit 0, cycles high time
-	           N_T0H = $ceil(T_T0H * F_CLK),
+	           N_T0H = 17,//$ceil(T_T0H * F_CLK),
 	           // Bit 0, cycles low time
-	           N_T0L = $ceil(T_T0L * F_CLK),
+	           N_T0L = 39,//$ceil(T_T0L * F_CLK),
 	           // Bit 1, cycles high time
-	           N_T1H = $ceil(T_T1H * F_CLK),
+	           N_T1H = 34,//$ceil(T_T1H * F_CLK),
 	           // Bit 1, cycles low time
-	           N_T1L = $ceil(T_T1L * F_CLK);
+	           N_T1L = 29;//$ceil(T_T1L * F_CLK);
 
 	// Counter width for delay
 	localparam CNT = $clog2($rtoi($ceil(T_T0L * F_CLK)));
