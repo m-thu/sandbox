@@ -4,6 +4,7 @@
 - [EDA](#eda)
 - [NFC, RFID, Smartcards](#nfc-rfid-smartcards)
 - [Verilog](#verilog)
+- [VHDL](#vhdl)
 - [Linux](#linux)
 - [Formal Verification](#formal-verification)
 - [RF, SDR](#rf-sdr)
@@ -136,6 +137,12 @@
 * [Verilog-AMS Examples using SMASH](http://cmosedu.com/cmos1/verilog_ams/verilog_ams.htm)
 * [Standard Gotchas -- Subtleties in the Verilog and SystemVerilog Standards That Every Engineer Should Know](http://www.lcdm-eng.com/papers/snug06_Verilog%20Gotchas%20Part1.pdf)
 * <http://asic-world.com/verilog/index.html>
+* [Verilog-AMS Language Reference Manual](http://accellera.org/images/downloads/standards/v-ams/VAMS-LRM-2-4.pdf), <http://accellera.org/downloads/standards/v-ams>
+* [1364-2005 - IEEE Standard for Verilog Hardware Description Language](http://ieeexplore.ieee.org/document/1620780/?arnumber=1620780)
+
+### VHDL
+
+* [IEEE Std 1076 - IEEE Standard VHDL Language Reference Manual](http://ieeexplore.ieee.org/document/4772740/?arnumber=4772740)
 
 ### Linux
 
