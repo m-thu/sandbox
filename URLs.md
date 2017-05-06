@@ -143,6 +143,13 @@
 ### VHDL
 
 * [IEEE Std 1076 - IEEE Standard VHDL Language Reference Manual](http://ieeexplore.ieee.org/document/4772740/?arnumber=4772740)
+* [Digital Integrated Circuit Design, From VLSI Architectures to CMOS Fabrication](http://www.cambridge.org/catalogue/catalogue.asp?isbn=9780521882675), [Top-Down Digital VLSI Design, From Architectures to Gate-Level Circuits and FPGAs](https://www.dz.ee.ethz.ch/en/our-range/teaching/textbook.html)
+* [The Designer's Guide to VHDL, 3rd Edition](http://www.ashenden.com.au/vhdl-book/DG3E.html)
+* [The System Designer's Guide to VHDL-AMS](http://www.ashenden.com.au/DGAMS/)
+* [Writing Testbenches: Functional Verification of HDL Models](https://www.springer.com/gp/book/9781402074011)
+* [FPGA Prototyping by VHDL Examples: Xilinx Spartan-3 Version](http://academic.csuohio.edu/chu_p/rtl/fpga_vhdl.html)
+* [HDL Chip Design: A Practical Guide for Designing, Synthesizing and Simulating ASICs and FPGAs Using VHDL or Verilog](https://dl.acm.org/citation.cfm?id=551302)
+* [Application-Specific Integrated Circuits](https://dl.acm.org/citation.cfm?id=1502318)
 
 ### Linux
 
