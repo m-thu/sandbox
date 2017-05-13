@@ -102,6 +102,13 @@ pi@raspberrypi:~ $ cat /sys/bus/w1/devices/28-051691e533ff/w1_slave
 69 01 4b 46 7f ff 0c 10 7d t=22562
 ```
 
+### tempcontrol.c
+`/etc/rc.local`:
+```sh
+nohup /home/pi/tempcontrol 0.5 &
+```
+
 ### References
 [DS1307 datasheet](https://datasheets.maximintegrated.com/en/ds/DS1307.pdf)
+
 [DS18B20 datasheet](https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf)
