@@ -27,9 +27,9 @@ static const bool debug = false;
 #define LOG_DIR "/home/pi/logs"
 
 /* Reference temperature sensor */
-#define TEMP_REF    "/sys/bus/w1/devices/28-0416927dcdff/w1_slave"
+#define TEMP_REF    "/sys/bus/w1/devices/28-051691e533ff/w1_slave"
 /* Tank 1 temperature sensor */
-#define TEMP_TANK_1 "/sys/bus/w1/devices/28-051691e533ff/w1_slave"
+#define TEMP_TANK_1 "/sys/bus/w1/devices/28-0416927dcdff/w1_slave"
 /* Tank 2 temperature sensor */
 #define TEMP_TANK_2 "/sys/bus/w1/devices/28-051691e2c3ff/w1_slave"
 
