@@ -65,3 +65,27 @@ coqtop # Coq toplevel
 coqc   # Coq compiler
 coqide # Coq IDE
 ```
+
+### NetBSD on Raspberry Pi 2
+
+* [NetBSD/evbarm on Raspberry Pi](http://wiki.netbsd.org/ports/evbarm/raspberry_pi/)
+* [How to get NetBSD](http://www.netbsd.org/releases/)
+* [The NetBSD Guide](http://netbsd.org/docs/guide/en/netbsd.html)
+* [NetBSD Internals](http://netbsd.org/docs/internals/en/index.html)
+* [NetBSD Documentation: Kernel](http://netbsd.org/docs/kernel/index.html)
+* [NetBSD Documentation: Kernel Programming FAQ](http://netbsd.org/docs/kernel/programming.html)
+* [NetBSD Device Driver Writing Guide](http://netbsd.org/docs/kernel/ddwg.html)
+* [NetBSD Documentation: Writing a pseudo device](http://netbsd.org/docs/kernel/pseudo/index.html)
+
+Crosscompiling NetBSD on Linux:
+```sh
+mkdir netbsd-src && cd netbsd-src
+wget http://cdn.netbsd.org/pub/NetBSD/NetBSD-7.1/source/sets/gnusrc.tgz
+wget http://cdn.netbsd.org/pub/NetBSD/NetBSD-7.1/source/sets/sharesrc.tgz
+wget http://cdn.netbsd.org/pub/NetBSD/NetBSD-7.1/source/sets/src.tgz
+wget http://cdn.netbsd.org/pub/NetBSD/NetBSD-7.1/source/sets/syssrc.tgz
+wget http://cdn.netbsd.org/pub/NetBSD/NetBSD-7.1/source/sets/xsrc.tgz
+for f in *.tgz; do tar xfz $f; done
+cd /usr/src && ./build.sh -U -u -m evbarm -a earmv7hf release
+sudo sh -c 'zcat obj/releasedir/evbarm/binary/gzimg/armv7.img.gz |dd bs=4M of=/dev/mmcblk0'
+```
