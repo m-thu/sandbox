@@ -89,3 +89,10 @@ for f in *.tgz; do tar xfz $f; done
 cd /usr/src && ./build.sh -U -u -m evbarm -a earmv7hf release
 sudo sh -c 'zcat obj/releasedir/evbarm/binary/gzimg/armv7.img.gz |dd bs=4M of=/dev/mmcblk0'
 ```
+
+### Zybo
+
+Zynq internal temperature sensor:
+```sh
+cat /sys/devices/amba.0/f8007100.ps7-xadc/temp
+```
