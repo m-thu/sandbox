@@ -19,14 +19,8 @@ begin
 
 	process
 	begin
-		a0 <= '0';
-		a1 <= '0';
-		a2 <= '0';
-		a3 <= '0';
-		b0 <= '1';
-		b1 <= '1';
-		b2 <= '1';
-		b3 <= '1';
+		(a0, a1, a2, a3) <= bit_vector'("0000");
+		(b0, b1, b2, b3) <= bit_vector'("1111");
 		sel <= '0';
 		wait for 20 ns;
 		sel <= '1';
