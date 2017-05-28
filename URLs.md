@@ -80,6 +80,7 @@
 * [C-Reduce](https://embed.cs.utah.edu/creduce/)
 * [Adventures in Time, part 1: Interfacing an Oven Controlled Crystal Oscillator to a Computer Running NetBSD](https://contraptnns.blogspot.de/2017/04/adventures-in-time-part-1-interfacing.html)
 * [Photonic Crystals: Molding the Flow of Light](http://ab-initio.mit.edu/book/)
+* [CSCI 4974 / 6974 Hardware Reverse Engineering](http://security.cs.rpi.edu/courses/hwre-spring2014)
 
 ### EDA
 
