@@ -129,6 +129,7 @@
 * [OPEN RFID Tag](http://www.t4f.org/projects/open-rfid-tag/introduction-to-the-open-rfid-tag/)
 * <http://demo.skora.net/NFC_Talk.pdf>
 * [Linux RFID/NFC userspace test application](https://github.com/pcacjr/nfc-example)
+* <http://www.cnblogs.com/shangdawei/p/4834188.html>
 
 ### Verilog
 
