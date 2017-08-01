@@ -83,6 +83,7 @@
 * [CSCI 4974 / 6974 Hardware Reverse Engineering](http://security.cs.rpi.edu/courses/hwre-spring2014)
 * [Elliptic Curve Cryptography Tutorial](https://www.johannes-bauer.com/compsci/ecc/)
 * <https://www.ocf.berkeley.edu/~abhishek/chicphys.htm>
+* [Michael Abrash's Graphics Programming Black Book](https://github.com/jagregory/abrash-black-book)
 
 ### EDA
 
