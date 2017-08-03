@@ -51,7 +51,8 @@ axis off
 pos = get(gcf, 'Position');
 msgbox('Select any point from the Mandelbrot set by clicking!');
 [mouse_x, mouse_y] = ginput(1);
-c = mouse_x/pos(1) + 1j*mouse_y/pos(2);
+c = m_x_min + (mouse_x/pos(1))*(m_x_max-m_x_min) ...
+    + 1j*m_y_min + 1j*(mouse_y/pos(2))*(m_y_max-m_y_min);
 
 % Plot Julia set
 x          = x_min:res:x_max;
