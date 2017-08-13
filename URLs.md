@@ -84,6 +84,8 @@
 * [Elliptic Curve Cryptography Tutorial](https://www.johannes-bauer.com/compsci/ecc/)
 * <https://www.ocf.berkeley.edu/~abhishek/chicphys.htm>
 * [Michael Abrash's Graphics Programming Black Book](https://github.com/jagregory/abrash-black-book)
+* [Structure and Interpretation of Classical Mechanics](https://mitpress.mit.edu/sites/default/files/titles/content/sicm_edition_2/book.html)
+* [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/full-text/book/book.html)
 
 ### EDA
 
