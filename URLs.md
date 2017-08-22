@@ -87,6 +87,7 @@
 * [Structure and Interpretation of Classical Mechanics](https://mitpress.mit.edu/sites/default/files/titles/content/sicm_edition_2/book.html)
 * [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/full-text/book/book.html)
 * [Reverse Engineering x86 Processor Microcode](https://www.usenix.org/system/files/conference/usenixsecurity17/sec17-koppe.pdf)
+* [LeapSecond.com](http://leapsecond.com/)
 
 ### EDA
 
