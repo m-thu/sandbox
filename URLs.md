@@ -88,6 +88,7 @@
 * [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/full-text/book/book.html)
 * [Reverse Engineering x86 Processor Microcode](https://www.usenix.org/system/files/conference/usenixsecurity17/sec17-koppe.pdf)
 * [LeapSecond.com](http://leapsecond.com/)
+* <http://www.dvq.com/>
 
 ### EDA
 
