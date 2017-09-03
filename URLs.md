@@ -89,6 +89,7 @@
 * [Reverse Engineering x86 Processor Microcode](https://www.usenix.org/system/files/conference/usenixsecurity17/sec17-koppe.pdf)
 * [LeapSecond.com](http://leapsecond.com/)
 * <http://www.dvq.com/>
+* [Let's Build a Simple Database - Writing a sqlite clone from scratch in C](https://cstack.github.io/db_tutorial/)
 
 ### EDA
 
