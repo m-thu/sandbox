@@ -90,6 +90,7 @@
 * [LeapSecond.com](http://leapsecond.com/)
 * <http://www.dvq.com/>
 * [Let's Build a Simple Database - Writing a sqlite clone from scratch in C](https://cstack.github.io/db_tutorial/)
+* [How To Retarget the GNU Toolchain in 21 Patches](https://atgreen.github.io/ggx/)
 
 ### EDA
 
