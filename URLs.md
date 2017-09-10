@@ -91,6 +91,7 @@
 * <http://www.dvq.com/>
 * [Let's Build a Simple Database - Writing a sqlite clone from scratch in C](https://cstack.github.io/db_tutorial/)
 * [How To Retarget the GNU Toolchain in 21 Patches](https://atgreen.github.io/ggx/)
+* [Poor Man’s 1-GHz](https://elektrotanya.com/files/forum/2009/10/e04a036.pdf)
 
 ### EDA
 
