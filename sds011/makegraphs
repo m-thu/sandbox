@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# directory containing log files
+LOGDIR=/home/pi/sds011/logs
+# gnuplot script file
+GPSCRIPT=/home/pi/sds011/graph.gp
+
+# directory for generated files
+OUTDIR=/home/pi/sds011/html
+# filename for generated HTML file
+HTML=index.html
+
+HOME=`pwd`
+cd $LOGDIR
+
+cat >$OUTDIR/$HTML <<HTML_HEADER
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SDS011 dust sensor data</title>
+</head>
+<body>
+HTML_HEADER
+
+for LOG in $LOGDIR/*; do
+	gnuplot -e "filename='${LOG}'" $GPSCRIPT >$OUTDIR/`basename $LOG`.png
+	cat >>$OUTDIR/$HTML <<HTML_IMAGE
+<figure>
+	<img src="`basename $LOG`.png" alt="`basename $LOG`">
+	<figcaption>Date: `basename $LOG`</figcaption>
+</figure>
+HTML_IMAGE
+done
+
+cat >>$OUTDIR/$HTML <<HTML_FOOTER
+</body>
+</html>
+HTML_FOOTER
+
+cd $HOME
