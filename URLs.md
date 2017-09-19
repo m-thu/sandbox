@@ -102,6 +102,7 @@
 * [Gnucap: GNU Circuit Analysis Package](http://www.gnucap.org/dokuwiki/doku.php?id=gnucap:start)
 * [ngspice](http://ngspice.sourceforge.net/)
 * [Xyce -- Parallel electronic simulation](https://xyce.sandia.gov/)
+* <https://embedded.eecs.berkeley.edu/pubs/downloads/spice/>
 * [Icarus Verilog](http://iverilog.icarus.com/)
 * [Yosys Open SYnthesis Suite](http://www.clifford.at/yosys/)
 * [Project IceStorm](http://www.clifford.at/icestorm/)
