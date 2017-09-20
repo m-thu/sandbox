@@ -53,7 +53,7 @@ enum {
 };
 
 /* directory for log files */
-#define LOGDIR "/home/pi/sds011/logs
+#define LOGDIR "/home/pi/sds011/logs"
 
 int main(int argc, char *argv[])
 {
@@ -176,8 +176,6 @@ int main(int argc, char *argv[])
 				fprintf(log, "%02i:%02i:%02i\t%f\t%f\n",
 				        t->tm_hour, t->tm_min, t->tm_sec,
 					pm25, pm10);
-			if (log)fflush(log);
-
 		} else {
 			tcflush(fd, TCIFLUSH);
 			if (debug) {

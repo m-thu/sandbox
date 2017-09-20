@@ -17,6 +17,7 @@ cat >$OUTDIR/$HTML <<HTML_HEADER
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>SDS011 dust sensor data</title>
 </head>
 <body>
