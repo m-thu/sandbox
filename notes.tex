@@ -1,0 +1,73 @@
+\documentclass[fontsize=11pt,a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, amsopn}
+\usepackage{xcolor} % include before tikz!
+\usepackage{tikz}
+\usepackage[european]{circuitikz}
+\usepackage{nicefrac}
+\usepackage{trfsigns} % for \laplace,\Laplace
+\usepackage{booktabs}
+%\usepackage{framed}
+%\usepackage{geometry}
+%\geometry{left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm}
+\setlength{\parskip}{7pt}
+\setlength{\parindent}{0em}
+%
+%
+%
+\usepackage[osf]{libertine}
+\usepackage{zi4}
+\usepackage[libertine,cmbraces]{newtxmath}
+%
+%
+%
+%
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\sinc}{sinc}
+%
+%
+%
+%
+\usepackage{listings}
+\usepackage{bytefield}
+%
+%
+%
+%
+\begin{document}
+\clearpage
+\begingroup
+	\pagestyle{empty}
+	\begin{center}
+		\LARGE{\textbf{Notes}}
+	\end{center}
+	\hfill
+	\tableofcontents
+	\clearpage
+\endgroup
+\newpage
+\setcounter{page}{1}
+%
+%
+%
+%
+\lstset{numbers=left,
+	frame=single,
+	numberstyle=\tiny,
+	basicstyle=\footnotesize,
+	showstringspaces=false,
+	%keywordstyle=\color{blue},
+	%commentstyle=\em\color{gray},
+	tabsize=3,
+	numbersep=5pt,
+	%morecomment=[s][\color{blue}]{<<<}{>>>},
+	%morekeywords={float3,float4,__device__,__global__,__shared__,__constant__,threadIdx,blockIdx,blockDim,gridDim,\_\_syncthreads}}
+}
+%
+%
+%
+\end{document}

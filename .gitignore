@@ -2,7 +2,7 @@
 *.aux
 *.log
 *.toc
-hdl.pdf
+notes.pdf
 
 # Verilog
 *.vvp
