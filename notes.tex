@@ -70,4 +70,219 @@
 %
 %
 %
+\section{Verilog}
+\subsection{Synthesis}
+\lstset{language=verilog}
+Listing \ref{lst:basic_structure} shows the basic structure of a Verilog module. Identifiers are case-sensitive.
+\begin{figure}[htb]
+\begin{lstlisting}
+// Single line comment
+/* Comment spanning
+   several lines */
+
+module some_module (
+	// Ports
+	input [wire/reg] in1,
+	input in2,
+	output [wire/reg] out
+);
+	// Internal signals
+	wire signal1, signal2;
+
+	// Vector, bus (32 bits wide)
+	wire [31:0] bus;
+
+	// Examples for accessing part of a vector:
+	// bus[0], bus[7:0]
+
+	// Local parameter, cannot be changed
+	localparam PARAM = 42;
+
+endmodule
+\end{lstlisting}
+\caption{Basic structure of a Verilog module}
+\label{lst:basic_structure}
+\end{figure}
+
+Signals can take the values \lstinline!0! (logic $0$), \lstinline!1! (logic $1$), \lstinline!x! (undefined, uninitialized) and \lstinline!z! (high impedance).
+
+Integer constants: \lstinline!<bits>'<base><literal>! (leaving out \lstinline!<bits>! defaults to a width of at least 32 bits, underscores in \lstinline!<literal>! are ignored). Valid values for \lstinline!<base>!: \lstinline!b! (binary), \lstinline!d! (decimal), \lstinline!o! (octal) and \lstinline!h! (hexadecimal). Examples: \lstinline!4'b01_01!, \lstinline!8'hab!, \lstinline!10!.
+
+Instantiating modules or primitives connecting ports by sequence:
+\begin{lstlisting}
+some_module instance_name (
+	// Inputs and outputs in the same order
+	// as the appear in the declaration of some_module
+	in1,
+	in2,
+	out
+);
+\end{lstlisting}
+
+Connecting the ports by name:
+\begin{lstlisting}
+some_module instance_name (
+	.IN1(in1),
+	.IN2(in2),
+	.OUT(out)
+);
+\end{lstlisting}
+
+Dataflow modeling (combinatorial circuit)
+\begin{lstlisting}
+module my_xor (
+	input a,
+	input b,
+	output y
+);
+
+	assign y = a ^ b;
+
+endmodule
+\end{lstlisting}
+
+Operators
+\begin{table}[htb]
+	\centering
+	\begin{tabular}{lll}
+	\toprule
+		\textbf{Operator} & \textbf{Type} & \textbf{Meaning} \\
+	\midrule
+		\lstinline!&! & Bitwise & AND \\
+		\lstinline!|! & Bitwise & OR \\
+		\lstinline!^! & Bitwise & Exclusive OR \\
+		\lstinline!~! & Bitwise & One's complement \\
+		\lstinline!{a, b, c}! & Other & Concatenate wires or vectores \\
+		... & ... & ...\\
+	\bottomrule
+	\end{tabular}
+	\caption{Verilog operators}
+	\label{tab:operators}
+\end{table}
+
+Behavioral modeling using \lstinline!always! blocks:
+\begin{lstlisting}
+// Synchronous logic
+// Edge triggered
+always @(posedge clock, negedge reset) begin
+	if (reset)
+		counter <= 0;
+	else
+		counter <= counter + 1;
+end
+
+// Asynchronous logic
+// Sensitive to all signals in block, level triggered
+always @* begin
+	// ...
+end
+\end{lstlisting}
+
+Non-blocking assignment: \lstinline!signal <= /* ... */!
+
+Blocking assignment: \lstinline!signal = /* ... */!
+
+Switch case
+\begin{lstlisting}
+case (signal)
+	value1: /* instruction / block */
+	value2: /* instruction / block */
+	// ...
+	default: /* instruction / block */
+endcase
+\end{lstlisting}
+
+\lstinline!casez! treats \lstinline!z!, \lstinline!casex! \lstinline!x! and \lstinline!z! as don't care values.
+
+Use default values to avoid inference of latches/ registers.
+
+Modeling of memory with arrays:
+\begin{lstlisting}
+// 256 bytes of memory
+reg [7:0] mem [0:255];
+//    ^         ^
+//    |         |
+//    |         -- Number of cells
+//    ------------ Memory width
+\end{lstlisting}
+
+Tristate ports: \lstinline!inout!, Pull-down: \lstinline!tri0!, Pull-up: \lstinline!tri1!, Wired-AND: \lstinline!wand! or \lstinline!triand!, Wired-OR: \lstinline!wor! or \lstinline!trior!
+
+Declaration and instantiation of modules with parameters:
+\begin{lstlisting}
+module some_module #(
+	// Parameters with default values
+	parameter PARAM1 = 1,
+	parameter PARAM2 = 2
+)(
+	input in,
+	output out
+);
+
+	/* ... */
+
+endmodule
+
+// Instantiation of the module above
+some_module #(
+	.PARAM1(param1),
+	.PARAM2(param2)
+) instance_name (
+	/* ... */
+);
+\end{lstlisting}
+
+Functions: only combinational circuits, no registers, delays and non-blocking assignments (are defined in the module in which they are used, can call other functions).
+\begin{lstlisting}
+function my_xor;
+	input a, b;
+
+	begin
+		my_xor = a ^ b;
+	end
+endfunction
+
+assign y = my_xor(c, d);
+\end{lstlisting}
+
+Tasks: no return value, can have \lstinline!ouput! and \lstinline!inout! ports, can have delays
+\begin{lstlisting}
+task my_inverter;
+	// FIXME
+\end{lstlisting}
+
+\lstinline!generate! Blocks:
+\begin{lstlisting}
+	// FIXME
+\end{lstlisting}
+
+Compiler directives: FIXME
+%
+%
+%
+%
+\subsection{Simulation}
+Register data types: \lstinline!integer!, \lstinline!real!, \lstinline!time!
+
+Initial blocks:
+\begin{lstlisting}
+module testbench;
+	initial begin
+		$display("Hello world!);
+		$finish;
+	end
+endmodule
+\end{lstlisting}
+
+Delays: \lstinline!#10;!
+
+System tasks: \lstinline!$display("Format string", /* ... */)!
+
+\lstinline!$monitor("Format string", /* ... */)!: automatically generates output when one of the values changes
+
+VCD (Value Change Dump) files:
+\begin{lstlisting}
+$dumpfile("traces.vcd")
+$dumpvars(0, testbench)
+\end{lstlisting}
 \end{document}
