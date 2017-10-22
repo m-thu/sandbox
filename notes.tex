@@ -294,10 +294,58 @@ $dumpvars(0, testbench)
 \lstset{language=vhdl,
         morecomment=[s]{/*}{*/}}
 \subsection{Lexical Elements}
-Types of comments (comments may not be nested):
+Types of comments (can't be nested):
 \begin{lstlisting}
 -- Single line comment
 /* Comment spanning multiple
    lines (VHDL-2008 only) */
+\end{lstlisting}
+
+Valid identifiers consist of the characters \lstinline!'a'!--\lstinline!'z'!, \lstinline!'A'!--\lstinline!'Z'!, \lstinline!'0'!--\lstinline!'9'!, \lstinline!'_'! and may only start with an alphabetic letter. Identifiers with more than one consecutive underscore or identifiers that end with an underscore are illegal. Furthermore, identifiers aren't case sensitive in VHDL.
+
+Examples of numeric literals:
+\begin{lstlisting}
+-- Integer literals (base 10)
+1 42 10e5 10E6
+1_234           -- identical to 1234, underscores get ignored
+
+-- Real literals (base 10, always contain the decimal point '.' character)
+3.1415927 1.6022e-19 8.8542E-12
+
+-- Other bases
+2#10101010#   -- binary integer
+8#777#        -- octal integer
+16#aa# 16#FF# -- hexadecimal integer
+2#1.101#      -- binary real
+\end{lstlisting}
+
+Examples of character and string literals:
+\begin{lstlisting}
+-- Characters
+'a' 'b' 'X' '_'
+'''             -- single quote
+
+-- Strings (may not be separated by linebreaks)
+"Hello world!"
+""""           -- double quote
+""             -- empty string
+\end{lstlisting}
+
+\newpage
+Bit string literals are enclosed in double quotes with a prefix that indicates the size of the string in bits (\textsc{VHDL-2008} only) and the base. Examples:
+\begin{lstlisting}
+b"101010" B"1111_0000" -- binary (underscores are ignored)
+o"777" O"777"          -- octal
+x"aabb" X"FFFF"        -- hexadecimal
+
+-- VHDL-2008 only
+8b"1111_0000" -- 8 bit long binary number
+d"42" D"23"   -- decimal number, size can't be specified
+
+X"0X1"       -- equivalent to B"0000XXXX1111"
+B"1111_ZZ00" -- equivalent to B"1111ZZ00"
+
+UB"" UO"" UX"" -- unsigned binary, octal, hexadecimal
+SB"" SO"" SX"" -- signed     "       "         "
 \end{lstlisting}
 \end{document}
