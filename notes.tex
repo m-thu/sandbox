@@ -33,7 +33,7 @@
 %
 %
 \usepackage{listings}
-\usepackage{bytefield}
+%\usepackage{bytefield}
 %
 %
 %
@@ -284,5 +284,20 @@ VCD (Value Change Dump) files:
 \begin{lstlisting}
 $dumpfile("traces.vcd")
 $dumpvars(0, testbench)
+\end{lstlisting}
+%
+%
+%
+%
+%
+\section{VHDL}
+\lstset{language=vhdl,
+        morecomment=[s]{/*}{*/}}
+\subsection{Lexical Elements}
+Types of comments (comments may not be nested):
+\begin{lstlisting}
+-- Single line comment
+/* Comment spanning multiple
+   lines (VHDL-2008 only) */
 \end{lstlisting}
 \end{document}
