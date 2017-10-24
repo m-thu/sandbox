@@ -294,16 +294,16 @@ $dumpvars(0, testbench)
 \lstset{language=vhdl,
         morecomment=[s]{/*}{*/}}
 \subsection{Lexical Elements}
-Types of comments (can't be nested):
+Types of \emph{comments} (can't be nested):
 \begin{lstlisting}
 -- Single line comment
 /* Comment spanning multiple
    lines (VHDL-2008 only) */
 \end{lstlisting}
 
-Valid identifiers consist of the characters \lstinline!'a'!--\lstinline!'z'!, \lstinline!'A'!--\lstinline!'Z'!, \lstinline!'0'!--\lstinline!'9'!, \lstinline!'_'! and may only start with an alphabetic letter. Identifiers with more than one consecutive underscore or identifiers that end with an underscore are illegal. Furthermore, identifiers aren't case sensitive in VHDL.
+Valid \emph{identifiers} consist of the characters \lstinline!'a'!--\lstinline!'z'!, \lstinline!'A'!--\lstinline!'Z'!, \lstinline!'0'!--\lstinline!'9'!, \lstinline!'_'! and may only start with an alphabetic letter. Identifiers with more than one consecutive underscore or identifiers that end with an underscore are illegal. Furthermore, identifiers aren't case sensitive in VHDL.
 
-Examples of numeric literals:
+Examples of \emph{numeric literals}:
 \begin{lstlisting}
 -- Integer literals (base 10)
 1 42 10e5 10E6
@@ -319,9 +319,9 @@ Examples of numeric literals:
 2#1.101#      -- binary real
 \end{lstlisting}
 
-Examples of character and string literals:
+Examples of \emph{character and string literals}:
 \begin{lstlisting}
--- Characters
+-- Characters (ISO 8859 Latin-1 8 bit character set)
 'a' 'b' 'X' '_'
 '''             -- single quote
 
@@ -332,7 +332,7 @@ Examples of character and string literals:
 \end{lstlisting}
 
 \newpage
-Bit string literals are enclosed in double quotes with a prefix that indicates the size of the string in bits (\textsc{VHDL-2008} only) and the base. Examples:
+\emph{Bit string literals} are enclosed in double quotes with a prefix that indicates the size of the string in bits (\textsc{VHDL-2008} only) and the base. Examples:
 \begin{lstlisting}
 b"101010" B"1111_0000" -- binary (underscores are ignored)
 o"777" O"777"          -- octal
@@ -347,5 +347,92 @@ B"1111_ZZ00" -- equivalent to B"1111ZZ00"
 
 UB"" UO"" UX"" -- unsigned binary, octal, hexadecimal
 SB"" SO"" SX"" -- signed     "       "         "
+\end{lstlisting}
+%
+%
+%
+%
+\subsection{Fundamental Data Types}
+Declaring \emph{constants} (one of several types of objects, namely constants, variables, signals and files):
+\begin{lstlisting}
+-- Syntax: constant identifier {, ...}: subtype [:= initial_value];
+constant pi : real    := 3.1415927;
+constant n  : natural := 42;
+\end{lstlisting}
+
+Declaring \emph{variables}:
+\begin{lstlisting}
+-- Syntax: variable identifier {, ...}: subtype [:= initial_value];
+variable count : integer := 0;
+variable x     : natural;
+\end{lstlisting}
+
+\emph{Assignments} to variables are non-blocking (in contrast to assignments to signals), i.e. the value of the variable gets updated immediately:
+\begin{lstlisting}
+-- Syntax: [label:] name := value;
+x     := 1;
+count := count + 1;
+\end{lstlisting}
+
+\emph{New types} can be declared using \lstinline!type identifier is definition;!.
+
+Declaring new \emph{integer types}:
+\begin{lstlisting}
+-- Syntax: type identifier is range bound1  (to|downto) bound2
+type day_of_week is range 0 to 6;
+
+constant JAN : integer := 1;
+constant DEC : integer := 12;
+type month is range JAN to DEC;  -- bounds for range can be evaluated
+                                 -- at compile time
+\end{lstlisting}
+Operations that are defined for integer types include \lstinline!+!, \lstinline !-!, \lstinline!*!, \lstinline!/!, \lstinline!mod!, \lstinline!rem!, \lstinline!abs! and \lstinline!**!.
+
+New \emph{floating point types} are declared exactly as their integer counterparts, except the bounds for their range have to evaluate to real numbers. \textsc{VHDL-2008} provides the additional \lstinline!maximum! and \lstinline!minimum! operators. If the default value for floating point variables is left out, they default to the lowest possible value.
+
+\emph{Physical types} include a physical unit and can be declared as follows:
+\begin{lstlisting}
+-- Syntax:
+-- type identifier is range bound1 (to|downto) bound2
+-- 	units
+-- 		identifier;
+-- 		{identifier2 = (integer/real) unit;}
+-- 	end units [identifier];
+
+type voltage is range 0 to 1e9
+	units
+		volt;              -- base unit
+		kvolt = 1000 volt;
+	end units voltage;
+\end{lstlisting}
+VHDL includes a predefined physical type \lstinline!time!, that defines the following unit prefixes: \lstinline!fs!, \lstinline!ps!, \lstinline!ns!, \lstinline!us!, \lstinline!ms!, \lstinline!sec!, \lstinline!min! and \lstinline!hr!.
+
+Examples of \emph{enumeration types}:
+\begin{lstlisting}
+-- Syntax: type identifier is ( (identifier|character literal) {, ...} );
+type fsm_state is (reset, state1, state2);
+variable state : fsm_state := reset;
+
+type hex_digit is ('0','1','2','3','4','5','6','7','8','9',
+                   'a','b','c','d','e','f'); -- lowercase hex digits
+variable x : hexdigit := 'a';
+
+-- Predefined character enumeration type
+variable c : character := 'x';
+\end{lstlisting}
+
+The predefined \lstinline!boolean! enumeration type can take the values \lstinline!true! and \lstinline!false!. Valid expressions including booleans may use the operators \lstinline!=! (is equal), \lstinline!/=! (is not equal), \lstinline!and!, \lstinline!or!, \lstinline!nand!, \lstinline!nor!, \lstinline!not!, \lstinline!xor! and \lstinline!xnor!.
+
+Predefined \lstinline!bit! type: \lstinline!type bit is ('0', '1');! (overloads \lstinline!'0'! and \lstinline!'1'!).
+
+Declaring subtypes:
+\begin{lstlisting}
+-- Syntax: subtype identifier is type range bound1 (to|downto) bound2;
+subtype uint8 is integer range 0 to 255;
+
+variable b : uint8 := 255;
+
+-- Predefined subtype for delays >=0 fs
+variable delay : delay_length;
 \end{lstlisting}
 \end{document}
