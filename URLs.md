@@ -94,6 +94,7 @@
 * [Poor Man’s 1-GHz](https://elektrotanya.com/files/forum/2009/10/e04a036.pdf)
 * [Exploring OpenVMS from “unsecure” NFS mount on linux](https://astr0baby.wordpress.com/2017/10/09/exploring-openvms-from-unsecure-nfs-mount-on-linux/)
 * <https://github.com/coreboot/coreboot/blob/master/util/romcc/romcc.c>
+* [PC-MOS/386 v5.01 final release including cdrom driver sources](https://github.com/roelandjansen/pcmos386v501)
 
 ### EDA
 
