@@ -388,7 +388,7 @@ type month is range JAN to DEC;  -- bounds for range can be evaluated
 \end{lstlisting}
 Operations that are defined for integer types include \lstinline!+!, \lstinline !-!, \lstinline!*!, \lstinline!/!, \lstinline!mod!, \lstinline!rem!, \lstinline!abs! and \lstinline!**!.
 
-New \emph{floating point types} are declared exactly as their integer counterparts, except the bounds for their range have to evaluate to real numbers. \textsc{VHDL-2008} provides the additional \lstinline!maximum! and \lstinline!minimum! operators. If the default value for floating point variables is left out, they default to the lowest possible value.
+New \emph{floating point types} are declared exactly as their integer counterparts, except the bounds for their range have to evaluate to real numbers. If the default value for floating point variables is left out, they default to the lowest possible value.
 
 \emph{Physical types} include a physical unit and can be declared as follows:
 \begin{lstlisting}
@@ -413,7 +413,7 @@ Examples of \emph{enumeration types}:
 type fsm_state is (reset, state1, state2);
 variable state : fsm_state := reset;
 
-type hex_digit is ('0','1','2','3','4','5','6','7','8','9',
+type hexdigit is ('0','1','2','3','4','5','6','7','8','9',
                    'a','b','c','d','e','f'); -- lowercase hex digits
 variable x : hexdigit := 'a';
 
@@ -423,7 +423,7 @@ variable c : character := 'x';
 
 The predefined \lstinline!boolean! enumeration type can take the values \lstinline!true! and \lstinline!false!. Valid expressions including booleans may use the operators \lstinline!=! (is equal), \lstinline!/=! (is not equal), \lstinline!and!, \lstinline!or!, \lstinline!nand!, \lstinline!nor!, \lstinline!not!, \lstinline!xor! and \lstinline!xnor!.
 
-Predefined \lstinline!bit! type: \lstinline!type bit is ('0', '1');! (overloads \lstinline!'0'! and \lstinline!'1'!).
+Predefined \lstinline!bit! type: \lstinline!type bit is ('0', '1');! (overloads \lstinline!'0'! and \lstinline!'1'! character literals).
 
 Declaring subtypes:
 \begin{lstlisting}
@@ -435,4 +435,53 @@ variable b : uint8 := 255;
 -- Predefined subtype for delays >=0 fs
 variable delay : delay_length;
 \end{lstlisting}
+
+The \emph{type qualification} operator \lstinline!typename'(expression)! can be used to distinguish between overloaded enumeration literals:
+\begin{lstlisting}
+type fsm1_state is (reset, a1, a2);
+type fsm2_state is (reset, b1, b2);
+
+fsm1_state'(reset) -- type of 'reset' literal: fsm1_state
+fsm2_state'(reset) -- type of 'reset' literal: fsm2_state
+\end{lstlisting}
+
+Examples for \emph{type conversions}:
+\begin{lstlisting}
+real(42)         -- integer to real
+integer(2.71828) -- real to integer
+\end{lstlisting}
+
+List of \emph{attributes} applicable to scalar data types (\lstinline!T! denotes a type name):
+
+%\centering
+\begin{tabular}{lll}
+\toprule
+	\textbf{Attribute} & \textbf{Description}\\
+\midrule
+	\lstinline!T'ascending! & \lstinline!True!: ascending range, \lstinline!false!: descending range \\
+	\lstinline!T'low! & Lowest possible value\\
+	\lstinline!T'high! & Highest possible value\\
+	\lstinline!T'left! & Leftmost element\\
+	\lstinline!T'right! & Rightmost element\\
+	\lstinline!T'image(value)! & Converts \lstinline!value! to string representation\\
+	\lstinline!T'value(string)! & Converts \lstinline!string! to value\\
+\bottomrule
+\end{tabular}
+
+
+List of additional attributes applicable to discrete and physical types:
+
+%\centering
+\begin{tabular}{lll}
+\toprule
+	\textbf{Attribute} & \textbf{Description}\\
+\midrule
+	\lstinline!T'pos(value)! & Index of \lstinline!value!\\
+	\lstinline!T'val(j)! & Value at index \lstinline!j!\\
+	\lstinline!T'succ(value)! & \lstinline!Value! incremented by one\\
+	\lstinline!T'pred(value)! & \lstinline!Value! decremented by one\\
+	\lstinline!T'leftof(value)! & Element to the left of \lstinline!value!\\
+	\lstinline!T'rightof(value)! & Element to the right of \lstinline!value!\\
+\bottomrule
+\end{tabular}
 \end{document}
