@@ -92,6 +92,7 @@
 * [Let's Build a Simple Database - Writing a sqlite clone from scratch in C](https://cstack.github.io/db_tutorial/)
 * [How To Retarget the GNU Toolchain in 21 Patches](https://atgreen.github.io/ggx/)
 * [Poor Man’s 1-GHz](https://elektrotanya.com/files/forum/2009/10/e04a036.pdf)
+* [Design of a low-cost 1 GHz Active Probe](https://cdn.instructables.com/ORIG/FQZ/1QZP/IPJTFO82/FQZ1QZPIPJTFO82.pdf)
 * [Exploring OpenVMS from “unsecure” NFS mount on linux](https://astr0baby.wordpress.com/2017/10/09/exploring-openvms-from-unsecure-nfs-mount-on-linux/)
 * <https://github.com/coreboot/coreboot/blob/master/util/romcc/romcc.c>
 * [PC-MOS/386 v5.01 final release including cdrom driver sources](https://github.com/roelandjansen/pcmos386v501)
