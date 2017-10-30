@@ -168,6 +168,7 @@
 * [FPGA Prototyping by VHDL Examples: Xilinx Spartan-3 Version](http://academic.csuohio.edu/chu_p/rtl/fpga_vhdl.html)
 * [HDL Chip Design: A Practical Guide for Designing, Synthesizing and Simulating ASICs and FPGAs Using VHDL or Verilog](https://dl.acm.org/citation.cfm?id=551302)
 * [Application-Specific Integrated Circuits](https://dl.acm.org/citation.cfm?id=1502318)
+* [VHDL-AMS and Verilog-AMS as Alternative Hardware Description Languages for Efficient Modeling of Multidiscipline Systems](http://ieeexplore.ieee.org/abstract/document/1386377/)
 
 ### Linux
 
