@@ -497,4 +497,184 @@ List of additional attributes applicable to discrete and physical types:
 %
 %
 \subsection{Sequential Control Flow Constructs}
+Syntax of \emph{if} statements:
+\begin{lstlisting}
+[label:]
+-- VHDL-2008 only: implicit conversion of 'expression' to boolean
+if expression then
+	{...}
+{elsif expression then
+	{...}}
+[else                   -- default branch
+	{...}]
+end if [label];
+\end{lstlisting}
+
+Example:
+\begin{lstlisting}
+entity bincnt is
+	port (clk : in std_logic;
+	      led1, led2, led3, led4, led5 : out std_logic);
+end bincnt;
+
+architecture behavioral of bincnt is
+	signal cnt : unsigned (4 downto 0) := (others => '0');
+begin
+	process (clk)
+		variable delay : unsigned (23 downto 0) := (others => '0');
+	begin
+		if rising_edge(clk) then
+			if delay = 2_999_999 then
+				cnt <= cnt + 1;
+				delay := x"000000";
+			else
+				delay := delay + 1;
+			end if;
+		end if;
+	end process;
+
+	(led5,led4,led3,led2,led1) <= std_logic_vector(cnt);
+end behavioral;
+\end{lstlisting}
+
+Syntax of \emph{conditional variable assignments} (VHDL-2008 only):
+\begin{lstlisting}
+[label:]
+variable := value when expression
+	{else value when expression}
+	[else expression];            -- default branch
+\end{lstlisting}
+
+Syntax of \emph{case} statements:
+\begin{lstlisting}
+[label:]
+case expression is
+	when (expression
+	      | bound1 (to|downto) bound2 -- discrete range
+	      | subtype                   -- name of subtype
+	      | others                    -- default branch)
+	=> {...}
+end case [label];
+\end{lstlisting}
+Multiple alternatives in a \lstinline!when! statement can be separated by the \lstinline!|! character, e.g.
+\begin{lstlisting}
+case x is
+	when 1|2 =>
+		y <= 1;
+	when 3   =>
+		y <= 2;
+	when others
+		y <= 3;
+end case;
+\end{lstlisting}
+
+Another example of a case statement:
+\begin{lstlisting}
+entity mux4 is
+	port (a0, a1, a2, a3 : in  bit;
+	      sel0, sel1     : in  bit;
+	      y              : out bit);
+	constant T_PD : delay_length := 4.5 ns;
+end entity mux4;
+
+architecture behav of mux4 is
+	signal sel : bit_vector(0 to 1);
+begin
+	sel <= (sel0, sel1);
+
+	process (sel, a0, a1, a2, a3) is
+	begin
+		case sel is
+			when "00" => y <= a0 after T_PD;
+			when "01" => y <= a1 after T_PD;
+			when "10" => y <= a2 after T_PD;
+			when "11" => y <= a3 after T_PD;
+		end case;
+	end process;
+end architecture behav;
+\end{lstlisting}
+
+Syntax of \emph{selected variable assignments} (VHDL-2008 only):
+\begin{lstlisting}
+[label:]
+with expression select
+variable := {value when expression,}
+	value when expression;
+\end{lstlisting}
+
+\emph{Null} statements (no operation): \lstinline![label:] null;!.
+
+General syntax of \emph{loops}:
+\begin{lstlisting}
+[label:]
+[while expression                               -- boolean expression
+ | for identifier in bound1 (to|downto) bound2] -- discrete range
+loop                                            -- loops forever without
+                                                -- while or for
+	{...}
+end loop [label];
+\end{lstlisting}
+
+Loops can be aborted with the \lstinline!exit! statement: \lstinline![label:] exit [label_loop] [when expression];!; to continue with the next iteration of the loop one can use the \lstinline!next! statement:\\ \lstinline![label:] next [label_loop] [when expression];!.
+
+Example of a loop without \lstinline!while! or \lstinline!for!:
+\begin{lstlisting}
+entity counter is
+	port (clk   : in bit;
+	      count : out natural);
+end entity counter;
+
+architecture behav of counter is
+begin
+	process is
+		variable c : natural := 15;
+	begin
+		count <= c;
+		loop
+			wait until clk = '1';
+			c := c - 1 when c /= 0
+			     else 15;
+			count <= c;
+		end loop;
+	end process;
+end architecture behav;
+\end{lstlisting}
+
+Example of a \emph{for loop}:
+\begin{lstlisting}
+entity average is
+	port (clk  : in bit;
+	      din  : in real;
+	      dout : out real);
+end entity average;
+
+architecture behav of average is
+	constant N : integer := 4;
+begin
+	process is
+		variable sum : real;
+	begin
+		loop
+			sum := 0.0;
+			for i in 0 to N-1 loop
+				wait until clk = '1';
+				sum := sum + din;
+			end loop;
+
+			dout <= sum / real(N);
+		end loop;
+	end process;
+end architecture behav;
+\end{lstlisting}
+
+Syntax of \emph{assertions} (for simulation, synthesis or formal verification):
+\begin{lstlisting}
+[label:] assert expression
+         [report expression] [severity level];
+
+-- Valid values for level:
+-- note, warning, error, failure
+\end{lstlisting}
+
+\emph{Report} statements are equivalent to unconditional assertions:\\ \lstinline![label:] report expression [severity level];!.
 \end{document}
