@@ -353,32 +353,36 @@ SB"" SO"" SX"" -- signed     "       "         "
 %
 %
 \subsection{Fundamental Data Types}
-Declaring \emph{constants} (one of several types of objects, namely constants, variables, signals and files):
+Declaring \emph{constants} (one of several types of objects, namely constants, variables, signals and files): \lstinline!constant identifier {, ...}: subtype [:= initial_value];!  
+
+Examples:
 \begin{lstlisting}
--- Syntax: constant identifier {, ...}: subtype [:= initial_value];
 constant pi : real    := 3.1415927;
 constant n  : natural := 42;
 \end{lstlisting}
 
-Declaring \emph{variables}:
+Declaring \emph{variables}: \lstinline!variable identifier {, ...}: subtype [:= initial_value];!
+
+Examples:
 \begin{lstlisting}
--- Syntax: variable identifier {, ...}: subtype [:= initial_value];
 variable count : integer := 0;
 variable x     : natural;
 \end{lstlisting}
 
-\emph{Assignments} to variables are non-blocking (in contrast to assignments to signals), i.e. the value of the variable gets updated immediately:
+\emph{Assignments} to variables are non-blocking (in contrast to assignments to signals), i.e. the value of the variable gets updated immediately: \lstinline![label:] name := value;!
+
+Examples:
 \begin{lstlisting}
--- Syntax: [label:] name := value;
 x     := 1;
 count := count + 1;
 \end{lstlisting}
 
-\emph{New types} can be declared using \lstinline!type identifier is definition;!.
+New \emph{types} can be declared using \lstinline!type identifier is definition;!.
 
-Declaring new \emph{integer types}:
+Declaring new \emph{integer} types: \lstinline!type identifier is range bound1 (to|downto) bound2;!
+
+Example:
 \begin{lstlisting}
--- Syntax: type identifier is range bound1  (to|downto) bound2
 type day_of_week is range 0 to 6;
 
 constant JAN : integer := 1;
@@ -388,17 +392,19 @@ type month is range JAN to DEC;  -- bounds for range can be evaluated
 \end{lstlisting}
 Operations that are defined for integer types include \lstinline!+!, \lstinline !-!, \lstinline!*!, \lstinline!/!, \lstinline!mod!, \lstinline!rem!, \lstinline!abs! and \lstinline!**!.
 
-New \emph{floating point types} are declared exactly as their integer counterparts, except the bounds for their range have to evaluate to real numbers. If the default value for floating point variables is left out, they default to the lowest possible value.
+New \emph{floating point} types are declared exactly as their integer counterparts, except the bounds for their range have to evaluate to real numbers. If the default value for floating point variables is left out, they default to the lowest possible value.
 
-\emph{Physical types} include a physical unit and can be declared as follows:
+\emph{Physical} types include a physical unit and can be declared as follows:
 \begin{lstlisting}
--- Syntax:
--- type identifier is range bound1 (to|downto) bound2
--- 	units
--- 		identifier;
--- 		{identifier2 = (integer/real) unit;}
--- 	end units [identifier];
+type identifier is range bound1 (to|downto) bound2
+	units
+		identifier;
+		{identifier2 = (integer/real) unit;}
+	end units [identifier];
+\end{lstlisting}
 
+Example:
+\begin{lstlisting}
 type voltage is range 0 to 1e9
 	units
 		volt;              -- base unit
@@ -407,9 +413,10 @@ type voltage is range 0 to 1e9
 \end{lstlisting}
 VHDL includes a predefined physical type \lstinline!time!, that defines the following unit prefixes: \lstinline!fs!, \lstinline!ps!, \lstinline!ns!, \lstinline!us!, \lstinline!ms!, \lstinline!sec!, \lstinline!min! and \lstinline!hr!.
 
-Examples of \emph{enumeration types}:
+Declaring \emph{enumeration} types: \lstinline!type identifier is ( (identifier|character literal) {, ...} );!
+
+Examples:
 \begin{lstlisting}
--- Syntax: type identifier is ( (identifier|character literal) {, ...} );
 type fsm_state is (reset, state1, state2);
 variable state : fsm_state := reset;
 
@@ -425,9 +432,10 @@ The predefined \lstinline!boolean! enumeration type can take the values \lstinli
 
 Predefined \lstinline!bit! type: \lstinline!type bit is ('0', '1');! (overloads \lstinline!'0'! and \lstinline!'1'! character literals).
 
-Declaring subtypes:
+Declaring \emph{subtypes}: \lstinline!subtype identifier is type range bound1 (to|downto) bound2;!
+
+Examples:
 \begin{lstlisting}
--- Syntax: subtype identifier is type range bound1 (to|downto) bound2;
 subtype uint8 is integer range 0 to 255;
 
 variable b : uint8 := 255;
@@ -484,4 +492,9 @@ List of additional attributes applicable to discrete and physical types:
 	\lstinline!T'rightof(value)! & Element to the right of \lstinline!value!\\
 \bottomrule
 \end{tabular}
+%
+%
+%
+%
+\subsection{Sequential Control Flow Constructs}
 \end{document}
