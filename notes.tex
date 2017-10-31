@@ -307,46 +307,46 @@ Examples of \emph{numeric literals}:
 \begin{lstlisting}
 -- Integer literals (base 10)
 1 42 10e5 10E6
-1_234           -- identical to 1234, underscores get ignored
+1_234           -- Identical to 1234, underscores get ignored
 
 -- Real literals (base 10, always contain the decimal point '.' character)
 3.1415927 1.6022e-19 8.8542E-12
 
 -- Other bases
-2#10101010#   -- binary integer
-8#777#        -- octal integer
-16#aa# 16#FF# -- hexadecimal integer
-2#1.101#      -- binary real
+2#10101010#   -- Binary integer
+8#777#        -- Octal integer
+16#aa# 16#FF# -- Hexadecimal integer
+2#1.101#      -- Binary real
 \end{lstlisting}
 
 Examples of \emph{character and string literals}:
 \begin{lstlisting}
 -- Characters (ISO 8859 Latin-1 8 bit character set)
 'a' 'b' 'X' '_'
-'''             -- single quote
+'''             -- Single quote
 
 -- Strings (may not be separated by linebreaks)
 "Hello world!"
-""""           -- double quote
-""             -- empty string
+""""           -- Double quote
+""             -- Empty string
 \end{lstlisting}
 
 \newpage
 \emph{Bit string literals} are enclosed in double quotes with a prefix that indicates the size of the string in bits (\textsc{VHDL-2008} only) and the base. Examples:
 \begin{lstlisting}
-b"101010" B"1111_0000" -- binary (underscores are ignored)
-o"777" O"777"          -- octal
-x"aabb" X"FFFF"        -- hexadecimal
+b"101010" B"1111_0000" -- Binary (underscores are ignored)
+o"777" O"777"          -- Octal
+x"aabb" X"FFFF"        -- Hexadecimal
 
 -- VHDL-2008 only
 8b"1111_0000" -- 8 bit long binary number
-d"42" D"23"   -- decimal number, size can't be specified
+d"42" D"23"   -- Decimal number, size can't be specified
 
-X"0X1"       -- equivalent to B"0000XXXX1111"
-B"1111_ZZ00" -- equivalent to B"1111ZZ00"
+X"0X1"       -- Equivalent to B"0000XXXX1111"
+B"1111_ZZ00" -- Equivalent to B"1111ZZ00"
 
-UB"" UO"" UX"" -- unsigned binary, octal, hexadecimal
-SB"" SO"" SX"" -- signed     "       "         "
+UB"" UO"" UX"" -- Unsigned binary, octal, hexadecimal
+SB"" SO"" SX"" -- Signed     "       "         "
 \end{lstlisting}
 %
 %
@@ -387,7 +387,7 @@ type day_of_week is range 0 to 6;
 
 constant JAN : integer := 1;
 constant DEC : integer := 12;
-type month is range JAN to DEC;  -- bounds for range can be evaluated
+type month is range JAN to DEC;  -- Bounds for range can be evaluated
                                  -- at compile time
 \end{lstlisting}
 Operations that are defined for integer types include \lstinline!+!, \lstinline !-!, \lstinline!*!, \lstinline!/!, \lstinline!mod!, \lstinline!rem!, \lstinline!abs! and \lstinline!**!.
@@ -407,7 +407,7 @@ Example:
 \begin{lstlisting}
 type voltage is range 0 to 1e9
 	units
-		volt;              -- base unit
+		volt;              -- Base unit
 		kvolt = 1000 volt;
 	end units voltage;
 \end{lstlisting}
@@ -421,7 +421,7 @@ type fsm_state is (reset, state1, state2);
 variable state : fsm_state := reset;
 
 type hexdigit is ('0','1','2','3','4','5','6','7','8','9',
-                   'a','b','c','d','e','f'); -- lowercase hex digits
+                  'a','b','c','d','e','f'); -- Lowercase hex digits
 variable x : hexdigit := 'a';
 
 -- Predefined character enumeration type
@@ -449,14 +449,14 @@ The \emph{type qualification} operator \lstinline!typename'(expression)! can be 
 type fsm1_state is (reset, a1, a2);
 type fsm2_state is (reset, b1, b2);
 
-fsm1_state'(reset) -- type of 'reset' literal: fsm1_state
-fsm2_state'(reset) -- type of 'reset' literal: fsm2_state
+fsm1_state'(reset) -- Type of 'reset' literal: fsm1_state
+fsm2_state'(reset) -- Type of 'reset' literal: fsm2_state
 \end{lstlisting}
 
 Examples for \emph{type conversions}:
 \begin{lstlisting}
-real(42)         -- integer to real
-integer(2.71828) -- real to integer
+real(42)         -- Integer to real
+integer(2.71828) -- Real to integer
 \end{lstlisting}
 
 List of \emph{attributes} applicable to scalar data types (\lstinline!T! denotes a type name):
@@ -505,7 +505,7 @@ if expression then
 	{...}
 {elsif expression then
 	{...}}
-[else                   -- default branch
+[else                   -- Default branch
 	{...}]
 end if [label];
 \end{lstlisting}
@@ -542,7 +542,7 @@ Syntax of \emph{conditional variable assignments} (VHDL-2008 only):
 [label:]
 variable := value when expression
 	{else value when expression}
-	[else expression];            -- default branch
+	[else expression];            -- Default branch
 \end{lstlisting}
 
 Syntax of \emph{case} statements:
@@ -550,9 +550,9 @@ Syntax of \emph{case} statements:
 [label:]
 case expression is
 	when (expression
-	      | bound1 (to|downto) bound2 -- discrete range
-	      | subtype                   -- name of subtype
-	      | others                    -- default branch)
+	      | bound1 (to|downto) bound2 -- Discrete range
+	      | subtype                   -- Name of subtype
+	      | others                    -- Default branch)
 	=> {...}
 end case [label];
 \end{lstlisting}
@@ -607,9 +607,9 @@ variable := {value when expression,}
 General syntax of \emph{loops}:
 \begin{lstlisting}
 [label:]
-[while expression                               -- boolean expression
- | for identifier in bound1 (to|downto) bound2] -- discrete range
-loop                                            -- loops forever without
+[while expression                               -- Boolean expression
+ | for identifier in bound1 (to|downto) bound2] -- Discrete range
+loop                                            -- Loops forever without
                                                 -- while or for
 	{...}
 end loop [label];
@@ -677,4 +677,46 @@ Syntax of \emph{assertions} (for simulation, synthesis or formal verification):
 \end{lstlisting}
 
 \emph{Report} statements are equivalent to unconditional assertions:\\ \lstinline![label:] report expression [severity level];!.
+%
+%
+%
+%
+\subsection{Composite Data Types}
+Declaring new \emph{array} types:
+\begin{lstlisting}
+type identifier is array
+	(discrete_subtype                                   -- Index is a discrete
+	                                                    -- subtype
+	 | discrete_subtype range bound1 (to|downto) bound2 -- Index is a discrete
+	                                                    -- subtype with
+	                                                    -- constrained range
+	 | bound1 (to|downto) bound2                        -- Index range is
+	                                                    -- specified directly
+	 {, ...}                                            -- Multidimensional
+	                                                    -- array
+	) of subtype;
+\end{lstlisting}
+
+Example of a one-dimensional array:
+\begin{lstlisting}
+entity reg is
+	port (din         : in bit_vector (31 downto 0);
+	      read, write : in integer range 0 to 15;
+	      wen         : in bit;
+	      dout        : out bit_vector (31 downto 0));
+end entity reg;
+
+architecture behav of reg is
+begin
+	process (din, read, write, wen) is
+		type mem is array (0 to 15) of bit_vector (31 downto 0);
+		variable memory : mem;
+	begin
+		if wen = '1' then
+			memory(write) := din;
+		end if;
+		dout <= memory(read);
+	end process;
+end architecture behav;
+\end{lstlisting}
 \end{document}
