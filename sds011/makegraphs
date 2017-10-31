@@ -24,7 +24,10 @@ cat >$OUTDIR/$HTML <<HTML_HEADER
 HTML_HEADER
 
 for LOG in $LOGDIR/*; do
-	gnuplot -e "filename='${LOG}'" $GPSCRIPT >$OUTDIR/`basename $LOG`.png
+	if [ ! -f $OUTDIR/`basename $LOG`.png ]; then
+		gnuplot -e "filename='${LOG}'" $GPSCRIPT \
+			>$OUTDIR/`basename $LOG`.png
+	fi
 	cat >>$OUTDIR/$HTML <<HTML_IMAGE
 <figure>
 	<img src="`basename $LOG`.png" alt="`basename $LOG`">
