@@ -96,6 +96,7 @@
 * [Exploring OpenVMS from “unsecure” NFS mount on linux](https://astr0baby.wordpress.com/2017/10/09/exploring-openvms-from-unsecure-nfs-mount-on-linux/)
 * <https://github.com/coreboot/coreboot/blob/master/util/romcc/romcc.c>
 * [PC-MOS/386 v5.01 final release including cdrom driver sources](https://github.com/roelandjansen/pcmos386v501)
+* [JSLinux](https://bellard.org/jslinux/index.html), [jor1k: OpenRISC OR1K Javascript Emulator Running Linux With Network Support](https://s-macke.github.io/jor1k/demos/main.html), [Virtual x86](http://copy.sh/v86/)
 
 ### EDA
 
