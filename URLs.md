@@ -61,7 +61,7 @@
 * <https://more-magic.org/>
 * [ANALYSING THE BITSTREAM OF ALTERA'S MAX-V CPLDS](https://lse.epita.fr/lse-summer-week-2016/slides/lse-summer-week-2016-07-maxv_cpld.pdf)
 * [From the bitstream to the netlist](http://www.fabienm.eu/flf/wp-content/uploads/2014/11/Note2008.pdf)
-* [Attack Methodologies on Security Chips](http://hardwear.io/wp-content/uploads/2015/10/Attack-Methodologies-on-Security-Chips-Marcus-Janke-Peter-Laackmann.pdf)
+<!--* [Attack Methodologies on Security Chips](http://hardwear.io/wp-content/uploads/2015/10/Attack-Methodologies-on-Security-Chips-Marcus-Janke-Peter-Laackmann.pdf)--> <!-- broken link -->
 * [Decoupling Techniques](http://www.analog.com/media/en/training-seminars/tutorials/MT-101.pdf)
 * [Advances and Challenges in Reconfigurable Computing](http://settrans.net/~rah/misc/Wawrzynek-Reconfig-101214.pdf)
 * [THE SECRET WORLD OF OSCILLOSCOPE PROBES](http://dfad.com.au/links/THE%20SECRET%20WORLD%20OF%20PROBES%20OCt09.pdf)
@@ -72,7 +72,6 @@
 * [Reverse Engineering Samsung S6 SBOOT - Part I](http://blog.quarkslab.com/reverse-engineering-samsung-s6-sboot-part-i.html)
 * [Attacking Nexus 9 with Malicious Headphones](https://alephsecurity.com/2017/03/08/nexus9-fiq-debugger/)
 * [Git Internals - Source code control and beyond](http://opcode.org/peepcode-git.pdf)
-* <http://bellard.org/riscvemu/>
 * <http://newandroidbook.com/AIvI-M-RL1.pdf>
 * [USB-C for Engineers, Part 1](https://www.reclaimerlabs.com/blog/2016/12/31/usb-c-for-engineers-part-1), [USB-C for Engineers, Part 2](https://www.reclaimerlabs.com/blog/2017/1/12/usb-c-for-engineers-part-2), [USB-C for Engineers, Part 3](https://www.reclaimerlabs.com/blog/2017/2/1/usb-c-for-engineers-part-3)
 * [Build Your Own Text Editor](http://viewsourcecode.org/snaptoken/kilo/)
@@ -93,10 +92,8 @@
 * [How To Retarget the GNU Toolchain in 21 Patches](https://atgreen.github.io/ggx/)
 * [Poor Man’s 1-GHz](https://elektrotanya.com/files/forum/2009/10/e04a036.pdf)
 * [Design of a low-cost 1 GHz Active Probe](https://cdn.instructables.com/ORIG/FQZ/1QZP/IPJTFO82/FQZ1QZPIPJTFO82.pdf)
-* [Exploring OpenVMS from “unsecure” NFS mount on linux](https://astr0baby.wordpress.com/2017/10/09/exploring-openvms-from-unsecure-nfs-mount-on-linux/)
 * <https://github.com/coreboot/coreboot/blob/master/util/romcc/romcc.c>
 * [PC-MOS/386 v5.01 final release including cdrom driver sources](https://github.com/roelandjansen/pcmos386v501)
-* [JSLinux](https://bellard.org/jslinux/index.html), [jor1k: OpenRISC OR1K Javascript Emulator Running Linux With Network Support](https://s-macke.github.io/jor1k/demos/main.html), [Virtual x86](http://copy.sh/v86/)
 
 ### EDA
 
@@ -183,6 +180,9 @@
 * [64-bit Linux Return-Oriented Programming](https://crypto.stanford.edu/~blynn/rop/)
 * <https://blog.lizzie.io/linux-containers-in-500-loc.html>
 * [Darling macOS translation layer for Linux](https://www.darlinghq.org/)
+* [Exploring OpenVMS from “unsecure” NFS mount on linux](https://astr0baby.wordpress.com/2017/10/09/exploring-openvms-from-unsecure-nfs-mount-on-linux/)
+* [JSLinux](https://bellard.org/jslinux/index.html), [jor1k: OpenRISC OR1K Javascript Emulator Running Linux With Network Support](https://s-macke.github.io/jor1k/demos/main.html), [Virtual x86](http://copy.sh/v86/)
+* [Linux device driver labs](https://linux-kernel-labs.github.io/)
 
 ### Formal Verification
 
