@@ -449,8 +449,8 @@ The \emph{type qualification} operator \lstinline!typename'(expression)! can be 
 type fsm1_state is (reset, a1, a2);
 type fsm2_state is (reset, b1, b2);
 
-fsm1_state'(reset) -- Type of 'reset' literal: fsm1_state
-fsm2_state'(reset) -- Type of 'reset' literal: fsm2_state
+fsm1_state'(reset) -- Type of reset literal: fsm1_state
+fsm2_state'(reset) -- Type of reset literal: fsm2_state
 \end{lstlisting}
 
 Examples for \emph{type conversions}:
@@ -462,7 +462,7 @@ integer(2.71828) -- Real to integer
 List of \emph{attributes} applicable to scalar data types (\lstinline!T! denotes a type name):
 
 %\centering
-\begin{tabular}{lll}
+\begin{tabular}{ll}
 \toprule
 	\textbf{Attribute} & \textbf{Description}\\
 \midrule
@@ -480,7 +480,7 @@ List of \emph{attributes} applicable to scalar data types (\lstinline!T! denotes
 List of additional attributes applicable to discrete and physical types:
 
 %\centering
-\begin{tabular}{lll}
+\begin{tabular}{ll}
 \toprule
 	\textbf{Attribute} & \textbf{Description}\\
 \midrule
@@ -719,4 +719,108 @@ begin
 	end process;
 end architecture behav;
 \end{lstlisting}
+
+Array literals can be constructed out of scalar data types using \emph{array aggregates}:
+\begin{lstlisting}
+([expression                   -- Named association: indices explicitly
+                               --                    specified
+  | discrete_subtype
+  | bound1 (to|downto) bound2
+  | others => ]                -- Wildcard for any indices that haven't been
+                               -- specified previously (must be last)
+  expression                   -- Positional association is used
+                               -- if [... => ] is left out
+{, ...})
+\end{lstlisting}
+
+Example:
+\begin{lstlisting}
+type narray is array (0 to 3) of natural;
+
+variable n1 : narray := (1, 2, 3, 4);     -- Positional association
+variable n2 : narray := (0 => 1, 1 => 2,  -- Named association
+                         2 => 3, 3 => 4);
+\end{lstlisting}
+
+Multiple indices can be separated with the \lstinline!|! character:
+\begin{lstlisting}
+type rarray is array (1 to 10) of real;
+
+variable r : rarray := (0|2|4 => 3.14, 5 to 7 => 2.718, others => 0.0);
+\end{lstlisting}
+
+Array aggregates can also be used as the target in both variable and signal assignments:
+\begin{lstlisting}
+[label:] (identifier|array_aggregate) := expression;
+[label:] (identifier|array_aggregate) <= expression;
+
+-- Example:
+variable a, b, c, d : bit;
+variable x          : bit_vector (3 downto 0);
+
+(a, b, c, d) := x;
+\end{lstlisting}
+
+In addition to just scalar types, VHDL-2008 also allows the use of sub-arrays in the specification of array aggregates.
+
+Attributes that can be used in conjunction with array types are (\lstinline!A! denotes either an array type or object, \lstinline!j=1,2,...! which dimension the attribute shall refer to. If the parentheses are left out, \lstinline!j! defaults to one.):
+
+\begin{tabular}{ll}
+\toprule
+	\textbf{Attribute} & \textbf{Description}\\
+\midrule
+	\lstinline!A'left(j)! & Leftmost index\\
+	\lstinline!A'right(j)! & Rightmost index\\
+	\lstinline!A'low(j)! & $\min_j j$\\
+	\lstinline!A'high(j)! & $\max_j j$\\
+	\lstinline!A'range(j)! & Index range\\
+	\lstinline!A'reverse_range(j)! & Reversed index range\\
+	\lstinline!A'length(j)! & Length of index range\\
+	\lstinline!A'ascending(j)! & \lstinline!True!: ascending range, \lstinline!false!: descending range\\
+	\lstinline!A'element! & Subtype of the elements in \lstinline!A! (VHDL-2008 only)\\
+\bottomrule
+\end{tabular}
+
+Array types that leave the index range(s) unspecified are called \emph{unconstrained} array types and can be declared in the following way:
+\begin{lstlisting}
+type identifier is array
+	(type range <>
+	 {, ...}          -- Multidimensional array
+) of subtype;
+\end{lstlisting}
+
+Example:
+\begin{lstlisting}
+package array_type is
+	type int_array is array (natural range <>) of integer;
+end package array_type;
+
+use work.array_type.all;
+
+entity max is
+	port (din  : in int_array;
+	      dout : out integer);
+end entity max;
+
+architecture behav of max is
+begin
+	process (din) is
+		variable max : integer;
+	begin
+		assert din'length /= 0
+			report "Array has zero length!"
+			severity failure;
+
+		max := din(din'left);
+		for i in din'range loop
+			if din(i) > max then
+				max := din(i);
+			end if;
+			dout <= max;
+		end loop;
+	end process;
+end architecture behav;
+\end{lstlisting}
+
+Predefined unconstrained array types include \lstinline!string! and \lstinline!bit_vector!, VHDL-2008 additionally provides \lstinline!boolean_vector!, \lstinline!integer_vector!, \lstinline!real_vector! and \lstinline!time_vector!.
 \end{document}
