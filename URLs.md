@@ -185,6 +185,7 @@
 * [JSLinux](https://bellard.org/jslinux/index.html), [jor1k: OpenRISC OR1K Javascript Emulator Running Linux With Network Support](https://s-macke.github.io/jor1k/demos/main.html), [Virtual x86](http://copy.sh/v86/)
 * [Linux device driver labs](https://linux-kernel-labs.github.io/)
 * [tinywm](http://incise.org/tinywm.html), [dwm - dynamic window manager](https://dwm.suckless.org/)
+* [Linux’s New GPIO User Space Subsystem & Libgpiod](https://www.cnx-software.com/2017/11/03/learn-more-about-linuxs-new-gpio-user-space-subsystem-libgpiod/)
 
 ### Formal Verification
 
