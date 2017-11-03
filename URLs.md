@@ -99,6 +99,7 @@
 
 * [gEDA: gschem, pcb, library, gerbv, icarus, gtkwave](http://geda-project.org/)
 * [Open Circuit Design: Magic, XCircuit, IRSIM, Netgen, Qrouter, Qflow, PCB](http://opencircuitdesign.com/)
+* [Whiteley Research](http://wrcad.com/)
 * [KiCad EDA](http://kicad-pcb.org/)
 * [Qucs project: Quite Universal Circuit Simulator](http://qucs.sourceforge.net/)
 * [Gnucap: GNU Circuit Analysis Package](http://www.gnucap.org/dokuwiki/doku.php?id=gnucap:start)
