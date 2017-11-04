@@ -94,6 +94,7 @@
 * [Design of a low-cost 1 GHz Active Probe](https://cdn.instructables.com/ORIG/FQZ/1QZP/IPJTFO82/FQZ1QZPIPJTFO82.pdf)
 * <https://github.com/coreboot/coreboot/blob/master/util/romcc/romcc.c>
 * [PC-MOS/386 v5.01 final release including cdrom driver sources](https://github.com/roelandjansen/pcmos386v501)
+* [S80186: 16-bit 80186 compatible IP core](https://www.jamieiles.com/80186/)
 
 ### EDA
 
@@ -186,6 +187,7 @@
 * [Linux device driver labs](https://linux-kernel-labs.github.io/)
 * [tinywm](http://incise.org/tinywm.html), [dwm - dynamic window manager](https://dwm.suckless.org/)
 * [Linux’s New GPIO User Space Subsystem & Libgpiod](https://www.cnx-software.com/2017/11/03/learn-more-about-linuxs-new-gpio-user-space-subsystem-libgpiod/)
+* [Infecting Running Processes](https://0x00sec.org/t/linux-infecting-running-processes/1097/1)
 
 ### Formal Verification
 
