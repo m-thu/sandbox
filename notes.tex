@@ -38,12 +38,19 @@
 %
 %
 %
+\usepackage{datetime} % for \currenttime
+%
+%
+%
+%
 \begin{document}
 \clearpage
 \begingroup
 	\pagestyle{empty}
 	\begin{center}
 		\LARGE{\textbf{Notes}}
+
+		\small{Compiled on {\today} at \currenttime}
 	\end{center}
 	\hfill
 	\tableofcontents
@@ -292,7 +299,9 @@ $dumpvars(0, testbench)
 %
 \section{VHDL}
 \lstset{language=vhdl,
-        morecomment=[s]{/*}{*/}}
+        morecomment=[s]{/*}{*/},
+	morekeywords={unaffected}
+}
 \subsection{Lexical Elements}
 Types of \emph{comments} (can't be nested):
 \begin{lstlisting}
@@ -399,7 +408,7 @@ New \emph{floating point} types are declared exactly as their integer counterpar
 type identifier is range bound1 (to|downto) bound2
 	units
 		identifier;
-		{identifier2 = (integer/real) unit;}
+		{identifier2 = (integer_literal|real_literal) unit;}
 	end units [identifier];
 \end{lstlisting}
 
@@ -824,7 +833,7 @@ end architecture behav;
 
 Predefined unconstrained array types include \lstinline!string! and \lstinline!bit_vector!, VHDL-2008 additionally provides \lstinline!boolean_vector!, \lstinline!integer_vector!, \lstinline!real_vector! and \lstinline!time_vector!.
 
-Parts of an array can be referred to using \emph{array slices}: \lstinline!identifier (bound1 (to|downto) bound2)!.
+Parts of an array can be referenced using \emph{array slices}: \lstinline!identifier (bound1 (to|downto) bound2)!.
 
 Declaring new \emph{record} types:
 \begin{lstlisting}
@@ -869,7 +878,46 @@ v2 = (others => 0.0);
 %
 %
 %
+\newpage
 \subsection{Entities and Architectures, Behavioral and Structural Modeling}
+Syntax of \emph{entity} declarations:
+\begin{lstlisting}
+entity identifier is
+	[port (
+		identifier : {, ...} : (in|out|buffer|inout) type_name
+			[:= default_value]
+		{; ...}
+	);]
+
+	-- Declarations common to all implementations
+	{...}
+end [entity] [identifier];
+\end{lstlisting}
+
+\lstinline!In! and \lstinline!out! ports are unidirectional, \lstinline!inout! ports are bidirectional and \lstinline!buffer! ports are \lstinline!out! ports that can be read internally (VHDL-2008 also allows reading \lstinline!out! ports).
+
+Syntax of \emph{architectures}:
+\begin{lstlisting}
+architecture identifier of entity_name is
+	-- Declarations
+	{...}
+begin
+	-- Concurrent statements
+	{...}
+end [architecture] [identifier];
+\end{lstlisting}
+
+\emph{Signals} (internal connections within an architecture) are declared as follows:\\ \lstinline!signal identifier {, ...} : type_name [:= initial_value];!.
+
+Syntax of \emph{signal assignments}:
+\begin{lstlisting}
+[label_name:]
+identifier <=
+	[transport                      -- Delay mechanism
+	 | [reject expression] inertial]
+	value [after expression] {, ...};
+	| unaffected;
+\end{lstlisting}
 %
 %
 %
