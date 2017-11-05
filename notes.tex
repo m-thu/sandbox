@@ -353,7 +353,7 @@ SB"" SO"" SX"" -- Signed     "       "         "
 %
 %
 \subsection{Fundamental Data Types}
-Declaring \emph{constants} (one of several types of objects, namely constants, variables, signals and files): \lstinline!constant identifier {, ...}: subtype [:= initial_value];!  
+Declaring \emph{constants} (one of several types of objects, namely constants, variables, signals and files): \lstinline!constant identifier {, ...}: type_name [:= initial_value];!  
 
 Examples:
 \begin{lstlisting}
@@ -361,7 +361,7 @@ constant pi : real    := 3.1415927;
 constant n  : natural := 42;
 \end{lstlisting}
 
-Declaring \emph{variables}: \lstinline!variable identifier {, ...}: subtype [:= initial_value];!
+Declaring \emph{variables}: \lstinline!variable identifier {, ...}: type_name [:= initial_value];!
 
 Examples:
 \begin{lstlisting}
@@ -369,7 +369,7 @@ variable count : integer := 0;
 variable x     : natural;
 \end{lstlisting}
 
-\emph{Assignments} to variables are non-blocking (in contrast to assignments to signals), i.e. the value of the variable gets updated immediately: \lstinline![label:] name := value;!
+\emph{Assignments} to variables are non-blocking (in contrast to assignments to signals), i.e. the value of the variable gets updated immediately: \lstinline![label_name:] identifier := value;!
 
 Examples:
 \begin{lstlisting}
@@ -413,7 +413,7 @@ type voltage is range 0 to 1e9
 \end{lstlisting}
 VHDL includes a predefined physical type \lstinline!time!, that defines the following unit prefixes: \lstinline!fs!, \lstinline!ps!, \lstinline!ns!, \lstinline!us!, \lstinline!ms!, \lstinline!sec!, \lstinline!min! and \lstinline!hr!.
 
-Declaring \emph{enumeration} types: \lstinline!type identifier is ( (identifier|character literal) {, ...} );!
+Declaring \emph{enumeration} types: \lstinline!type identifier is ( (identifier|character_literal) {, ...} );!
 
 Examples:
 \begin{lstlisting}
@@ -432,7 +432,7 @@ The predefined \lstinline!boolean! enumeration type can take the values \lstinli
 
 Predefined \lstinline!bit! type: \lstinline!type bit is ('0', '1');! (overloads \lstinline!'0'! and \lstinline!'1'! character literals).
 
-Declaring \emph{subtypes}: \lstinline!subtype identifier is type range bound1 (to|downto) bound2;!
+Declaring \emph{subtypes}: \lstinline!subtype identifier is type_name range bound1 (to|downto) bound2;!
 
 Examples:
 \begin{lstlisting}
@@ -477,7 +477,7 @@ List of \emph{attributes} applicable to scalar data types (\lstinline!T! denotes
 \end{tabular}
 
 
-List of additional attributes applicable to discrete and physical types:
+List of additional attributes applicable to discrete and physical types (\lstinline!T! denotes a type name):
 
 %\centering
 \begin{tabular}{ll}
@@ -499,7 +499,7 @@ List of additional attributes applicable to discrete and physical types:
 \subsection{Sequential Control Flow Constructs}
 Syntax of \emph{if} statements:
 \begin{lstlisting}
-[label:]
+[label_name:]
 -- VHDL-2008 only: implicit conversion of 'expression' to boolean
 if expression then
 	{...}
@@ -507,7 +507,7 @@ if expression then
 	{...}}
 [else                   -- Default branch
 	{...}]
-end if [label];
+end if [label_name];
 \end{lstlisting}
 
 Example:
@@ -539,7 +539,7 @@ end behavioral;
 
 Syntax of \emph{conditional variable assignments} (VHDL-2008 only):
 \begin{lstlisting}
-[label:]
+[label_name:]
 variable := value when expression
 	{else value when expression}
 	[else expression];            -- Default branch
@@ -547,16 +547,16 @@ variable := value when expression
 
 Syntax of \emph{case} statements:
 \begin{lstlisting}
-[label:]
+[label_name:]
 case expression is
 	when (expression
 	      | bound1 (to|downto) bound2 -- Discrete range
-	      | subtype                   -- Name of subtype
-	      | others                    -- Default branch)
+	      | subtype_name              -- Name of subtype
+	      | others)                   -- Default branch
 	=> {...}
-end case [label];
+end case [label_name];
 \end{lstlisting}
-Multiple alternatives in a \lstinline!when! statement can be separated by the \lstinline!|! character, e.g.
+Multiple alternatives in a \lstinline!when! statement can be separated with the ``\lstinline!|!'' character, e.g.
 \begin{lstlisting}
 case x is
 	when 1|2 =>
@@ -596,26 +596,26 @@ end architecture behav;
 
 Syntax of \emph{selected variable assignments} (VHDL-2008 only):
 \begin{lstlisting}
-[label:]
+[label_name:]
 with expression select
 variable := {value when expression,}
 	value when expression;
 \end{lstlisting}
 
-\emph{Null} statements (no operation): \lstinline![label:] null;!.
+\emph{Null} statements (no operation): \lstinline![label_name:] null;!.
 
 General syntax of \emph{loops}:
 \begin{lstlisting}
-[label:]
+[label_name:]
 [while expression                               -- Boolean expression
  | for identifier in bound1 (to|downto) bound2] -- Discrete range
 loop                                            -- Loops forever without
                                                 -- while or for
 	{...}
-end loop [label];
+end loop [label_name];
 \end{lstlisting}
 
-Loops can be aborted with the \lstinline!exit! statement: \lstinline![label:] exit [label_loop] [when expression];!; to continue with the next iteration of the loop one can use the \lstinline!next! statement:\\ \lstinline![label:] next [label_loop] [when expression];!.
+Loops can be aborted with the \lstinline!exit! statement: \lstinline![label_name:] exit [label_loop] [when expression];!, to continue with the next iteration of the loop one can use the \lstinline!next! statement:\\ \lstinline![label_name:] next [label_loop] [when expression];!.
 
 Example of a loop without \lstinline!while! or \lstinline!for!:
 \begin{lstlisting}
@@ -669,14 +669,14 @@ end architecture behav;
 
 Syntax of \emph{assertions} (for simulation, synthesis or formal verification):
 \begin{lstlisting}
-[label:] assert expression
+[label_name:] assert expression
          [report expression] [severity level];
 
 -- Valid values for level:
 -- note, warning, error, failure
 \end{lstlisting}
 
-\emph{Report} statements are equivalent to unconditional assertions:\\ \lstinline![label:] report expression [severity level];!.
+\emph{Report} statements are equivalent to unconditional assertions:\\ \lstinline![label_name:] report expression [severity level];!.
 %
 %
 %
@@ -691,7 +691,7 @@ type identifier is array
 	                                                    -- subtype with
 	                                                    -- constrained range
 	 | bound1 (to|downto) bound2                        -- Index range is
-	                                                    -- specified directly
+	)                                                   -- specified directly
 	 {, ...}                                            -- Multidimensional
 	                                                    -- array
 	) of subtype;
@@ -729,7 +729,7 @@ Array literals can be constructed out of scalar data types using \emph{array agg
   | others => ]                -- Wildcard for any indices that haven't been
                                -- specified previously (must be last)
   expression                   -- Positional association is used
-                               -- if [... => ] is left out
+                               -- if the [... => ] part is left out
 {, ...})
 \end{lstlisting}
 
@@ -742,7 +742,7 @@ variable n2 : narray := (0 => 1, 1 => 2,  -- Named association
                          2 => 3, 3 => 4);
 \end{lstlisting}
 
-Multiple indices can be separated with the \lstinline!|! character:
+Multiple indices can be separated with the ``\lstinline!|!'' character:
 \begin{lstlisting}
 type rarray is array (1 to 10) of real;
 
@@ -751,8 +751,8 @@ variable r : rarray := (0|2|4 => 3.14, 5 to 7 => 2.718, others => 0.0);
 
 Array aggregates can also be used as the target in both variable and signal assignments:
 \begin{lstlisting}
-[label:] (identifier|array_aggregate) := expression;
-[label:] (identifier|array_aggregate) <= expression;
+[label_name:] (identifier|array_aggregate) := expression;
+[label_name:] (identifier|array_aggregate) <= expression;
 
 -- Example:
 variable a, b, c, d : bit;
@@ -763,7 +763,7 @@ variable x          : bit_vector (3 downto 0);
 
 In addition to just scalar types, VHDL-2008 also allows the use of sub-arrays in the specification of array aggregates.
 
-Attributes that can be used in conjunction with array types are (\lstinline!A! denotes either an array type or object, \lstinline!j=1,2,...! which dimension the attribute shall refer to. If the parentheses are left out, \lstinline!j! defaults to one.):
+Attributes that can be used in conjunction with array types are (\lstinline!A! denotes either an array type or object, the index \lstinline!j=1,2,...! which dimension the attribute shall refer to. If the parentheses are left out, \lstinline!j! defaults to one.):
 
 \begin{tabular}{ll}
 \toprule
@@ -784,8 +784,8 @@ Attributes that can be used in conjunction with array types are (\lstinline!A! d
 Array types that leave the index range(s) unspecified are called \emph{unconstrained} array types and can be declared in the following way:
 \begin{lstlisting}
 type identifier is array
-	(type range <>
-	 {, ...}          -- Multidimensional array
+	(type_name range <>
+	{, ...})          -- Multidimensional array
 ) of subtype;
 \end{lstlisting}
 
@@ -823,4 +823,56 @@ end architecture behav;
 \end{lstlisting}
 
 Predefined unconstrained array types include \lstinline!string! and \lstinline!bit_vector!, VHDL-2008 additionally provides \lstinline!boolean_vector!, \lstinline!integer_vector!, \lstinline!real_vector! and \lstinline!time_vector!.
+
+Parts of an array can be referred to using \emph{array slices}: \lstinline!identifier (bound1 (to|downto) bound2)!.
+
+Declaring new \emph{record} types:
+\begin{lstlisting}
+type identifier is record
+	identifier {, ...} : type_name;
+	{...}
+end record [identifier];
+\end{lstlisting}
+
+Single members in a record type can be referred to using \emph{selected names}: \lstinline!identifier.record_member!.
+
+Example:
+\begin{lstlisting}
+type coordinate is record
+	x, y, z : real;
+end record coordinate;
+
+variable v1, v2 : coordinate;
+
+v1.x = 1.0; v1.y = 2.0; v1.z = 3.0;
+v2 = v1;
+\end{lstlisting}
+
+\emph{Record aggregates} can be constructed similarly to array aggregates:
+\begin{lstlisting}
+([expression     -- Named association: record members explicitly specified,
+                 -- multiple choices may be separated with the '|' character
+  | others => ]  -- Wildcard for any members that haven't been
+                 -- specified previously (must be last)
+  expression     -- Positional association is used
+                 -- if the [... => ] part is left out
+{, ...})
+\end{lstlisting}
+
+Example:
+\begin{lstlisting}
+v1 = (1.0, 2.0, 3.0);                -- Positional association
+v1 = (x => 1.0, y => 2.0, z => 3.0); -- Named association
+v2 = (others => 0.0);
+\end{lstlisting}
+%
+%
+%
+%
+\subsection{Entities and Architectures, Behavioral and Structural Modeling}
+%
+%
+%
+%
+%\subsection{Miscellaneous}
 \end{document}
