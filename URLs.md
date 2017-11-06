@@ -95,6 +95,7 @@
 * <https://github.com/coreboot/coreboot/blob/master/util/romcc/romcc.c>
 * [PC-MOS/386 v5.01 final release including cdrom driver sources](https://github.com/roelandjansen/pcmos386v501)
 * [S80186: 16-bit 80186 compatible IP core](https://www.jamieiles.com/80186/)
+* [THE AMAZING $1 MICROCONTROLLER](https://jaycarlson.net/microcontrollers/)
 
 ### EDA
 
