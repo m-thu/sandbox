@@ -28,6 +28,7 @@
 \DeclareMathOperator{\Div}{div}
 \DeclareMathOperator{\rot}{rot}
 \DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\curl}{curl}
 %
 %
 %
@@ -923,4 +924,396 @@ identifier <=
 %
 %
 %\subsection{Miscellaneous}
+\section{ED}
+\subsection{Vector Analysis}
+Identities involving vector products ($\vec a, \vec b, \vec c\in\mathbb{R}^3$, the wedge operator $\wedge$ denotes the vector product):
+\begin{gather*}
+	\vec a\cdot(\vec b\wedge\vec c) = \vec b\cdot(\vec c\wedge\vec a) = \vec c\cdot(\vec a\wedge\vec b)\\
+	\vec a\cdot(\vec c\wedge\vec b) = \vec b\cdot(\vec a\wedge\vec c) = \vec c\cdot(\vec b\wedge\vec a)
+\end{gather*}
+\begin{gather*}
+	\vec a\wedge(\vec b\wedge\vec c) = \vec b(\vec a\cdot\vec c) - \vec c(\vec a\cdot\vec b)\\
+	(\vec a\wedge\vec b)\wedge\vec c = \vec b(\vec a\cdot\vec c) - \vec a(\vec b\cdot\vec c)
+\end{gather*}
+
+Definition of the \emph{nabla} (\emph{del}) operator:
+\[
+	\vec\nabla = \begin{bmatrix}\nicefrac{\partial}{\partial x}\\
+	                            \nicefrac{\partial}{\partial y}\\
+	                            \nicefrac{\partial}{\partial z}
+	             \end{bmatrix}
+\]
+
+\emph{Gradient} of a scalar field $f$:
+\[
+	\grad(f) = \vec\nabla f = \begin{bmatrix}\nicefrac{\partial f}{\partial x}\\
+	                                         \nicefrac{\partial f}{\partial y}\\
+	                                         \nicefrac{\partial f}{\partial z}
+	                          \end{bmatrix}
+\]
+
+\emph{Divergence} of a vector field $\vec F$:
+\[
+	\Div(\vec F) = \vec\nabla\cdot\vec F = \frac{\partial F_x}{\partial x}
+	                                       + \frac{\partial F_y}{\partial y}
+	                                       + \frac{\partial F_z}{\partial z}
+\]
+
+\emph{Curl} of a vector field $\vec F$:
+\[
+	\curl(\vec F) = \vec\nabla\wedge\vec F = \begin{vmatrix}\hat e_x & \hat e_y & \hat e_z\\
+	                                                        \nicefrac{\partial}{\partial x} & \nicefrac{\partial}{\partial y} & \nicefrac{\partial}{\partial z}\\
+	                                                        F_x & F_y & F_z
+	                                         \end{vmatrix}
+\]
+
+Product rules for gradients ($f,g$: scalar fields; $\vec F,\vec G$: vector fields):
+\begin{gather*}
+	\vec\nabla(fg) = f(\vec\nabla g) + g(\vec\nabla f)\\
+	\vec\nabla(\vec F\cdot\vec G) = \vec F\wedge(\vec\nabla\wedge\vec G) + \vec G\wedge(\vec\nabla\wedge\vec F)
+	                               +(\vec F\cdot\vec\nabla)\vec G + (\vec G\cdot\vec\nabla)\vec F
+\end{gather*}
+
+Product rules for divergences ($f$: scalar field; $\vec F,\vec G$: vector fields):
+\begin{gather*}
+	\vec\nabla\cdot(f\vec G) = f(\vec\nabla\cdot\vec G) + \vec G\cdot(\vec\nabla f)\\
+	\vec\nabla\cdot(\vec F\wedge\vec G) = \vec G\cdot(\vec\nabla\wedge\vec F) - \vec F\cdot(\vec\nabla\wedge\vec G)
+\end{gather*}
+
+Product rules for curls ($f$: scalar field; $\vec F,\vec G$: vector fields):
+\begin{gather*}
+	\vec\nabla\wedge(f\vec G) = f(\vec\nabla\wedge\vec G) - \vec G\wedge(\vec\nabla f)\\
+	\vec\nabla\wedge(\vec F\wedge\vec G) = (\vec G\cdot\vec\nabla)\vec F - (\vec F\cdot\vec\nabla)\vec G+\vec F(\vec\nabla\cdot\vec G) - \vec G(\vec\nabla\cdot\vec F)
+\end{gather*}
+
+Definition of the \emph{Laplacian} ($f$: scalar field):
+\[
+	\vec\nabla\cdot(\vec\nabla f) = \vec\nabla^2 f = \Delta f = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}
+\]
+
+The curl of a gradient and the divergence of a curl always vanish:
+\begin{gather*}
+	\vec\nabla\wedge(\vec\nabla f)\equiv\vec 0\\
+	\vec\nabla\cdot(\vec\nabla\wedge\vec F)\equiv 0
+\end{gather*}
+
+Curl of a curl:
+\[
+	\vec\nabla\wedge(\vec\nabla\wedge\vec F) = \vec\nabla(\vec\nabla\cdot\vec F) - \vec\nabla^2\vec F
+\]
+
+Fundamental theorem for gradients ($f$: scalar field):
+\[
+	\int_{\vec a}^{\vec b} (\vec\nabla f)\cdot\mathrm{d}\vec r = f(\vec b) - f(\vec a)
+\]
+
+\emph{Gauss's theorem} ($\vec F$: vector field):
+\[
+	\int_V(\vec\nabla\cdot\vec F)\,\mathrm{d}V = \oint_{\partial V}\vec F\cdot\mathrm{d}\vec a
+\]
+
+\emph{Stokes' theorem} ($\vec F$: vector field):
+\[
+	\int_S(\vec\nabla\wedge\vec F)\cdot\mathrm{d}\vec a = \oint_{\partial S}\vec F\cdot\mathrm{d}\vec r
+\]
+
+\emph{Spherical} coordinates:
+\[
+	\begin{bmatrix}x\\ y\\ z\end{bmatrix} =
+	r\cdot\begin{bmatrix}\sin(\vartheta)\cdot\cos(\varphi)\\ \sin(\vartheta)\cdot\sin(\varphi)\\ \cos(\vartheta)\end{bmatrix}
+\]
+
+Unit vectors:
+\begin{align*}
+	\hat e_r &= \sin(\vartheta)\cdot\cos(\varphi)\cdot\hat e_x + \sin(\vartheta)\cdot\sin(\varphi)\cdot\hat e_y + \cos(\vartheta)\cdot\hat e_z\\
+	\hat e_\vartheta &= \cos(\vartheta)\cdot\cos(\varphi)\cdot\hat e_x + \cos(\vartheta)\cdot\sin(\varphi)\cdot\hat e_y - \sin(\vartheta)\cdot\hat e_z\\
+	\hat e_\varphi &= -\sin(\varphi)\cdot\hat e_x + \cos(\varphi)\cdot\hat e_y
+\end{align*}
+
+Line and volume elements:
+\begin{align*}
+	\mathrm{d}\vec r &= \mathrm{d}r\cdot\hat e_r + r\,\mathrm{d}\vartheta\cdot\hat e_\vartheta + r\sin(\vartheta)\,\mathrm{d}\varphi\cdot\hat e_\varphi\\
+	\mathrm{d}V &= r^2\sin(\vartheta)\,\mathrm{d}r\,\mathrm{d}\vartheta\,\mathrm{d}\varphi
+\end{align*}
+
+Gradient:
+\[
+	\vec\nabla f = \frac{\partial f}{\partial r}\cdot\hat e_r + \frac{1}{r}\,\frac{\partial f}{\partial \vartheta}\cdot\hat e_\vartheta
+	               + \frac{1}{r\sin(\vartheta)}\,\frac{\partial f}{\partial\varphi}\cdot\hat e_\varphi
+\]
+
+Divergence:
+\[
+	\vec\nabla\cdot\vec F = \frac{1}{r^2}\,\frac{\partial}{\partial r}(r^2\cdot F_r)
+	                        + \frac{1}{r\sin(\vartheta)}\,\frac{\partial}{\partial\vartheta}\left(\sin(\vartheta)\cdot F_\vartheta\right)
+	                        + \frac{1}{r\sin(\vartheta)}\,\frac{\partial}{\partial\varphi} F_\varphi
+\]
+
+Curl:
+\begin{equation*}
+\begin{split}
+	\vec\nabla\wedge\vec F &= \frac{1}{r\sin(\vartheta)}\cdot\left[\frac{\partial}{\partial\vartheta}\left(\sin(\vartheta)\cdot F_\varphi\right)
+	                    - \frac{\partial}{\partial\varphi}F_\vartheta\right]\cdot\hat e_r\\
+	                 &\quad +\frac{1}{r}\cdot\left[\frac{1}{\sin(\vartheta)}\,\frac{\partial}{\partial\varphi}F_r
+	                    - \frac{\partial}{\partial r}(r\cdot F_\varphi)\right]\cdot\hat e_\vartheta\\
+	                 &\quad +\frac{1}{r}\cdot\left[\frac{\partial}{\partial r}(r\cdot F_\vartheta)-\frac{\partial}{\partial\vartheta}F_r\right]\cdot\hat e_\varphi
+\end{split}
+\end{equation*}
+
+Laplacian:
+\begin{equation*}
+	\Delta f = \frac{1}{r^2}\,\frac{\partial}{\partial r}\left(r^2\cdot\frac{\partial f}{\partial r}\right)
+	           + \frac{1}{r^2\sin(\vartheta)}\,\frac{\partial}{\partial\vartheta}\left(\sin(\vartheta)\cdot\frac{\partial f}{\partial\vartheta}\right)
+	           + \frac{1}{r^2\sin^2(\vartheta)}\cdot\frac{\partial^2 f}{\partial\varphi^2}
+\end{equation*}
+
+\emph{Cylindrical} coordinates:
+\[
+	\begin{bmatrix}x\\ y\\ z\end{bmatrix} =
+	\begin{bmatrix}\varrho\cdot\cos(\varphi)\\ \varrho\cdot\sin(\varphi)\\ z\end{bmatrix}
+\]
+
+Unit vectors:
+\begin{align*}
+	\hat e_\varrho &= \cos(\varphi)\cdot\hat e_x + \sin(\varphi)\cdot\hat e_y\\
+	\hat e_\varphi &= -\sin(\varphi)\cdot\hat e_x + \cos(\varphi)\cdot\hat e_y\\
+	\hat e_z &= \hat e_z
+\end{align*}
+
+Line and volume elements:
+\begin{align*}
+	\mathrm{d}\vec r &= \mathrm{d}\varrho\cdot\hat e_\varrho + \varrho\,\mathrm{d}\varphi\cdot\hat e_\varphi + \mathrm{d}z\cdot\hat e_z\\
+	\mathrm{d}V &= \varrho\,\mathrm{d}\varrho\,\mathrm{d}\varphi\,\mathrm{d}z
+\end{align*}
+
+Gradient:
+\[
+	\vec\nabla f = \frac{\partial f}{\partial\varrho}\cdot\hat e_\varrho + \frac{1}{\varrho}\,\frac{\partial f}{\partial\varphi}\cdot\hat e_\varphi
+	               + \frac{\partial f}{\partial z}\cdot\hat e_z
+\]
+
+Divergence:
+\[
+	\vec\nabla\cdot\vec F = \frac{1}{\varrho}\,\frac{\partial}{\partial\varrho}(\varrho\cdot F_\varrho)
+	                        + \frac{1}{\varrho}\,\frac{\partial}{\partial\varphi}\cdot F_\varphi + \frac{\partial}{\partial z}\cdot F_z
+\]
+
+Curl:
+\begin{equation*}
+\begin{split}
+	\vec\nabla\wedge\vec F &= \left(\frac{1}{\varrho}\,\frac{\partial}{\partial\varphi}\cdot F_z-\frac{\partial}{\partial z}\cdot F_\varphi\right)\cdot\hat e_\varrho\\
+	                       &\quad+ \left(\frac{\partial}{\partial z}F_\varrho-\frac{\partial}{\partial\varrho}\cdot F_z\right)\cdot\hat e_\varphi\\
+	                       &\quad+ \frac{1}{\varrho}\cdot\left[\frac{\partial}{\partial\varrho}(\varrho\cdot F_\varphi)-\frac{\partial}{\partial\varphi}\cdot
+	                               F_\varrho\right]\cdot\hat e_z
+\end{split}
+\end{equation*}
+
+Laplacian:
+\[
+	\Delta f = \frac{1}{\varrho}\,\frac{\partial}{\partial\varrho}\left(\varrho\cdot\frac{\partial f}{\partial\varrho}\right)
+	           + \frac{1}{\varrho^2}\cdot\frac{\partial^2 f}{\partial\varphi^2} + \frac{\partial^2 f}{\partial z^2}
+\]
+
+\emph{Delta distribution} (differentiation with respect to $\vec r$, $\vec r'\equiv\text{const.}$):
+\begin{gather*}
+	\vec\nabla\cdot\left(\frac{\vec r-\vec r'}{|\vec r-\vec r'|^3}\right) = 4\pi\cdot\delta^{(3)}(\vec r-\vec r')\\
+	\Delta\left(\frac{1}{|\vec r-\vec r'|}\right) = -4\pi\cdot\delta^{(3)}(\vec r-\vec r')
+\end{gather*}
+
+Properties of \emph{curl-less} fields:
+\begin{enumerate}
+	\item $\vec\nabla\wedge\vec F\equiv\vec 0$
+	\item $\int_\gamma\vec F\cdot\mathrm{d}\vec r$ is independent of the path $\gamma$
+	\item $\oint_\gamma\vec F\cdot\mathrm{d}\vec r\equiv 0\quad\forall\gamma$
+	\item $\vec F=-\vec\nabla \phi\quad$ ($\phi$: scalar potential)
+\end{enumerate}
+
+Properties of \emph{divergence-less} field:
+\begin{enumerate}
+	\item $\vec\nabla\cdot\vec F\equiv 0$
+	\item $\int_S\vec F\cdot\mathrm{d}\vec a$ is independent of the surface $S$
+	\item $\oint_S\vec F\cdot\mathrm{d}\vec a\equiv 0\quad\forall S$
+	\item $\vec F=\vec\nabla\wedge\vec A\quad$ ($\vec A$: vector potential)
+\end{enumerate}
+%
+%
+%
+%
+\subsection{Electrostatics}
+\emph{Coulomb's law} (force on a test charge $Q$ caused by a point charge $q$ at location $\vec r'$,\\ $\varepsilon_0$: permittivity of free space):
+\[
+	\vec F(\vec r) = \frac{qQ}{4\pi\varepsilon_0}\cdot\frac{\vec r-\vec r'}{|\vec r-\vec r'|^3}
+\]
+
+Force on a test charge exerted by several point charges $q_1,\dots,q_n$:
+\[
+	\vec F = Q\cdot\vec E
+\]
+
+\emph{Electric field}:
+\[
+	\vec E(\vec r) = \frac{1}{4\pi\varepsilon_0}\cdot\sum_{j=1}^n q_j\cdot\frac{\vec r-\vec r_j}{|\vec r-\vec r_j|^3}
+\]
+
+Electric field generated by the charge distribution $\varrho(\vec r)$:
+\[
+	\vec E(\vec r) = \frac{1}{4\pi\varepsilon_0}\cdot\int\varrho(\vec r')\cdot\frac{\vec r-\vec r'}{|\vec r-\vec r'|^3}\,\mathrm{d}^3 r'
+\]
+
+\emph{Electric flux} through a surface $S$:
+\[
+	\Phi = \int_S\vec E\cdot\mathrm{d}\vec a
+\]
+
+\emph{Gauss's law} (differential form):
+\begin{equation*}
+\begin{split}
+	\vec\nabla\cdot\vec E &= \frac{1}{4\pi\varepsilon_0}\cdot\int\mathrm{d}^3 r'\,\varrho(\vec r')\,\vec\nabla\cdot\left(\frac{\vec r-\vec r'}{|\vec r-\vec r'|^3}\right)
+	                         = \frac{1}{4\pi\varepsilon_0}\cdot\int\mathrm{d}^3 r'\,\varrho(\vec r')\,4\pi\cdot\delta^{(3)}(\vec r-\vec r')\\
+	                      &= \frac{1}{\varepsilon_0}\cdot\varrho(\vec r)
+\end{split}
+\end{equation*}
+
+Gauss's law (integral form):
+\begin{equation*}
+\begin{split}
+	\oint_{\partial V}\vec E\cdot\mathrm{d}\vec a &= \int_V\vec\nabla\cdot\vec E\,\mathrm{d}V = \frac{1}{\varepsilon_0}\cdot\int_V\varrho(\vec r)\,\mathrm{d}V\\
+	                                              &= \frac{1}{\varepsilon_0}\cdot Q_\mathrm{total}
+\end{split}
+\end{equation*}
+
+Closed paths, curl of an electric field:
+\begin{gather*}
+		\oint_\gamma\vec E\cdot\mathrm{d}\vec r\equiv 0\quad\forall\gamma\\
+		\vec\nabla\wedge\vec E\equiv\vec 0
+\end{gather*}
+
+Definition of the electric potential ($\vec r_\mathrm{ref}$: reference point):
+\begin{equation*}
+	\phi(\vec r)=-\int_{\vec r_\mathrm{ref}}^{\vec r}\vec E(\vec r')\cdot\mathrm{d}\vec r'\,\curvearrowright\,\vec E(\vec r)=-\vec\nabla\phi(\vec r)
+\end{equation*}
+
+Poisson's equation:
+\[
+	\vec\nabla^2\phi=\Delta\phi=-\frac{\varrho}{\varepsilon_0}
+\]
+
+Laplace's equation ($\varrho\equiv 0$):
+\[
+	\vec\nabla^2\phi=\Delta\phi=0
+\]
+
+Potential of a charge distribution ($\vec r_\mathrm{ref}\to\infty$):
+\[
+	\phi(\vec r)=\frac{1}{4\pi\varepsilon_0}\cdot\int\frac{\varrho(\vec r')}{|\vec r-\vec r'|}\,\mathrm{d}^3 r'
+\]
+
+Energy stored in an electric field:
+\[
+	W=\frac{\varepsilon_0}{2}\cdot\int_{\mathbb{R}^3}\vec E^2\,\mathrm{d}V
+\]
+
+Properties of an ideal conductor:
+\begin{enumerate}
+	\item $\vec E\equiv\vec 0$ on the inside
+	\item $\varrho\equiv 0$ on the inside
+	\item Any net charge resides on the surface.
+	\item $\phi(\vec r)\equiv\text{const.}$
+	\item $\vec E\perp \text{surface}$
+\end{enumerate}
+
+Boundary conditions at the proximity of a surface with surface charge density $\sigma$ ($\hat n$: unit vector perpendicular to the surface):
+\[
+	\vec E_\mathrm{above}-\vec E_\mathrm{below}=\frac{\sigma}{\varepsilon_0}\cdot\hat n
+\]
+
+Multipole expansion in cartesian coordinates ($P_n$: Legendre polynomials, $\alpha:=\angle\left(\vec r,\vec r'\right)$):
+\[
+	\phi(\vec r)=\frac{1}{4\pi\varepsilon_0}\cdot\sum_{n=0}^\infty\frac{1}{|\vec r|^{n+1}}\,\int|\vec r'|^n\,P_n\left(\cos(\alpha)\right)\,\varrho(\vec r')\,\mathrm{d}^3 r'
+\]
+
+Dipole moments:
+\begin{gather*}
+	\vec p=\int\vec r'\,\varrho(\vec r')\,\mathrm{d}^3 r'\\
+	\phi^{(2)}(\vec r)=\frac{1}{4\pi\varepsilon_0}\cdot\frac{\vec p\cdot\hat e_r}{|\vec r|^2}
+\end{gather*}
+%
+%
+%
+%
+%
+\section{QM}
+Schroedinger equation in one dimension:
+\[
+	\mathrm{i}\hbar\,\frac{\partial\Psi}{\partial t}=-\frac{\hbar^2}{2m}\,\frac{\partial^2\Psi}{\partial x^2}+V\cdot\Psi
+\]
+
+Statistical interpretation:
+\[
+	P(a\le x\le b; t)=\int_a^b |\Psi(x,t)|^2\,\mathrm{d}x
+\]
+
+Expectation value ($\varrho$: probability density):
+\[
+	\langle f(x)\rangle=\int_{-\infty}^\infty f(x)\cdot\varrho(x)\,\mathrm{d}x
+\]
+
+Variance:
+\begin{gather*}
+	\sigma^2\equiv\langle\left(x-\langle x\rangle\right)^2\rangle\\
+	\sigma^2=\langle x^2\rangle - \langle x\rangle^2
+\end{gather*}
+
+Normalization requirement:
+\[
+	\int_{-\infty}^\infty |\Psi(x,t)|^2\,\mathrm{d}x = 1
+\]
+
+Uncertainty principle:
+\[
+	\sigma_x\,\sigma_p\ge\frac{\hbar}{2}
+\]
+
+Hamiltonian ($p\to\frac{\hbar}{\mathrm{i}}\,\frac{\partial}{\partial x}$):
+\[
+	H=\frac{p^2}{2m}+V(x)=-\frac{\hbar^2}{2m}\,\frac{\partial^2}{\partial x^2}+V(x)
+\]
+
+Time-independent Schroedinger equation:
+\[
+	H\psi(x)=E\psi(x)
+\]
+
+General solution of the separable time-dependent Schroedinger equation:
+\[
+	\Psi(x,t)=\sum_{n=1}^\infty c_n\cdot\psi_n(x)\cdot\mathrm{e}^{-\mathrm{i} E_n\cdot t/\hbar}
+\]
+
+1D infinite square well:
+\begin{gather*}
+	V(x)=\begin{cases}
+		0, & 0\le x\le a\\
+		\infty, & \text{otherwise}
+	\end{cases}\\
+	E_n = \frac{n^2\pi^2\hbar^2}{2ma^2}, \quad n=1,2,\dots\\
+	\psi_n = \sqrt{\frac{2}{a}}\cdot\sin\left(\frac{n\pi}{a}\cdot x\right)
+\end{gather*}
+
+1D harmonic oscillator ($\xi\equiv\sqrt{\frac{m\omega}{\hbar}}\cdot x$, $H_n$: Hermite polynomials):
+\begin{gather*}
+	V(x) = \frac{1}{2} m\omega^2 x^2\\
+	E_n = \left(n+\frac{1}{2}\right)\cdot\hbar\omega\quad n=1,2,\dots\\
+	\psi_n(x) = \left(\frac{m\omega}{\pi\hbar}\right)\cdot\frac{1}{\sqrt{2^n n!}}\cdot
+		H_n(\xi)\cdot\mathrm{e}^{-\xi^2/2}
+\end{gather*}
+
+%Free particle ($k\equiv\pm\frac{\sqrt{2mE}}{\hbar}$):
+%\begin{gather*}
+	%\Psi(x,t)=\frac{1}{\sqrt{2\pi}}\cdot\int_{-\infty}^\infty \phi(k)\cdot
+		%\mathrm{e}^{\mathrm{i}\left(kx-\frac{\hbar k^2}{2m}\cdot t\right)}\,\mathrm{d}k
+		%=\frac{1}{\sqrt{2\pi}}\cdot\int_{-\infty}^\infty \phi(k)\cdot
+			%\mathrm{e}^{}\,\mathrm\\
+	%\phi(k)=\frac{1}{\sqrt{2\pi}}\cdot\int_{-\infty}^\infty \Psi(x,0)\cdot
+		%\mathrm{e}^{-\mathrm{i}kx}\,\mathrm{d}x
+%\end{gather*}
 \end{document}
