@@ -40,6 +40,7 @@
 %
 %
 \usepackage{datetime} % for \currenttime
+\usepackage{braket}
 %
 %
 %
@@ -1241,6 +1242,54 @@ Dipole moments:
 %
 %
 %
+\subsection{Electric fields in matter}
+Polarization:
+\[
+	\vec P=\frac{\text{dipole moment}}{\text{unit volume}}
+\]
+
+Electric displacement:
+\begin{gather*}
+	\vec D=\varepsilon_0\,\vec E+\vec P\\
+	\vec\nabla\wedge\vec D=\varepsilon_0\,(\vec\nabla\wedge\vec E)+\vec\nabla\wedge\vec P=
+		\vec\nabla\wedge\vec P\neq\vec 0
+\end{gather*}
+
+Gauss's law ($\varrho_\mathrm{f}$: free charge density):
+\begin{gather*}
+	\vec\nabla\cdot\vec D = \varrho_\mathrm{f}\\
+	\oint_{\partial V}\vec D\cdot\mathrm{d}\vec a = Q_\mathrm{total}
+\end{gather*}
+
+Boundary conditions ($\sigma_\mathrm{f}$: free surface charge density):
+\begin{gather*}
+	D_\text{above}^\perp -D_\text{below}^\perp = \sigma_\mathrm{f}\\
+	D_\text{above}^\parallel - D_\text{below}^\parallel = P_\text{above}^\parallel - P_\text{below}^\parallel
+\end{gather*}
+
+Polarization in linear dielectrics ($\chi_\mathrm{e}$: electric susceptibility):
+\[
+	\vec P=\varepsilon_0\chi_\mathrm{e}\,\vec E
+\]
+
+Permittivity:
+\[
+	\varepsilon=\varepsilon_0\,(1+\chi_\mathrm{e})
+\]
+
+Electric displacement:
+\[
+	\vec D=\varepsilon\,\vec E
+\]
+
+Dielectric constant:
+\[
+	\varepsilon_\mathrm{r} = 1+\chi_\mathrm{e}=\frac{\varepsilon}{\varepsilon_0}
+\]
+%
+%
+%
+%
 %
 \section{QM}
 Schroedinger equation in one dimension:
@@ -1299,6 +1348,11 @@ General solution of the separable time-dependent Schroedinger equation:
 	\psi_n = \sqrt{\frac{2}{a}}\cdot\sin\left(\frac{n\pi}{a}\cdot x\right)
 \end{gather*}
 
+Hermite polynomials (Rodrigues formula):
+\[
+	H_n(\xi)=(-1)^n\cdot\mathrm{e}^{\xi^2}\cdot\left(\frac{\mathrm{d}}{\mathrm{d}\xi}\right)^n\,\mathrm{e}^{-\xi^2}
+\]
+
 1D harmonic oscillator ($\xi\equiv\sqrt{\frac{m\omega}{\hbar}}\cdot x$, $H_n$: Hermite polynomials):
 \begin{gather*}
 	V(x) = \frac{1}{2} m\omega^2 x^2\\
@@ -1307,13 +1361,301 @@ General solution of the separable time-dependent Schroedinger equation:
 		H_n(\xi)\cdot\mathrm{e}^{-\xi^2/2}
 \end{gather*}
 
-%Free particle ($k\equiv\pm\frac{\sqrt{2mE}}{\hbar}$):
-%\begin{gather*}
-	%\Psi(x,t)=\frac{1}{\sqrt{2\pi}}\cdot\int_{-\infty}^\infty \phi(k)\cdot
-		%\mathrm{e}^{\mathrm{i}\left(kx-\frac{\hbar k^2}{2m}\cdot t\right)}\,\mathrm{d}k
-		%=\frac{1}{\sqrt{2\pi}}\cdot\int_{-\infty}^\infty \phi(k)\cdot
-			%\mathrm{e}^{}\,\mathrm\\
-	%\phi(k)=\frac{1}{\sqrt{2\pi}}\cdot\int_{-\infty}^\infty \Psi(x,0)\cdot
-		%\mathrm{e}^{-\mathrm{i}kx}\,\mathrm{d}x
-%\end{gather*}
+Free particle ($k\equiv\pm\frac{\sqrt{2mE}}{\hbar}$, dispersion relation: $\omega=\frac{\hbar k^2}{2m}$):
+\begin{gather*}
+	\Psi(x,t)=\frac{1}{\sqrt{2\pi}}\cdot\int_{-\infty}^\infty \phi(k)\cdot
+		\mathrm{e}^{\mathrm{i}\left(kx-\frac{\hbar k^2}{2m}\cdot t\right)}\,\mathrm{d}k
+		=\frac{1}{\sqrt{2\pi}}\cdot\int_{-\infty}^\infty \phi(k)\cdot
+		\mathrm{e}^{\mathrm{i}(kx-\omega t)}\\
+	\phi(k)=\frac{1}{\sqrt{2\pi}}\cdot\int_{-\infty}^\infty \Psi(x,0)\cdot
+		\mathrm{e}^{-\mathrm{i}kx}\,\mathrm{d}x
+\end{gather*}
+
+Group velocity:
+\[
+	v_\mathrm{g}=\frac{\mathrm{d}\omega}{\mathrm{d}k}
+\]
+
+Phase velocity:
+\[
+	v_\mathrm{ph}=\frac{\omega}{k}
+\]
+
+Definition of bound and scattering states ($V(x\to\infty)=0$):
+\begin{itemize}
+	\item $E<0$: bound state
+	\item $E>0$: scattering state
+\end{itemize}
+
+Delta function potential:
+\begin{equation*}
+	V(x)=-\alpha\delta(x)
+\end{equation*}
+
+Bound state:
+\begin{gather*}
+	\psi(x)=\frac{\sqrt{m\alpha}}{\hbar}\cdot\mathrm{e}^{-m\alpha|x|/\hbar^2}\\
+	E=-\frac{m\alpha^2}{2\hbar^2}
+\end{gather*}
+
+Inner product:
+\begin{gather*}
+	\braket{\alpha|\beta}=a_1^* b_1 + a_2^* b_2 + \dots + a_N^* b_N\\
+	\braket{\beta|\alpha}=\braket{\alpha|\beta}^*\\
+	\braket{f|g}=\int_a^b f(x)^* g(x)\,\mathrm{d}x
+\end{gather*}
+
+Schwarz inequality:
+\[
+	\left|\braket{f|g}\right| \le \sqrt{\braket{f|f}\cdot\braket{g|g}}
+\]
+
+Orthonormal set of functions $\{f_n\}$:
+\[
+	\braket{f_m|f_n} = \delta_{mn}
+\]
+
+Complete set of functions $\{f_n\}$:
+\begin{gather*}
+	f(x)=\sum_{n=1}^\infty c_n\cdot f_n(x)\\
+	c_n=\braket{f_n|f}
+\end{gather*}
+
+Expectation value of an observable:
+\[
+	\langle Q\rangle=\int \psi^*\hat Q\psi\,\mathrm{d}x=\braket{\psi|\hat Q|\psi}
+\]
+
+Hermitian operators:
+\[
+	\braket{f|\hat Q f}=\braket{\hat Qf|f}
+\]
+
+Properties of eigenfunctions of hermitian operators $\hat Q$ with discrete spectra:
+\begin{enumerate}
+	\item $\hat Q f=qf\,\curvearrowright\,q\in\mathbb{R}$
+	\item $\hat Q f=qf,\,\, \hat Q g=q'g,\,\,q\neq q'\,\curvearrowright\,\braket{f|g}=0$
+\end{enumerate}
+
+Momentum space wave function:
+\begin{gather*}
+	\Phi(p,t)=\frac{1}{\sqrt{2\pi\hbar}}\cdot\int_{-\infty}^\infty \mathrm{e}^{-\mathrm{i}px/\hbar}
+		\cdot\Psi(x, t)\,\mathrm{d}x\\
+	\Psi(x,t)=\frac{1}{\sqrt{2\pi\hbar}}\cdot\int_{-\infty}^\infty \mathrm{e}^{\mathrm{i}px/\hbar}
+		\cdot\Phi(p,t)\,\mathrm{d}p
+\end{gather*}
+
+Commutator of two operators $\hat A, \hat B$:
+\[
+	[\hat A, \hat B]:=\hat A\hat B - \hat B\hat A
+\]
+
+Anticommutator of two operators $\hat A, \hat B$:
+\[
+	\{\hat A, \hat B\}:=\hat A\hat B + \hat B\hat A
+\]
+
+Generalized uncertainty principle (observable $A$: $\sigma_A^2=\braket{\left(\hat A-\langle A\rangle\right)\Psi|\left(\hat A-\langle A\rangle\right)\Psi}$,\\ observable $B$: $\sigma_B^2=\braket{\left(\hat B-\langle B\rangle\right)\Psi|\left(\hat B-\langle B\rangle\right)\Psi}$):
+\[
+	\sigma_A^2\sigma_B^2\ge\left(\frac{1}{2\mathrm{i}} \langle [\hat A,\hat B]\rangle\right)^2
+\]
+
+Time dependence of an expectation value ($Q$: observable, $H$: Hamiltonian):
+\begin{gather*}
+	\frac{\mathrm{d}}{\mathrm{d}t}\langle Q\rangle=
+		\frac{\mathrm{i}}{\hbar}\langle[\hat H,\hat Q]\rangle+\langle\frac{\partial\hat Q}{\partial t}\rangle
+\end{gather*}
+
+Schroedinger equation in three dimensions ($\vec p\to\frac{\hbar}{\mathrm{i}}\vec\nabla$):
+\[
+	\mathrm{i}\hbar\frac{\partial\Psi}{\partial t}=-\frac{\hbar^2}{2m}\Delta\Psi + V\Psi
+\]
+
+Normalization requirement:
+\[
+	\int_{\mathbb{R}^3}|\Psi|^2\,\mathrm{d}V=1
+\]
+
+Probability current and conservation of probability:
+\begin{gather*}
+	\vec j=\frac{\mathrm{i}\hbar}{2m}\cdot(\Psi\vec\nabla\Psi^* - \Psi^* \vec\nabla\Psi)\\
+	\vec\nabla\cdot\vec j=-\frac{\partial}{\partial t}|\Psi|^2
+\end{gather*}
+
+Time-independent Schroedinger equation:
+\[
+	-\frac{\hbar^2}{2m}\Delta\psi + V\psi=E\psi
+\]
+
+General solution of the separable time-dependent Schroedinger equation:
+\[
+	\Psi(\vec r,t)=\sum_{n=1}^\infty c_n\psi_n(\vec r)\cdot\mathrm{e}^{-\mathrm{i}E_n\cdot t/\hbar}
+\]
+
+Canonical commutation relations ($i,j\in\{1,2,3\}$):
+\begin{gather*}
+	[r_i,p_j]=\mathrm{i}\hbar\delta_{ij}\\
+	[r_i,r_j]=[p_i,p_j]=0
+\end{gather*}
+
+Legendre polynomials (Rodrigues formula):
+\[
+	P_l(x)=\frac{1}{2^l l!}\cdot\left(\frac{\mathrm{d}}{\mathrm{d}x}\right)^l \cdot(x^2-1)^l
+\]
+
+Associated Legendre functions:
+\[
+	P_l^m(x)=(1-x^2)^{|m|/2}\cdot\left(\frac{\mathrm{d}}{\mathrm{d}x}\right)^{|m|}\cdot P_l(x)
+\]
+
+Spherical harmonics (normalized angular wave function):
+\begin{gather*}
+	\text{Azimuthal quantum number: } l=0,1,2,\dots\\
+	\text{Magnetic quantum number: } m=-l,\,-l+1,\,\dots,\,l-1,\,l\\
+	Y_l^m(\vartheta,\varphi)=\sqrt{\frac{2l+1}{4\pi}\cdot\frac{(l-|m|)!}{(l+|m|)!}}
+		\cdot\mathrm{e}^{\mathrm{i}m\varphi}\cdot P_l^m\left(\cos(\vartheta)\right)
+		\cdot\begin{cases}(-1)^m, &m\ge 0\\ 1, &m<0\end{cases}
+\end{gather*}
+
+Orthonormality:
+\[
+	\int_0^{2\pi}\mathrm{d}\varphi\,\int_0^\pi\mathrm{d}\vartheta\,\sin(\vartheta)\,
+		Y_l^m(\vartheta,\varphi)^*\cdot Y_{l'}^{m'}(\vartheta,\varphi)=\delta_{ll'}\delta_{mm'}
+\]
+
+Radial equation ($\psi(r,\vartheta,\varphi)=R(r)\cdot Y(\vartheta,\varphi)$, $u(r)\equiv r\cdot R(r)$):
+\[
+	-\frac{\hbar^2}{2m}\cdot\frac{\mathrm{d}^2 u}{\mathrm{d}r^2}
+		+ \underbrace{\left[V+\frac{\hbar^2}{2m}\cdot\frac{l(l+1)}{r^2}\right]}_\text{effective potential}\cdot u = E\cdot u
+\]
+
+Radial wave equation for the hydrogen atom:
+\[
+	-\frac{\hbar^2}{2m_\mathrm{e}}\cdot\frac{\mathrm{d}^2 u}{\mathrm{d}r^2}
+		+\left[-\frac{e^2}{4\pi\varepsilon_0}\cdot\frac{1}{r}+\frac{\hbar^2}{2}\cdot\frac{l(l+1)}{r^2}\right]\cdot u=E\cdot u
+\]
+
+Laguerre polynomial:
+\[
+	L_q(x)=\mathrm{e}^x\cdot\left(\frac{\mathrm{d}}{\mathrm{d}x}\right)^q\,\left(\mathrm{e}^{-x}\cdot x^q\right)
+\]
+
+Associated Laguerre polynomial:
+\[
+	L_{q-p}^p(x)=(-1)^p\cdot\left(\frac{\mathrm{d}}{\mathrm{d}x}\right)^p\,L_q(x)
+\]
+
+Energies (degeneracy of $E_n$: $n^2$):
+\[
+	E_n=-\left[\frac{m_\mathrm{e}}{2\hbar ^2}\cdot\left(\frac{e^2}{4\pi\varepsilon_0}\right)\right]\cdot\frac{1}{n^2},\quad n=1,2,\dots
+\]
+
+Bohr radius:
+\[
+	a_\mathrm{B}=\frac{4\pi\varepsilon_0\hbar^2}{m_\mathrm{e}e^2}
+\]
+
+Hydrogen wave function:
+\begin{gather*}
+	\psi_{nlm}(r,\vartheta,\varphi)=
+		\sqrt{\left(\frac{2}{na}\right)^3\cdot\frac{(n-l-1)!}{2n\left[(n+l)!\right]^3}}
+		\cdot\mathrm{e}^{-\nicefrac{r}{na}}\cdot\left(\frac{2r}{na}\right)^l
+		\cdot\left[L_{n-l-1}^{2l+1}\left(\nicefrac{2r}{na}\right)\right]\cdot Y_l^m(\vartheta,\varphi)\\
+	n=1,2,3,\,\dots;\,\,l=0,1,2,\,\dots,\,n-1;\,\,m=-l,\,-l+1,\,\dots,\,l-1,\,l
+\end{gather*}
+
+Angular momentum operator:
+\[
+	\hat{\vec L}=\hat{\vec r}\wedge\left(\frac{\mathrm{i}}{\hbar}\vec\nabla\right)
+\]
+
+Commutation relations ($L^2\equiv L_x^2+L_y^2+L_z^2$):
+\begin{gather*}
+	[L_x,L_y]=\mathrm{i}\hbar L_z;
+		\quad[L_y,L-z]=\mathrm{i}\hbar L_x;
+		\quad[L_z,L_x]=\mathrm{i}\hbar L_y\\
+	[L^2,\vec L]=0
+\end{gather*}
+
+Eigenvalues ($Y_l^m$: spherical harmonics):
+\begin{gather*}
+	L^2\, Y_l^m=\hbar^2l(l+1)\,Y_l^m;\quad
+		L_z\,Y_l^m=\hbar m\,Y_l^m\\
+	l=0,\,\nicefrac{1}{2},\,1,\,\nicefrac{3}{2},\,\dots;\quad
+		m=-l,-l+1,\dots,l-1,l
+\end{gather*}
+
+Commutation relations for spin:
+\[
+	[S_x,S_y]=\mathrm{i}\hbar S_z;
+		\quad[S_y,S_z]=\mathrm{i}\hbar S_x;
+		\quad[S_z,S_x]=\mathrm{i}\hbar S_y
+\]
+
+Eigenvectors and eigenvalues of $S^2$ and $S_z$:
+\begin{gather*}
+	S^2\ket{s\,m}=\hbar^2s(s+1)\,\ket{s\,m};
+		\quad S_z\,\ket{s\,m}=\hbar m\ket{s\,m}\\
+	s=0,\,\nicefrac{1}{2},\,1,\,\nicefrac{3}{2},\,\dots;
+		\quad m=-s,-s+1,\dots,s-1,s
+\end{gather*}
+
+Eigenstates of spin $\nicefrac{1}{2}$ ($s=\nicefrac{1}{2}$):
+\begin{itemize}
+	\item Spin up: $\ket{\frac{1}{2}\,\frac{1}{2}} = \ket{\frac{1}{2}\,\uparrow}$
+	\item Spin down: $\ket{\frac{1}{2}\,\left(-\frac{1}{2}\right)} = \ket{\frac{1}{2}\,\downarrow}$
+\end{itemize}
+
+Spinor:
+\begin{gather*}
+	\chi=\begin{bmatrix}a\\b\end{bmatrix}=a\chi_+ + b\chi_-\\
+	\chi_+=\begin{bmatrix}1\\0\end{bmatrix},\,
+	\chi_-=\begin{bmatrix}0\\1\end{bmatrix}\\
+	|a|^2+|b|^2=1
+\end{gather*}
+
+Pauli matrices:
+\[
+	\sigma_x=\begin{bmatrix}0 & 1\\ 1 & 0\end{bmatrix},
+	\quad\sigma_y=\begin{bmatrix}0 & -\mathrm{i}\\ \mathrm{i} & 0\end{bmatrix},
+	\quad\sigma_z=\begin{bmatrix}1 & 0\\ 0 & -1\end{bmatrix}
+\]
+
+Spin operator ($\vec\sigma=[\sigma_x,\sigma_y,\sigma_z]$):
+\[
+	\vec S = \frac{\hbar}{2}\cdot\vec\sigma
+\]
+
+Hamiltonian of a charged particle at rest in a magnetic field ($\gamma$: gyromagnetic ratio):
+\[
+	H=-\gamma\vec B\cdot\vec S
+\]
+
+Triplet states ($s=1$):
+\begin{enumerate}
+	\item $\ket{1\,1} = \,\uparrow\,\uparrow$
+	\item $\ket{1\,0} = \frac{1}{\sqrt{2}}\left(\uparrow\,\downarrow+\downarrow\,\uparrow\right)$
+	\item $\ket{1\,(-1)} = \,\downarrow\,\downarrow$
+\end{enumerate}
+
+Singlet state ($s=0$):
+\[
+	\ket{0\,0} = \frac{1}{\sqrt{2}}\left(\uparrow\,\downarrow-\downarrow\,\uparrow\right)
+\]
+
+Addition of spins $s_1$ and $s_2$:
+\[
+	s=(s_1+s_2),\,(s1+s_2-1),\,(s1+s2-2),\dots,|s_1-s_2|
+\]
+
+Combined states ($C_{m_1 m_2 m}^{s_1 s_2 s}$: Clebsch-Gordan coefficients):
+\begin{gather*}
+	\ket{s\,m}=\sum_{m_1+m_2=m} C_{m_1 m_2 m}^{s_1 s_2 s}\cdot\ket{s_1\,m_1}\,\ket{s_2\,m_2}\\
+	\ket{s_1\,m_1}\,\ket{s_2\,m_2}=\sum_s C_{m_1 m_2 m}^{s_1 s_2 s}\cdot\ket{s\,m}
+\end{gather*}
+
+Symmetrization requirement (``$+$'': bosons, ``$-$'': fermions):
+\[
+	\psi(\vec r_1,\vec r_2)=\pm\psi(\vec r_2,\vec r_1)
+\]
 \end{document}
