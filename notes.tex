@@ -287,7 +287,7 @@ Delays: \lstinline!#10;!
 
 System tasks: \lstinline!$display("Format string", /* ... */)!
 
-\lstinline!$monitor("Format string", /* ... */)!: automatically generates output when one of the values changes
+\lstinline!$monitor("Format string", /* ... */)!: automatically generates output if one of the values changes
 
 VCD (Value Change Dump) files:
 \begin{lstlisting}
@@ -757,7 +757,7 @@ Multiple indices can be separated with the ``\lstinline!|!'' character:
 \begin{lstlisting}
 type rarray is array (1 to 10) of real;
 
-variable r : rarray := (0|2|4 => 3.14, 5 to 7 => 2.718, others => 0.0);
+variable r : rarray := (1|2|4 => 3.14, 5 to 7 => 2.718, others => 0.0);
 \end{lstlisting}
 
 Array aggregates can also be used as the target in both variable and signal assignments:
@@ -782,8 +782,8 @@ Attributes that can be used in conjunction with array types are (\lstinline!A! d
 \midrule
 	\lstinline!A'left(j)! & Leftmost index\\
 	\lstinline!A'right(j)! & Rightmost index\\
-	\lstinline!A'low(j)! & $\min_j j$\\
-	\lstinline!A'high(j)! & $\max_j j$\\
+	\lstinline!A'low(j)! & Lowest index\\
+	\lstinline!A'high(j)! & Highest index\\
 	\lstinline!A'range(j)! & Index range\\
 	\lstinline!A'reverse_range(j)! & Reversed index range\\
 	\lstinline!A'length(j)! & Length of index range\\
@@ -1572,7 +1572,7 @@ Angular momentum operator:
 Commutation relations ($L^2\equiv L_x^2+L_y^2+L_z^2$):
 \begin{gather*}
 	[L_x,L_y]=\mathrm{i}\hbar L_z;
-		\quad[L_y,L-z]=\mathrm{i}\hbar L_x;
+		\quad[L_y,L_z]=\mathrm{i}\hbar L_x;
 		\quad[L_z,L_x]=\mathrm{i}\hbar L_y\\
 	[L^2,\vec L]=0
 \end{gather*}
