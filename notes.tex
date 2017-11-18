@@ -1290,6 +1290,132 @@ Dielectric constant:
 %
 %
 %
+\subsection{Magnetostatics}
+Lorentz force law:
+\[
+	\vec F=q\cdot(\vec E+\vec v\wedge\vec B)
+\]
+
+Force on a wire with impressed current $I$ in a magnetic field $\vec B$:
+\[
+	\vec F_\mathrm{mag}=\int I\,(\mathrm{d}\vec l\wedge\vec B)
+\]
+
+Surface current density ($\sigma$: surface charge density):
+\[
+	\vec K=\frac{\mathrm{d}\vec I}{\mathrm{d}l_\perp}=\sigma\vec v
+\]
+
+Force on a surface current in a magnetic field $\vec B$:
+\[
+	\vec F_\mathrm{mag}=\int(\vec K\wedge\vec B)\,\mathrm{d}a
+\]
+
+Volume current density ($\varrho$: volume charge density):
+\[
+	\vec J=\frac{\mathrm{d}\vec I}{\mathrm{d}a_\perp}=\varrho\vec v
+\]
+
+Force on a volume current in a magnetic field $\vec B$:
+\[
+	\vec F_\mathrm{mag}=\int(\vec I\wedge\vec B)\,\mathrm{d}V
+\]
+
+Continuity equation (local charge conservation):
+\[
+	\vec\nabla\cdot\vec J=-\frac{\partial\varrho}{\partial t}
+\]
+
+Biot-Savart law (magnetic field of a steady line current):
+\[
+	\vec B(\vec r)=\frac{\mu_0}{4\pi}\cdot\int\vec I\wedge\frac{\vec r-\vec r'}{|\vec r-\vec r'|^3}\,\mathrm{d}l'\\
+		=\frac{\mu_0}{4\pi}\,I\cdot\int\mathrm{d}\vec l'\wedge\frac{\vec r-\vec r'}{|\vec r-\vec r'|^3}
+\]
+
+Ampere's law (differential form):
+\[
+	\vec\nabla\wedge\vec B=\mu_0\cdot\vec J
+\]
+
+Ampere's law (integral form, $I_\mathrm{total}$: total enclosed current):
+\[
+	\oint\vec B\cdot\mathrm{d}\vec l=\mu_0\cdot I_\mathrm{total}
+\]
+
+Definition of the vector potential:
+\begin{gather*}
+	\vec B=\vec\nabla\wedge\vec A\\
+	\vec\nabla\cdot\vec A\equiv 0
+\end{gather*}
+
+Ampere's law:
+\[
+	\vec\nabla^2\vec A=-\mu_0\cdot\vec J
+\]
+
+General solution ($\vec J(|\vec r|\to\infty)\to\vec 0$):
+\[
+	\vec A(\vec r)=\frac{\mu_0}{4\pi}\cdot\int\frac{\vec J(\vec r')}{|\vec r-\vec r'|}\,\mathrm{d}^3 r'
+\]
+
+Boundary conditions at a surface current ($\hat n$: unit vector perpendicular to the surface):
+\[
+	\vec B_\mathrm{above}-\vec B_\mathrm{below}=\mu_0\cdot\vec K\wedge\hat n
+\]
+
+Magnetic dipole moment:
+\[
+	\vec m=I\,\int\mathrm{d}\vec a=I\,\vec a
+\]
+
+Vector potential of a magnetic dipole:
+\[
+	\vec A^{(2)}(\vec r)=\frac{\mu_0}{4\pi}\cdot\frac{\vec m\wedge\hat e_r}{|\vec r|^2}
+\]
+%
+%
+%
+%
+\subsection{Magnetic Fields in Matter}
+Magnetization:
+\[
+	\vec M=\frac{\text{magnetic dipole moment}}{\text{unit volume}}
+\]
+
+Definition of the magnetic field:
+\[
+	\vec H=\frac{1}{\mu_0}\cdot\vec B-\vec M
+\]
+
+Ampere's law ($\vec J_\mathrm{f}$: free current, $I_\mathrm{total}$: total free current):
+\begin{gather*}
+	\vec\nabla\wedge\vec H=\vec J_\mathrm{f}\\
+	\oint\vec H\cdot\mathrm{d}\vec l=I_\mathrm{total}
+\end{gather*}
+
+Divergence of the magnetic field:
+\[
+	\vec\nabla\cdot\vec H=-\vec\nabla\cdot\vec M
+\]
+
+Boundary conditions at a surface current ($\hat n$: unit vector perpendicular to the surface, $\vec K_\mathrm{f}$: free surface current):
+\[
+	\vec H_\mathrm{above}^\parallel-\vec H_\mathrm{below}^\parallel=\vec K_\mathrm{f}\wedge\hat n
+\]
+
+Magnetization in linear matter ($\chi_\mathrm{m}$: magnetic susceptibility):
+\[
+	\vec M=\chi_\mathrm{m}\cdot\vec H
+\]
+
+Magnetic flux density in linear matter ($\mu$: permeability, $\mu_\mathrm{r}$: relative permeability,\\ $\mu_0$: permeability of free space):
+\[
+	\vec B=\mu_0\cdot(\vec H+\vec M)=\mu_0\cdot(1+\chi_\mathrm{m})\cdot\vec H=\mu_0\,\mu_\mathrm{r}\cdot\vec H=\mu\cdot\vec H
+\]
+%
+%
+%
+%
 %
 \section{QM}
 Schroedinger equation in one dimension:
