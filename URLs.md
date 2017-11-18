@@ -99,6 +99,7 @@
 * [Let’s build an MP3-decoder!](http://blog.bjrn.se/2008/10/lets-build-mp3-decoder.html)
 * [Let’s construct an elliptic curve: Introducing Crackpot2065](http://blog.bjrn.se/2015/07/lets-construct-elliptic-curve.html)
 * [WaveDrom -- Digital Timing Diagram everywhere](http://wavedrom.com/)
+* [Creating an Autonomous System for Fun and Profit](http://blog.thelifeofkenneth.com/2017/11/creating-autonomous-system-for-fun-and.html)
 
 ### EDA
 
