@@ -1416,6 +1416,189 @@ Magnetic flux density in linear matter ($\mu$: permeability, $\mu_\mathrm{r}$: r
 %
 %
 %
+\subsection{Electrodynamics}
+Ohm's law ($\sigma$: conductivity, $\varrho=\nicefrac{1}{\sigma}$: resistivity):
+\[
+	\vec J=\sigma\,\vec E
+\]
+
+Resistance:
+\[
+	R=\frac{V}{I}
+\]
+
+Electromotive force (emf, $\vec f_\mathrm{s}$: source):
+\[
+	\mathcal{E}=\oint \vec f_\mathrm{s}\cdot\mathrm{d}\vec l
+\]
+
+Magnetic flux through a surface $\mathcal{S}$:
+\[
+	\Phi=\int_\mathcal{S}\vec B\cdot\mathrm{d}\vec a
+\]
+
+Flux rule for motional emf:
+\[
+	\mathcal{E}=-\frac{\mathrm{d}\Phi}{\mathrm{d}t}
+\]
+
+Faraday's law (differential form):
+\[
+	\vec\nabla\wedge\vec E=-\frac{\partial\vec B}{\partial t}
+\]
+
+Mutual inductance of two loops ($\Phi_1, I_1$: flux and current through loop one; $\Phi_2, I_2$: flux and current through loop two):
+\[
+	\Phi_2=M_{21}\,I_1
+\]
+
+Neumann formula:
+\begin{gather*}
+	M_{21}=\frac{\mu_0}{4\pi}\cdot\oint\oint\frac{\mathrm{d}\vec I_1\cdot\mathrm{d}\vec I_2}{|\vec r_1-\vec r_2|}\\
+	\curvearrowright\,\,M_{21}=M_{12}
+\end{gather*}
+
+Self inductance:
+\[
+	\Phi=L\,I
+\]
+
+Energy of a magnetic field:
+\[
+	W=\int_{\mathbb{R}^3}\vec B^2\,\mathrm{d}V
+\]
+
+Maxwell's equations:
+\begin{align*}
+	\vec\nabla\cdot\vec E&=\frac{1}{\varepsilon_0}\cdot\varrho\\
+	\vec\nabla\cdot\vec B&=0\\
+	\vec\nabla\wedge\vec E&=-\frac{\partial\vec B}{\partial t}\\
+	\vec\nabla\wedge\vec B&=\mu_0\cdot\vec J+\mu_0\,\varepsilon_0\cdot\frac{\partial\vec E}{\partial t}
+\end{align*}
+
+Maxwell's equations in matter:
+\begin{align*}
+	\vec\nabla\cdot\vec D&=\varrho_\mathrm{free}\\
+	\vec\nabla\cdot\vec B&=0\\
+	\vec\nabla\wedge\vec E&=-\frac{\partial\vec B}{\partial t}\\
+	\vec\nabla\wedge\vec H&=\vec J_\mathrm{free}+\frac{\partial\vec D}{\partial t}
+\end{align*}
+
+General boundary conditions at a surface ($\hat n$: unit vector perpendicular to the surface, $\sigma_\mathrm{f}$: free surface charge density, $\vec K_\mathrm{f}$: free surface current density):
+\begin{gather*}
+	D_1^\perp-D_2^\perp=\sigma_\mathrm{f}\\
+	B_1^\perp-B_2^\perp=0\\
+	\vec E_1^\parallel-\vec E_2^\parallel=\vec 0\\
+	\vec H_1^\parallel-\vec H_2^\parallel=\vec K_\mathrm{f}\wedge\hat n
+\end{gather*}
+
+General boundary conditions at a surface in linear matter:
+\begin{gather*}
+	\varepsilon_1\cdot\vec E_1^\perp-\varepsilon_2\cdot\vec E_2^\perp=\sigma_\mathrm{f}\\
+	B_1^\perp-B_2^\perp=0\\
+	\vec E_1^\parallel-\vec E_2^\parallel=\vec 0\\
+	\frac{1}{\mu_1}\cdot\vec B_1^\parallel-\frac{1}{\mu_2}\cdot\vec B_2^\parallel=\vec K_\mathrm{f}\wedge\hat n
+\end{gather*}
+
+Energy density in an electromagnetic field:
+\[
+	u=\frac{1}{2}\,\left(\varepsilon_0\cdot\vec E^2+\frac{1}{\mu_0}\cdot\vec B^2\right)
+\]
+
+Poynting vector (energy flux density):
+\[
+	\vec S=\frac{1}{\mu_0}\,(\vec E\wedge\vec B)
+\]
+
+Poynting's theorem:
+\[
+	\frac{\mathrm{d}W}{\mathrm{d}t}=-\frac{\mathrm{d}}{\mathrm{d}t}\,\int_\mathcal{V}u\,\mathrm{d}V-\oint_{\partial\mathcal{V}}\vec S\cdot\mathrm{d}\vec a
+\]
+
+General wave equation:
+\[
+	\vec\nabla^2 f=\frac{1}{v_\mathrm{ph}^2}\cdot\frac{\partial^2 f}{\partial t^2}
+\]
+
+Maxwell's equations in a vacuum:
+\begin{align*}
+	\vec\nabla\cdot\vec E&=0\\
+	\vec\nabla\cdot\vec B&=0\\
+	\vec\nabla\wedge\vec E&=-\frac{\partial\vec B}{\partial t}\\
+	\vec\nabla\wedge\vec B&=\mu_0\,\varepsilon_0\cdot\frac{\partial\vec E}{\partial t}
+\end{align*}
+
+Derivation of the wave equations for $\vec E$ and $\vec B$:
+\begin{gather*}
+	\vec\nabla\wedge(\vec\nabla\wedge\vec E)=
+		\vec\nabla\underbrace{(\vec\nabla\cdot\vec E)}_{=0}-\vec\nabla^2\vec E=-\frac{\partial}{\partial t}(\vec\nabla\wedge\vec B)=-\mu_0\,\varepsilon_0\cdot
+		\frac{\partial^2\vec E}{\partial t^2}\\
+	\curvearrowright\,\,\vec\nabla^2\vec E=\mu_0\,\varepsilon_0\cdot\frac{\partial^2\vec E}{\partial t^2}\\
+	\vec\nabla\wedge(\vec\nabla\wedge\vec B)=
+		\vec\nabla\underbrace{(\vec\nabla\cdot\vec B)}_{=0}-\vec\nabla^2\vec B=\mu_0\varepsilon_0\cdot\frac{\partial}{\partial t}(\vec\nabla\wedge\vec E)
+		=\mu_0\,\varepsilon_0\cdot\frac{\partial^2\vec B}{\partial t^2}\\
+	\curvearrowright\,\,\vec\nabla^2\vec B=\mu_0\,\varepsilon_0\cdot\frac{\partial^2\vec B}{\partial t^2}
+\end{gather*}
+
+Speed of light in a vacuum:
+\[
+	c_0=\frac{1}{\sqrt{\mu_0\,\varepsilon_0}}
+\]
+
+(Complex) plane waves ($\vec k$: wave vector, $|\vec k|=\nicefrac{2\pi}{\lambda}$: wave number, $\hat n$: polarization vector,\\ $\omega=c\cdot k$):
+\begin{align*}
+	\underline{\vec E}(\vec r,t)&=\underline{E_0}\cdot\mathrm{e}^{\mathrm{i}\,(\vec k\cdot\vec r-\omega\,t)}\cdot\hat n\\
+	\underline{\vec B}(\vec r,t)&=\frac{1}{c}\cdot\underline{E_0}\cdot\mathrm{e}^{\mathrm{i}\,(\vec k\cdot\vec r-\omega\,t)}\cdot(\vec e_k\wedge\hat n)
+		=\frac{1}{c}\cdot(\hat e_k\wedge\underline{\vec E})
+\end{align*}
+
+Maxwell's equations in linear matter in absence of free charge and current:
+\begin{align*}
+	\vec\nabla\cdot\vec E&=0\\
+	\vec\nabla\cdot\vec B&=0\\
+	\vec\nabla\wedge\vec E&=-\frac{\partial\vec B}{\partial t}\\
+	\vec\nabla\wedge\vec B&=\mu\,\varepsilon\cdot\frac{\partial\vec E}{\partial t}
+\end{align*}
+
+Speed of light in linear matter:
+\[
+	c=\frac{1}{\sqrt{\mu\,\varepsilon}}=\frac{c_0}{n}
+\]
+
+Index of refraction:
+\[
+	n=\sqrt{\mu_\mathrm{r}\,\varepsilon_\mathrm{r}}
+\]
+
+Boundary conditions on the inside of a wave guide:
+\begin{gather*}
+	\vec E^\parallel=\vec 0\\
+	B^\perp=0
+\end{gather*}
+
+Plane electromagnetic wave travelling in $z$-direction:
+\begin{align*}
+	\underline{\vec E}&=\underline{\vec E_0}\cdot\mathrm{e}^{\mathrm{i}\,(k\,z-\omega\,t)}\\
+	\underline{\vec B}&=\underline{\vec B_0}\cdot\mathrm{e}^{\mathrm{i}\,(k\,z-\omega\,t)}
+\end{align*}
+
+Complex amplitudes:
+\begin{equation*}
+	\underline{\vec E_0}=\begin{bmatrix}E_{0,x}\\E_{0,y}\\E_{0,z}\end{bmatrix};\quad
+	\underline{\vec B_0}=\begin{bmatrix}B_{0,x}\\B_{0,y}\\B_{0,z}\end{bmatrix}
+\end{equation*}
+
+Maxwell's equations on the inside:
+\begin{align*}
+	\vec\nabla\cdot\vec E&=0\\
+	\vec\nabla\cdot\vec B&=0\\
+	\vec\nabla\wedge\vec E&=-\frac{\partial\vec B}{\partial t}\\
+	\vec\nabla\wedge\vec B&=\frac{1}{c^2}\cdot\frac{\partial\vec E}{\partial t}
+\end{align*}
+%
+%
+%
+%
 %
 \section{QM}
 Schroedinger equation in one dimension:
