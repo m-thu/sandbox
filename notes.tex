@@ -893,8 +893,17 @@ entity identifier is
 
 	-- Declarations common to all implementations
 	{...}
+
+[begin
+	-- Concurrent assertion statements
+	-- Passive concurrent procedure calls
+	-- Passive processes
+	{...}
+]
 end [entity] [identifier];
 \end{lstlisting}
+
+Procedure calls and processes are \emph{passive} if they don't include any signal assignments.
 
 \lstinline!In! and \lstinline!out! ports are unidirectional, \lstinline!inout! ports are bidirectional and \lstinline!buffer! ports are \lstinline!out! ports that can be read internally (VHDL-2008 also allows reading \lstinline!out! ports).
 
@@ -913,13 +922,142 @@ end [architecture] [identifier];
 
 Syntax of \emph{signal assignments}:
 \begin{lstlisting}
+-- Default delay mechanism: inertial
+[label_name:]
+identifier <=
+	[transport
+	 | [reject time_expression] inertial]
+	value [after time_expression] {, ...};
+	| unaffected;
+\end{lstlisting}
+
+If one assigns the \lstinline!unaffected! value to a signal, its value remains unchanged (VHDL-2008: \lstinline!unaffected! may also be used in sequential signal assignments). Not specifying any delay is equivalent to specifying a delay of \lstinline!0 fs! (\emph{delta delay}).
+
+Syntax of \emph{conditional signal assignments} (VHDL-2008 only, replace with \lstinline!if! in VHDL$<$2008):
+\begin{lstlisting}
 [label_name:]
 identifier <=
 	[transport                      -- Delay mechanism
-	 | [reject expression] inertial]
-	value [after expression] {, ...};
-	| unaffected;
+	 | [reject time_expression] inertial]
+	value [after time_expression] {, ...};
+	| unaffected when expression
+	{else ... when expression}
+	[else ...]; -- Default branch
 \end{lstlisting}
+
+Syntax of \emph{selected signal assignments} (VHDL-2008 only, replace with \lstinline!case! in VHDL$<$2008):
+\begin{lstlisting}
+[label_name:]
+with expression select
+identifier <=
+	{... when ...,}
+	[transport                      -- Delay mechanism
+	 | [reject time_expression] inertial]
+	value [after time_expression] {, ...};
+	| unaffected when expression;
+\end{lstlisting}
+
+List of attributes applicable to signals (\lstinline!S! denotes a signal, \lstinline!T! an expression of type \lstinline!time!):
+
+%%%%%% !!!!!FIXME!!!!!!
+\begin{tabular}{ll}
+\toprule
+	\textbf{Attribute} & \textbf{Description}\\
+\midrule
+	\lstinline!S'active! & \lstinline!True! if signal \lstinline!S! got updated with a new value in the current\\ simulation cycle (\emph{transaction}), \lstinline!false! otherwise.\\
+	\lstinline!S'delayed(T)! & Delays signal \lstinline!S! by a time interval \lstinline!T!.\\
+	\lstinline!S'event!& \lstinline!True! if the new value of a signal \lstinline!S! is unequal to its old value (\emph{event}),\\ \lstinline!false! otherwise.\\
+	\lstinline!S'last_active! & Time since last transaction on signal \lstinline!S!.\\
+	\lstinline!S'last_event! & Time since last event on signal \lstinline!S!.\\
+	\lstinline!S'last_value! & Last value of signal \lstinline!S! before current event.\\
+	\lstinline!S'quiet! & \lstinline!True! if no events occured on signal \lstinline!S! for a time span \lstinline!T!,\\ \lstinline!false! otherwise (return type: \lstinline!signal!).\\
+	\lstinline!S'stable(T)! & \lstinline!True! if no events where scheduled on signal \lstinline!S! for a time period \lstinline!T!,\\ \lstinline!false! otherwise (return type: \lstinline!signal!).\\
+	\lstinline!S'transaction! & Toggles between \lstinline!'0'! and \lstinline!'1'! each time a transaction occurs\\ on signal \lstinline!S! (return type: \lstinline!signal!).\\
+\bottomrule
+\end{tabular}
+
+Syntax of \emph{wait statements}:
+\begin{lstlisting}
+[label_name:]
+-- Type of identifier: signal
+wait [on identifier {, ...}] -- Sensitivity list
+	[until expression]        -- Condition clause
+	[for time_expression];    -- Timeout
+\end{lstlisting}
+
+Combinational logic can be modeled using \lstinline!wait on! statements. The execution of the process in the following example resumes every time an event occurs on any signal in its \emph{sensitivity list}:
+\begin{lstlisting}
+my_or: process
+begin
+	y <= x1 or x2;
+	wait on x1, x2;
+end process;
+
+-- Equivalent to:
+my_or2: process (x1, x2)
+begin
+	y <= x1 or x2;
+end process;
+\end{lstlisting}
+
+In contrast, \lstinline!wait until! statements suspend a process until the condition becomes true once again. When combining both aforementioned forms of wait statements, events on signals in the sensitivity list have a higher priority than any conditions. A timeout for maximum suspension of a process may be specified using the \lstinline!for! statement. In simulation, a process can be stopped using a single \lstinline!wait;! instruction.
+
+Syntax of \emph{process statements}:
+\begin{lstlisting}
+-- Type of identifier: signal
+[label_name:]
+process [(identifier {, ...} | all)] [is]
+	-- Declarations (including variables)
+	{...}
+begin
+	-- Sequential statements
+	{...}
+end process [label_name];
+\end{lstlisting}
+
+A process gets activated on any event that occurs on the signals listed in its \emph{sensitivity} list. If there is no sensitivity list, one has to use at least one \lstinline!wait! statement inside the body of the process. The usage of a sensitivity list and \lstinline!wait! statements is mutually exclusive. Specifying \lstinline!all! in the sensitivity list of a process in VHDL-2008 is equivalent to explicitly listing all signals the process treats as inputs.
+
+\emph{Concurrent signal assignments} are signal assignment statements that reside inside an architecture body. Accordingly, conditional signal assignments inside an architecture body are called \emph{concurrent signal assignments}, selected signal assignments \emph{concurrent selected signal assignments}. This enables \emph{functional descriptions} of digital systems.
+
+Example of a concurrent selected signal assignment:
+\begin{lstlisting}
+entity mux4 is
+	port (a0, a1, a2, a3 : in bit;
+	      sel0, sel1     : in bit;
+	      y              : out bit);
+	constant T_PD : time := 4.5 ns;
+end entity mux4;
+
+architecture behav of mux4 is
+begin
+	with bit_vector'(sel0, sel1) select
+		y <= a0 when "00",
+		     a1 when "01",
+		     a2 when "10",
+		     a3 when "11";
+end architecture behav;
+\end{lstlisting}
+
+Similarly, assertions inside the body of an architecture or entity are referred to as \emph{concurrent assertion statements}.
+
+A \emph{structural model} of a system can be constructed using \emph{component instantiation statements} inside an architecture body:
+\begin{lstlisting}
+[label_name:]
+entity identifier [(architecture_identifier)]
+	[port map (
+		[identifier => ]signal_identifier
+		                | expression
+		                | open
+		{, ...}
+	)];
+\end{lstlisting}
+
+Using \lstinline!open! leaves the corresponding port unconnected.
+%
+%
+%
+%
+%\subsection{Procedures and Functions}
 %
 %
 %
