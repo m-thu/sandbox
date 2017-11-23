@@ -1057,7 +1057,176 @@ Using \lstinline!open! leaves the corresponding port unconnected.
 %
 %
 %
-%\subsection{Procedures and Functions}
+\subsection{Procedures and Functions}
+Syntax of a \emph{procedure} declaration:
+\begin{lstlisting}
+procedure identifier [(
+	-- Formal parameters
+	[constant | variable | signal]
+	-- Out parameters may only be read in VHDL-2008
+	identifier {, ...} : [in|out|inout] typename
+		[:= default_value]
+	{; ...}
+)] is
+	-- Declarations (local to the procedure)
+	{...}
+begin
+	-- Sequential statements
+	{...}
+end [procedure] [identifier];
+\end{lstlisting}
+
+The statement \lstinline![label_name:] return;! returns immediately from a procedure.
+
+Syntax of procedure calls:
+\begin{lstlisting}
+[label_name:]
+procedure_identifier [(
+	[parameter_identifier =>]
+		expression
+		| signal_identifier
+		| variable_identifier
+		| open
+	{, ...}
+)];
+\end{lstlisting}
+
+Example of a procedure:
+\begin{lstlisting}
+entity sum is
+end entity sum;
+
+architecture behav of sum is
+begin
+	process is
+		type real_array is array (natural range <>) of real;
+		constant deviations : real_array := (1.0, 2.0, 3.0);
+		variable sum_of_squares : real;
+
+		procedure calc_sos (dev : in real_array; sos : out real) is
+			variable tmp : real := 0.0;
+		begin
+			for i in dev'range loop
+				tmp := tmp + dev(i)**2;
+			end loop;
+
+			sos := tmp;
+		end procedure calc_sos;
+	begin
+		calc_sos(deviations, sum_of_squares);
+		report "Sum of squares: " & to_string(sum_of_squares);
+		wait;
+	end process;
+end architecture behav;
+\end{lstlisting}
+
+Syntax of function declarations:
+\begin{lstlisting}
+-- Default: pure
+[pure | impure]
+function identifier [(
+	-- Default: constant
+	[constant | signal]
+	-- Default: in
+	identifier {, ...} : [in] typename
+		[:= default_value]
+	{; ...}
+)] return type_name is
+	-- Declarations (local to the function)
+	{...}
+begin
+	-- Sequential statements
+	{...}
+end [function] [identifier];
+\end{lstlisting}
+
+\emph{Pure} functions do not read any variables or signals other than those specified in its parameter list; the impure keyword indicates that a function may have side effects. The statement \lstinline![label_name:] return value;! exits the function immediately returning \lstinline!value!. Functions may not include any \lstinline!wait! statements.
+
+Syntax of function calls:
+\begin{lstlisting}
+function_identifier [(
+	[parameter_identifier =>]
+		expression
+		| signal_identifier
+		| open
+	{, ...}
+)];
+\end{lstlisting}
+
+The predefined function \lstinline!now! returns the current simulation time as a \lstinline!delay_length!.
+
+Example of a function:
+\begin{lstlisting}
+entity check_edge is
+end entity check_edge;
+
+architecture behav of check_edge is
+	function valid_edge(signal x : in std_ulogic) return boolean is
+	begin
+		if (x'last_value = '0' or x'last_value = 'L')
+		   and (x = '1' or x = 'H') then
+			return true;
+		elsif (x'last_value = '1' or x'last_value = 'H')
+		      and (x = '0' or x = 'L') then
+			return true;
+		else
+			return false;
+		end if;
+	end function valid_edge;
+
+	signal x : std_ulogic := 'U';
+begin
+	process is
+	begin
+		x <= '1';
+		wait until x = '1';
+		report "U -> 1: " & to_string(valid_edge(x));
+		x <= '0';
+		wait until x = '0';
+		report "1 -> 0: " & to_string(valid_edge(x));
+		x <= 'L';
+		wait until x = 'L';
+		report "0 -> L: " & to_string(valid_edge(x));
+		x <= 'H';
+		wait until x = 'H';
+		report "L -> H: " & to_string(valid_edge(x));
+		wait;
+	end process;
+end architecture behav;
+\end{lstlisting}
+
+Example of \emph{operator overloading}:
+\begin{lstlisting}
+entity overloading is
+end entity overloading;
+
+architecture behav of overloading is
+	function "and" (left, right : integer) return boolean is
+		variable l, r : boolean;
+	begin
+		l := false when left = 0 else true when left /= 0;
+		r := false when right = 0 else true when right /= 0;
+		return l and r;
+	end function "and";
+
+	function "or" (left, right : integer) return boolean is
+		variable l, r : boolean;
+	begin
+		l := false when left = 0 else true when left /= 0;
+		r := false when right = 0 else true when right /= 0;
+		return l or r;
+	end function "or";
+begin
+	process is
+	begin
+		report "0 and 1 = " & to_string(0 and 1);
+		report "1 and 1 = " & to_string(1 and 1);
+		report "0 or  0 = " & to_string(0 or  0);
+		report "0 or  1 = " & to_string(0 or  1);
+		wait;
+	end process;
+end architecture behav;
+\end{lstlisting}
 %
 %
 %
