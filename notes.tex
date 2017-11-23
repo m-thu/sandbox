@@ -312,7 +312,7 @@ Types of \emph{comments} (can't be nested):
    lines (VHDL-2008 only) */
 \end{lstlisting}
 
-Valid \emph{identifiers} consist of the characters \lstinline!'a'!--\lstinline!'z'!, \lstinline!'A'!--\lstinline!'Z'!, \lstinline!'0'!--\lstinline!'9'!, \lstinline!'_'! and may only start with an alphabetic letter. Identifiers with more than one consecutive underscore or identifiers that end with an underscore are illegal. Furthermore, identifiers aren't case sensitive in VHDL.
+Valid \emph{identifiers} consist of the characters \lstinline!'a'!--\lstinline!'z'!, \lstinline!'A'!--\lstinline!'Z'!, \lstinline!'0'!--\lstinline!'9'!, \lstinline!'_'! and may only start with an alphabetic letter. Identifiers with more than one consecutive underscore or identifiers that end with an underscore are illegal. Furthermore, identifiers are case insensitive in VHDL.
 
 Examples of \emph{numeric literals}:
 \begin{lstlisting}
@@ -346,6 +346,7 @@ Examples of \emph{character and string literals}:
 \emph{Bit string literals} are enclosed in double quotes with a prefix that indicates the size of the string in bits (\textsc{VHDL-2008} only) and the base. Examples:
 \begin{lstlisting}
 b"101010" B"1111_0000" -- Binary (underscores are ignored)
+"11001100"             -- Equivalent to b"11001100"
 o"777" O"777"          -- Octal
 x"aabb" X"FFFF"        -- Hexadecimal
 
@@ -364,7 +365,7 @@ SB"" SO"" SX"" -- Signed     "       "         "
 %
 %
 \subsection{Fundamental Data Types}
-Declaring \emph{constants} (one of several types of objects, namely constants, variables, signals and files): \lstinline!constant identifier {, ...}: type_name [:= initial_value];!  
+Declaring \emph{constants} (one of several types of objects, namely constants, variables, signals and files):\\ \lstinline!constant identifier {, ...}: type_name [:= initial_value];!
 
 Examples:
 \begin{lstlisting}
@@ -372,7 +373,7 @@ constant pi : real    := 3.1415927;
 constant n  : natural := 42;
 \end{lstlisting}
 
-Declaring \emph{variables}: \lstinline!variable identifier {, ...}: type_name [:= initial_value];!
+Declaring \emph{variables}:\\ \lstinline!variable identifier {, ...}: type_name [:= initial_value];!
 
 Examples:
 \begin{lstlisting}
@@ -380,7 +381,7 @@ variable count : integer := 0;
 variable x     : natural;
 \end{lstlisting}
 
-\emph{Assignments} to variables are non-blocking (in contrast to assignments to signals), i.e. the value of the variable gets updated immediately: \lstinline![label_name:] identifier := value;!
+\emph{Assignments} to variables are non-blocking (in contrast to assignments to signals), i.e. the value of the variable gets updated immediately:\\ \lstinline![label_name:] identifier := value;!
 
 Examples:
 \begin{lstlisting}
@@ -388,9 +389,9 @@ x     := 1;
 count := count + 1;
 \end{lstlisting}
 
-New \emph{types} can be declared using \lstinline!type identifier is definition;!.
+New \emph{types} can be declared using\\ \lstinline!type identifier is definition;!.
 
-Declaring new \emph{integer} types: \lstinline!type identifier is range bound1 (to|downto) bound2;!
+Declaring new \emph{integer} types:\\ \lstinline!type identifier is range bound1 (to|downto) bound2;!
 
 Example:
 \begin{lstlisting}
@@ -424,7 +425,7 @@ type voltage is range 0 to 1e9
 \end{lstlisting}
 VHDL includes a predefined physical type \lstinline!time!, that defines the following unit prefixes: \lstinline!fs!, \lstinline!ps!, \lstinline!ns!, \lstinline!us!, \lstinline!ms!, \lstinline!sec!, \lstinline!min! and \lstinline!hr!.
 
-Declaring \emph{enumeration} types: \lstinline!type identifier is ( (identifier|character_literal) {, ...} );!
+Declaring \emph{enumeration} types:\\ \lstinline!type identifier is ( (identifier|character_literal) {, ...} );!
 
 Examples:
 \begin{lstlisting}
@@ -443,7 +444,7 @@ The predefined \lstinline!boolean! enumeration type can take the values \lstinli
 
 Predefined \lstinline!bit! type: \lstinline!type bit is ('0', '1');! (overloads \lstinline!'0'! and \lstinline!'1'! character literals).
 
-Declaring \emph{subtypes}: \lstinline!subtype identifier is type_name range bound1 (to|downto) bound2;!
+Declaring \emph{subtypes}:\\ \lstinline!subtype identifier is type_name range bound1 (to|downto) bound2;!
 
 Examples:
 \begin{lstlisting}
@@ -464,7 +465,7 @@ fsm1_state'(reset) -- Type of reset literal: fsm1_state
 fsm2_state'(reset) -- Type of reset literal: fsm2_state
 \end{lstlisting}
 
-Examples for \emph{type conversions}:
+Examples of \emph{type conversions}:
 \begin{lstlisting}
 real(42)         -- Integer to real
 integer(2.71828) -- Real to integer
@@ -570,11 +571,11 @@ end case [label_name];
 Multiple alternatives in a \lstinline!when! statement can be separated with the ``\lstinline!|!'' character, e.g.
 \begin{lstlisting}
 case x is
-	when 1|2 =>
+	when 1|2    =>
 		y <= 1;
-	when 3   =>
+	when 3      =>
 		y <= 2;
-	when others
+	when others =>
 		y <= 3;
 end case;
 \end{lstlisting}
@@ -835,7 +836,7 @@ end architecture behav;
 
 Predefined unconstrained array types include \lstinline!string! and \lstinline!bit_vector!, VHDL-2008 additionally provides \lstinline!boolean_vector!, \lstinline!integer_vector!, \lstinline!real_vector! and \lstinline!time_vector!.
 
-Parts of an array can be referenced using \emph{array slices}: \lstinline!identifier (bound1 (to|downto) bound2)!.
+Parts of an array can be referenced using \emph{array slices}:\\ \lstinline!identifier (bound1 (to|downto) bound2)!.
 
 Declaring new \emph{record} types:
 \begin{lstlisting}
@@ -1052,7 +1053,7 @@ Similarly, assertions inside the body of an architecture or entity are referred 
 
 A \emph{structural model} of a system can be constructed using \emph{component instantiation statements} inside an architecture body:
 \begin{lstlisting}
-[label_name:]
+label_name:
 entity identifier [(architecture_identifier)]
 	[generic map (
 		[identifier =>] expression
