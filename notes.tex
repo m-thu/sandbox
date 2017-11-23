@@ -302,7 +302,7 @@ $dumpvars(0, testbench)
 \section{VHDL}
 \lstset{language=vhdl,
         morecomment=[s]{/*}{*/},
-	morekeywords={unaffected}
+	morekeywords={unaffected,parameter}
 }
 \subsection{Lexical Elements}
 Types of \emph{comments} (can't be nested):
@@ -885,9 +885,19 @@ v2 = (others => 0.0);
 Syntax of \emph{entity} declarations:
 \begin{lstlisting}
 entity identifier is
-	[port (
-		identifier : {, ...} : (in|out|buffer|inout) type_name
+	[generic (
+		identifier {, ...} : typename
 			[:= default_value]
+		-- Generic type (VHDL-2008 only)
+		| type generic_type_identifier
+		{; ...}
+	);]
+
+	[port (
+		identifier {, ...} : (in|out|buffer|inout) typename
+			[:= default_value]
+		-- Generic type (VHDL-2008 only)
+		| generic_type_identifier ...
 		{; ...}
 	);]
 
@@ -1044,15 +1054,22 @@ A \emph{structural model} of a system can be constructed using \emph{component i
 \begin{lstlisting}
 [label_name:]
 entity identifier [(architecture_identifier)]
+	[generic map (
+		[identifier =>] expression
+		                | open
+		{, ...}
+	)]
+
 	[port map (
-		[identifier => ]signal_identifier
+		[identifier =>] signal_identifier
 		                | expression
 		                | open
 		{, ...}
-	)];
+	)]
+;
 \end{lstlisting}
 
-Using \lstinline!open! leaves the corresponding port unconnected.
+Specifying \lstinline!open! in the port association list leaves the corresponding port unconnected.
 %
 %
 %
@@ -1060,7 +1077,11 @@ Using \lstinline!open! leaves the corresponding port unconnected.
 \subsection{Procedures and Functions}
 Syntax of a \emph{procedure} declaration:
 \begin{lstlisting}
-procedure identifier [(
+procedure identifier
+[generic (
+	-- C.f. entity declaration
+)]
+[[parameter] (
 	-- Formal parameters
 	[constant | variable | signal]
 	-- Out parameters may only be read in VHDL-2008
@@ -1078,10 +1099,10 @@ end [procedure] [identifier];
 
 The statement \lstinline![label_name:] return;! returns immediately from a procedure.
 
-Syntax of procedure calls:
+Syntax of \emph{procedure calls}:
 \begin{lstlisting}
 [label_name:]
-procedure_identifier [(
+procedure_identifier[(
 	[parameter_identifier =>]
 		expression
 		| signal_identifier
@@ -1120,11 +1141,15 @@ begin
 end architecture behav;
 \end{lstlisting}
 
-Syntax of function declarations:
+Syntax of \emph{function} declarations:
 \begin{lstlisting}
 -- Default: pure
 [pure | impure]
-function identifier [(
+function identifier
+[generic (
+	-- C.f. entity declarations
+)]
+[[parameter] (
 	-- Default: constant
 	[constant | signal]
 	-- Default: in
@@ -1142,7 +1167,7 @@ end [function] [identifier];
 
 \emph{Pure} functions do not read any variables or signals other than those specified in its parameter list; the impure keyword indicates that a function may have side effects. The statement \lstinline![label_name:] return value;! exits the function immediately returning \lstinline!value!. Functions may not include any \lstinline!wait! statements.
 
-Syntax of function calls:
+Syntax of \emph{function calls}:
 \begin{lstlisting}
 function_identifier [(
 	[parameter_identifier =>]
@@ -1231,7 +1256,35 @@ end architecture behav;
 %
 %
 %
-%\subsection{Miscellaneous}
+\subsection{Miscellaneous}
+Syntax of \emph{package} declarations:
+\begin{lstlisting}
+package identifier is
+	-- Declarations
+	{...}
+end [package] [identifier];
+\end{lstlisting}
+
+Syntax of \emph{package bodies}:
+\begin{lstlisting}
+package body identifier is
+	-- Declarations
+	{...}
+end [package body] [identifier];
+\end{lstlisting}
+
+Implicit context clause in each design unit:
+\begin{lstlisting}
+library std, work;
+use std.standard.all;
+\end{lstlisting}
+
+Declaring aliases for data objects:\\ \lstinline!alias new_identifier is old_identifier;!
+%
+%
+%
+%
+%
 \section{ED}
 \subsection{Vector Analysis}
 Identities involving vector products ($\vec a, \vec b, \vec c\in\mathbb{R}^3$, the wedge operator $\wedge$ denotes the vector product):
