@@ -1398,7 +1398,7 @@ architecture behav of fsm3 is
 	signal state, next_state : fsm_state;
 begin
 	-- Next state and output logic
-	process
+	process (state, x)
 	begin
 		case state is
 			when S0 =>
@@ -1448,7 +1448,7 @@ end entity;
 
 architecture behav of fsm4 is
 begin
-	process
+	process (clk, rst)
 		type fsm_state is (S0, S1, S2);
 		variable state : fsm_state;
 	begin
