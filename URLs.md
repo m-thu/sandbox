@@ -101,6 +101,8 @@
 * [WaveDrom -- Digital Timing Diagram everywhere](http://wavedrom.com/)
 * [Creating an Autonomous System for Fun and Profit](http://blog.thelifeofkenneth.com/2017/11/creating-autonomous-system-for-fun-and.html)
 * [Computer Science 152: Computer Architecture and Engineering](http://www-inst.eecs.berkeley.edu/~cs152/fa16/)
+* [LatticeMicro32 and Milkymist port for NetBSD](https://github.com/fallen/NetBSD)
+* [Announced submissions to NIST's post-quantum crypto standardization project](https://post-quantum.ch/)
 
 ### EDA
 
