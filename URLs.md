@@ -103,6 +103,7 @@
 * [Computer Science 152: Computer Architecture and Engineering](http://www-inst.eecs.berkeley.edu/~cs152/fa16/)
 * [LatticeMicro32 and Milkymist port for NetBSD](https://github.com/fallen/NetBSD)
 * [Announced submissions to NIST's post-quantum crypto standardization project](https://post-quantum.ch/)
+* [Writing a C Compiler, Part 1](https://norasandler.com/2017/11/29/Write-a-Compiler.html)
 
 ### EDA
 
