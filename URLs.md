@@ -197,6 +197,7 @@
 * [tinywm](http://incise.org/tinywm.html), [dwm - dynamic window manager](https://dwm.suckless.org/)
 * [Linux’s New GPIO User Space Subsystem & Libgpiod](https://www.cnx-software.com/2017/11/03/learn-more-about-linuxs-new-gpio-user-space-subsystem-libgpiod/)
 * [Infecting Running Processes](https://0x00sec.org/t/linux-infecting-running-processes/1097/1)
+* [OpenCL implementation running on the VideoCore IV GPU of the Raspberry Pi models](https://github.com/doe300/VC4CL)
 
 ### Formal Verification
 
