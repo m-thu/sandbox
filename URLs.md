@@ -104,6 +104,7 @@
 * [LatticeMicro32 and Milkymist port for NetBSD](https://github.com/fallen/NetBSD)
 * [Announced submissions to NIST's post-quantum crypto standardization project](https://post-quantum.ch/)
 * [Writing a C Compiler, Part 1](https://norasandler.com/2017/11/29/Write-a-Compiler.html)
+* [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)
 
 ### EDA
 
