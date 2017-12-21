@@ -121,6 +121,7 @@
 * [Icarus Verilog](http://iverilog.icarus.com/)
 * [Yosys Open SYnthesis Suite](http://www.clifford.at/yosys/)
 * [Project IceStorm](http://www.clifford.at/icestorm/)
+* [SymbiFlow](https://symbiflow.github.io/)
 * [GTKWave](http://gtkwave.sourceforge.net/)
 * [Verilator](http://www.veripool.org/wiki/verilator)
 * [Covered - Verilog Code Coverage Analyzer](http://covered.sourceforge.net/)
