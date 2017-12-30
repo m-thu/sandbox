@@ -106,6 +106,8 @@
 * [Writing a C Compiler, Part 1](https://norasandler.com/2017/11/29/Write-a-Compiler.html)
 * [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)
 * <http://www.w140.com/tekwiki/wiki/Main_Page>
+* [Algebra, Topology, Differential Calculus, and Optimization Theory For Computer Science and Engineering](https://www.cis.upenn.edu/~jean/math-basics.pdf)
+* [Fundamentals of Linear Algebra and Optimization](http://www.seas.upenn.edu/~cis515/linalg.pdf)
 
 ### EDA
 
