@@ -101,3 +101,7 @@ cat /sys/devices/amba.0/f8007100.ps7-xadc/temp
 
 * [<stdint.h>](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdint.h.html): `intptr_t, uintptr_t`
 * [<inttypes.h>](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/inttypes.h.html)
+
+### GitHub syntax highlighting
+
+<https://github.com/github/linguist/blob/master/lib/linguist/languages.yml>
