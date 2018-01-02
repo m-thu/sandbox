@@ -138,6 +138,7 @@
 * [ABC: A System for Sequential Synthesis and Verification](https://people.eecs.berkeley.edu/~alanmi/abc/)
 * [CλaSH - From Haskell to Hardware](http://www.clash-lang.org/)
 * [GNU Octave](http://www.gnu.org/software/octave/)
+* [SageMath](https://www.sagemath.org/)
 * [Gnuplot](http://www.gnuplot.info/)
 * [Maxima, a Computer Algebra System](http://maxima.sourceforge.net/)
 * [wxMaxima](http://andrejv.github.io/wxmaxima/)
