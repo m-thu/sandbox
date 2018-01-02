@@ -109,6 +109,8 @@
 * [Algebra, Topology, Differential Calculus, and Optimization Theory For Computer Science and Engineering](https://www.cis.upenn.edu/~jean/math-basics.pdf)
 * [Fundamentals of Linear Algebra and Optimization](http://www.seas.upenn.edu/~cis515/linalg.pdf)
 * [Introduction to RAW-sockets](http://tuprints.ulb.tu-darmstadt.de/6243/1/TR-18.pdf)
+* <https://quantumexperience.ng.bluemix.net/qx/experience>
+* [Quantum Development Kit | Microsoft](https://www.microsoft.com/en-us/quantum/development-kit)
 
 ### EDA
 
