@@ -111,6 +111,7 @@
 * [Introduction to RAW-sockets](http://tuprints.ulb.tu-darmstadt.de/6243/1/TR-18.pdf)
 * <https://quantumexperience.ng.bluemix.net/qx/experience>
 * [Quantum Development Kit | Microsoft](https://www.microsoft.com/en-us/quantum/development-kit)
+* <https://ha.cking.ch/s8_data_line_locator/>
 
 ### EDA
 
