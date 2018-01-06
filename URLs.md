@@ -112,6 +112,7 @@
 * <https://quantumexperience.ng.bluemix.net/qx/experience>
 * [Quantum Development Kit | Microsoft](https://www.microsoft.com/en-us/quantum/development-kit)
 * <https://ha.cking.ch/s8_data_line_locator/>
+* [Cowrie Honeypot](http://www.micheloosterhof.com/cowrie/), <https://github.com/micheloosterhof/cowrie>
 
 ### EDA
 
