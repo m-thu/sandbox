@@ -113,6 +113,8 @@
 * [Quantum Development Kit | Microsoft](https://www.microsoft.com/en-us/quantum/development-kit)
 * <https://ha.cking.ch/s8_data_line_locator/>
 * [Cowrie Honeypot](http://www.micheloosterhof.com/cowrie/), <https://github.com/micheloosterhof/cowrie>
+* <https://github.com/matlab2tikz/matlab2tikz>
+* <https://github.com/nschloe/matplotlib2tikz>
 
 ### EDA
 
