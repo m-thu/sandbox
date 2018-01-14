@@ -115,6 +115,7 @@
 * [Cowrie Honeypot](http://www.micheloosterhof.com/cowrie/), <https://github.com/micheloosterhof/cowrie>
 * <https://github.com/matlab2tikz/matlab2tikz>
 * <https://github.com/nschloe/matplotlib2tikz>
+* [Programmer's Guide to Meltdown](http://funwithbits.net/blog/programmers-guide-to-meltdown/)
 
 ### EDA
 
