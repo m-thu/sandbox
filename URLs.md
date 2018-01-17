@@ -214,6 +214,8 @@
 * [Infecting Running Processes](https://0x00sec.org/t/linux-infecting-running-processes/1097/1)
 * [OpenCL implementation running on the VideoCore IV GPU of the Raspberry Pi models](https://github.com/doe300/VC4CL)
 * [A SCIENCE PROJECT: “MAKE THE 486 GREAT AGAIN!” – MODERN LINUX IN AN ANCIENT PC](http://yeokhengmeng.com/2018/01/make-the-486-great-again/)
+* [The AWK Programming Language](https://ia802309.us.archive.org/25/items/pdfy-MgN0H1joIoDVoIC7/The_AWK_Programming_Language.pdf)
+* [GNU Awk](https://www.gnu.org/software/gawk/manual/gawk.pdf)
 
 ### Formal Verification
 
