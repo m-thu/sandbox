@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# HTML file
+HTML=/home/pi/cowrie-stats.html
+# Remote directory
+REMOTEDIR=html/
+# Additional commands to execute on target
+CMD="chmod o+r html/cowrie-stats.html"
+
+# account
+USER=
+HOST=
+
+scp $HTML ${USER}@${HOST}:$REMOTEDIR
+ssh ${USER}@${HOST} "$CMD"
