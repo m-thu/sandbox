@@ -116,6 +116,9 @@
 * <https://github.com/matlab2tikz/matlab2tikz>
 * <https://github.com/nschloe/matplotlib2tikz>
 * [Programmer's Guide to Meltdown](http://funwithbits.net/blog/programmers-guide-to-meltdown/)
+* [Building an Operating System for the Raspberry Pi](https://jsandler18.github.io)
+* [Hacking Printers Wiki](http://hacking-printers.net/wiki/index.php/Main_Page)
+* [An Introduction to Printer Exploitation #1](https://0x00sec.org/t/an-introduction-to-printer-exploitation-1/3565/1)
 
 ### EDA
 
