@@ -1028,7 +1028,7 @@ end process [label_name];
 
 A process gets activated on any event that occurs on the signals listed in its \emph{sensitivity} list. If there is no sensitivity list, one has to use at least one \lstinline!wait! statement inside the body of the process. The usage of a sensitivity list and \lstinline!wait! statements is mutually exclusive. Specifying \lstinline!all! in the sensitivity list of a process in VHDL-2008 is equivalent to explicitly listing all signals the process treats as inputs.
 
-\emph{Concurrent signal assignments} are signal assignment statements that reside inside an architecture body. Accordingly, conditional signal assignments inside an architecture body are called \emph{concurrent signal assignments}, selected signal assignments \emph{concurrent selected signal assignments}. This enables \emph{functional descriptions} of digital systems.
+\emph{Concurrent signal assignments} are signal assignment statements that reside inside an architecture body. Accordingly, conditional signal assignments inside an architecture body are called \emph{concurrent conditional signal assignments} and selected signal assignments \emph{concurrent selected signal assignments}. This enables \emph{functional descriptions} of digital systems.
 
 Example of a concurrent selected signal assignment:
 \begin{lstlisting}
