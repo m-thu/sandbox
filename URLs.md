@@ -121,6 +121,7 @@
 * [An Introduction to Printer Exploitation #1](https://0x00sec.org/t/an-introduction-to-printer-exploitation-1/3565/1)
 * [RIGOL DS1054Z Oscilloscope Stand with Probe Holder](https://www.thingiverse.com/thing:2127891)
 * [Aneng AN8008 Modify For Better Accuracy Faster Readings](https://www.jackenhack.com/aneng-an8008-modify-for-better-accuracy-faster-readings/)
+* [THE SMD CODEBOOK](http://www.sphere.bc.ca/download/smd-codebook.pdf)
 
 ### EDA
 
