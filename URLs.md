@@ -222,6 +222,7 @@
 * [A SCIENCE PROJECT: “MAKE THE 486 GREAT AGAIN!” – MODERN LINUX IN AN ANCIENT PC](http://yeokhengmeng.com/2018/01/make-the-486-great-again/)
 * [The AWK Programming Language](https://ia802309.us.archive.org/25/items/pdfy-MgN0H1joIoDVoIC7/The_AWK_Programming_Language.pdf)
 * [GNU Awk](https://www.gnu.org/software/gawk/manual/gawk.pdf)
+* [Programming the Linux Framebuffer](https://cmcenroe.me/2018/01/30/fbclock.html)
 
 ### Formal Verification
 
