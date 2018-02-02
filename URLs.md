@@ -122,6 +122,7 @@
 * [RIGOL DS1054Z Oscilloscope Stand with Probe Holder](https://www.thingiverse.com/thing:2127891)
 * [Aneng AN8008 Modify For Better Accuracy Faster Readings](https://www.jackenhack.com/aneng-an8008-modify-for-better-accuracy-faster-readings/)
 * [THE SMD CODEBOOK](http://www.sphere.bc.ca/download/smd-codebook.pdf)
+* {IDA Support: Freeware Version](https://www.hex-rays.com/products/ida/support/download_freeware.shtml)
 
 ### EDA
 
