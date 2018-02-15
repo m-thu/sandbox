@@ -179,6 +179,12 @@ int main(int argc, char *argv[])
 		} else {
 			tcflush(fd, TCIFLUSH);
 			if (debug) {
+				/* PM 2.5 (ug/m^3) */
+				float pm25 = (buf[OFF_DATA2]<<8 | buf[OFF_DATA1])/10.f;
+				/* PM 10  (ug/m^3) */
+				float pm10 = (buf[OFF_DATA4]<<8 | buf[OFF_DATA3])/10.f;
+
+				printf("PM 2.5: %f, PM 10: %f\n", pm25, pm10);
 				fprintf(stderr, "header  : %s\n",
 				        buf[OFF_HDR]==MSG_HDR?"pass":"fail");
 				fprintf(stderr, "cmd     : %s\n",
