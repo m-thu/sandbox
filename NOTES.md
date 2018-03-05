@@ -105,3 +105,10 @@ cat /sys/devices/amba.0/f8007100.ps7-xadc/temp
 ### GitHub syntax highlighting
 
 <https://github.com/github/linguist/blob/master/lib/linguist/languages.yml>
+
+### Apache
+
+* SSI modification time: ```<!--#flastmod virtual="index.shtml" -->```
+* SSI remote IP: ```<!--#echo var="REMOTE_ADDR" -->```
+* SSI execute CGI: ```<!--#exec cgi="count.cgi" -->```
+* htaccess remove CGI handler: ```RemoveHandler .pl```
