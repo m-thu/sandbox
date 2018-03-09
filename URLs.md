@@ -190,6 +190,8 @@
 * <http://asic-world.com/verilog/index.html>
 * [Verilog-AMS Language Reference Manual](http://accellera.org/images/downloads/standards/v-ams/VAMS-LRM-2-4.pdf), <http://accellera.org/downloads/standards/v-ams>
 * [1364-2005 - IEEE Standard for Verilog Hardware Description Language](http://ieeexplore.ieee.org/document/1620780/?arnumber=1620780)
+* [Advanced Synthesis Cookbook](https://www.altera.com/content/dam/altera-www/global/en_US/pdfs/literature/manual/stx_cookbook.pdf)
+* [Recommended HDL Coding Styles](https://people.ece.cornell.edu/land/courses/ece5760/DE1_SOC/HDL_style_qts_qii51007.pdf)
 
 ### VHDL
 
