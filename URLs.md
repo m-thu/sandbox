@@ -164,6 +164,7 @@
 * [SystemC](http://accellera.org/downloads/standards/systemc)
 * [GDL - GNU Data Language](http://gnudatalanguage.sourceforge.net/)
 * [ROOT Data Analysis Framework](https://root.cern/)
+* [Degate](http://www.degate.org/)
 
 ### NFC, RFID, Smartcards
 
