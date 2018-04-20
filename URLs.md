@@ -8,6 +8,7 @@
 - [Linux](#linux)
 - [Formal Verification](#formal-verification)
 - [RF, SDR](#rf-sdr)
+- [Search engines](#search-engines)
 
 ### Unsorted
 
@@ -61,7 +62,7 @@
 * <https://more-magic.org/>
 * [ANALYSING THE BITSTREAM OF ALTERA'S MAX-V CPLDS](https://lse.epita.fr/lse-summer-week-2016/slides/lse-summer-week-2016-07-maxv_cpld.pdf)
 * [From the bitstream to the netlist](http://www.fabienm.eu/flf/wp-content/uploads/2014/11/Note2008.pdf)
-<!--* [Attack Methodologies on Security Chips](http://hardwear.io/wp-content/uploads/2015/10/Attack-Methodologies-on-Security-Chips-Marcus-Janke-Peter-Laackmann.pdf)--> <!-- broken link -->
+* [Attack Methodologies on Security Chips](http://hardwear.io/wp-content/uploads/2015/10/Attack-Methodologies-on-Security-Chips-Marcus-Janke-Peter-Laackmann.pdf)
 * [Decoupling Techniques](http://www.analog.com/media/en/training-seminars/tutorials/MT-101.pdf)
 * [Advances and Challenges in Reconfigurable Computing](http://settrans.net/~rah/misc/Wawrzynek-Reconfig-101214.pdf)
 * [THE SECRET WORLD OF OSCILLOSCOPE PROBES](http://dfad.com.au/links/THE%20SECRET%20WORLD%20OF%20PROBES%20OCt09.pdf)
@@ -124,6 +125,11 @@
 * [THE SMD CODEBOOK](http://www.sphere.bc.ca/download/smd-codebook.pdf)
 * [IDA Support: Freeware Version](https://www.hex-rays.com/products/ida/support/download_freeware.shtml)
 * [Course materials for Modern Binary Exploitation by RPISEC](https://github.com/RPISEC/MBE)
+* [A Simple Introduction to Particle Physics: Part I - Foundations and the Standard Model](https://arxiv.org/abs/0810.3328)
+* [A Simple Introduction to Particle Physics: Part II - Geometric Foundations and Relativity](https://arxiv.org/pdf/0908.1395.pdf)
+* [Quantum circuit viewer: qasm2circ](https://www.media.mit.edu/quanta/qasm2circ/)
+* [qcircuit](https://arxiv.org/pdf/quant-ph/0406003.pdf), <ftp://ftp.dante.de/tex-archive/graphics/qcircuit/qcircuit.pdf>
+* [Best of Baker's Best e-books](http://www.ti.com/analog-circuit/bonnie-baker-ebook.html)
 
 ### EDA
 
@@ -161,7 +167,8 @@
 * [The R Project for Statistical Computing](https://www.r-project.org/)
 * [OpenSCAD: The Programmers Solid 3D CAD Modeller](http://www.openscad.org/)
 * [Elmer FEM](https://www.csc.fi/web/elmer), [Elmer Community Portal](http://www.elmerfem.org/)
-* [SystemC](http://accellera.org/downloads/standards/systemc)
+* [SystemC, SystemC AMS](http://accellera.org/downloads/standards/systemc)
+* [SystemC AMS Proof of Concept](http://www.coseda-tech.com/systemc-ams-proof-of-concept)
 * [GDL - GNU Data Language](http://gnudatalanguage.sourceforge.net/)
 * [ROOT Data Analysis Framework](https://root.cern/)
 * [Degate](http://www.degate.org/)
@@ -260,3 +267,13 @@
 * [RTL-SDR TUTORIAL: RECEIVING WEATHER BALLOON (RADIOSONDE) DATA WITH RTL-SDR](https://www.rtl-sdr.com/receiving-weather-balloon-data-with-rtl-sdr/)
 * <https://github.com/strigeus/sparsnas_decoder>
 * <http://ke5fx.com/>
+
+### Search engines
+
+* [Google Scholar](https://scholar.google.com)
+* [Google Books](https://books.google.com/)
+* [IEEE Xplore Digital Library](http://ieeexplore.ieee.org/Xplore/home.jsp)
+* [arXiv.org e-Print archive](https://arxiv.org/)
+* [Microsoft Academic Search](https://academic.microsoft.com/)
+* [BASE (Bielefeld Academic Search Engine)](https://www.base-search.net/about/en/)
+* [PubMed Central](https://www.ncbi.nlm.nih.gov/pmc/about/intro/)
