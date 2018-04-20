@@ -2608,7 +2608,7 @@ Resistivity ($\vec E$: electric field, $[|\vec E|]=\nicefrac{\mathrm{V}}{\mathrm
 
 Conductivity:
 \[
-	\sigma\equiv\kappa=\frac{1}{\varrho},\quad[\sigma]=\frac{\mathrm{S}}{\mathrm{m}}\equiv\frac{\mathrm{mho}}{\mathrm{m}}\equiv\frac{\mho}{\mathrm{m}}
+	\sigma\equiv\frac{1}{\varrho},\quad[\sigma]=\frac{\mathrm{S}}{\mathrm{m}}\equiv\frac{\mathrm{mho}}{\mathrm{m}}\equiv\frac{\mho}{\mathrm{m}}
 \]
 
 Current density of $n$ electrons per unit volume moving with velocity $\vec v$:
@@ -2670,4 +2670,48 @@ Steady state solution:
 	\curvearrowright\,\vec j(\omega)=-\frac{ne}{m_\mathrm{e}}\cdot\vec p(\omega)=-\frac{ne}{m_\mathrm{e}}\cdot\left(-\frac{e\cdot\vec E(\omega)}{\nicefrac{1}{\tau}-\mathrm{i}\omega}\right)=\frac{ne^2}{m_\mathrm{e}}\cdot\frac{\vec E(\omega)}{\nicefrac{1}{\tau}-\mathrm{i}\omega}\\
 	\curvearrowright\,\vec j(\omega)=\sigma(\omega)\cdot\vec E(\omega),\,\,\,\sigma(\omega)=\frac{\sigma_\mathrm{DC}}{1-\mathrm{i}\omega\tau},\,\,\,\sigma_\mathrm{DC}=\frac{ne^2\tau}{m_\mathrm{e}}
 \end{gather*}
+
+$\lambda\gg\text{ electronic mean free path}$:
+\[
+	\curvearrowright\,\vec j(\vec r,\omega)=\sigma(\omega)\cdot\vec E(\vec r,\omega)
+\]
+
+Maxwell's equations (cgs units):
+\begin{gather*}
+	\vec\nabla\cdot\vec E=0\\
+	\vec\nabla\cdot\vec H=0\\
+	\vec\nabla\wedge\vec E=-\frac{1}{c}\cdot\frac{\partial\vec H}{\partial t}\\
+	\vec\nabla\wedge\vec H=\frac{1}{c}\cdot\left[4\pi\vec j+\frac{\partial\vec E}{\partial t}\right]
+\end{gather*}
+
+\begin{gather*}
+	\vec\nabla\wedge(\vec\nabla\wedge\vec E)=\vec\nabla(\vec\nabla\cdot\vec E)=\vec\nabla(\underbrace{\vec\nabla\cdot\vec E}_{=0})-\vec\nabla^2\vec E=-\frac{1}{c}\cdot\frac{\partial}{\partial t}(\vec\nabla\wedge\vec H)=-\frac{1}{c}\,(-\mathrm{i}\omega)\cdot(\vec\nabla\wedge\vec H)\\
+	=\frac{\mathrm{i}\omega}{c}\cdot(\vec\nabla\wedge\vec H)=\frac{\mathrm{i}\omega}{c^2}\cdot\left[4\pi\sigma(\omega)\cdot\vec E(\omega)-\mathrm{i}\omega\cdot\vec E(\omega)\right]\\
+	\curvearrowright\,-\vec\nabla^2\vec E=\vec E\cdot\left(\frac{\mathrm{i}\omega}{c^2}\cdot 4\pi\sigma(\omega)+\frac{\omega^2}{c^2}\right)=\left(1+\frac{4\pi\mathrm{i}\sigma(\omega)}{\omega}\right)\cdot\frac{\omega^2}{c^2}\cdot\vec E
+\end{gather*}
+
+Complex dielectric constant:
+\[
+	\varepsilon(\omega)\equiv 1+\frac{4\pi\mathrm{i}\sigma(\omega)}{\omega}
+\]
+
+\[
+	\curvearrowright\,-\vec\nabla^2\vec E=\varepsilon(\omega)\cdot\frac{\omega^2}{c^2}\cdot\vec E
+\]
+
+For $\omega\tau\gg 1$:
+\begin{gather*}
+	\varepsilon(\omega)=1+\frac{4\pi\mathrm{i}}{\omega}\cdot\sigma_\mathrm{DC}\cdot\frac{1}{\underbrace{1-\mathrm{i}\omega\tau}_{\approx-\mathrm{i}\omega\tau}}\approx 1-\frac{4\pi}{\omega^2\tau}\cdot\sigma_\mathrm{DC}=1-\frac{1}{\omega^2}\cdot\frac{4\pi ne^2}{m_\mathrm{e}}\\
+	=1-\frac{\omega_\mathrm{p}^2}{\omega^2}
+\end{gather*}
+
+\emph{Plasma frequency}:
+\[
+	\omega_\mathrm{p}^2=\frac{4\pi ne^2}{m_\mathrm{e}}
+\]
+
+\begin{itemize}
+	\item $\omega<\omega_\mathrm{p}$: $\varepsilon<0$: no propagation of e.m. waves
+	\item $\omega>\omega_\mathrm{p}$: $\varepsilon>0$: propagation of e.m waves is possible
+\end{itemize}
 \end{document}
