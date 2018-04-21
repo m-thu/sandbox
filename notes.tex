@@ -2567,7 +2567,7 @@ Symmetrization requirement (``$+$'': bosons, ``$-$'': fermions):
 %
 %
 \section{CM}
-\large{\textbf{Drude model}}
+\textbf{\Large{Drude's model}}
 
 Avogadro's number:
 \[
@@ -2601,7 +2601,7 @@ Assumptions:
 	\item probability of a collision per unit time: $\nicefrac{1}{\tau}$ ($\tau$: \emph{relaxation time})
 \end{itemize}
 
-Resistivity ($\vec E$: electric field, $[|\vec E|]=\nicefrac{\mathrm{V}}{\mathrm{m}}$, $\vec j$: current density, $[|\vec j|]=\nicefrac{\mathrm{A}}{\mathrm{m}^2}$):
+Resistivity ($\vec E$: electric field, $[E]=\nicefrac{\mathrm{V}}{\mathrm{m}}$, $\vec j$: current density, $[j]=\nicefrac{\mathrm{A}}{\mathrm{m}^2}$):
 \[
 	\vec E=\varrho\cdot\vec j,\quad[\varrho]=\Upomega\cdot\mathrm{m}
 \]
@@ -2618,7 +2618,7 @@ Current density of $n$ electrons per unit volume moving with velocity $\vec v$:
 
 Average electron velocity:
 \[
-	\bar{\vec v}=-\frac{1}{m_\mathrm{e}}\cdot e\tau\cdot\vec E\,\curvearrowright\,\vec j=\frac{ne^2\tau}{m_\mathrm{e}}\cdot\vec E
+	\vec v_\mathrm{average}=-\frac{1}{m_\mathrm{e}}\cdot e\tau\cdot\vec E\,\curvearrowright\,\vec j=\frac{ne^2\tau}{m_\mathrm{e}}\cdot\vec E
 \]
 
 Current density at time $t$:
@@ -2648,7 +2648,7 @@ Contribution of electrons without any collision during $t+\mathrm{d}t$ to the av
 	\curvearrowright\,\dot{\vec{p}}(t)=-\frac{1}{\tau}\cdot\vec p(t)+\vec F(t)\quad\text{(e.o.m)}
 \end{gather*}
 
-\textbf{AC electrical conductivity}
+\textbf{\normalsize{AC electrical conductivity}}
 
 \[
 	\vec E(t)=\Re\left\{\vec E(\omega)\cdot\mathrm{e}^{-\mathrm{i}\omega t}\right\}
@@ -2714,4 +2714,119 @@ For $\omega\tau\gg 1$:
 	\item $\omega<\omega_\mathrm{p}$: $\varepsilon<0$: no propagation of e.m. waves
 	\item $\omega>\omega_\mathrm{p}$: $\varepsilon>0$: propagation of e.m waves is possible
 \end{itemize}
+
+\textbf{\normalsize{Thermal conductivity}}
+
+Wiedemann-Franz law ($\kappa$: thermal conductivity, $[\kappa]=\nicefrac{\mathrm{W}}{\mathrm{m}\cdot\mathrm{K}}$; $\sigma$: electrical conductivity, $[\sigma]=\nicefrac{1}{\Upomega\cdot\mathrm{m}}$; $T$: temperature, $[T]=\mathrm{K}$):
+\[
+	\frac{\kappa}{\sigma}\propto T
+\]
+
+Fourier's law ($\vec j^\mathrm{q}$: thermal conductivity, $[j^\mathrm{q}]=\nicefrac{\mathrm{W}}{\mathrm{m}^2}$; $\vec\nabla T$: temperature gradient,\\ $[\nabla T]=\nicefrac{\mathrm{K}}{\mathrm{m}}$):
+\[
+	\vec j^\mathrm{q}=-\kappa\cdot\vec\nabla T
+\]
+
+\textbf{\Large{Sommerfeld's model}}
+
+Maxwell-Boltzmann distribution:
+\[
+	f_\mathrm{MB}(\vec v)=n\cdot\left(\frac{m}{2\pi k_\mathrm{B}T}\right)^{\nicefrac{3}{2}}\cdot\exp\left\{-\frac{1}{2}\cdot\frac{mv^2}{k_\mathrm{B}T}\right\}
+\]
+
+\textbf{\normalsize{Ground state ($T\equiv 0$)}}
+
+Time independent Schroedinger equation for one free and independent electron:
+\[
+	H\,\Psi(\vec r)=E\,\Psi(\vec r)\,\curvearrowright\,-\frac{\hbar^2}{2m_\mathrm{e}}\,\vec\nabla^2\Psi(\vec r)=E\,\Psi(\vec r)
+\]
+
+Born--von Karman/periodic boundary conditions for an electron confined to a cube of volume $V=L^3$:
+\begin{gather*}
+	\Psi(x+L,y,z)=\Psi(x,y,z)\\
+	\Psi(x,y+L,z)=\Psi(x,y,z)\\
+	\Psi(x,y,z+L)=\Psi(x,y,z)
+\end{gather*}
+
+Trial solution ignoring the boundary condition:
+\begin{gather*}
+	\Psi_{\vec k}(\vec r)=\frac{1}{\sqrt{V}}\cdot\mathrm{e}^{\mathrm{i}\vec k\cdot\vec r}\\
+	\curvearrowright\,-\frac{\hbar^2}{2m}\,(\partial_x^2+\partial_y^2+\partial_z^2)\,\mathrm{e}^{\mathrm{i}\vec k\cdot\vec r}=\frac{\hbar^2}{2m}\cdot(k_x^2+k_y^2+k_z^2)\cdot\mathrm{e}^{\mathrm{i}\vec k\cdot\vec r}=\frac{\hbar^2|\vec k|^2}{2m}\cdot\mathrm{e}^{\mathrm{i}\vec k\cdot\vec r}\\
+	\curvearrowright\,E(\vec k)=\frac{\hbar^2\vec k^2}{2m}\\
+	\int_V\mathrm{d}^3x\,\left|\frac{1}{\sqrt{V}}\cdot\mathrm{e}^{\mathrm{i}\vec k\cdot\vec r}\right|^2=\frac{1}{V}\cdot\int_V\mathrm{d}^3x=1
+\end{gather*}
+
+$\Psi_{\vec k}(\vec r)$: eigenstate of the momentum operator:
+\begin{gather*}
+	\hat{\vec{p}}\equiv\frac{\hbar}{\mathrm{i}}\,\vec\nabla\\
+	\curvearrowright\,\hat{\vec{p}}\,\mathrm{e}^{\mathrm{i}\vec k\cdot\vec r}=\frac{\hbar}{\mathrm{i}}\cdot\mathrm{i}\vec k\cdot\mathrm{e}^{\mathrm{i}\vec k\cdot r}=\hbar\vec k\cdot\mathrm{e}^{\mathrm{i}\vec k\cdot\vec r}
+\end{gather*}
+
+Momentum and velocity of an electron in level $\Psi_{\vec k}(\vec r)$:
+\[
+	\vec p=\hbar\vec k\quad\vec v=\frac{\hbar\vec k}{m_\mathrm{e}}
+\]
+
+de Broglie wavelength ($\vec k$: wave vector, $k\equiv|\vec k|$: wave number):
+\[
+	\lambda=\frac{2\pi}{k}
+\]
+
+Applying the boundary conditions:
+\begin{gather*}
+	\mathrm{e}^{\mathrm{i}k_x\cdot L}=\mathrm{e}^{\mathrm{i}k_y\cdot L}=\mathrm{e}^{\mathrm{i}k_z\cdot L}=1\\
+	\curvearrowright\,k_x=\frac{2\pi n_x}{L},k_y=\frac{2\pi n_y}{L},k_z=\frac{2\pi n_z}{L}\quad n_x,n_y,n_z\in\mathbb{Z}
+\end{gather*}
+
+Number of allowed states in $k$-space of Volume $\Omega$ ($V=L^3$):
+\[
+	\frac{\Omega}{\underbrace{2\pi/L^3}_\text{Volume of one state}}=\frac{\Omega\cdot V}{8\pi^3}
+\]
+
+Number of allowed $\vec k$ values within the \emph{Fermi sphere} (radius $k_\mathrm{F}$):
+\[
+	\frac{V}{8\pi^3}\cdot\Omega=\frac{V}{8\pi^3}\cdot\frac{4\pi}{3}\,k_\mathrm{F}^3=\frac{V}{6\pi^2}\cdot k_\mathrm{F}^3
+\]
+
+$N$ electrons with spin $\pm\frac{\hbar}{2}$:
+\[
+	N=2\cdot\frac{V}{6\pi^2}\cdot k_\mathrm{F}^3=\frac{V}{3\pi^2}\cdot k_\mathrm{F}^3
+\]
+
+Ground state of a system with $N$ electrons (density $n=\nicefrac{N}{V}$, $k_\mathrm{F}$: Fermi wave vector):
+\[
+	n=\frac{k_\mathrm{F}^3}{3\pi^2}
+\]
+
+\emph{Fermi momentum} and \emph{Fermi velocity}:
+\[
+	p_\mathrm{F}=\hbar k_\mathrm{F},\,v_\mathrm{F}=\frac{p_\mathrm{F}}{m_\mathrm{e}}
+\]
+
+\emph{Fermi energy}:
+\[
+	E_\mathrm{F}=\frac{\hbar^2 k_\mathrm{F}^2}{2m_\mathrm{e}}
+\]
+
+Ground state energy of $N$ electrons:
+\[
+	E=\underbrace{2}_{\text{Spin }\pm\nicefrac{\hbar}{2}}\cdot\sum_{k<k_\mathrm{F}}\frac{\hbar^2 k^2}{2m_\mathrm{e}}
+\]
+
+\begin{gather*}
+	\sum_{\vec k}F(\vec k)=\left(\frac{V}{8\pi^3}\right)\cdot\sum_{\vec k}F(\vec k)\cdot\left(\frac{8\pi^3}{V}\right)\\
+	\curvearrowright\,\lim_{V\to\infty}\,\frac{1}{V}\cdot\sum_{\vec k}F(\vec k)=\int\frac{\mathrm{d}\vec k}{8\pi^3}\,F(\vec k)\\
+	\curvearrowright\,\underbrace{\frac{E}{V}}_\text{Energy density}=2\cdot\int_{k<k_\mathrm{F}}\frac{\mathrm{d}^3 k}{8\pi^3}\,\frac{\hbar^2 k^2}{2m_\mathrm{e}}=\frac{\hbar^2}{8m_\mathrm{e}\pi^3}\cdot\int_0^\pi\mathrm{d}\vartheta\,\sin(\vartheta)\,\int_0^{2\pi}\mathrm{d}\varphi\,\int_0^{k_\mathrm{F}}\mathrm{d}r r^4\\
+	=\frac{\hbar^2}{8m_\mathrm{e}\pi^3}\cdot 2\cdot 2\pi\cdot\frac{1}{5}k_\mathrm{F}^5=\frac{\hbar^2 k_\mathrm{F}^5}{10\pi^2 m_\mathrm{e}}
+\end{gather*}
+
+Energy per electron:
+\[
+	\frac{E}{N}=\frac{E}{V}\cdot\frac{3\pi^2}{k_\mathrm{F}^3}=\frac{3}{10}\cdot\frac{\hbar^2 k_\mathrm{F}^2}{m_\mathrm{e}}=\frac{3}{5}\cdot E_\mathrm{F}
+\]
+
+\emph{Fermi temperature}:
+\[
+	T_\mathrm{F}\equiv\frac{E_\mathrm{F}}{k_\mathrm{B}}=\frac{\hbar^2 k_\mathrm{F}^2}{2k_\mathrm{B} m_\mathrm{e}}
+\]
 \end{document}
