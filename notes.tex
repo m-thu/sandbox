@@ -2829,4 +2829,43 @@ Energy per electron:
 \[
 	T_\mathrm{F}\equiv\frac{E_\mathrm{F}}{k_\mathrm{B}}=\frac{\hbar^2 k_\mathrm{F}^2}{2k_\mathrm{B} m_\mathrm{e}}
 \]
+
+\textbf{\Large{Crystal lattices}}
+
+\textbf{\normalsize{Bravais lattice}}
+
+Position vectors in a Bravais lattice ($\vec a_i$: \emph{primitive vectors}):
+\[
+	\vec R=n_1\,\vec a_1+n_2\,\vec a_2+n_3\,\vec a_3;\quad n_1,n_2,n_3\in\mathbb{Z}
+\]
+
+\emph{Nearest neighbours}:
+\begin{quote}
+	Points in a Bravais lattice closest to a given point $\equiv$ \emph{coordination number}
+\end{quote}
+
+\emph{sc}/\emph{simple cubic} ($\hat x,\hat y,\hat z$: orthogonal unit vectors):
+\begin{gather*}
+	\vec a_1=a\,\hat x,\,\vec a_2=a\,\hat y,\,\vec a_3=a\,\hat z\\
+	\text{coordination number: }6
+\end{gather*}
+
+\emph{bcc}/\emph{body-centered cubic}:
+\begin{gather*}
+	\vec a_1=a\,\hat x,\,\vec a_2=a\,\hat y,\,\vec a_3=\frac{a}{2}\,(\hat x+\hat y+\hat z)\\
+	\vec a_1=\frac{a}{2}\,(\hat y+\hat z-\hat x),\,\vec a_2=\frac{a}{2}\,(\hat z+\hat x-\hat y),\,\vec a_3=\frac{a}{2}\,(\hat x+\hat y-\hat z)\\
+	\text{coordination number: }8
+\end{gather*}
+
+\emph{fcc}/\emph{face-centered cubic}:
+\begin{gather*}
+	\vec a_1=\frac{a}{2}\,(\hat y+\hat z),\,\vec a_2=\frac{a}{2}\,(\hat z+\hat x),\,\vec a_3=\frac{a}{2}\,(\hat x+\hat y)\\
+	\text{coordination number: }12
+\end{gather*}
+
+\emph{Primitive (unit) cell} of a lattice:
+\begin{quote}
+	Fills all of space without voids or overlap when translated along the primitive vectors $\vec a_i$; contains exactly one point of the lattice.\\
+	$\vec r=x_1\,\vec a_1+x_2\,\vec a_2+x_3\,\vec a_3,\,x_i\in[0,1]$
+\end{quote}
 \end{document}
