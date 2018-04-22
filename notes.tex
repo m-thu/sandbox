@@ -2868,4 +2868,75 @@ Position vectors in a Bravais lattice ($\vec a_i$: \emph{primitive vectors}):
 	Fills all of space without voids or overlap when translated along the primitive vectors $\vec a_i$; contains exactly one point of the lattice.\\
 	$\vec r=x_1\,\vec a_1+x_2\,\vec a_2+x_3\,\vec a_3,\,x_i\in[0,1]$
 \end{quote}
+
+\textbf{\normalsize{Reciprocal lattice}}
+
+Definition of the \emph{reciprocal} lattice ($\vec R$: Bravais lattice, $\vec K$: set of wave vectors):
+\begin{gather*}
+	\mathrm{e}^{\mathrm{i}\vec K\cdot(\vec r+\vec R)}\stackrel{!}{=}\mathrm{e}^{\mathrm{i}\vec K\cdot\vec r}\quad\forall\vec r,\vec R\\
+	\curvearrowright\,\mathrm{e}^{\mathrm{i}\vec K\cdot\vec R}=1\quad\forall\vec R
+\end{gather*}
+
+Primitive vectors spanning the reciprocal lattice ($\vec a_i$: primitive vectors generating the \emph{direct lattice}):
+\begin{gather*}
+	\vec b_1=2\pi\,\frac{\vec a_2\wedge\vec a_3}{\vec a_1\cdot(\vec a_2\wedge\vec a_3)}\\
+	\vec b_2=2\pi\,\frac{\vec a_3\wedge\vec a_1}{\vec a_1\cdot(\vec a_2\wedge\vec a_3)}=2\pi\,\frac{\vec a_3\wedge\vec a_1}{\vec a_2\cdot(\vec a_3\wedge\vec a_1)}\\
+	\vec b_3=2\pi\,\frac{\vec a_1\wedge\vec a_2}{\vec a_1\cdot(\vec a_2\wedge\vec a_3)}=2\pi\,\frac{\vec a_1\wedge\vec a_2}{\vec a_3\cdot(\vec a_1\wedge\vec a_2)}\\
+	\curvearrowright\,\vec b_i\cdot\vec a_j=2\pi\,\delta_{ij}\\
+	\vec k=k_1\,\vec b_1+k_2\,\vec b_2+k_3\,\vec b_3\\
+	\vec R=n_1\,\vec a_1+n_2\,\vec a_2+n_3\,\vec a_3\quad n_i\in\mathbb{Z}\\
+	\curvearrowright\,\vec k\cdot\vec R=2\pi\,(k1\,n_1+k_2\,n_2+k_3\,n_3)\stackrel{!}{=}m\cdot 2\pi\quad m\in\mathbb{Z}\\
+	\curvearrowright\,k_i\in\mathbb{Z}
+\end{gather*}
+
+Simple cubic (sc):
+\begin{gather*}
+	\vec a_1=a\,\hat x,\,\vec a_2=a\,\hat y,\,\vec a_3=a\,\hat z\\
+	\vec b_1=2\pi\,\frac{a^2\,(\hat y\wedge\hat z)}{a^3\,\hat x\cdot(\hat y\wedge\hat z)}=\frac{2\pi}{a}\,\hat x\\
+	\vec b_2=\frac{2\pi}{a}\,(\hat z\wedge\hat x)=\frac{2\pi}{a}\,\hat y\\
+	\vec b_3=\frac{2\pi}{a}\,(\hat x\wedge\hat y)=\frac{2\pi}{a}\,\hat z\\
+	\curvearrowright\,\text{Reciprocal lattice: sc}
+\end{gather*}
+
+Face-centered cubic (fcc):
+\begin{gather*}
+	\vec a_1=\frac{a}{2}\,(\hat y+\hat z),\,\vec a_2=\frac{a}{2}\,(\hat z+\hat x),\,\vec a_3=\frac{a}{2}\,(\hat x+\hat y)\\
+	\vec b_1=2\pi\,\frac{(a/2)^2\,(\hat z+\hat x)\wedge(\hat x+\hat y)}{(a/2)^3\,(\hat y+\hat z)\cdot\left[(\hat z+\hat x)\wedge(\hat x+\hat y)\right]}=\frac{4\pi}{a}\,\frac{\hat y-\hat x+\hat z}{1+1}=\frac{4\pi}{a}\,\frac{1}{2}\,(\hat y+\hat z-\hat x)\\
+	\vec b_2=\frac{4\pi}{a}\,\frac{1}{2}\,\left[(\hat x+\hat y)\wedge(\hat y+\hat z)\right]=\frac{4\pi}{a}\,\frac{1}{2}\,(\hat x+\hat z-\hat y)\\
+	\vec b_3=\frac{4\pi}{a}\,\frac{1}{2}\,\left[(\hat y+\hat z)\wedge(\hat z+\hat x)\right]=\frac{4\pi}{a}\,\frac{1}{2}\,(\hat x+\hat y-\hat z)\\
+	\curvearrowright\,\text{Reciprocal lattice: bcc}
+\end{gather*}
+
+Body-centered cubic (bcc):
+\[
+	\curvearrowright\,\text{Reciprocal lattice: fcc}
+\]
+
+Volume of the reciprocal lattice primitive cell ($v$: volume of the primitive cell of the direct lattice):
+\[
+	\frac{(2\pi)^3}{v}
+\]
+
+\emph{First Brillouin zone}:
+\begin{quote}
+	Wigner-Seitz primitive cell of the reciprocal lattice.
+\end{quote}
+
+\textbf{\normalsize{Lattice planes}}
+
+\emph{Family of lattice planes}:
+\begin{quote}
+	Set of parallel, equally spaces (distance $d$) lattice planes (contain all points of the Bravais lattice).
+\end{quote}
+
+Classification of lattice planes:
+\begin{itemize}
+	\item For any family of lattice planes, there exists a set of reciprocal lattice vectors with\\ length $\nicefrac{2\pi}{d}$.
+	\item For any reciprocal lattice vector $\vec K, |\vec K|=\nicefrac{2\pi}{d}$, there exists a family of lattice planes normal to $\vec K$ seperated by distance $d$.
+\end{itemize}
+
+Plane with \emph{Miller indices} $h,k,l$:
+\begin{quote}
+	Plane normal to the reciprocal lattice vector $\vec k=h\,\vec b_1+k\,\vec b_2+l\,\vec b_3$ ($h,k,l\in\mathbb{Z}$); $|\vec k|\stackrel{!}{=}min$.
+\end{quote}
 \end{document}
