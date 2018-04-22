@@ -267,6 +267,7 @@
 * [RTL-SDR TUTORIAL: RECEIVING WEATHER BALLOON (RADIOSONDE) DATA WITH RTL-SDR](https://www.rtl-sdr.com/receiving-weather-balloon-data-with-rtl-sdr/)
 * <https://github.com/strigeus/sparsnas_decoder>
 * <http://ke5fx.com/>
+* [osmo-fl2k: Using cheap USB 3.0 VGA adapters as SDR transmitter](http://people.osmocom.org/steve-m/fl2k_slides/osmo-fl2k.html#(1)), <https://osmocom.org/projects/osmo-fl2k/wiki/Wiki>
 
 ### Search engines
 
