@@ -130,6 +130,7 @@
 * [Quantum circuit viewer: qasm2circ](https://www.media.mit.edu/quanta/qasm2circ/)
 * [qcircuit](https://arxiv.org/pdf/quant-ph/0406003.pdf), <ftp://ftp.dante.de/tex-archive/graphics/qcircuit/qcircuit.pdf>
 * [Best of Baker's Best e-books](http://www.ti.com/analog-circuit/bonnie-baker-ebook.html)
+* [Scipy Lecture Notes](http://www.scipy-lectures.org)
 
 ### EDA
 
