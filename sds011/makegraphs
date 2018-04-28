@@ -15,7 +15,7 @@ cd $LOGDIR
 
 cat >$OUTDIR/$HTML <<HTML_HEADER
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>SDS011 dust sensor data</title>

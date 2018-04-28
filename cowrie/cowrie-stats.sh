@@ -10,7 +10,7 @@ HTML=/home/pi/cowrie-stats.html
 
 cat >$HTML <<HTML_HEADER
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>Cowrie SSH Honeypot Statistics</title>
