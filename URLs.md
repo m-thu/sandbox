@@ -131,6 +131,7 @@
 * [qcircuit](https://arxiv.org/pdf/quant-ph/0406003.pdf), <ftp://ftp.dante.de/tex-archive/graphics/qcircuit/qcircuit.pdf>
 * [Best of Baker's Best e-books](http://www.ti.com/analog-circuit/bonnie-baker-ebook.html)
 * [Scipy Lecture Notes](http://www.scipy-lectures.org)
+* [A Physics Book List: Recommendations from the Net](http://math.ucr.edu/home/baez/physics/Administrivia/booklist.html)
 
 ### EDA
 
