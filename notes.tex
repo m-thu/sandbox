@@ -2937,6 +2937,45 @@ Classification of lattice planes:
 
 Plane with \emph{Miller indices} $h,k,l$:
 \begin{quote}
-	Plane normal to the reciprocal lattice vector $\vec k=h\,\vec b_1+k\,\vec b_2+l\,\vec b_3$ ($h,k,l\in\mathbb{Z}$); $|\vec k|\stackrel{!}{=}min$.
+	Plane normal to the reciprocal lattice vector $\vec k=h\,\vec b_1+k\,\vec b_2+l\,\vec b_3$ ($h,k,l\in\mathbb{Z}$); $|\vec k|\stackrel{!}{=}\text{min}$.
 \end{quote}
+%
+%
+%
+%
+%
+\section{P}
+
+Lagrangian ($T$: kinetic energy, $V$: potential energy):
+\[
+	L\equiv T-V
+\]
+
+Action:
+\[
+	S[x]=\int_{t_a}^{t_b} L(x,\dot x,t)\,\mathrm{d}t\stackrel{!}{=}\text{min}
+\]
+
+Variation of the action:
+\[
+	\delta S=S[x+\delta x]-S[x]\stackrel{!}{=}0
+\]
+
+Endpoints of the extremum path $x$ shall be fixed:
+\[
+	\delta x(t_a)=\delta x(t_b)=0
+\]
+
+\begin{gather*}
+	\curvearrowright\, S[x+\delta x]=\int_{t_a}^{t_b} L(x+\delta x,\dot x+\delta\dot x,t)\,\mathrm{d}t=\int_{t_a}^{t_b} \left[L(x,\dot x,t)+\frac{\partial L}{\partial x}\,\delta x+\frac{\partial L}{\partial \dot x}\,\delta\dot x\right]\,\mathrm{d}t\\
+	=S[x]+\int_{t_a}^{t_b} \left[\frac{\partial L}{\partial x}\,\delta x+\frac{\partial L}{\partial\dot x}\,\delta\dot x\right]\,\mathrm{d}t\\
+	\curvearrowright\,\delta S=\int_{t_a}^{t_b} \left[\frac{\partial L}{\partial x}\,\delta x+\frac{\partial L}{\partial\dot x}\,\frac{\mathrm{d}}{\mathrm{d}t}\,\delta x\right]\,\mathrm{d}t=\int_{t_a}^{t_b} \frac{\partial L}{\partial x}\,\delta x\,\mathrm{d}t+\underbrace{\left.\frac{\partial L}{\partial\dot x}\,\delta x\right|_{t_a}^{t_b}}_{=0}-\int_{t_a}^{t_b} \frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial L}{\partial\dot x}\right)\,\delta x\,\mathrm{d}t\\
+	=\int_{t_a}^{t_b}\delta x\,\left[\frac{\partial L}{\partial x}-\frac{\mathrm{d}}{\mathrm{d}t}\,\frac{\partial L}{\partial \dot x}\right]\,\mathrm{d}t\stackrel{!}{=}0\\
+	\curvearrowright\,\frac{\mathrm{d}}{\mathrm{d}t}\,\frac{\partial L}{\partial\dot x}-\frac{\partial L}{\partial x}=0
+\end{gather*}
+
+Euler-Lagrange equation(s) for $n$ coordinates:
+\[
+	\frac{\mathrm{d}}{\mathrm{d}t}\,\frac{\partial L}{\partial \dot q_i}-\frac{\partial L}{\partial q_i}=0,\quad i=1,\dots,n
+\]
 \end{document}
