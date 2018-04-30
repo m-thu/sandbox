@@ -2978,4 +2978,58 @@ Euler-Lagrange equation(s) for $n$ coordinates:
 \[
 	\frac{\mathrm{d}}{\mathrm{d}t}\,\frac{\partial L}{\partial \dot q_i}-\frac{\partial L}{\partial q_i}=0,\quad i=1,\dots,n
 \]
+
+Problem 2--1: Free particle with Lagrangian $L=\frac{1}{2}m\dot x^2$. Show:
+\[
+	S=\frac{m}{2}\,\frac{(x_b-x_a)^2}{t_b-t_a}
+\]
+
+Solution:
+\begin{gather*}
+	x(t)=x_a+\frac{x_b-x_a}{t_b-t_a}\cdot (t-t_a)\\
+	\curvearrowright\,\dot x(t)=\frac{x_b-x_a}{t_b-t_a}\\
+	\curvearrowright\,S=\frac{m}{2}\,\int_{t_a}^{t_b}\,\frac{(x_b-x_a)^2}{(t_b-t_a)^2}\,\mathrm{d}t=\frac{m}{2}\,\left.\frac{(x_b-x_a)^2}{(t_b-t_a)^2}\cdot t\right|_{t_a}^{t_b}=\frac{m}{2}\,\frac{(x_b-x_a)^2}{t_b-t_a}
+\end{gather*}
+
+Problem 2--2: Harmonic oscillator with Langrangian $L=\frac{m}{2}(\dot x^2-\omega^2 x^2)$, $T\equiv t_b-t_a$. Show:
+\[
+	S=\frac{m\omega}{2\sin(\omega T)}\,\left[(x_a^2+x_b^2)\,\cos(\omega T)-2x_a x_b\right]
+\]
+
+Solution:
+\begin{gather*}
+	x(t)=A\sin(\omega t)+B\cos(\omega t)\\
+	x(t_a\equiv 0)=B=x_a\\
+	x(t_b-t_a\equiv T)=A\sin(\omega T)+x_a\cos(\omega T)=x_b\\
+	\curvearrowright\,A=\frac{x_b-x_a\cos(\omega T)}{\sin(\omega T)}\\
+	\curvearrowright\,x(t)=\frac{x_b-x_a\cos(\omega T)}{\sin(\omega T)}\,\sin(\omega t)+x_a\cos(\omega t)\\
+	\dot x(t)=A\omega\cos(\omega t)-x_a\omega\sin(\omega t)\\
+	S=\frac{m}{2}\,\int_{t_a}^{t_b} \dot x\dot x\,\mathrm{d}t-\frac{m\omega^2}{2}\,\int_{t_a}^{t_b} x^2\,\mathrm{d}t=\left.\frac{m}{2}\,\dot x x\right|_{t_a}^{t_b}-\frac{m}{2}\,\int_{t_a}^{t_b}\underbrace{\ddot x}_{-\omega^2 x} x\,\mathrm{d}t-\frac{m\omega^2}{2}\,\int_{t_a}^{t_b} x^2\,\mathrm{d}t\\=\left.\frac{m}{2}\,x\dot x\right|_{t_a}^{t_b}\\
+	\curvearrowright\,S=\frac{m}{2}\,\left[x_b\dot x(T)-x_a\dot x(0)\right]=\frac{m}{2}\,\left[x_b A\omega\cos(\omega T)-x_b x_a\omega\sin(\omega T)-x_a A\omega\right]\\
+	=\frac{m\omega}{2\sin(\omega T)}\,\left[x_b\left(x_b-x_a\cos(\omega T)\right)\cos(\omega T)-x_b x_a\sin^2(\omega T)-x_a\left(x_b-x_a\cos(\omega T)\right)\right]\\
+	=\dots=\frac{m\omega}{2\sin(\omega T)}\,\left[(x_a^2+x_b^2)\,\cos(\omega T)-2x_a x_b\right]
+\end{gather*}
+
+Problem 2--3: Particle under constant force $F$ with $L=\frac{1}{2}m\dot x^2+Fx$, $T\equiv t_b-t_a$. Show:
+\[
+	S=\frac{m(x_b-x_a)^2}{2T}+\frac{FT(x_b+x_a)}{2}-\frac{F^2 T^3}{24 m}
+\]
+
+Solution:
+\begin{gather*}
+	x(t)=x_a+\dot x(t_a)\cdot(t-t_a)+\frac{1}{2}\frac{F}{m}\cdot(t-t_a)^2\\
+	x(t_b)=x_b=x_a+\dot x(t_a)T+\frac{F}{2m}T^2\\
+	\curvearrowright\,\dot x(t_a)=\frac{x_b-x_a}{T}-\frac{FT}{2m}\\
+	\curvearrowright\,x(t)=x_a+\left(\frac{x_b-x_a}{T}-\frac{FT}{2m}\right)\cdot(t-t_a)+\frac{F}{2m}\cdot(t-t_a)^2\\
+	\frac{m}{2}\dot x^2=\frac{m}{2}\left(\frac{x_b-x_a}{T}-\frac{FT}{2m}\right)^2+\left(\frac{x_b-x_a}{T}-\frac{FT}{2m}\right)F\cdot(t-t_a)+\frac{F^2}{2m}\cdot(t-t_a)^2\\
+	Fx=Fx_a+\left(\frac{x_b-x_a}{T}-\frac{FT}{2m}\right)F\cdot(t-t_a)+\frac{F^2}{2m}\cdot(t-t_a)^2\\
+	\frac{m}{2}\dot x^2+Fx=\frac{F^2}{m}\cdot(t-t_a)^2+2F\left(\frac{x_b-x_a}{T}-\frac{FT}{2m}\right)\cdot(t-t_a)+Fx_a+\frac{m}{2}\left(\frac{x_b-x_a}{T}-\frac{FT}{2m}\right)^2\\
+	\curvearrowright\,S=\int_{t_a}^{t_b}\,\left(\frac{m}{2}\dot x^2+Fx\right)\,\mathrm{d}t=\frac{F^2 T^3}{3m}+F\left(\frac{x_b-x_a}{T}-\frac{FT}{2m}\right)T^2+Fx_a T+\frac{mT}{2}\left(\frac{x_b-x_a}{T}-\frac{FT}{2m}\right)^2\\
+	=\dots=\frac{m}{2T}(x_b-x_a)^2+\frac{FT}{2}(x_b+x_a)-\frac{F^2 T^3}{24m}
+\end{gather*}
+
+%Problem 2--4: Momentum: $p\equiv\frac{\partial L}{\partial\dot x}$. Show:
+%\[
+	%\left.\frac{\partial L}{\partial\dot x}\right|_{x=x_b}=\frac{\partial S}{\partial x_b};\quad\left.\frac{\partial L}{\partial\dot x}\right|_{x=x_a}=-\frac{\partial S}{\partial x_a}
+%\]
 \end{document}
