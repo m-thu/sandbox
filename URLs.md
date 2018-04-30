@@ -155,6 +155,7 @@
 * [Covered - Verilog Code Coverage Analyzer](http://covered.sourceforge.net/)
 * [Verilog to Routing](https://verilogtorouting.org/)
 * [Electric](http://www.staticfreesoft.com/), <https://www.gnu.org/software/electric/electric.html>
+* [OwlVision GDSII Viewer](http://www.owlvision.org/)
 * [GHDL](http://ghdl.free.fr/)
 * [VHDL synthesis (based on ghdl)](https://github.com/tgingold/ghdlsynth-beta)
 * [NVC VHDL compiler and simulator](https://github.com/nickg/nvc)
