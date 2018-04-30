@@ -3032,4 +3032,22 @@ Solution:
 %\[
 	%\left.\frac{\partial L}{\partial\dot x}\right|_{x=x_b}=\frac{\partial S}{\partial x_b};\quad\left.\frac{\partial L}{\partial\dot x}\right|_{x=x_a}=-\frac{\partial S}{\partial x_a}
 %\]
+
+Infinite transformation ($\varepsilon\to 0$):
+\begin{gather*}
+	q\,\to\,q+\varepsilon\delta\\
+	\curvearrowright\,L(q,\dot q)\,\to\,L(q+\varepsilon\delta q,\dot q+\varepsilon\delta\dot q)=L(q,\dot q)+\varepsilon\delta q\,\frac{\partial L}{\partial q}+\varepsilon\delta\dot q\,\frac{\partial L}{\partial\dot q}\\=L(q,\dot q)+\varepsilon\delta q\,\frac{\mathrm{d}}{\mathrm{d}t}\,\frac{\partial L}{\partial\dot q}+\varepsilon\frac{\partial L}{\partial\dot q}\,\frac{\mathrm{d}}{\mathrm{d}t}\,\delta q
+	=L(q,\dot q)+\frac{\mathrm{d}}{\mathrm{d}t}\,\left(\varepsilon\delta q\,\frac{\partial L}{\partial\dot q}\right)\\
+	\curvearrowright\,\delta L=\frac{\mathrm{d}}{\mathrm{d}t}\,\left(\frac{\partial L}{\partial\dot q}\,\varepsilon\delta q\right)
+\end{gather*}
+
+Noether current:
+\[
+	j\equiv\frac{\partial L}{\partial\dot q}\,\delta q
+\]
+
+Hamiltonian ($p\equiv\frac{\partial L}{\partial\dot q}$: momentum):
+\[
+	H\equiv T+V=p\dot q-L
+\]
 \end{document}
