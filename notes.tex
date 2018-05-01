@@ -29,6 +29,7 @@
 \DeclareMathOperator{\rot}{rot}
 \DeclareMathOperator{\sinc}{sinc}
 \DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\diag}{diag}
 %
 %
 %
@@ -3050,4 +3051,64 @@ Hamiltonian ($p\equiv\frac{\partial L}{\partial\dot q}$: momentum):
 \[
 	H\equiv T+V=p\dot q-L
 \]
+
+Lorentz transformation along the $x$-axis ($\gamma\equiv\frac{1}{\sqrt{1-\beta^2}}$, $\beta\equiv\frac{v}{c}$):
+\begin{enumerate}
+	\item $x'=\gamma(x-vt)$
+	\item $y'=y$
+	\item $z'=z$
+	\item $t'=\gamma(t-\frac{v}{c^2}x)$
+\end{enumerate}
+
+Position four-vector:
+\[
+	x^0\equiv ct,\,x^1=x,\,x^2=y,\,x^3=z
+\]
+
+Lorentz transformation using four-vectors:
+\begin{enumerate}
+	\item $x'^0=\gamma(x^0-\beta x^1)$
+	\item $x'^1=\gamma(x^1-\beta x^0)$
+	\item $x'^2=x^2$
+	\item $x'^3=x^3$
+\end{enumerate}
+
+Matrix form:
+\begin{gather*}
+	\begin{bmatrix}x'^0\\x'^1\\x'^2\\x'^3\end{bmatrix}=\begin{bmatrix}\gamma & -\gamma\beta & 0 & 0\\ -\gamma\beta & \gamma & 0 & 0\\ 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 1\\\end{bmatrix}\cdot\begin{bmatrix}x^0\\x^1\\x^2\\x^3\end{bmatrix}\\
+	\curvearrowright\,x'^\mu=\sum_{\nu=0}^3 \Lambda^\mu_\nu x^\nu\quad\mu:\text{ row},\,\,\nu:\text{ column}
+\end{gather*}
+
+Definition of a four-vector ($\Lambda$: Lorentz transformation):
+\[
+	a'^\mu=\Lambda^\mu_\nu x^\nu
+\]
+
+Contravariant four-vector:
+\[
+	a^\mu=(a^0,a^1,a^2,a^3)^t
+\]
+
+Covariant four-vector:
+\[
+	a_\mu=(-a^0,a^1,a^2,a^3)
+\]
+
+Scalar product of two four-vectors (invariant under Lorentz transformations):
+\[
+	a\cdot b=a_\mu b^\mu=a^\mu b_\mu=-a^0 b^0+a^1 b^1+a^2 b^2+a^3 b^3
+\]
+
+Minkowski metric $(-,+,+,+)$:
+\begin{gather*}
+	g_{\mu\nu}=g^{\mu\nu}=\diag(-1,1,1,1)\\
+	\curvearrowright\,a_\mu=g_{\mu\nu} a^\nu
+\end{gather*}
+
+Distance:
+\begin{itemize}
+	\item $a_\mu a^\mu>0$: spacelike
+	\item $a_\mu a^\mu=0$: lightlike
+	\item $a_\mu a^\mu<0$: timelike
+\end{itemize}
 \end{document}
