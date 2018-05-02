@@ -132,6 +132,10 @@
 * [Best of Baker's Best e-books](http://www.ti.com/analog-circuit/bonnie-baker-ebook.html)
 * [Scipy Lecture Notes](http://www.scipy-lectures.org)
 * [A Physics Book List: Recommendations from the Net](http://math.ucr.edu/home/baez/physics/Administrivia/booklist.html)
+* [Quantum Algorithm Implementations for Beginners](https://arxiv.org/pdf/1804.03719.pdf)
+* [Stability Analysis Of Voltage-Feedback Op Amps](http://www.ti.com/lit/an/sloa020a/sloa020a.pdf)
+* [Op Amps for Everyone Design Guide (Rev. B) - Texas Instruments](http://web.mit.edu/6.101/www/reference/op_amps_everyone.pdf)
+* [Handbook of Operational Amplifier Applications](http://www.ti.com/lit/an/sboa092b/sboa092b.pdf)
 
 ### EDA
 
@@ -141,6 +145,8 @@
 * [KiCad EDA](http://kicad-pcb.org/)
 * [Horizon](https://github.com/carrotIndustries/horizon)
 * [LibrePCB](http://librepcb.org/)
+* [Caneda, Circuits and Networks Electronic Design Automation](http://caneda.org/), <https://github.com/Caneda/Caneda>
+* [KTechLab](https://github.com/ktechlab/ktechlab)
 * [Qucs project: Quite Universal Circuit Simulator](http://qucs.sourceforge.net/)
 * [Gnucap: GNU Circuit Analysis Package](http://www.gnucap.org/dokuwiki/doku.php?id=gnucap:start)
 * [ngspice](http://ngspice.sourceforge.net/)
