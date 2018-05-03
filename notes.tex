@@ -2992,7 +2992,7 @@ Solution:
 	\curvearrowright\,S=\frac{m}{2}\,\int_{t_a}^{t_b}\,\frac{(x_b-x_a)^2}{(t_b-t_a)^2}\,\mathrm{d}t=\frac{m}{2}\,\left.\frac{(x_b-x_a)^2}{(t_b-t_a)^2}\cdot t\right|_{t_a}^{t_b}=\frac{m}{2}\,\frac{(x_b-x_a)^2}{t_b-t_a}
 \end{gather*}
 
-Problem 2--2: Harmonic oscillator with Langrangian $L=\frac{m}{2}(\dot x^2-\omega^2 x^2)$, $T\equiv t_b-t_a$. Show:
+Problem 2--2: Harmonic oscillator with Lagrangian $L=\frac{m}{2}(\dot x^2-\omega^2 x^2)$, $T\equiv t_b-t_a$. Show:
 \[
 	S=\frac{m\omega}{2\sin(\omega T)}\,\left[(x_a^2+x_b^2)\,\cos(\omega T)-2x_a x_b\right]
 \]
@@ -3034,7 +3034,7 @@ Solution:
 	%\left.\frac{\partial L}{\partial\dot x}\right|_{x=x_b}=\frac{\partial S}{\partial x_b};\quad\left.\frac{\partial L}{\partial\dot x}\right|_{x=x_a}=-\frac{\partial S}{\partial x_a}
 %\]
 
-Infinite transformation ($\varepsilon\to 0$):
+Infinitesimal transformation ($\varepsilon\to 0$):
 \begin{gather*}
 	q\,\to\,q+\varepsilon\delta\\
 	\curvearrowright\,L(q,\dot q)\,\to\,L(q+\varepsilon\delta q,\dot q+\varepsilon\delta\dot q)=L(q,\dot q)+\varepsilon\delta q\,\frac{\partial L}{\partial q}+\varepsilon\delta\dot q\,\frac{\partial L}{\partial\dot q}\\=L(q,\dot q)+\varepsilon\delta q\,\frac{\mathrm{d}}{\mathrm{d}t}\,\frac{\partial L}{\partial\dot q}+\varepsilon\frac{\partial L}{\partial\dot q}\,\frac{\mathrm{d}}{\mathrm{d}t}\,\delta q
@@ -3111,4 +3111,97 @@ Distance:
 	\item $a_\mu a^\mu=0$: lightlike
 	\item $a_\mu a^\mu<0$: timelike
 \end{itemize}
+
+Proper time ($\vec u=\frac{\mathrm{d}\vec l}{\mathrm{d}t}$: velocity in an inertial system $\,\equiv\,$ ordinary velocity):
+\[
+	\mathrm{d}\tau=\sqrt{1-\frac{u^2}{c^2}}
+\]
+
+Proper velocity:
+\begin{gather*}
+	\vec\eta=\frac{\mathrm{d}\vec l}{\mathrm{d}\tau}=\frac{1}{\sqrt{1-\frac{u^2}{c^2}}}\,\vec u\\
+	\eta^\mu=\frac{\mathrm{d}x^\mu}{\mathrm{d}\tau};\,\,\,\eta'^\mu=\Lambda^\mu_{\,\nu}\eta^\nu
+\end{gather*}
+
+Relativistic momentum:
+\[
+	\vec p=m\eta=\frac{m\vec u}{\sqrt{1-\frac{u^2}{c^2}}}
+\]
+
+Relativistic energy:
+\[
+	E=\frac{mc^2}{\sqrt{1-\frac{u^2}{c^2}}}\quad\curvearrowright\,p^0=\frac{E}{c};\,p^i=\vec p^i
+\]
+
+Rest and kinetic energy:
+\[
+	E_\mathrm{rest}=mc^2;\quad E_\mathrm{kin}=E^2-mc^2
+\]
+
+Relativistic energy:
+\begin{gather*}
+	p\cdot p=p_\mu p^\mu=-(p^0)^2+\vec p^2=-m^2c^2\\
+	\curvearrowright\,E^2=m^2 c^4+p^2 c^2
+\end{gather*}
+
+Second rank tensor:
+\begin{gather*}
+	t'^{\mu\nu}=\Lambda^\mu_{\,\lambda} \Lambda^\nu_{\,\sigma} t^{\lambda\sigma}\\
+	\Lambda=\begin{bmatrix}\gamma & -\gamma\beta & 0 & 0\\ -\gamma\beta & \gamma & 0 & 0\\ 0 & 0 & 1 & 0\\ 0 & 0 & 0 &1\end{bmatrix}\\
+		t^{\mu\nu}=\begin{bmatrix}t^{00} & t^{01} & t^{02} & t^{03}\\ t^{10} & t^{11} & t^{12} & t^{13}\\ t^{20} & t^{21} & t^{22} & t^{23}\\ t^{30} & t^{31} & t^{32} & t^{33}\end{bmatrix}
+\end{gather*}
+
+(Anti-)symmetric tensor:
+\[
+	t^{\mu\nu}=(-)t^{\nu\mu}
+\]
+
+General antisymmetric tensor:
+\[
+	\begin{bmatrix}0 & t^{01} & t^{02} & t^{03}\\ -t^{01} & 0 & t^{12} & t^{13}\\ -t^{02} & -t^{12} & 0 & t^{23}\\ -t^{03} & -t^{13} & -t^{23} & 0\end{bmatrix}
+\]
+
+Field tensor:
+\[
+	F^{\mu\nu}=\begin{bmatrix}0 & \nicefrac{E_x}{c} & \nicefrac{E_y}{c} & \nicefrac{E_z}{c}\\ -\nicefrac{E_x}{c} & 0 & B_z & -B_y\\ -\nicefrac{E_y}{c} & -B_z & 0  & B_x\\ -\nicefrac{E_z}{c} & B_y & -B_x & 0\end{bmatrix}
+\]
+
+Dual tensor: ($\frac{\vec E}{c}\to\vec B,\,\,\vec B\to-\frac{\vec E}{c}$):
+\[
+	G^{\mu\nu}=\begin{bmatrix}0 & B_x & B_y & B_z\\ -B_x & 0 & -\nicefrac{E_z}{c} & \nicefrac{E_y}{c}\\ -B_y & \nicefrac{E_z}{c} & 0 & -\nicefrac{E_x}{c}\\ -B_z & -\nicefrac{E_y}{c} & \nicefrac{E_x}{c} & 0\end{bmatrix}
+\]
+
+Current density 4-vector:
+\[
+	j^\mu=(c\varrho,\,j_x,\,j_y,\,j_z)^t
+\]
+
+Continuity equation:
+\[
+	\frac{\partial j^\mu}{\partial x^\mu}=0
+\]
+
+Maxwell's equations (summation over $\nu$):
+\[
+	\frac{\partial F^{\mu\nu}}{\partial x^\nu}=\mu_0 j^\mu\quad\frac{\partial G^{\mu\nu}}{\partial x^\nu}=0
+\]
+
+Vector potential of the magnetic field ($\vec\nabla\cdot\vec B=0$):
+\begin{gather*}
+	\vec B=\vec\nabla\wedge\vec A\\
+	\curvearrowright\,\vec\nabla\wedge\vec E=-\frac{\partial}{\partial t}\,\vec B=-\frac{\partial}{\partial t}\,\left(\vec\nabla\wedge\vec A\right)\\
+	\curvearrowright\,\vec\nabla\wedge\left(\vec E+\frac{\partial\vec A}{\partial t}\right)=0\\
+	\curvearrowright\,\exists\phi:\,\vec\nabla\phi=-\left(\vec E+\frac{\partial\vec A}{\partial t}\right)\\
+	\curvearrowright\,\vec E=-\vec\nabla\phi-\frac{\partial\vec A}{\partial t}
+\end{gather*}
+
+\begin{gather*}
+	\vec\nabla\cdot\vec E=\vec\nabla\cdot\left(-\vec\nabla\phi-\frac{\partial\vec A}{\partial t}\right)=-\vec\nabla^2\phi-\frac{\partial}{\partial t}\,\left(\vec\nabla\cdot\vec A\right)=\frac{1}{\varepsilon_0}\varrho\\
+	\curvearrowright\,\vec\nabla^2\phi+\frac{\partial}{\partial t}\,\left(\vec\nabla\cdot\vec a\right)=-\frac{1}{\varepsilon_0}\varrho
+\end{gather*}
+
+\begin{gather*}
+	\vec\nabla\wedge\vec B=\vec\nabla\wedge\left(\vec\nabla\wedge\vec A\right)=\mu_0\vec j+\mu_0\varepsilon_0\frac{\partial\vec E}{\partial t}=\mu_0\vec j-\mu_0\varepsilon_0\vec\nabla\left(\frac{\partial\phi}{\partial t}\right)-\mu_0\varepsilon_0\frac{\partial^2\vec A}{\partial t^2}\\
+	\curvearrowright\,\left(\vec\nabla^2\vec A-\mu_0\varepsilon_0\frac{\partial^2\vec A}{\partial t^2}\right)-\vec\nabla\left(\vec\nabla\cdot\vec A+\mu_0\varepsilon_0\frac{\partial\phi}{\partial t}\right)=-\mu_0\vec j
+\end{gather*}
 \end{document}
