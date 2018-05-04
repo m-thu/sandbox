@@ -2927,7 +2927,7 @@ Volume of the reciprocal lattice primitive cell ($v$: volume of the primitive ce
 
 \emph{Family of lattice planes}:
 \begin{quote}
-	Set of parallel, equally spaces (distance $d$) lattice planes (contain all points of the Bravais lattice).
+	Set of parallel, equally spaced (distance $d$) lattice planes (contain all points of the Bravais lattice).
 \end{quote}
 
 Classification of lattice planes:
@@ -3125,7 +3125,7 @@ Proper velocity:
 
 Relativistic momentum:
 \[
-	\vec p=m\eta=\frac{m\vec u}{\sqrt{1-\frac{u^2}{c^2}}}
+	\vec p=m\vec\eta=\frac{m\vec u}{\sqrt{1-\frac{u^2}{c^2}}}
 \]
 
 Relativistic energy:
@@ -3204,4 +3204,111 @@ Vector potential of the magnetic field ($\vec\nabla\cdot\vec B=0$):
 	\vec\nabla\wedge\vec B=\vec\nabla\wedge\left(\vec\nabla\wedge\vec A\right)=\mu_0\vec j+\mu_0\varepsilon_0\frac{\partial\vec E}{\partial t}=\mu_0\vec j-\mu_0\varepsilon_0\vec\nabla\left(\frac{\partial\phi}{\partial t}\right)-\mu_0\varepsilon_0\frac{\partial^2\vec A}{\partial t^2}\\
 	\curvearrowright\,\left(\vec\nabla^2\vec A-\mu_0\varepsilon_0\frac{\partial^2\vec A}{\partial t^2}\right)-\vec\nabla\left(\vec\nabla\cdot\vec A+\mu_0\varepsilon_0\frac{\partial\phi}{\partial t}\right)=-\mu_0\vec j
 \end{gather*}
+
+\begin{gather*}
+	\vec A'=\vec A+\vec\alpha,\quad\vec\nabla\wedge\vec A=\vec B,\vec\nabla\wedge\vec A'=\vec B\\
+	\curvearrowright\,\vec\nabla\wedge\vec\alpha=0\\
+	\vec\nabla\wedge(\vec\nabla f)\equiv 0\,\forall f\,\curvearrowright\,\vec\alpha=\vec\nabla\lambda
+\end{gather*}
+
+\begin{gather*}
+	\phi'=\phi+\beta,\quad\vec\nabla\phi=-\vec E,\vec\nabla\phi'=-\vec E\\
+	\curvearrowright\,\vec\nabla\beta+\frac{\partial\vec\alpha}{\partial t}=\vec\nabla\left(\beta+\frac{\partial\lambda}{\partial t}\right)=0\,\curvearrowright\,\beta=-\frac{\partial\lambda}{\partial t}
+\end{gather*}
+
+Gauge transformations:
+\begin{gather*}
+	\vec A\to\vec A+\vec\nabla\lambda\\
+	\phi\to\phi-\frac{\partial\lambda}{\partial t}
+\end{gather*}
+
+Coulomb gauge:
+\[
+	\vec\nabla\cdot\vec A=0
+\]
+
+Lorentz gauge:
+\[
+	\vec\nabla\cdot\vec A=-\mu_0\varepsilon_0\frac{\partial\phi}{\partial t}
+\]
+
+Four-vector potential:
+\[
+	A^\mu=\left(\frac{\phi}{c},\,A_x,\,A_y,\,A_z\right)^t
+\]
+
+Field tensor:
+\[
+	F^{\mu\nu}=\frac{\partial A^\nu}{\partial x_\mu}-\frac{\partial A^\mu}{\partial x_\nu}=\partial^\mu A^\nu-\partial^\nu A^\mu
+\]
+
+Four-gradient:
+\begin{gather*}
+	\frac{\partial}{\partial x^\mu}=\left(\frac{1}{c}\frac{\partial}{\partial t},\vec\nabla\right)\equiv\partial_\mu\\
+	\frac{\partial}{\partial x_\mu}=\left(-\frac{1}{c}\frac{\partial}{\partial t},\vec\nabla\right)\equiv\partial^\mu
+\end{gather*}
+
+d'Alembert operator:
+\[
+	\Box\equiv\frac{\partial}{\partial x_\mu}\frac{\partial}{\partial x^\mu}=\partial^\mu \partial_\mu=-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}+\vec\nabla^2
+\]
+
+Definition of Lorentz transformations:
+\begin{gather*}
+	x'^2=\eta_{\mu\nu} x'^\mu x'^\nu=\eta_{\mu\nu} (\Lambda^\mu_{\,\alpha} x^\alpha) (\Lambda^\nu_{\,\beta} x^\beta)
+	\stackrel{!}{=}x^2=\eta_{\alpha\beta} x^\alpha x^\beta\\
+	\curvearrowright\,\eta_{\mu\nu} \Lambda^\mu_{\,\alpha} \Lambda^\nu_{\,\beta}=\eta_{\alpha\beta}
+\end{gather*}
+
+Lagrangian ($\mathcal{L}$: Lagrangian density):
+\[
+	L=\int\mathcal{L}\,\mathrm{d}^n x
+\]
+
+Action:
+\[
+	S=\int L\,\mathrm{d}t=\int\mathcal{L}\,\mathrm{d}t\,\mathrm{d}^n x
+\]
+
+Variation of the action ($\delta\phi(x,t_a)=\delta\phi(x,t_b)=0$, $\delta\phi(x\to\pm\infty)\to 0$):
+\begin{gather*}
+	\delta S=\delta\int_{t_a}^{t_b}\mathrm{d}t\,\int_{-\infty}^\infty\mathrm{d}x\,\mathcal{L}(\phi,\dot\phi,t)\\=\int_{t_a}^{t_b}\mathrm{d}t\,\int_{-\infty}^\infty\mathrm{d}x\,\left[\mathcal{L}(\phi+\delta\phi, \dot\phi+\delta\dot\phi, \partial_x\phi+\partial_x\delta\phi, t) - \mathcal{L}(\phi,\dot\phi,\partial_x\phi, t)\right]\\
+	=\int_{t_a}^{t_b}\mathrm{d}t\,\int_{-\infty}^\infty\mathrm{d}x\,\left[\frac{\partial\mathcal{L}}{\partial\phi}\delta\phi + \frac{\partial\mathcal{L}}{\partial\dot\phi}\delta\dot\phi + \frac{\partial\mathcal{L}}{\partial(\partial_x\phi)}\partial_x\delta\phi\right]\\
+	\int_{t_a}^{t_b}\mathrm{d}t\,\int_{-\infty}^\infty\mathrm{d}x\,\frac{\partial\mathcal{L}}{\partial\dot\phi}\frac{\mathrm{d}}{\mathrm{d}t}\delta\phi = \underbrace{\left.\int_{-\infty}^\infty\mathrm{d}x\, \frac{\partial\mathcal{L}}{\partial\dot\phi}\delta\phi\right|_{t_a}^{t_b}}_{=0} - \int_{-\infty}^\infty\mathrm{d}x\,\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial\mathcal{L}}{\partial\dot\phi}\right)\delta\phi\\
+	\int_{-\infty}^\infty\mathrm{d}x\,\int_{t_a}^{t_b}\mathrm{d}t\,\frac{\partial\mathcal{L}}{\partial(\partial_x\phi)}\frac{\mathrm{d}}{\mathrm{d}x}\delta\phi = \underbrace{\left.\int_{t_a}^{t_b}\mathrm{d}t\, \frac{\partial\mathcal{L}}{\partial(\partial_x\phi)}\delta\phi\right|_{-\infty}^\infty}_{=0} - \int_{-\infty}^\infty\mathrm{d}x\,\int_{t_a}^{t_b}\mathrm{d}t\, \frac{\mathrm{d}}{\mathrm{d}x}\left(\frac{\partial\mathcal{L}}{\partial(\partial_x\phi)}\right)\delta\phi\\
+	\curvearrowright\,\delta S=\int_{t_a}^{t_b}\mathrm{d}t\,\int_{-\infty}^\infty\mathrm{d}x\, \delta\phi\,\left[\frac{\partial\mathcal{L}}{\partial\phi} - \frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial\mathcal{L}}{\partial\dot\phi}\right) - \frac{\mathrm{d}}{\mathrm{d}x}\left(\frac{\partial\mathcal{L}}{\partial(\partial_x\phi)}\right)\right]\stackrel{!}{=}0\quad\text{ for arbitrary }\delta\phi\\
+	\curvearrowright\,\frac{\partial\mathcal{L}}{\partial\phi} - \frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial\mathcal{L}}{\partial\dot\phi}\right) - \frac{\mathrm{d}}{\mathrm{d}x}\left(\frac{\partial\mathcal{L}}{\partial(\partial_x\phi)}\right)=0
+\end{gather*}
+
+Euler-Lagrange equations for $n$ fields:
+\[
+	\partial_\mu\left(\frac{\partial\mathcal{L}}{\partial\left(\partial_\mu\phi_i\right)}\right) - \frac{\partial\mathcal{L}}{\partial\phi_i} = 0\quad i=1,\dots,n
+\]
+
+Noether current:
+\begin{gather*}
+	j^\mu=\frac{\partial\mathcal{L}}{\partial\left(\partial_\mu\phi\right)}\delta\phi\\
+	\phi\to\phi+\varepsilon\delta\phi: \delta\mathcal{L}=0
+	\curvearrowright\,\partial_\mu j^\mu=-\frac{\partial j^0}{\partial t} + \vec\nabla\cdot\vec j = 0\\
+	j^0: \text{charge density}, \vec j: \text{current density}
+\end{gather*}
+
+Hamiltonian density and momentum:
+\begin{gather*}
+	\mathcal{H}=\frac{\partial\mathcal{L}}{\partial\dot\phi_\mu}\dot\phi_\mu - \mathcal{L}\\
+	\Pi^\mu = \frac{\partial\mathcal{L}}{\partial\dot\phi_\mu}
+\end{gather*}
+
+Maxwell's equations for $c=\mu_0=\varepsilon_0=1$:
+\begin{gather*}
+	\vec\nabla\cdot\vec E=\varrho\\
+	\vec\nabla\cdot\vec B=0\\
+	\vec\nabla\wedge\vec E=-\frac{\partial\vec B}{\partial t}\\
+	\vec\nabla\wedge\vec B=\vec j+\frac{\partial E}{\partial t}
+\end{gather*}
+
+Lagrangian density for classical electrodynamics:
+\[
+	\mathcal{L}=-\frac{1}{4} F_{\mu\nu} F^{\mu\nu} - j^\mu A_\mu
+\]
 \end{document}
