@@ -2940,6 +2940,46 @@ Plane with \emph{Miller indices} $h,k,l$:
 \begin{quote}
 	Plane normal to the reciprocal lattice vector $\vec k=h\,\vec b_1+k\,\vec b_2+l\,\vec b_3$ ($h,k,l\in\mathbb{Z}$); $|\vec k|\stackrel{!}{=}\text{min}$.
 \end{quote}
+
+\textbf{\Large{Electrons in a periodic potential}}
+
+Potential with the periodicity of a Bravais lattice $\vec R$:
+\[
+	U(\vec r+\vec R)=U(\vec r)
+\]
+
+Schroedinger equation for single electrons in a periodic potential ($\equiv$ \emph{Bloch electrons}):
+\[
+	H\,\Psi=\left[-\frac{\hbar^2}{2m_\mathrm{e}}\vec\nabla^2+U(\vec r)\right]\,\Psi=E\,\Psi
+\]
+
+\emph{Bloch's theorem} ($n$: \emph{band index}):
+\begin{gather*}
+	\Psi_{n\vec k}(\vec r)=\mathrm{e}^{\mathrm{i}\vec k\cdot\vec r}\cdot u_{n\vec k}(\vec r),\\
+	u_{n\vec k}(\vec r+\vec R)=u_{n\vec k}(\vec r)\\
+	\curvearrowright\,\Psi_{n\vec k}(\vec r+\vec R)=\mathrm{e}^{\mathrm{i}\vec k\cdot\vec R}\cdot\Psi_{n\vec k}(\vec r)
+\end{gather*}
+
+Definition of the translation operator:
+\begin{gather*}
+	T_{\vec R}\,f(\vec r)=f(\vec r+\vec R)\quad\forall f\\
+	\curvearrowright\, T_{\vec R}(H\Psi)=H(\vec r+\vec R)\Psi(\vec r+\vec R)=H\Psi(\vec r+\vec R)=H T_{\vec R}\Psi\quad\forall\Psi\\
+	\curvearrowright\,T_{\vec R}\, H=H\,T_{\vec R}\,\leftrightarrow\,[H,T_{\vec R}]=0\\
+	T_{\vec R}T_{\vec R'}\Psi(\vec r)=T_{\vec R'}T_{\vec R}\Psi(\vec r)=\Psi(\vec r+\vec R+\vec R')\\
+	\curvearrowright\,T_{\vec R}T_{\vec R'}=T_{\vec R'}T_{\vec R}=T_{\vec R+\vec R'}\,\leftrightarrow\,[T_{\vec R},T_{\vec R'}]=0
+\end{gather*}
+
+Translation operator and Hamiltonian commute $\to$ simultaneous eigenfunctions exist:
+\begin{gather*}
+	H\,\Psi=E\,\Psi\\
+	T_{\vec R}\,\Psi=c(\vec R)\,\Psi
+\end{gather*}
+
+\begin{gather*}
+	T_{\vec R'}T_{\vec R}\Psi=c(\vec R)T_{\vec R'}\Psi=c(\vec R)c(\vec R')\Psi\\
+	T_{\vec R'}T_{\vec R}\Psi=T_{\vec R+\vec R'}\Psi=c(\vec R+\vec R')\Psi\\
+	\curvearrowright\,c(\vec R+\vec R')=c(\vec R)\cdot c(\vec R')
+\end{gather*}
 %
 %
 %
