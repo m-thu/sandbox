@@ -143,14 +143,16 @@
 * [Open Circuit Design: Magic, XCircuit, IRSIM, Netgen, Qrouter, Qflow, PCB](http://opencircuitdesign.com/)
 * [Whiteley Research](http://wrcad.com/)
 * [KiCad EDA](http://kicad-pcb.org/)
+* [Fritzing](http://fritzing.org/home/)
 * [Horizon](https://github.com/carrotIndustries/horizon)
 * [LibrePCB](http://librepcb.org/)
 * [Caneda, Circuits and Networks Electronic Design Automation](http://caneda.org/), <https://github.com/Caneda/Caneda>
+* [QElectroTech](https://qelectrotech.org/)
 * [KTechLab](https://github.com/ktechlab/ktechlab)
 * [Qucs project: Quite Universal Circuit Simulator](http://qucs.sourceforge.net/)
 * [Gnucap: GNU Circuit Analysis Package](http://www.gnucap.org/dokuwiki/doku.php?id=gnucap:start)
 * [ngspice](http://ngspice.sourceforge.net/)
-* [Xyce -- Parallel electronic simulation](https://xyce.sandia.gov/)
+* [Xyce - Parallel electronic simulation](https://xyce.sandia.gov/)
 * <https://embedded.eecs.berkeley.edu/pubs/downloads/spice/>
 * [Icarus Verilog](http://iverilog.icarus.com/)
 * [Yosys Open SYnthesis Suite](http://www.clifford.at/yosys/)
