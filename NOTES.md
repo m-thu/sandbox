@@ -112,3 +112,87 @@ cat /sys/devices/amba.0/f8007100.ps7-xadc/temp
 * SSI remote IP: ```<!--#echo var="REMOTE_ADDR" -->```
 * SSI execute CGI: ```<!--#exec cgi="count.cgi" -->```
 * htaccess remove CGI handler: ```RemoveHandler .pl```
+
+### RTL-SDR
+
+Determining frequency offset:
+
+```sh
+git clone https://github.com/asdil12/kalibrate-rtl.git
+cd kalibrate-rtl && ./bootstrap && ./configure && make
+```
+
+`src/kal -s GSM900`:
+
+```
+Found 1 device(s):
+  0:  Generic RTL2832U
+
+Using device 0: Generic RTL2832U
+Found Rafael Micro R820T tuner
+Exact sample rate is: 270833.002142 Hz
+kal: Scanning for GSM-900 base stations.
+GSM-900:
+	chan: 2 (935.4MHz - 5.411kHz)	power: 83509.38
+	chan: 41 (943.2MHz - 5.213kHz)	power: 37202.89
+	chan: 57 (946.4MHz - 5.122kHz)	power: 31001.38
+	chan: 85 (952.0MHz - 5.204kHz)	power: 40837.42
+```
+
+`src/kal -c 2`:
+
+```
+Found 1 device(s):
+  0:  Generic RTL2832U
+
+Using device 0: Generic RTL2832U
+Found Rafael Micro R820T tuner
+Exact sample rate is: 270833.002142 Hz
+kal: Calculating clock frequency offset.
+Using GSM-900 channel 2 (935.4MHz)
+average		[min, max]	(range, stddev)
+- 4.616kHz		[-4646, -4582]	(64, 16.380167)
+overruns: 0
+not found: 0
+average absolute error: 4.935 ppm
+```
+
+#### POCSAG
+
+```sh
+git clone https://github.com/EliasOenal/multimon-ng.git
+cd multimon-ng && mkdir build && cd build
+cmake ..
+make
+
+gqrx & # Frequency: 466.075 MHz, Narrow FM, Bandwidth ~ 15 kHz, Stream Audio to UDP
+
+nc -l -u -p 7355 |
+    sox -t raw -esigned-integer -b 16 -r 48000 - -esigned-integer -b 16 -r 22050 -t raw - |
+    ./multimon-ng -t raw -a POCSAG512 -a POCSAG1200 -a POCSAG2400  -f alpha -
+```
+
+#### ADS-B
+
+```sh
+sudo apt-get install librtlsdr-dev
+git clone https://github.com/antirez/dump1090.git
+cd dump1090 && make
+
+./dump1090 --interactive --net
+
+# Web interface (map):  http://localhost:8080
+```
+
+#### ACARS
+
+Frequencies: <https://www.acarsd.org/ACARS_frequencies.html>
+
+```sh
+git clone https://github.com/TLeconte/acarsdec.git
+cd acarsdec && make -f Makefile.rtl
+
+./acarsdec -r 0 131.525 131.550 131.725 p 5 # 131.{525,550,725} MHz, frequency offset 5 ppm
+```
+
+ACARS message labels: <http://acarsonline.pbworks.com/w/page/1286730/Message%20Labels>
