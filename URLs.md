@@ -157,6 +157,7 @@
 * [Icarus Verilog](http://iverilog.icarus.com/)
 * [Yosys Open SYnthesis Suite](http://www.clifford.at/yosys/)
 * [Project IceStorm](http://www.clifford.at/icestorm/)
+* [iCE Floorplan](https://github.com/whitequark/icefloorplan)
 * [SymbiFlow](https://symbiflow.github.io/)
 * [GTKWave](http://gtkwave.sourceforge.net/)
 * [Verilator](http://www.veripool.org/wiki/verilator)
