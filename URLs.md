@@ -136,6 +136,8 @@
 * [Stability Analysis Of Voltage-Feedback Op Amps](http://www.ti.com/lit/an/sloa020a/sloa020a.pdf)
 * [Op Amps for Everyone Design Guide (Rev. B) - Texas Instruments](http://web.mit.edu/6.101/www/reference/op_amps_everyone.pdf)
 * [Handbook of Operational Amplifier Applications](http://www.ti.com/lit/an/sboa092b/sboa092b.pdf)
+* <https://www.tacc.utexas.edu/documents/13601/162125/fortran_class.pdf>
+* <http://web.physics.ucsb.edu/~terler/quaternions.ps>
 
 ### EDA
 
