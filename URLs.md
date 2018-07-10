@@ -252,6 +252,7 @@
 * [GNU Awk](https://www.gnu.org/software/gawk/manual/gawk.pdf)
 * [Programming the Linux Framebuffer](https://cmcenroe.me/2018/01/30/fbclock.html)
 * [In-Memory-Only ELF Execution (Without tmpfs)](https://magisterquis.github.io/2018/03/31/in-memory-only-elf-execution.html)
+* [Making a low level (Linux) debugger](https://blog.asrpo.com/making_a_low_level_debugger), <https://blog.asrpo.com/making_a_low_level_debugger_part_2>, <https://blog.asrpo.com/making_a_low_level_debugger_part_3>
 
 ### Formal Verification
 
