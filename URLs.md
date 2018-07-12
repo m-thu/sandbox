@@ -138,6 +138,7 @@
 * [Handbook of Operational Amplifier Applications](http://www.ti.com/lit/an/sboa092b/sboa092b.pdf)
 * <https://www.tacc.utexas.edu/documents/13601/162125/fortran_class.pdf>
 * <http://web.physics.ucsb.edu/~terler/quaternions.ps>
+* [Taming math and physics using SymPy](https://minireference.com/static/tutorials/sympy_tutorial.pdf)
 
 ### EDA
 
