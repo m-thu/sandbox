@@ -139,6 +139,7 @@
 * <https://www.tacc.utexas.edu/documents/13601/162125/fortran_class.pdf>
 * <http://web.physics.ucsb.edu/~terler/quaternions.ps>
 * [Taming math and physics using SymPy](https://minireference.com/static/tutorials/sympy_tutorial.pdf)
+* [Street-Fighting Mathematics, The Art of Educated Guessing and Opportunistic Problem Solving](https://mitpress.mit.edu/books/street-fighting-mathematics), <https://www.dropbox.com/s/722rlvrwy9l9w73/7728.pdf?dl=0>
 
 ### EDA
 
