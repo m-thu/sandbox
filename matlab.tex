@@ -1,0 +1,283 @@
+\documentclass[a4paper,fontsize=11pt,parskip]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{acronym}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+\usepackage[european]{circuitikz}
+%
+%\usepackage[osf]{libertine}
+%\usepackage{zi4} % Inconsolata
+%\usepackage[libertine,cmbraces]{newtxmath}
+%
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{nicefrac}
+\usepackage{upgreek}
+%
+\usepackage{pdfpages}
+\usepackage{listings}
+\lstset{numbers=left,
+	frame=none,
+	numberstyle=\tiny,
+	basicstyle=\footnotesize,
+	showstringspaces=false,
+	%keywordstyle=\color{blue},
+	%commentstyle=\em\color{gray},
+	tabsize=3,
+	numbersep=5pt,
+	%morecomment=[s][\color{blue}]{<<<}{>>>},
+	%morekeywords={float3,float4,__device__,__global__,__shared__,__constant__,threadIdx,blockIdx,blockDim,gridDim,\_\_syncthreads}}
+	language=matlab,
+	morekeywords={switch,case,otherwise}
+}
+%
+%
+%
+%
+\usepackage{geometry}
+\geometry{left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm}
+\usepackage{trfsigns}
+\begin{document}
+{\Huge Matlab/Simulink Cheat Sheet}\\
+{\large Matthias Thumann}\\
+{\large https://github.com/m-thu/sandbox/blob/master/matlab.tex}
+
+
+{\Large Graphics}
+
+
+\begin{lstlisting}
+clear      % Clear all variables
+close all  % Close all figures
+figure(n); % Select figure nr. n
+
+plot(y);            % Plots all values in y as a function of the index
+plot(x, y);         % Plots all (x,y) pairs
+axis([x1 x2 y1 y2]; % Specify plotting area
+
+title('text');            % Title
+xlabel('text');           % Label x-axis
+ylabel('text');           % Label y-axis
+grid;                     % Enable grid
+legend('text1', 'text2'); % Legend in the order of the plotted functions
+
+subplot(m, n, p); % m columns, n rows
+
+hold on;  % Keep graphics in current figure
+hold off; % Reset hold functionality
+\end{lstlisting}
+
+
+{\Large Control Flow Constructs}
+
+If ... else:
+\begin{lstlisting}
+if a == 0
+   b = 2;
+elseif a < 0
+   b = -a;
+else
+   b = a;
+end;
+\end{lstlisting}
+
+Switch ... case:
+\begin{lstlisting}
+switch (x)
+   case (1)
+      disp('x = 1')
+   case (2)
+      disp('x = 2')
+   otherwise
+      disp('default')
+end;
+\end{lstlisting}
+
+For-loop:
+\begin{lstlisting}
+for k = 1:100
+   u(k) = k^2;
+   if k == 9
+      break;
+end;
+\end{lstlisting}
+
+While-loop:
+\begin{lstlisting}
+z = 0;
+while z <= 10
+   z = z + 1;
+end;
+\end{lstlisting}
+
+{\Large Analysis of AC Circuits}
+
+Resistance $R$: $\underline Z_R = R$, $u_R = R\cdot i$
+
+Inductance: $L$: $\underline Z_L = \mathrm{j}\omega L=sL$, $u_L = L\cdot\frac{\mathrm{d}\,i_L}{\mathrm{d}\,t}$
+
+Capacity $C$: $\underline Z_C = \frac{1}{\mathrm{j}\omega C}=\frac{1}{sC}$, $i_C = C\cdot\frac{\mathrm{d}\,u_C}{\mathrm{d}\,t}$
+
+Impedance of the circuit: $\underline Z = \dots$, total current: $\underline I = \frac{\underline U}{\underline Z}$, voltages at the components:
+\begin{lstlisting}
+omega = 2*pi * f;
+Z_C   = 1 / (1j * omega * C);
+Z_L   = 1j * omega * L;
+Z     = R + Z_C + Z_L;
+
+i   = U / Z; % U: Amplitude
+U_R = i * R;
+U_C = i * Z_C;
+U_L = i * Z_L;
+\end{lstlisting}
+
+Plotting voltages in the time domain:
+\begin{lstlisting}
+T = 1 / f;
+t = 0:T/200:T;
+
+u_in = U * sin(omega*t);
+u_r  = abs(U_R) * sin(omega*t + angle(U_R));
+u_c  = abs(U_C) * sin(omega*t + angle(U_C));
+u_l  = abs(U_L) * sin(omega*t + angle(U_L));
+
+figure(1);
+plot(t, u_in, t, u_r, t, u_c, t, u_l);
+legend('u_{in}', 'u_r', 'u_c', 'u_l');
+xlabel('t/s'); ylabel('u/V');
+\end{lstlisting}
+
+Phasor diagram of all voltages:
+\begin{lstlisting}
+figure(2);
+compass(U  , 'k'); hold on;
+compass(U_R, 'b'); hold on;
+compass(U_C, 'g'); hold on;
+compass(U_L, 'r'); hold off;
+legend('U_{in}', 'U_R', 'U_C', 'U_L');
+xlabel('Re U_k \rightarrow'); ylabel('Im U_k \rightarrow');
+\end{lstlisting}
+
+Bode plot of a transfer function:
+\begin{lstlisting}
+w = 2*pi*logspace(-1, 5); % Angular frequency (1/s)
+H = ...;                  % Transfer function
+
+figure(3);
+subplot(2, 1, 1);              % Two rows, one column
+semilogx(w, 20*log10(abs(H))); % Magnitude in dB
+subplot(2, 1, 2);
+semilogx(w, angle(H));         % Phase in rad
+\end{lstlisting}
+
+{\Large System Analysis using ODEs/Transfer functions}
+
+Transfer function: $H(s) = \frac{Y(s)}{X(s)}$ with input $X(s)$ and output $Y(s)$
+
+$y(t)\,\laplace\,Y(s)$, $\dot y(t)\,\laplace\,s\cdot Y(s)$, $\ddot y(t)\,\laplace\,s^2\cdot Y(s)$, $\dots$
+
+Calculation of the range of the angular frequnecy for the Bode plot of the transfer function:
+\begin{lstlisting}
+omega_min = ...;
+omega_max = ...;
+w         = logspace(log10(omega_min), log10(omega_max));
+\end{lstlisting}
+
+{\Large State space}
+
+Conversion of an ODE of $n$\textsuperscript{th} order to a system of $n$ ODEs of first order (input $u$, output $y$):\\
+\[a_n\cdot y^{(n)}+a_{n-1}\cdot y^{(n-1)}+\dots+a_2\cdot\ddot y+a_1\cdot\dot y+a_0\cdot y=b_0\cdot u\]
+
+Introduction of state space variables:\\
+\[x_1 = y, x_2 = \dot y, x_3 = \ddot y, \dots, x_{n-1} = y^{(n-2)}, x_n=y^{(n-1)}\]
+\[\Rightarrow \dot x_1 = x_2, \dot x_2 = x_3, \dots, \dot x_{n-1} = x_n\qquad \text{(}n-1\text{ equations)}\]
+
+\[a_n\cdot\dot x_n+a_{n-1}\cdot x_n+a_{n-2}\cdot x_{n-1}+\dots+a_2\cdot x_3+a_1\cdot x_2+a_0\cdot x_1=b_0\cdot u\]
+\[\Rightarrow \dot x_n = \frac{-a_{n-1}}{a_n}\cdot x_n-\frac{a_{n-2}}{a_n}\cdot x_{n-1}-\dots-\frac{a_2}{a_n}\cdot x_3-\frac{a_1}{a_n}\cdot x_2-\frac{a_0}{a_n}\cdot x_1+\frac{b_0}{a_n}\cdot u\qquad \text{(1 equation)}\]
+
+Matrix representation (only for linear ODEs):
+\[\frac{\mathrm{d}}{\mathrm{d}t}\begin{bmatrix}x_1\\\dots\\\dots\\x_n\end{bmatrix}=\underbrace{A}_\text{state matrix}\cdot\vec x+B\cdot\vec u\]
+\[\vec y=\underbrace{C}_\text{output matrix}\cdot\vec x+D\cdot\vec u\]
+
+{\Large Solving ODEs with Matlab}
+
+Function-file \texttt{dgl.m} with the state space representation of the ODE in this form: $\dot{\vec x}=\vec f(\vec x)$:
+\begin{lstlisting}
+function xp = dgl(t, x, dummy, parameter1, parameter2, ...)
+
+xp = zeros(n, 1); % xp: d/dt x, column vector
+                  %  n: order of the ODE
+
+xp(1) = ...;
+xp(2) = ...;
+% ...
+xp(n) = ...;
+\end{lstlisting}
+
+Invocation of the solver:
+\begin{lstlisting}
+t_span = [0 t_max];         % Time interval for simulation
+x0     = [x1_0, x2_0, ...]; % Initial values of the ODE
+
+[t, x] = ode45('dgl', t_span, x0, [], parameter1, parameter2, ...);
+
+% t: Time vector returned by the solver
+% x: column 1: x1, column 2: x2, ...
+
+figure(1); plot(t, x(:, 1)); % x1 plotted against t
+figure(2); plot(t, x(:, 2)); % x2 plotted against t
+\end{lstlisting}
+
+Harmonic oscillator: $\ddot y + \delta\cdot\dot y + \omega_0^2\cdot y=\frac{1}{m}\cdot F_\text{ext}$
+
+Damped free oscillation ($\delta>0$):
+\begin{enumerate}
+	\item $\delta<\omega_0$: Underdamped, $\omega=\sqrt{\omega_0^2-\delta^2}$
+	\item $\delta=\omega_0$: Critically damped
+	\item $\delta>\omega_0$: Overdamped
+\end{enumerate}
+
+Forced oscillation by excitation with an external force $F_\text{ext}(t)=A_0\cdot\sin(\omega_\mathrm{f}\cdot t)$:
+\begin{enumerate}
+	\item $\omega_\mathrm{f}\ll\omega_0$: System is in phase with the external excitation after some time.
+	\item $\omega_\mathrm{f}\approx\omega_0$: Resonance, phase difference of $90^\circ$.
+	\item $\omega_\mathrm{f}\gg\omega_0$: Phase difference of $180^\circ$
+\end{enumerate}
+
+{\Large Solving ODEs with Simulink}
+
+Passing vectors from the Matlab workspace using the \emph{From Workspace} block, data format: Matrix with the time vector as the first column and data vector(s) as additional column(s):
+\begin{lstlisting}
+x = [1:10];         % Parameter as a row vector
+t = 0:length(x)-1;  % Time as a row vector
+
+param = [t.', x.']; % Simulink format for passing parameters
+\end{lstlisting}
+
+Transfer of vectors to the Matlab workspace using the \emph{To Workspace} block, Save Format: Array.
+
+Invocation of a Simulink simulation from Matlab (Name of the Simulink model must not be identical to the name of the invoking Matlab m-file!):
+\begin{lstlisting}
+tout = sim('example_sim', time_vect);
+
+% time_vect: defines temporal resolution and simulation interval
+% tout     : internally used time vector
+\end{lstlisting}
+
+Graphical solution of ODEs using Simulink:
+\begin{enumerate}
+	\item ODE of $n$\textsuperscript{th} order: \[a_n\cdot y^{(n)}+a_{n-1}\cdot y^{(n-1)}+\dots+a_2\cdot\ddot y+a_1\cdot\dot y+a_0\cdot y=b_0\cdot u\]
+	\item Solve for the highest derivative: \[y^{(n)}=\frac{-a_{n-1}}{a_n}\cdot y^{(n-1)}-\frac{a_{n-2}}{a_n}\cdot y^{(n-2)}-\dots-\frac{a_1}{a_n}\cdot\dot y-\frac{a_0}{a_n}\cdot y+\frac{b_0}{a_n}\cdot u\]
+	\item Successive integration, starting with the highest derivate:: \[y^{(n-1)}=\int y^{(n)},\,y^{(n-2)}=\int y^{(n-1)},\,\dots\,\dot y=\int\ddot y,\,y=\int\dot y\]
+\item Simulink block diagram:\\ FIXME
+\end{enumerate}
+
+{\Large Simulations using Simulink}
+
+Avoiding algebraic loops: Insert \emph{Algebraic Constraint} block.
+\end{document}
