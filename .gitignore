@@ -2,7 +2,9 @@
 *.aux
 *.log
 *.toc
+*.out
 notes.pdf
+matlab.pdf
 
 # Verilog
 *.vvp
