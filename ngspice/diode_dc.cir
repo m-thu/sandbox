@@ -1,0 +1,28 @@
+Diode current-voltage curve
+* Ngspice batch mode:
+* ngspice -b diode_dc.cir
+
+* DC Analysis (0-1 V in 1 mV steps)
+.dc	V0	0	1	1m
+.plot	DC	I(Vmeas) V(Vd)
+
+* DC voltage source
+V0	V0	0	DC	1
+
+* Diode with current limiting resistor
+R1	V0	Vd	1k
+D1	Vd	Vmeas	DMOD
+* Dummy voltage source for measuring current through diode
+Vmeas	Vmeas	0	DC	0
+
+* Diode model with default parameters
+.model	DMOD	D
+
+* Save plot to file
+.control
+run
+set hcopydevtype=postscript
+hardcopy diode_dc.ps I(Vmeas) vs V(Vd)
+.endc
+
+.end

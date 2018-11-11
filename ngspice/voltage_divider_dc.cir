@@ -1,0 +1,18 @@
+Voltage divider DC analysis
+* Ngspice batch mode:
+* ngspice -b voltage_divider_dc.cir
+
+* Sweep input voltage from 0 V to 10 V in 1 V steps
+.dc	V0	0	10	1
+* Print output voltage
+.print	DC	V(Vout,0)
+* Plot output voltage
+.plot	DC	V(Vout,0)
+
+* DC voltage source, V0 = 10 V, Node 0: ground
+V0	V0	0	DC	10
+* Resistive voltage divider
+R1	V0	Vout	10k
+R2	Vout	0	10k
+
+.end

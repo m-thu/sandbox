@@ -1,0 +1,30 @@
+NPN BJT current-voltage curves
+* Ngspice batch mode:
+* ngspice -b npn_dc.cir
+
+* Collector-emitter voltage: 0 V -> 5V in 1 mV steps (inner loop)
+* Base current             : 5 uA -> 25 uA in 5 uA steps (outer loop)
+.dc Vce 0 5 1m Ib 5u 25u 5u
+.plot DC I(Vc) V(Vce)
+
+* Current source (base current)
+Ib	0	Vb	DC	0
+* Voltage source (collector-emitter voltage)
+Vce	Vce	0	DC	0
+* Dummy voltage source for measuring collector current
+Vc	Vce	Vc	DC	0
+* NPN BJT transistor
+Q1	Vc	Vb	0	NPNMOD
+
+* Transistor model with default parameters
+.model	NPNMOD	NPN
+
+* Save plot to file
+.control
+run
+set hcopydevtype=postscript
+plot I(Vc) vs V(Vce)
+hardcopy npn_dc.ps I(Vc) vs V(Vce)
+.endc
+
+.end

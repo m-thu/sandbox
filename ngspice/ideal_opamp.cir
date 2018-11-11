@@ -1,0 +1,29 @@
+Ideal opamp used as inverting amplifier
+* Ngspice batch mode:
+* ngspice -b ideal_opamp.cir
+
+* Transfer function
+* H = Vout / Vin = - R2/R1 = -10
+.tf	V(Vout,0)	Vin
+
+* DC voltage source, Vin = 1 V
+Vin	Vin	0	DC	1V
+* Use opamp as inverting amplifier
+R1	Vin	In_m	1k
+R2	In_m	Vout	10k	
+
+* Opamp
+X1	Vout	In_m	0	opamp
+
+**********************************
+* Subcircuit: ideal opamp        *
+* Vout : output                  *
+* In_m : inverting input (-)     *
+* In_p : non-inverting input (+) *
+**********************************
+.subckt	opamp	Vout	In_m	In_p
+* Linear voltage-controlled voltage source
+E1	Vout	0	In_p	In_m	1Meg
+.ends
+
+.end

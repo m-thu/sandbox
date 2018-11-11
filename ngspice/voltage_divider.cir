@@ -1,0 +1,14 @@
+Voltage divider DC operating point
+* Ngspice batch mode:
+* ngspice -b voltage_divider.cir
+
+* DC operating point
+.op
+
+* DC voltage source, V0 = 10 V, Node 0: ground
+V0	1	0	DC	10
+* Resistive voltage divider
+R1	1	2	10k
+R2	2	0	10k
+
+.end

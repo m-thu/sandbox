@@ -1,0 +1,27 @@
+AC analysis of an RC circuit
+* Ngspice batch mode:
+* ngspice -b rc_ac.cir
+
+* AC analysis
+* Plot frequency in decades, 100 points per decade
+* 1 Hz -> 100 kHz
+.ac	DEC	100	1	100k
+*.plot AC V(V0) V(Vout)
+
+* AC voltage source
+* Amplitude for AC analysis: 1 V, phase: 0
+V0 V0 0 DC 0 SIN 0 1 100 AC 1 0
+
+* RC
+R1	V0	Vout	1k
+C1	Vout	0	1u
+
+* Save plot to file
+.control
+run
+set hcopydevice=postscript
+hardcopy rc_ac_mag.ps V(Vout)/V(V0)
+hardcopy rc_ac_phase.ps phase(V(Vout))*180/pi
+.endc
+
+.end

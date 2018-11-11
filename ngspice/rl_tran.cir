@@ -1,0 +1,25 @@
+Transient analysis of an LR circuit
+* Ngspice batch mode:
+* ngspice -b rl_tran.cir
+
+* Transient analysis
+* Max. step size: 100 ns, stop time: 10 ms
+.tran	10ns	10us
+.plot	TRAN	V(V0)	V(Vr)
+
+* Sinusoidal input voltage
+* DC offset: 0 V, amplitude: 1 V, frequency: 1 MHz
+V0 V0 0 DC 0 SIN 0 1 1MEG
+
+* LR
+L1	V0	Vr	500u
+R1	Vr	0	1k
+
+* Save plot to file
+.control
+run
+set hcopydevtype=postscript
+hardcopy rl_tran.ps V0 Vr
+.endc
+
+.end

@@ -1,0 +1,17 @@
+Voltage divider transfer function
+* Ngspice batch mode:
+* ngspice -b voltage_divider_tf.cir
+
+* DC transfer characteristic
+* H = V(2,0) / V0 = 0.5
+* Output impedance: R1//R2 = 5 kOhm
+* Input  impedance: R1+R2 = 20 kOhm
+.tf	V(2,0)	V0
+
+* DC voltage source, V0 = 10 V
+V0	1	0	DC	10
+* Resistive voltage divider
+R1	1	2	10k
+R2	2	0	10k
+
+.end
