@@ -173,6 +173,7 @@
 * [VHDL synthesis (based on ghdl)](https://github.com/tgingold/ghdlsynth-beta)
 * [NVC VHDL compiler and simulator](https://github.com/nickg/nvc)
 * [The FreeHDL Project (VHDL)](http://www.freehdl.seul.org/)
+* [slang - SystemVerilog Language Services](https://github.com/MikePopoloski/slang)
 * [ABC: A System for Sequential Synthesis and Verification](https://people.eecs.berkeley.edu/~alanmi/abc/)
 * [CλaSH - From Haskell to Hardware](http://www.clash-lang.org/)
 * [GNU Octave](http://www.gnu.org/software/octave/)
