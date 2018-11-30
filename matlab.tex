@@ -54,19 +54,22 @@
 \begin{lstlisting}
 clear      % Clear all variables
 close all  % Close all figures
-figure(n); % Select figure nr. n
+format     % Reset output format for numbers to default
+
+figure(n); % Select figure n
 
 plot(y);            % Plots all values in y as a function of the index
 plot(x, y);         % Plots all (x,y) pairs
 axis([x1 x2 y1 y2]; % Specify plotting area
 
-title('text');            % Title
+title('text');            % Plot title
 xlabel('text');           % Label x-axis
 ylabel('text');           % Label y-axis
 grid;                     % Enable grid
 legend('text1', 'text2'); % Legend in the order of the plotted functions
 
-subplot(m, n, p); % m columns, n rows
+subplot(m, n, p); % m rows, n columns, p: number of subplot (numbered left to right,
+                  % top to bottom)
 
 hold on;  % Keep graphics in current figure
 hold off; % Reset hold functionality
@@ -273,8 +276,8 @@ Graphical solution of ODEs using Simulink:
 \begin{enumerate}
 	\item ODE of $n$\textsuperscript{th} order: \[a_n\cdot y^{(n)}+a_{n-1}\cdot y^{(n-1)}+\dots+a_2\cdot\ddot y+a_1\cdot\dot y+a_0\cdot y=b_0\cdot u\]
 	\item Solve for the highest derivative: \[y^{(n)}=\frac{-a_{n-1}}{a_n}\cdot y^{(n-1)}-\frac{a_{n-2}}{a_n}\cdot y^{(n-2)}-\dots-\frac{a_1}{a_n}\cdot\dot y-\frac{a_0}{a_n}\cdot y+\frac{b_0}{a_n}\cdot u\]
-	\item Successive integration, starting with the highest derivate:: \[y^{(n-1)}=\int y^{(n)},\,y^{(n-2)}=\int y^{(n-1)},\,\dots\,\dot y=\int\ddot y,\,y=\int\dot y\]
-\item Simulink block diagram:\\ FIXME
+	\item Successive integration, starting with the highest derivate: \[y^{(n-1)}=\int y^{(n)},\,y^{(n-2)}=\int y^{(n-1)},\,\dots\,\dot y=\int\ddot y,\,y=\int\dot y\]
+\item Simulink block diagram:
 \end{enumerate}
 
 {\Large Simulations using Simulink}
