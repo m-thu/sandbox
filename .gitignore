@@ -5,6 +5,7 @@
 *.out
 notes.pdf
 matlab.pdf
+signals-systems.pdf
 
 # Verilog
 *.vvp

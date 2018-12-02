@@ -1,0 +1,480 @@
+\documentclass[fontsize=9pt,a4paper,twocolumn]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, amsopn}
+\usepackage{xcolor} % include before tikz!
+\usepackage{tikz}
+\usepackage[european]{circuitikz}
+\usepackage{nicefrac}
+\usepackage{trfsigns} % for \laplace,\Laplace
+\usepackage{framed}
+\usepackage{geometry}
+\geometry{left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0em}
+%
+%
+%
+%
+\DeclareMathOperator{\grad}{grad}
+\renewcommand\div{}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\sinc}{sinc}
+%
+%
+%
+\begin{document}
+\clearpage
+\pagestyle{empty}
+\huge{Signals \& Systems Cheat Sheet}\footnote{\small{\texttt{https://github.com/m-thu/sandbox/blob/master/signals-systems.tex}}}\\
+\large{Matthias Thumann}
+\vspace*{0.5cm}
+
+\large{\textbf{Introduction}}
+
+\textit{C-T/D-T Signal Models, System Properties}
+
+Unit step function:
+\begin{quote}
+	$\boxed{u(t)=\begin{cases}1,& t\geq 0\\ 0,& t<0\end{cases}}$
+\end{quote}
+
+Unit ramp function:
+\begin{quote}
+	$\boxed{r(t)=\begin{cases}t,& t\geq 0\\ 0,& t<0\end{cases}}$
+\end{quote}
+
+Relationship between $u(t)$ and $r(t)$:
+\begin{quote}
+	$r(t) = \int_{-\infty}^t u(\lambda)\,\mathrm{d}\lambda$\\
+	$u(t) = \frac{\mathrm{d}}{\mathrm{d}t}r(t)$
+\end{quote}
+
+Dirac Delta function:
+\begin{quote}
+	$\int_{-\varepsilon}^\varepsilon \delta(t)\,\mathrm{d}t = 1\quad\forall\varepsilon>0$
+\end{quote}
+
+Sifting property of the delta function:
+\begin{quote}
+	$\boxed{\int_{t_0-\varepsilon}^{t_0+\varepsilon} f(t)\cdot\delta(t-t_0)\,\mathrm{d}t = f(t_0)\quad\forall\varepsilon>0}$
+\end{quote}
+
+Relationship between $\delta(t)$ and $u(t)$:
+\begin{quote}
+	$\int_{-\infty}^t \delta(\lambda)\,\mathrm{d}\lambda = u(t),\quad t\neq 0$\\
+	$\delta(t) = \frac{\mathrm{d}}{\mathrm{d}t} u(t)$
+\end{quote}
+
+Rectangular pulse function (width $\tau$):
+\begin{quote}
+	$\boxed{p_\tau(t) = \begin{cases}1,& -\nicefrac{\tau}{2}\leq t\leq\nicefrac{\tau}{2}\\ 0,& \text{otherwise}\end{cases}}$\\
+	$p_\tau(t) = u(t+\nicefrac{\tau}{2}) - u(t-\nicefrac{\tau}{2})$
+\end{quote}
+
+Discrete-time (D-T) signal:
+\begin{quote}
+	Sequence of numbers indexed by integers\\
+	$x[n]\quad n=\dots,-3,-2,-1,0,1,2,3,\dots$
+\end{quote}
+
+Sampling a continuous-time signal:
+\begin{quote}
+	$y[n] = \left. y(t)\right|_{t=n\cdot T} = y(n\cdot T)$\\
+	$T$: sampling interval\\
+	$F_\mathrm{s}\equiv\nicefrac{1}{T}$: sampling rate
+\end{quote}
+
+Discrete-time sinusoid:
+\begin{quote}
+	$x(t)=A\cdot\cos(2\pi f_0\cdot t)$\\
+	$\Rightarrow x[n]=x(t=n\cdot T) = A\cdot\cos(2\pi f_0\cdot nT)$\\
+	$\boxed{x[n]=A\cdot\cos(\Omega_0\cdot n),\,\Omega_0=2\pi\cdot\frac{f_0}{F_\mathrm{s}},\,[\Omega_0]=\nicefrac{\mathrm{rad}}{\mathrm{sample}}}$
+\end{quote}
+
+General D-T sinusoid:
+\begin{quote}
+	$x[n]=A\cdot\cos(\Omega_0\cdot n+\theta),\,\Omega_0\equiv\Omega_0\pm 2\pi,\pm 4\pi,\dots$
+\end{quote}
+
+Discrete-time impulse or D-T delta:
+\begin{quote}
+	$\boxed{\delta[n]=\begin{cases}1,& n=0\\0,& n\neq 0\end{cases}}$
+\end{quote}
+
+Sifting property of the D-T delta function:
+\begin{quote}
+	$\boxed{\sum_{n=-\infty}^\infty \delta[n] = 1,\,\sum_{n=-\infty}^\infty x[n]\cdot\delta[n-n_0]=x[n_0]}$
+\end{quote}
+\newpage
+D-T rectangular pulse ($2q+1$ samples):
+\begin{quote}
+	$\boxed{p_q[n]=\begin{cases}1,& n=-q,\dots,-1,0,1,\dots,q\\ 0,& \text{otherwise}\end{cases}}$
+\end{quote}
+
+Causality:
+\begin{quote}
+	A causal system's output at a time $t_1$ does not depend on values of the input $x(t)$ for $t>t_1$.
+\end{quote}
+
+Linearity ($\to$ Superposition):
+\begin{quote}
+	$x_1(t)\to y_1(t)\qquad x_2(t)\to y_2(t)$\\
+	$\Rightarrow x(t)=a_1\cdot x_1(t)+a_2\cdot x_2(t)\to y(t)=a_1\cdot y_1(t)+a_2\cdot y_2(t)$
+\end{quote}
+
+Time invariance:
+\begin{quote}
+	$x(t)\to y(t)\Rightarrow x(t-t_0)\to y(t-t_0)$
+\end{quote}
+
+LTI: Linear Time-Invariant systems
+
+
+\large{\textbf{Diff. Equations}}
+
+\textit{C-T System Model: Differential Equations,\\ D-T Signal Model: Difference Equations}
+
+Linear constant-coefficient differential equations of order $N$:
+\begin{quote}
+	$y^{(N)}(t)+\sum_{i=0}^{N-1} a_i\cdot y^{(i)}(t) = \sum_{i=0}^M b_i\cdot x^{(i)}(t)$\\
+	Solution: ``zero-input response'' (due to I.C.s) + ``zero-state response'' (due to input): $y(t) = y_\mathrm{ZI}(t)+y_\mathrm{ZS}(t)$
+\end{quote}
+
+%$y_\mathrm{ZI}(t)$:
+%\begin{quote}
+%	Char. polynomial: $\lambda^N+a_{N-1}\cdot\lambda^{N-1}+\dots+a_1\cdot\lambda+a_0$\\
+%	$N$ roots: $\lambda_1,\lambda_2,\lambda_3,\dots,\lambda_N$\\
+%	$N$ ``modes'' (assuming distinct roots): $y_\mathrm{ZI}=C_1\cdot\mathrm{e}^{\lambda_1 t}+C_2\cdot\mathrm{e}^{\lambda_2 t}+\dots+C_N\cdot\mathrm{e}^{\lambda_N t}$
+%\end{quote}
+
+Linear constant coefficient difference equation of order $N$:
+\begin{quote}
+	$y[n]+a_1\cdot y[n-1]+\dots+a_N\cdot y[n-N] =$\\ $b_0\cdot x[n]+b_1\cdot x[n-1]+\dots+b_M\cdot x[n-M]$
+\end{quote}
+
+Solution of a difference equation by recursion:
+\begin{quote}
+	$y[n]=-a_1\cdot y[n-1]-\dots-a_N\cdot y[n-N]+b_0\cdot x[n]+b_1\cdot x[n-1]+\dots+b_M\cdot x[n-M]$
+\end{quote}
+
+\large{\textbf{Convolution}}
+
+\textit{C-T System Model: Convolution Integral,\\D-T System Model: Convolution Sum}
+
+D-T convolution:
+\begin{quote}
+	$\boxed{y[n]=x[n]*h[n]=\sum_{i=-\infty}^\infty x[i]\cdot h[n-i]}$
+	\vspace*{0.25cm}\\
+	$h[n]$: impulse response of an LTI D-T system\\
+	$y[n]$: zero state solution\\
+	$x[n]$: input
+\end{quote}
+
+Properties of convolution (both D-T and C-T):
+\begin{quote}
+	Commutativity:\\\hspace*{0.5cm} $x[n]*h[n]=h[n]*x[n]$\\
+	Associativity:\\\hspace*{0.5cm} $x[n]*\left(v[n]*w[n]\right)=\left(x[n]*v[n]\right)*w[n]$\\
+	Distributivity:\\\hspace*{0.5cm} $x[n]*\left(h_1[n]+h_2[n]\right)=x[n]*h_1[n]+x[n]*h_2[n]$
+\end{quote}
+
+C-T convolution:
+\begin{quote}
+	$\boxed{y(t)=x(t)*h(t)=h(t)*x(t)=\int_{-\infty}^\infty x(\tau)\cdot h(t-\tau)\,\mathrm{d}\tau}$
+\end{quote}
+
+C-T conv. derivative property: $y(t)=x(t)*h(t)$
+\begin{quote}
+	$\frac{\mathrm{d}}{\mathrm{d}t}\,y(t)=\left(\frac{\mathrm{d}}{\mathrm{d}t}\,x(t)\right)*h(t)=x(t)*\left(\frac{\mathrm{d}}{\mathrm{d}t}\,h(t)\right)$
+\end{quote}
+
+C-T conv. integration property: $y(t)=x(t)*h(t)$
+\begin{quote}
+	$\int_{-\infty}^t y(\lambda)\,\mathrm{d}\lambda=\left[\int_{-\infty}^t x(\lambda)\,\mathrm{d}\lambda\right]*h(t)=$\\$=x(t)*\left[\int_{-\infty}^t h(\lambda)\,\mathrm{d}\lambda\right]$
+\end{quote}
+
+\newpage
+\large{\textbf{CT Fourier Signal Models}}
+
+\textit{Fourier Series, Fourier-Transform (CTFT)}
+
+Fourier series (Complex exp. form):
+\begin{quote}
+	$\boxed{x(t)=\sum_{k=-\infty}^\infty c_k\cdot\mathrm{e}^{\mathrm{j}\,k\omega_0\cdot t}}$
+\end{quote}
+
+Fourier series (Trig. form):
+\begin{quote}
+	$\boxed{x(t)=A_0+\sum_{k=1}^\infty A_k\cdot\cos(k\omega_0\cdot t+\theta_k)}$
+\end{quote}
+
+Complex Fourier series coefficients:
+\begin{quote}
+	$\boxed{c_k=\frac{1}{T}\cdot\int_{t_0}^{t_0+T} x(t)\cdot\mathrm{e}^{-\mathrm{j}\,k\omega_0\cdot t}\,\mathrm{d}t}$
+\end{quote}
+
+Trigonometric FS with complex coefficients:
+\begin{quote}
+	$x(t)=c_0+\sum_{k=1}^\infty 2\cdot|c_k|\cdot\cos(k\omega_0\cdot t+\angle c_k)$
+\end{quote}
+
+Fourier transform:
+\begin{quote}
+	$\boxed{X(\omega)=\int_{-\infty}^\infty x(t)\cdot\mathrm{e}^{-\mathrm{j}\,\omega t}\,\mathrm{d}t}$
+\end{quote}
+
+Inverse Fourier transform:
+\begin{quote}
+	$\boxed{x(t)=\frac{1}{2\pi}\int_{-\infty}^\infty X(\omega)\cdot\mathrm{e}^{\mathrm{j}\,\omega t}\,\mathrm{d}\omega}$
+\end{quote}
+
+Definition of the $\sinc$-function:
+\begin{quote}
+	$\boxed{\sinc(x)=\frac{\sin(\pi\cdot x)}{\pi\cdot x}}$
+\end{quote}
+
+\textit{Timelimited} signal:
+\begin{quote}
+	$x(t)= 0\quad\forall t\not\in[T_1,T_2]$
+\end{quote}
+
+\textit{Bandlimited} signal:
+\begin{quote}
+	$|X(\omega)|=0\quad\forall|\omega|>2\pi\cdot B$
+\end{quote}
+
+Linearity of the FT:
+\begin{quote}
+	$a\cdot x(t)+b\cdot y(t)\,\laplace\,a\cdot X(\omega)+b\cdot Y(\omega)$
+\end{quote}
+
+Time shift:
+\begin{quote}
+	$x(t-c)\,\laplace\,X(\omega)\cdot\mathrm{e}^{-\mathrm{j}\omega c}$
+\end{quote}
+
+Complex exponential modulation property:
+\begin{quote}
+	$x(t)\cdot\mathrm{e}^{\mathrm{j}\omega_0\cdot t}\,\laplace\,X(\omega-\omega_0)$
+\end{quote}
+
+Real sinusoid modulation:
+\begin{quote}
+	$x(t)\cdot\cos(\omega_0\cdot t)\,\laplace\,\frac{1}{2}\cdot\left[X(\omega+\omega_0)+X(\omega-\omega_0)\right]$\\
+	$x(t)\cdot\sin(\omega_0\cdot t)\,\laplace\,\frac{\mathrm{j}}{2}\cdot\left[X(\omega+\omega_0)-X(\omega-\omega_0)\right]$
+\end{quote}
+
+Convolution property:
+\begin{quote}
+	$\boxed{x(t)*h(t)\,\laplace\,X(\omega)\cdot H(\omega)}$
+\end{quote}
+
+Differentiation property:
+\begin{quote}
+	$\boxed{\frac{\mathrm{d}^n}{\mathrm{d}t^n}\cdot x(t)\,\laplace\,(\mathrm{j}\omega)^n\cdot X(\omega)}$
+\end{quote}
+
+Fourier transform of the delta function:
+\begin{quote}
+	$\delta(t)\,\laplace\,1$\\
+	$1\,\laplace\,2\pi\cdot\delta(\omega)$
+\end{quote}
+
+Fourier transform of sine and cosine:
+\begin{quote}
+	$\cos(\omega_0\cdot t)\,\laplace\,\pi\cdot\left[\delta(\omega+\omega_0)+\delta(\omega-\omega_0)\right]$\\
+	$\sin(\omega_0\cdot t)\,\laplace\,\mathrm{j}\pi\cdot\left[\delta(\omega+\omega_0)-\delta(\omega-\omega_0)\right]$
+\end{quote}
+\newpage
+FT of a periodic signal ($c_k$: Fourier series coefficients):
+\begin{quote}
+	$\boxed{X(\omega)=\sum_{k=-\infty}^\infty 2\pi\cdot c_k\cdot\delta(\omega-k\cdot\omega_0)}$
+\end{quote}
+
+\large{\textbf{CT Fourier System models}}
+
+\textit{Frequency response}
+
+
+Response of an LTI system to a sinusoid:
+\begin{quote}
+	$\boxed{x(t)=A\cdot\cos(\omega_0\cdot t+\theta)}$\\\\
+	$\boxed{\to\,y(t)=|H(\omega_0)|\cdot A\cdot\cos\left(\omega_0\cdot t+\theta+\angle  H(\omega_0)\right)}$
+\end{quote}
+
+Response to periodic inputs:
+\begin{quote}
+	$\boxed{x(t)=\sum_{k=-\infty}^\infty c_k^{(x)}\cdot\mathrm{e}^{\mathrm{j}\,k\cdot\omega_0 t}}$\\\\
+	$\boxed{\to\,y(t)=\sum_{k=-\infty}^\infty H(k\cdot\omega_0)\cdot c_k^{(x)}\cdot\mathrm{e}^{\mathrm{j}\,k\cdot\omega_0 t}}$
+\end{quote}
+
+Output Fourier series coefficients:
+\begin{quote}
+	$c_k^{(y)}=H(k\cdot\omega_0)\cdot c_k^{(x)}$
+\end{quote}
+
+Response to aperiodic signals:
+\begin{quote}
+	$\boxed{x(t)=\frac{1}{2\pi}\cdot\int_{-\infty}^\infty X(\omega)\cdot\mathrm{e}^{\mathrm{j}\,\omega t}\,\mathrm{d}\omega}$\\\\
+	$\boxed{\to\,y(t)=\frac{1}{2\pi}\cdot\int_{-\infty}^\infty H(\omega)\cdot X(\omega)\cdot\mathrm{e}^{\mathrm{j}\,\omega t}\,\mathrm{d}\omega}$
+\end{quote}
+
+Ideal low-pass filter ($t_\mathrm{d}$: filter delay in time domain):
+\begin{quote}
+	$H(\omega)=\begin{cases}1\cdot\mathrm{e}^{-\mathrm{j}\omega t_\mathrm{d}},&-\Omega<\omega<\Omega \quad\text{(Passband)}\\0,&\text{otherwise} \quad\text{(Stopband)}\end{cases}$
+\end{quote}
+
+Ideal high-pass filter:
+\begin{quote}
+	$H(\omega)=\begin{cases}0, &-\Omega<\omega<\Omega \quad\text{(Stopband)}\\1\cdot\mathrm{e}^{-\mathrm{j}\omega t_\mathrm{d}}, &\text{otherwise}\quad\text{(Passband)}\end{cases}$
+\end{quote}
+
+Summary of \textit{ideal} filters:
+\begin{quote}
+	\begin{enumerate}
+		\item Magnitude response:
+			\begin{enumerate}
+				\item Constant in passband.
+				\item Zero in stopband.
+			\end{enumerate}
+		\item Phase response:
+			\begin{enumerate}
+				\item Linear in passband (neg. slope = delay).
+				\item Undefined in stopband.
+			\end{enumerate}
+	\end{enumerate}
+\end{quote}
+
+\large{\textbf{Laplace Models for CT Signals \& Systems}}
+
+\textit{Transfer Function}
+
+One-sided Laplace Transform:
+\begin{quote}
+	$\boxed{X(s)=\int_{0^-}^\infty x(t)\cdot\mathrm{e}^{-st}\,\mathrm{d}t,\quad s=\sigma+\mathrm{j}\omega}$
+\end{quote}
+
+Inverse Laplace Transform:
+\begin{quote}
+	$x(t)=\frac{1}{2\pi\mathrm{j}}\cdot\int_{c-\mathrm{j}\infty}^{c+\mathrm{j}\infty} X(s)\cdot\mathrm{e}^{st}\,\mathrm{d}s,\quad s=c+\mathrm{j}\omega\text{ is in ROC}$
+\end{quote}
+
+Linearity of the LT:
+\begin{quote}
+	$a\cdot x(t)+b\cdot y(t)\,\laplace\,a\cdot X(s)+b\cdot Y(s)$
+\end{quote}
+
+Time shift ($c>0$, $x(t)$ causal):
+\begin{quote}
+	$x(t-c)\,\laplace\,\mathrm{e}^{-cs}\cdot X(s)$
+\end{quote}
+
+Time differentiation:
+\begin{quote}
+	$\boxed{\dot x(t)\,\laplace\,s\cdot X(s)-x(t=0^-)}$
+\end{quote}
+
+Integration:
+\begin{quote}
+	$\boxed{\int_{0^-}^t x(\lambda)\,\mathrm{d}\lambda\,\laplace\,\frac{1}{s}\cdot X(s)}$
+\end{quote}
+
+Convolution:
+\begin{quote}
+	$\boxed{x(t)*h(t)\,\laplace\,X(s)\cdot H(s)}$
+\end{quote}
+
+First-order linear ODE ($s+a$: characteristic polynomial):
+\begin{quote}
+	$\dot y(t)+a\cdot y(t)=b\cdot x(t)$\\
+	$\to Y(s)=\underbrace{\frac{y(0^-)}{s+a}}_{\text{zero input sol.}}+\underbrace{\frac{b}{s+a}\cdot X(s)}_{\text{zero state sol.}}$
+\end{quote}
+
+Second-order linear ODE ($s^2+a_1\cdot s+a_0$: char. pol.):
+\begin{quote}
+	$\ddot y(t)+a_1\cdot\dot y(t)+a_0\cdot y(t)=b_1\cdot\dot x(t)+b_0\cdot x(t)$\vspace*{0.25cm}\\
+	\vspace*{0.25cm}Causal input: $x(t)=0, t<0\to x(0^-)=0$\\
+	$\to Y(s)=\underbrace{\frac{y(0^-)\cdot s+\dot y(0^-)+a_1\cdot y(0^-)}{s^2+a_1\cdot s+a_0}}_{\text{zero-input sol.}}$\\\hspace*{1.5cm}$\underbrace{+\frac{b_1\cdot s+b_0}{s^2+a_1\cdot s+a_0}\cdot X(s)}_{\text{zero-state sol.}}$
+\end{quote}
+
+Zero-input solution (2nd-order system): $|\zeta|<1, \omega_\mathrm{n}>0$
+\begin{quote}
+	$Y(s)=\frac{\alpha}{s^2+2\zeta\omega_\mathrm{n}\cdot s+\omega_\mathrm{n}^2}$\\
+	$\to y(t)=A\cdot\mathrm{e}^{-\zeta\omega_\mathrm{n}\cdot t}\cdot\sin\left(\left(\omega_\mathrm{n}\cdot\sqrt{1-\zeta^2}\right)\cdot t\right)\cdot u(t),$\\
+	\hspace*{1.5cm}$A=\frac{\alpha}{\omega_\mathrm{n}\cdot\sqrt{1-\zeta^2}}$\\
+	$Y(s)=\beta\cdot\frac{s+\alpha}{s^2+2\zeta\omega_\mathrm{n}\cdot s+\omega_\mathrm{n}^2}$\\
+	$\to y(t)=A\cdot\mathrm{e}^{-\zeta\omega_\mathrm{n}\cdot t}\cdot\sin\left(\left(\omega_\mathrm{n}\cdot\sqrt{1-\zeta^2}\right)\cdot t+\phi\right)\cdot u(t),$\\
+	\hspace*{1.5cm}$A=\beta\cdot\sqrt{\frac{(\alpha-\zeta\omega_\mathrm{n})^2}{\omega_\mathrm{n}^2\cdot(1-\zeta^2)}+1},$\\\hspace*{1.5cm}$\phi=\arctan\left(\frac{\omega_\mathrm{n}\cdot\sqrt{1-\zeta^2}}{\alpha-\zeta\omega_\mathrm{n}}\right)$
+\end{quote}
+
+$N^\mathrm{th}$-order linear ODE ($M\leq N$):
+\begin{quote}
+	$y^{(N)}(t)+a_{N-1}\cdot y^{(N-1)}(t)+\dots+a_1\cdot\dot y(t)+a_0\cdot y(t)$\vspace*{0.2cm}\\
+	\hspace*{0.5cm}$=b_M\cdot x^{(M)}+\dots+b_1\cdot\dot x(t)+b_0\cdot x(t)$\vspace*{0.25cm}\\
+	$\boxed{\to Y(s)=\frac{\mathrm{IC}(s)}{A(s)}+\underbrace{\frac{B(s)}{A(s)}}_{H(s)}\cdot \underbrace{X(s)}_{\frac{N_X(s)}{D_X(s)}}}$\vspace*{0.2cm}\\
+	\hspace*{0.5cm}$A(s)=s^N+a_{N-1}\cdot s^{N-1}+\dots+a_1\cdot s+a_0,$\\
+	\hspace*{0.5cm}$B(s)=b_M\cdot s^M+\dots+b_1\cdot s+b_0,$\\
+	\hspace*{0.5cm}$\mathrm{IC}(s)=\text{polynomial in s dependent of ICs}$
+\end{quote}
+
+Solution for general system with ICs (no common roots between denominator of $X(s)$ and $H(s)$):
+\begin{quote}
+	$\boxed{Y(s)=\overbrace{\frac{\mathrm{IC}(s)}{A(s)}}^\text{zero-input response}+\overbrace{\underbrace{\frac{E(s)}{A(s)}}_\text{transient response}+\underbrace{\frac{F(s)}{D_X(s)}}_\text{steady-state response}}^\text{zero-state response}}$
+\end{quote}
+
+Transfer function (system in zero-state):
+\begin{quote}
+	$\boxed{Y(s)=\frac{B(s)}{A(s)}\cdot X(s)=H(s)\cdot X(s)}$
+\end{quote}
+
+Connection between frequency response and transfer function\\(if $H(\mathrm{j}\omega)$ exists):
+\begin{quote}
+	$\boxed{H(\mathrm{j}\omega)=\left.H(s)\right|_{s=\mathrm{j}\omega}}$\vspace*{0.25cm}\\
+	$H(\mathrm{j}\omega)$ always exists for $R$, $L$, $C$ circuits.
+\end{quote}
+\newpage
+S-domain impedances:
+\begin{quote}
+	$Z_R(s)=R\quad\quad Z_C(s)=\frac{1}{sC}\quad\quad Z_L(s)=sL$
+\end{quote}
+
+Bounded-input, bounded-output (BIBO) stability:
+\begin{framed}
+		For any bounded input $|x(t)|\leq C_1\,\forall t\geq 0$ the output remains bounded: $|y(t)|\leq C_2$.
+\end{framed}
+
+Checks for BIBO stability:
+\begin{framed}
+	\begin{itemize}
+		\item $\int_0^\infty |h(t)|\,\mathrm{d}t<\infty$
+		\item All poles of $H(s)$ ($N^\mathrm{th}$-order system with $N$ poles\\ $p_i=1,2,\dots,N$) are in the open left-half of the $s$-plane:\\ $\Re\{p_i\}<0 \text{ for all } i=1,2,\dots,N$.
+	\end{itemize}
+\end{framed}
+
+Marginally stable systems:
+\begin{quote}
+	Systems that have at least one \textit{distinct} pole on the $\mathrm{j}\omega$ axis, but no repeated poles.
+\end{quote}
+
+Real poles $p_i$:
+\begin{quote}
+	$h_i(t)=c_i\cdot\mathrm{e}^{p_i\cdot t}\cdot u(t)\qquad\text{(distinct pole)}$\\
+	$h_i(t)=c_i\cdot t^{k-1}\cdot\mathrm{e}^{p_i\cdot t}\cdot u(t)\qquad (k\text{-repeated poles})$
+\end{quote}
+
+Complex pole pairs $p_i=\sigma_i\pm\mathrm{j}\omega_i, \,\,\omega_i>0$:
+\begin{quote}
+	$h_i(t)=c_i\cdot\mathrm{e}^{\sigma_i\cdot t}\cdot\cos(\omega_i\cdot t+\theta_i)\cdot u(t)\qquad\text{(distinct pole)}$\\
+	$h_i(t)=c_i\cdot t^{k-1}\cdot\mathrm{e}^{\sigma_i\cdot t}\cdot\cos(\omega_i\cdot t+\theta_i)\cdot u(t)$\\
+	\hspace*{1cm}($k$-repeated poles)
+\end{quote}
+
+Response of an (unstable) system with transfer function $H(s)$ to a sinusoid, no I.C.s:
+\begin{quote}
+	$x(t)=A\cdot\cos(\omega_0\cdot t)\cdot u(t)$\\
+	$\to y(t)=y_t(t)+\underbrace{A\cdot\left|H(\mathrm{j}\omega_0)\right|\cdot\cos\left(\omega_0\cdot t+\angle H(\mathrm{j}\omega_0)\right), t\geq 0}_\text{steady-state response}$\\
+	$y_t(t)$: transient response
+\end{quote}
+\end{document}
