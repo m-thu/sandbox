@@ -289,6 +289,7 @@
 * <https://github.com/strigeus/sparsnas_decoder>
 * <http://ke5fx.com/>
 * [osmo-fl2k: Using cheap USB 3.0 VGA adapters as SDR transmitter](http://people.osmocom.org/steve-m/fl2k_slides/osmo-fl2k.html#(1)), <https://osmocom.org/projects/osmo-fl2k/wiki/Wiki>
+* [Software-Defined Radio for Engineers](https://www.analog.com/media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers.pdf), <https://www.analog.com/en/education/education-library/software-defined-radio-for-engineers.html>
 
 ### Search engines
 
