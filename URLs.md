@@ -142,6 +142,7 @@
 * [Street-Fighting Mathematics, The Art of Educated Guessing and Opportunistic Problem Solving](https://mitpress.mit.edu/books/street-fighting-mathematics), <https://www.dropbox.com/s/722rlvrwy9l9w73/7728.pdf?dl=0>
 * [A VLSI Analog Computer / Math Co-processor for a Digital Computer](http://www.cisl.columbia.edu/grads/gcowan/vlsianalog.pdf)
 * [OpenModelica](https://www.openmodelica.org/)
+* [Hard 2632 - An Atari 2600 VCS Hardware Demo](https://xayax.net/hard2632/)
 
 ### EDA
 
