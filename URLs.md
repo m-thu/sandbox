@@ -143,6 +143,7 @@
 * [A VLSI Analog Computer / Math Co-processor for a Digital Computer](http://www.cisl.columbia.edu/grads/gcowan/vlsianalog.pdf)
 * [OpenModelica](https://www.openmodelica.org/)
 * [Hard 2632 - An Atari 2600 VCS Hardware Demo](https://xayax.net/hard2632/)
+* <https://justanotherelectronicsblog.com/>
 
 ### EDA
 
