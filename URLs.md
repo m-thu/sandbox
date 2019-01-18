@@ -144,6 +144,7 @@
 * [OpenModelica](https://www.openmodelica.org/)
 * [Hard 2632 - An Atari 2600 VCS Hardware Demo](https://xayax.net/hard2632/)
 * <https://justanotherelectronicsblog.com/>
+* [Parallel Programming for FPGAs](http://kastner.ucsd.edu/hlsbook/)
 
 ### EDA
 
