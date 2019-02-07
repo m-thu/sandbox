@@ -294,6 +294,7 @@
 * <http://ke5fx.com/>
 * [osmo-fl2k: Using cheap USB 3.0 VGA adapters as SDR transmitter](http://people.osmocom.org/steve-m/fl2k_slides/osmo-fl2k.html#(1)), <https://osmocom.org/projects/osmo-fl2k/wiki/Wiki>
 * [Software-Defined Radio for Engineers](https://www.analog.com/media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers.pdf), <https://www.analog.com/en/education/education-library/software-defined-radio-for-engineers.html>
+* [Understanding the POCSAG paging protocol](https://habr.com/en/post/438906/)
 
 ### Search engines
 
