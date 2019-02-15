@@ -145,6 +145,7 @@
 * [Hard 2632 - An Atari 2600 VCS Hardware Demo](https://xayax.net/hard2632/)
 * <https://justanotherelectronicsblog.com/>
 * [Parallel Programming for FPGAs](http://kastner.ucsd.edu/hlsbook/)
+* [DDA on FPGA - A modern Analog Computer](https://people.ece.cornell.edu/land/courses/ece5760/DDA/index.htm)
 
 ### EDA
 
