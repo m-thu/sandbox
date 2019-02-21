@@ -1,0 +1,281 @@
+\documentclass[fontsize=9pt,a4paper,twocolumn]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, amsopn}
+\usepackage{xcolor} % include before tikz!
+\usepackage{tikz}
+\usepackage[european]{circuitikz}
+\usepackage{nicefrac}
+\usepackage{trfsigns} % for \laplace,\Laplace
+\usepackage{framed}
+\usepackage{geometry}
+\geometry{left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0em}
+%
+%
+%
+%
+\DeclareMathOperator{\grad}{grad}
+\renewcommand\div{}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\sinc}{sinc}
+%
+%
+%
+\begin{document}
+\clearpage
+\pagestyle{empty}
+\huge{Electronics Cooling Cheat Sheet}\footnote{\small{\texttt{https://github.com/m-thu/sandbox/blob/master/electronics-cooling.tex}}}\\
+\large{Matthias Thumann}
+\vspace*{0.5cm}
+
+\large{\textbf{Introduction}}
+
+Heat conduction equation / Fourier's law\\ ($A$: area, $T$: temperature, $[\dot Q] = \mathrm{W}$):
+\begin{quote}
+	$\dot Q_\mathrm{cond} = -kA\frac{\mathrm{d}T}{\mathrm{d}x}$
+\end{quote}
+
+Thermal conductivity $k$:
+\begin{quote}
+	$[k]=\frac{\mathrm{W}}{\mathrm{m}\cdot\mathrm{K}}$
+\end{quote}
+
+Convection heat flow ($A_\mathrm{s}$: surface area, $T_\mathrm{s}$: surface temperature, $T_\mathrm{amb}$: ambient):
+\begin{quote}
+	$\dot Q_\mathrm{conv}=h A_\mathrm{s}\cdot(T_\mathrm{s}-T_\mathrm{amb})$
+\end{quote}
+
+Heat transfer coefficient $h$:
+\begin{quote}
+	$[h]=\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mathrm{K}}$
+\end{quote}
+
+Forced convection over flat plate ($U$: air speed, $[U]=\frac{\mathrm{m}}{\mathrm{s}}$,\\ $L$: lenght of plate, $[L]=\mathrm{m}$):
+\begin{itemize}
+	\item Laminar flow: $h=3.9\cdot\sqrt{\frac{U}{L}}$
+	\item Turbulent flow: $h=5.5\cdot\left(\frac{U^4}{L}\right)^{\nicefrac{1}{5}}$
+\end{itemize}
+
+Natural convection from vertical flat plate ($L$: height of plate, $[L]=\mathrm{m}$, $T_\mathrm{s}$: surface temperature, $T_\mathrm{amb}$: ambient temperature):
+\begin{itemize}
+	\item Laminar flow: $h=1.4\cdot\left(\frac{T_\mathrm{s}-T_\mathrm{amb}}{L}\right)^{\nicefrac{1}{4}}$
+	\item Turbulent flow: $h=1.1\cdot\left(T_\mathrm{s}-T_\mathrm{amb}\right)^{\nicefrac{1}{3}}$
+\end{itemize}
+
+Radiation heat transfer ($\varepsilon$: surface emissivity, $[\varepsilon]=1$,\\ $\sigma=5.67\cdot 10^{-8}\,\frac{\mathrm{W}}{\mathrm{m}^2 \mathrm{K}^4}$: Stefan-Boltzmann constant,\\ $A_\mathrm{s}$: surface area, $T_\mathrm{s}$: surface temperature,\\ $T_\mathrm{surr}$: surrounding temperature, $[T_\mathrm{s}]=[T_\mathrm{surr}]=\mathrm{K}$):
+\begin{quote}
+	$\dot Q_\mathrm{rad}=\varepsilon\sigma A_\mathrm{s}\cdot\left(T_\mathrm{s}^4-T_\mathrm{surr}^4\right) = h_\mathrm{rad}\,A_\mathrm{s}\cdot\left(T_\mathrm{s}-T_\mathrm{surr}\right)$
+\end{quote}
+
+\large{\textbf{Heat losses}}
+
+Joule's law:
+\begin{quote}
+	$P=V\cdot I=R\cdot I^2=\frac{V^2}{R}$
+\end{quote}
+
+Average IGBT conduction loss:
+\begin{quote}
+	$P_\mathrm{avg}=u_{\mathrm{ce},0}\cdot I_{\mathrm{c},\mathrm{avg}} + r_\mathrm{c}\cdot I_{\mathrm{c},\mathrm{rms}}^2$
+\end{quote}
+
+Average diode conduction loss:
+\begin{quote}
+	$P_\mathrm{avg}=u_{\mathrm{D},0}\cdot I_{\mathrm{D},\mathrm{avg}} + r_\mathrm{D}\cdot I_{\mathrm{D},\mathrm{rms}}^2$
+\end{quote}
+
+IGBT switching loss:
+\begin{itemize}
+	\item $E_\mathrm{on}=\sum_{i=1}^n k_\mathrm{on}\cdot i_\mathrm{IGBT}(t_i)$
+	\item $E_\mathrm{off}=\sum_{i=1}^n k_\mathrm{off}\cdot i_\mathrm{IGBT}(t_i)$
+	\item $P_\mathrm{sw}=\frac{1}{T}(E_\mathrm{on}+E_\mathrm{off})$
+\end{itemize}
+
+Diode switching loss:
+\begin{itemize}
+	\item $E_\mathrm{rr}=\sum_{i=1}^n k_\mathrm{rr}\cdot i_\mathrm{DIode}(t_i)$
+	\item $P_\mathrm{rr}=\frac{E_\mathrm{rr}}{T}$
+\end{itemize}
+
+\large{\textbf{Thermal resistance networks}}
+
+Thermal resistance $R_\mathrm{th}$:
+\begin{itemize}
+	\item $\dot Q = \frac{1}{R_\mathrm{th}}\cdot\Delta T$
+	\item $[R_\mathrm{th}]=\frac{\mathrm{K}}{\mathrm{W}}$
+\end{itemize}
+\newpage
+Thermal resistivity $r_\mathrm{th}$ ($[\dot q]=\frac{\mathrm{W}}{\mathrm{m}^2}$):
+\begin{itemize}
+	\item $\dot q = \frac{1}{r_\mathrm{th}}\cdot\Delta T$
+	\item $[r_\mathrm{th}]=\frac{\mathrm{K}\cdot\mathrm{m}^2}{\mathrm{W}}$
+\end{itemize}
+
+Thermal resistance of conduction ($t$: thickness, $k$: thermal coductivity, $A$: area):
+\begin{quote}
+	$R_{\mathrm{th},\mathrm{cond}} = \frac{t}{kA} = \frac{r_\mathrm{th}}{A}$
+\end{quote}
+
+Thermal resistivity of conduction ($t$: thickness, $k$: thermal conductivity):
+\begin{quote}
+	$r_{\mathrm{th},\mathrm{cond}} = \frac{t}{k}$
+\end{quote}
+
+Thermal resistance of convection ($h$: heat transfer coefficient, $A_\mathrm{s}$: surface area):
+\begin{quote}
+	$R_{\mathrm{th},\mathrm{conv}} = \frac{1}{h A_\mathrm{s}}$
+\end{quote}
+
+Conversion of Celcius temperatures to Kelvin:
+\begin{quote}
+    $\frac{T}{\mathrm{K}} = \frac{\vartheta}{^\circ\mathrm{C}} + 273.15$
+\end{quote}
+
+Radiation heat transfer coefficient ($[T_\mathrm{s}]=[T_\mathrm{surr}]=\mathrm{K}$):
+\begin{quote}
+	$h_\mathrm{rad}=\varepsilon\sigma (T_\mathrm{s}^2+T_\mathrm{surr}^2) (T_\mathrm{s}+T_\mathrm{surr})$
+\end{quote}
+
+Thermal resistance of radiation:
+\begin{quote}
+	$R_{\mathrm{th},\mathrm{rad}} = \frac{1}{h_\mathrm{rad} A}$
+\end{quote}
+
+Modified heat transfer coefficient ($[T_\mathrm{s}]=[T_\mathrm{surr}]=\mathrm{K}$):
+\begin{quote}
+	$h'_\mathrm{rad} = \frac{\varepsilon\sigma(T_\mathrm{s}^4-T_\mathrm{surr}^4)}{T_\mathrm{s}-T_\mathrm{amb}}$
+\end{quote}
+
+Modified conduction thermal resistance:
+\begin{quote}
+	$R'_{\mathrm{th},\mathrm{rad}} = \frac{1}{h'_\mathrm{rad}\cdot A}$
+\end{quote}
+
+$N$ thermal resistances in series:
+\begin{quote}
+	$R_{\mathrm{th},\mathrm{tot}} = \sum_{i=1}^N R_{\mathrm{th},i}$ 
+\end{quote}
+
+$N$ thermal resistances in parallel:
+\begin{quote}
+	$\frac{1}{R_{\mathrm{th},\mathrm{tot}}} = \sum_{i=1}^N \frac{1}{R_{\mathrm{th},i}}$
+\end{quote}
+
+Effective normal thermal conductivity of a PCB ($t$: total thickness, $t_\mathrm{e}$: total thickness of epoxy layers, $t_\mathrm{c}$: total thickness of copper layers, $k_\mathrm{e}$: thermal conductivity of epoxy, $k_\mathrm{c}$: thermal conductivity of copper):
+\begin{quote}
+	$k_\mathrm{n} = \frac{t}{\frac{t_\mathrm{e}}{k_\mathrm{e}} + \frac{t_\mathrm{c}}{k_\mathrm{c}}}$
+\end{quote}
+
+Effective planar thermal conductivity of a PCB:
+\begin{quote}
+	$k_\mathrm{p} = \frac{k_\mathrm{e} t_\mathrm{e} + k_\mathrm{c} t_\mathrm{c}}{t}$
+\end{quote}
+
+Heat spreading:
+\begin{itemize}
+	\item $A_1$: heat source area, $A_2$: heat spreader area
+	\item $k$: thermal conductivity of heat spreader material
+	\item $t$: heat spreader thickness
+	\item $h_\mathrm{eff}$: effective heat transfer coefficient 
+	\item $r_1=\sqrt{\frac{A_1}{\pi}}$, $r_2=\sqrt{\frac{A_2}{\pi}}$
+	\item $\varepsilon=\frac{r_1}{r_2}$
+	\item $\tau=\frac{t}{r_2}$
+	\item $Bi = \frac {h_\mathrm{eff}\cdot r_2}{k}$
+	\item $\lambda = \pi + \frac{1}{\varepsilon\sqrt{\pi}}$
+	\item $\phi = \frac{\tanh(\lambda\tau)+\frac{\lambda}{Bi}}{1 + \frac{\lambda}{Bi} \tanh(\lambda\tau)}$
+	\item $R_{\mathrm{th},\mathrm{sp}} = \frac{(1-\varepsilon)\phi}{\pi k r_1}$
+\end{itemize}
+
+\newpage
+\large{\textbf{Heat Sinks}}
+
+Heat sink parameters:
+\begin{itemize}
+	\item $A_\mathrm{c}$: cross sectional area of one fin ($[A_\mathrm{c}]=\mathrm{m}^2$)
+	\item $P$: perimeter of fin cross-section ($[P]=\mathrm{m}$)
+	\item $c$: fin length
+	\item $k$: thermal conductivity of heatsink material
+	\item $A_\mathrm{b}$: base plate area
+	\item $n_\mathrm{f}$: number of fins
+\end{itemize}
+
+Thermal resistance of heat sink (with \emph{adiabatic approximation}):
+\begin{itemize}
+	\item Corrected fin length: $c_\mathrm{c} = c + \frac{A_\mathrm{c}}{P}$
+	\item $a = \sqrt{\frac{h P}{k A_\mathrm{c}}}$, $[a]=\frac{1}{\mathrm{m}}$
+	\item Fin efficiency: $\eta_\mathrm{f} = \frac{\tanh(a\cdot c_\mathrm{c})}{a\cdot c_\mathrm{c}}$
+	\item Fin surface area: $A_\mathrm{f} = P\cdot c_\mathrm{c}$
+	\item Total heat sink area: $A_\mathrm{tot} = n_\mathrm{f} A_\mathrm{f} + A_\mathrm{b} - n_\mathrm{f} A_\mathrm{c}$
+	\item Heat sink efficiency: $\eta_\mathrm{hs} = 1-\frac{n_\mathrm{f} A_\mathrm{f}}{A_\mathrm{tot}} (1-\eta_\mathrm{f})$
+	\item $\Rightarrow\,R_{\mathrm{hs},\mathrm{conv}} = \frac{1}{\eta_\mathrm{hs} A_\mathrm{tot} h}$
+\end{itemize}
+
+Caloric thermal resistance ($c_\mathrm{p}$: specific heat of fluid, $[c_\mathrm{p}] = \frac{\mathrm{J}}{\mathrm{kg}\cdot\mathrm{K}}$, $\dot V$: volume flow rate, $[\dot V]=\frac{\mathrm{m}^3}{\mathrm{s}}$, $\varrho$: density, $[\varrho]=\frac{\mathrm{kg}}{\mathrm{m}^3}$):
+\begin{itemize}
+	\item Flow cross section: $A_\mathrm{flow}$
+	\item Air speed: $U_\mathrm{air}$, $[U]=\frac{\mathrm{m}}{\mathrm{s}}$
+	\item Volume flow rate: $\dot V = U_\mathrm{air}\cdot A_\mathrm{flow}$
+	\item Mass flow rate: $\dot m = \dot V\cdot\varrho$
+	\item $\Rightarrow\,R_{\mathrm{hs},\mathrm{cal}} = \frac{1}{2 \dot m c_\mathrm{p}} = \frac{1}{2 \dot V \varrho c_\mathrm{p}}$
+\end{itemize}
+
+Effective heat transfer coefficient (for spreading resistance):
+\begin{quote}
+	$h_\mathrm{eff} = \frac{1}{\left(R_{\mathrm{hs},\mathrm{conv}} + R_{\mathrm{hs},\mathrm{cal}}\right)\cdot A_\mathrm{b}}$
+\end{quote}
+
+Linear fit for fan curve ($p_\mathrm{max}$: maximum pressure when fan is completely blocked, $[p_\mathrm{max}]=\mathrm{Pa}$, $\dot V_\mathrm{max}$: maximum volume flow rate when fan is unobstructed, $[\dot V_\mathrm{max}]=\frac{\mathrm{m}^3}{\mathrm{s}}$):
+\begin{quote}
+	$\Delta p_\mathrm{fan}\left(\dot V\right) = p_\mathrm{max} - \frac{p_\mathrm{max}}{\dot V_\mathrm{max}}\cdot \dot V$
+\end{quote}
+
+Heat sink parameters:
+\begin{itemize}
+	\item $c$: fin length
+	\item $s$: fin spacing
+	\item $n_\mathrm{f}$: number of fins
+	\item $n=n_\mathrm{f}-1$: number of channels
+	\item $L$: length of heatsink (in flow direction)
+\end{itemize}
+
+Hydraulic diameter:
+\begin{quote}
+	$d_\mathrm{h} = \frac{2 sc}{s+c}$
+\end{quote}
+
+Fan pressure drop with laminar flow ($\varrho$: air density):
+\begin{quote}
+	$\Delta p_\mathrm{lam}\left(\dot V\right) = 1.5\, \frac{32 \varrho \nu L}{n(sc) d_\mathrm{h}^2}\cdot \dot V$
+\end{quote}
+
+Fan operating point (laminar flow):
+\begin{quote}
+	$\Delta p_\mathrm{fan}\left(\dot V\right) = \Delta p_\mathrm{lam}\,\,\curvearrowright\, \dot V\,\,\curvearrowright\,p$
+\end{quote}
+
+Reynolds number ($\nu$: kinematic viscosity, $[\nu]=\frac{\mathrm{m}^2}{\mathrm{s}}$):
+\begin{quote}
+	$Re = \frac{2 \dot V}{n(s+c)\nu}$
+\end{quote}
+\newpage
+Flow type:
+\begin{itemize}
+	\item $Re<2300$: laminar flow
+	\item $Re>2300$: turbulent flow
+\end{itemize}
+
+Nusselt number ($Pr$: Prandtl's number, $[Pr]=1$, $[Nu]=1$):
+\begin{itemize}
+	\item $X = \frac{L}{d_\mathrm{h} Re_\mathrm{lam} Pr}$
+	\item $Nu_\mathrm{lam} = \frac{3.657\left[\tanh\left(2.264\cdot X^{\nicefrac{1}{3}} + 1.7\cdot X^{\nicefrac{2}{3}}\right)\right]^{-1} + \frac{0.0499}{X}\tanh(X)}{\tanh\left[2.432\cdot Pr^{\nicefrac{1}{6}}\cdot X^{\nicefrac{1}{6}}\right]}$
+\end{itemize}
+
+Heat transfer coefficient of the heatsink ($k_\mathrm{air}$: thermal conductivity of air):
+\begin{quote}
+	$h = \frac{Nu_\mathrm{lam}\cdot k_\mathrm{air}}{d_\mathrm{h}}$
+\end{quote}
+\end{document}

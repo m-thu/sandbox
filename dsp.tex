@@ -1,0 +1,355 @@
+\documentclass[fontsize=9pt,a4paper,twocolumn]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, amsopn}
+\usepackage{xcolor} % include before tikz!
+\usepackage{tikz}
+\usepackage[european]{circuitikz}
+\usepackage{nicefrac}
+\usepackage{trfsigns} % for \laplace,\Laplace
+\usepackage{framed}
+\usepackage{geometry}
+\geometry{left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0em}
+%
+%
+%
+%
+\DeclareMathOperator{\grad}{grad}
+\renewcommand\div{}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\sinc}{sinc}
+%
+%
+%
+\begin{document}
+\clearpage
+\pagestyle{empty}
+\huge{Digital Signal Processing Cheat Sheet}\footnote{\small{\texttt{https://github.com/m-thu/sandbox/blob/master/dsp.tex}}}\\
+\large{Matthias Thumann}
+\vspace*{0.5cm}
+
+\large{\textbf{Introduction}}
+
+\textit{CT/DT Signal Models}
+
+Unit step function:
+\begin{quote}
+	$u(t)=\begin{cases}1,\, & t\geq 0\\0,\, & t<0\end{cases}$
+\end{quote}
+
+Sifting property of the delta function ($\varepsilon>0$):
+\begin{quote}
+	$\int_{t_0-\varepsilon}^{t_0+\varepsilon} f(t)\,\delta(t-t_0)\,\mathrm{d}t = f(t_0)$
+\end{quote}
+
+Rectangular pulse function ($\tau$: pulse width):
+\begin{quote}
+	$p_\tau(t)=\begin{cases}1,\, & -\nicefrac{\tau}{2}\leq t\leq\nicefrac{\tau}{2}\\ 0,\,&\text{otherwise}\end{cases}$
+\end{quote}
+
+Sampling ($y(t)$: CT signal, $y[n]$: DT signal,\\ $T_\mathrm{s}$: Sampling time, $F_\mathrm{s}=\nicefrac{1}{T_\mathrm{s}}$: sampling rate):
+\begin{quote}
+	$y[n] = \left. y(t)\right|_{t=nT_\mathrm{s}} = y(n\cdot T_\mathrm{s})$
+\end{quote}
+
+Unit pulse (DT impulse, DT delta):
+\begin{quote}
+	$\delta[n] = \begin{cases}1,\, & n=0\\ 0,\, & n\neq 0\end{cases}$
+\end{quote}
+
+DT rectangular pulse ($q$: $\pm$ pulse extent):
+\begin{quote}
+	$p_q[n] = \begin{cases}1,\, & n=-q,\,\dots,\,-1,0,1,\dots,\,q\\ 0,\, & \text{otherwise}\end{cases}$
+\end{quote}
+
+DT sinusoid ($\Omega$: DT frequency, $[\Omega]=\nicefrac{\mathrm{rad}}{\mathrm{sample}}$):
+\begin{quote}
+	$x[n]=A\cdot\cos(\Omega\cdot n+\theta)$
+\end{quote}
+
+\large{\textbf{Difference Equations}}
+
+\textit{DT System Models}
+
+General $N^\mathrm{th}$ order difference equation ($y[n]$: output, \\$x[n]$: input):
+\begin{quote}
+	$y[n]+a_1 y[n-1]+\dots+a_N y[n-N]=b_0 x[n]+b_1 x[n-1]+\dots+b_M x[n-M]$
+\end{quote}
+
+\large{\textbf{Convolution}}
+
+\textit{DT System Models}
+
+Solutions of DT LTI systems (difference equation):
+\begin{quote}
+	``Zero input'' solution $\to$ Char. roots of polynomial\\
+	+ ``Zero state'' solution $\to$ Convolution
+\end{quote}
+
+Convolution ($x[n]$: input, $y[n]$: output, $h[n]$: impulse response):
+\begin{quote}
+	$y[n] = x[n]*h[n] = \sum_{k=-\infty}^\infty x[k]\cdot h[n-k]$
+\end{quote}
+
+Length of output of linear convolution ($L$: length of first signal,\\ $M$: length of second signal):
+\begin{quote}
+	$L+M-1$
+\end{quote}
+
+Commutativity of convolution:
+\begin{quote}
+	$y[n] = x[n]*h[n] = h[n]*x[n]$
+\end{quote}
+
+\large{\textbf{DT Fourier Signal Models}}
+
+\textit{DTFT, DFT\&FFT}
+
+Sampling a CT signal ($x(t)$: CT signal, $X(\omega)=\mathcal{F}\left\{x(t)\right\}$):
+\begin{quote}
+	$\widetilde{X}(\omega) = \frac{1}{T_\mathrm{s}}\,\left[\dots+ X(\omega-4\pi F_\mathrm{s})+X(\omega-2\pi F_\mathrm{s})+X(\omega)\right.$\\$\left.+X(\omega+2\pi F_\mathrm{s})+X(\omega+4\pi F_\mathrm{s})+\dots\right]$
+\end{quote}
+
+Nyquist frequency ($B$: highest input signal frequency):
+\begin{quote}
+	$F_\mathrm{s}\geq 2B$
+\end{quote}
+
+Definition of the DT frequency ($[\Omega] = \mathrm{rad}$):
+\begin{quote}
+	$\Omega\equiv \omega\cdot T_\mathrm{s} = \omega\cdot\frac{1}{T_\mathrm{s}}$
+\end{quote}
+
+Definition of the DTFT ($-\pi\leq\Omega<\pi$):
+\begin{quote}
+	$X(\Omega) = \sum_{n=-\infty}^\infty x[n]\cdot\mathrm{e}^{-\mathrm{j}n\Omega}$
+\end{quote}
+
+Definition of the inverse DTFT:
+\begin{quote}
+	$x[n] = \frac{1}{2\pi}\,\int_{-\pi}^\pi X(\Omega)\cdot\mathrm{e}^{\mathrm{j}n\Omega}\,\mathrm{d}\Omega$
+\end{quote}
+
+DTFT: timeshift ($q\in\mathbb{Z}$):
+\begin{quote}
+	$x[n-q]\,\laplace\,\mathrm{e}^{-\mathrm{j}q\Omega}\cdot X(\Omega)$
+\end{quote}
+
+Definition of the DFT\\ ($x[n]$: time domain signal, $n=0,\,\dots,\,N-1$):
+\begin{quote}
+	$X[k]=\sum_{n=0}^{N-1} x[n]\cdot\mathrm{e}^{-\mathrm{j}\frac{2\pi kn}{N}}\qquad k=0,1,2,\,\dots,\,N-1$
+\end{quote}
+
+Definition of the inverse DFT\\ ($X[k]$: frequency domain signal, $k=0,\,\dots,\,N-1$):
+\begin{quote}
+	$x[n] = \frac{1}{N}\,\sum_{k=0}^{N-1} X[k]\cdot\mathrm{e}^{\mathrm{j}\frac{2\pi kn}{N}}\qquad n=0,1,2,\,\dots,\,N-1$
+\end{quote}
+
+Spacing of DT frequencies (grid):
+\begin{quote}
+	$\Delta\Omega = \frac{2\pi}{N}$
+\end{quote}
+
+DFT values ($X(\Omega)$: DTFT):
+\begin{quote}
+	$X[k] = X\left(k\cdot\frac{2\pi}{N}\right)$
+\end{quote}
+
+Errors in a computed DFT:
+\begin{itemize}
+	\item Aliasing error: control through choice of $F_\mathrm{s}$ 
+	\item Smearing error: control through choice of $N$, window
+	\item Grid error: control through choice of $N$, zero padding
+\end{itemize}
+
+\large{\textbf{DT Fourier System Models}}
+
+\textit{Frequency Response}
+
+Steady state response to sinusoidal inputs ($H(\Omega)$: DTFT):
+\begin{quote}
+	$x[n] = A\cdot\cos(\Omega_0 n + \theta)$\\
+	$\to\,y[n] = |H(\Omega_0)|A\cdot\cos\left(\Omega_0 n+\theta+\angle H(\Omega_0)\right)$
+\end{quote}
+
+Impulse response of an $M$ point moving average filter:
+\begin{quote}
+	$h[n] = \begin{cases}\frac{1}{M},\, & n=0,1,\,\dots,\,M-1\\ 0,\,\text{otherwise}\end{cases}$
+\end{quote}
+
+Difference equation for $M$ point MA filter:
+\begin{quote}
+	$y[n] = \frac{1}{M}\cdot\left(x[n]+x[n-1]+\dots+x[n-M+1]\right)$
+\end{quote}
+
+\large{\textbf{Z Transformation Models for DT Signals \& Systems}}
+
+\textit{Transfer Function}
+
+Definition of the one sided z-transform for causal signals \\($x[n]=0,\,\,n<0$):
+\begin{quote}
+	$X(z) = \sum_{n=0}^\infty x[n]\cdot z^{-n}$
+\end{quote}
+
+Inverse z-transform:
+\begin{itemize}
+	\item Partial fractions
+	\item Tables
+\end{itemize}
+
+Convolution property:
+\begin{quote}
+	$x[n]*h[n]\,\laplace\,X(z)\cdot H(z)$
+\end{quote}
+
+Right shift for causal signal ($x[n]=0,\,\,n<0$, $x[n]\,\laplace\,X(z)$):
+\begin{quote}
+	$x[n-q]\,\laplace\,z^{-q}\cdot X(z)$
+\end{quote}
+
+Transfer function:
+\begin{quote}
+	$H(z) = \frac{Y(z)}{X(z)}$
+\end{quote}
+
+Relationship between z-transform and DTFT:
+\begin{quote}
+	$X(\Omega) = \left.X(z)\right|_{z=\mathrm{e}^{\mathrm{j}\Omega}}$
+\end{quote}
+\newpage
+Circular convolution:
+\begin{quote}
+	$IDFT\left\{X[k]\cdot H[k]\right\} = x[n]\circledast h[n]$
+\end{quote}
+
+Convert cyclic convolution to linear convolution ($L$: length of $x[n]$, $M$: length of $h[n]$):
+\begin{quote}
+	Zero-pad both signals to length $N\geq L+M-1$,\\
+	choose $N=2^r$ for minimum $r$
+\end{quote}
+
+Windowing ($x[n]$: input signal, $w[n]$: window function, $x_N[n]$: truncated signal):
+\begin{quote}
+	$X_N[n] = x[n]\cdot w[n]$
+\end{quote}
+
+DTFT of windowed signal ($W(\Omega)$: kernel function):
+\begin{quote}
+	$X_N(\Omega) = X(\Omega)*W(\Omega)=\frac{1}{2\pi}\,\int_{-\pi}^\pi X(\lambda)\cdot W(\Omega-\lambda)\,\mathrm{d}\lambda$
+\end{quote}
+
+Rectangular window (length $N$):
+\begin{quote}
+$w_\mathrm{R}[n]=\begin{cases}1,\, & 0\leq n\leq N-1,\\ 0,\, & \text{otherwise}\end{cases}$
+\end{quote}
+
+Kernel function for rectangular window (Dirichlet kernel):
+\begin{quote}
+	$W_\mathrm{R}(\Omega) = \mathrm{e}^{-\mathrm{j}\Omega\,\frac{N-1}{2}}\cdot\frac{\sin\left(\Omega\,\frac{N}{2}\right)}{\sin\left(\frac{\Omega}{2}\right)}$
+\end{quote}
+
+Distortions due to windowing:
+\begin{itemize}
+	\item Side-lobe interferences
+	\item Smearing due to width of the main lobe
+\end{itemize}
+
+Properties of window functions (main lobe width, largest side lobe):
+\begin{itemize}
+	\item Rectangular window:
+	\begin{itemize}
+		\item $\frac{4\pi}{N}$
+		\item $\approx -13\,\mathrm{dB}$
+		\item Undesirable side lobes
+	\end{itemize}
+	\item Bartlett (Triangular) window:
+	\begin{itemize}
+		\item $\frac{8\pi}{N}$
+		\item $\approx -27\,\mathrm{dB}$
+	\end{itemize}
+	\item Hann (Hanning, Cosine) window:
+	\begin{itemize}
+		\item $\frac{8\pi}{N}$
+		\item $-32\,\mathrm{dB}$
+	\end{itemize}
+	\item Hamming (Raised Cosine) window:
+	\begin{itemize}
+		\item $\frac{8\pi}{N}$
+		\item $-43\,\mathrm{dB}$
+		\item Flat kernel function
+	\end{itemize}
+	\item Blackman windows:
+	\begin{itemize}
+		\item $\frac{12\pi}{N}$
+		\item $-57\,\mathrm{dB}$
+	\end{itemize}
+	\item Kaiser window:
+	\begin{itemize}
+		\item $\alpha=3$: $\frac{6\pi}{N}$, $-25\,\mathrm{dB}$
+		\item $\alpha=6$: $\frac{8\pi}{N}$, $-45\,\mathrm{dB}$
+		\item $\alpha=9$: $\frac{12\pi}{N}$, $-65\,\mathrm{dB}$
+		\item $\alpha=12$: $\frac{16\pi}{N}$, $-90\,\mathrm{dB}$
+	\end{itemize}
+\end{itemize}
+
+Measuring amplitude ($w[n]$: window function):
+\begin{quote}
+	$W(0) = \sum_{n=0}^{N-1} w[n]$\\
+	$\to$ Amplitude: $A\cdot W(0)$
+\end{quote}
+
+Non-recursive filters (FIR):
+\begin{quote}
+	$y[n] = \sum_{k=0}^M b_k\cdot x[n-k]$\\
+	$H(z) = b_0+b_1 z^{-1}+\dots+b_M z^{-M}$\\
+	$\to\,H(z)=\frac{b_0 z^M+b_1 z^{M-1}+\dots+b_M}{z^M}$
+\end{quote}
+
+
+Impulse invariance ($h(t)$: impulse response of a CT system,\\ $T_\mathrm{s}$: sampling interval):
+\begin{itemize}
+	\item Equivalent DT system: $h[n]=T_\mathrm{s}\cdot h(t=n\cdot T)$
+	\item Not suitable for high-pass filters!
+	\item Implementation as FIR filter.
+\end{itemize}
+
+Tustin's method / Bilinear transformation \\($H(s)$: CT transfer function):
+\begin{itemize}
+	\item $s\,\to\,\frac{2}{T_\mathrm{s}}\cdot\frac{z-1}{z+1}=\frac{2}{T_\mathrm{s}}\cdot\frac{1-z^{-1}}{1+z^{-1}}$
+	\item Implementation as IIR filter.
+	\item Frequency distortion in amplitude and phase response, but no aliasing.
+	\item $\Omega=2\,\arctan\left(\frac{T_\mathrm{s}}{2}\,\omega\right)$, $\omega=\frac{2}{T_\mathrm{s}}\,\tan\left(\frac{\Omega}{2}\right)$\\
+		$-\infty <\omega<\infty$ is mapped into $-\pi<\Omega<\pi$.
+\end{itemize}
+
+\large{\textbf{Misc}}
+
+Geometric sum:
+\begin{quote}
+	$\sum_{n=q_1}^{q_2} = \frac{r^{q_1} - r^{q_2+1}}{1-r}$
+\end{quote}
+
+DTFT transform ($|a|<1$):
+\begin{quote}
+	$a^n\, u[n]\,\laplace\,\frac{1}{1-a\cdot\mathrm{e}^{-\mathrm{j}\Omega}}$
+\end{quote}
+
+DTFT multiplication by cosine:
+\begin{quote}
+	$\cos(\Omega_0 n)\cdot x[n]\,\laplace\,\frac{1}{2}\left[X(\Omega+\Omega_0)+X(\Omega-\Omega_0)\right]$
+\end{quote}
+
+DTFT multiplication by sine:
+\begin{quote}
+	$\sin(\Omega_0 n)\cdot x[n]\,\laplace\,\frac{\mathrm{j}}{2}\left[X(\Omega+\Omega_0)-X(\Omega-\Omega_0)\right]$
+\end{quote}
+
+Z transform ($a\in\mathbb{C}$):
+\begin{quote}
+	$a^n\, u[n]\,\laplace\,\frac{z}{z-a}$
+\end{quote}
+\end{document}
