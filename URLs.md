@@ -148,6 +148,7 @@
 * [DDA on FPGA - A modern Analog Computer](https://people.ece.cornell.edu/land/courses/ece5760/DDA/index.htm)
 * [MATLAB array manipulation tips and tricks](https://www.ee.columbia.edu/~marios/matlab/mtt.pdf)
 * [Semiconductor Radioactivity Detector: Part II](https://robertgawron.blogspot.com/2019/02/semiconductor-radioactivity-detector.html)
+* [Airbus Notes](https://hursts.org.uk/)
 
 ### EDA
 
