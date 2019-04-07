@@ -196,3 +196,52 @@ cd acarsdec && make -f Makefile.rtl
 ```
 
 ACARS message labels: <http://acarsonline.pbworks.com/w/page/1286730/Message%20Labels>
+
+### LaTeX listings package: syntax highlighting for SPICE netlists
+
+```latex
+\usepackage{listings}
+
+% Listings package language definition for SPICE netlists
+\lstdefinelanguage{SPICE}
+{
+	% SPICE commands
+	morekeywords={
+		% Control statements
+		.op,
+		.dc,
+		.ac,
+		.tran,
+		.ic,
+		.if,
+		% Output statements
+		.print,
+		.plot,
+		.option,
+		.options,
+		.measure,
+		% Misc
+		.include,
+		.end
+	},
+	alsoletter = {.},
+	% Keywords are not case sensitive
+	sensitive = false,
+	% Comments
+	morecomment = [l]{*},
+	morecomment = [l]{;} % LTSpice extension
+}
+\lstset{
+	language     = SPICE,
+	basicstyle   = \small\ttfamily, % Global font
+	captionpos   = b,               % Place caption at the bottom
+	tabsize      = 4,               % Tab equals four spaces
+	columns      = fixed,           % Same width for all characters
+	keepspaces   = true,            % Leave spaces as is
+	breaklines   = true,            % Wrap long lines
+	numbers      = left,            % Linenumbers on the left
+	numberstyle  = \tiny\ttfamily,  % Font for numbers
+	commentstyle = \em\color{gray}, % Font for comments
+	keywordstyle = \bfseries,       % Font for keywords
+}
+```
