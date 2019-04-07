@@ -233,7 +233,7 @@ ACARS message labels: <http://acarsonline.pbworks.com/w/page/1286730/Message%20L
 }
 \lstset{
 	language     = SPICE,
-	basicstyle   = \small\ttfamily, % Global font
+	basicstyle   = \footnotesize\ttfamily, % Global font
 	captionpos   = b,               % Place caption at the bottom
 	tabsize      = 4,               % Tab equals four spaces
 	columns      = fixed,           % Same width for all characters
