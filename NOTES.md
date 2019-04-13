@@ -245,3 +245,23 @@ ACARS message labels: <http://acarsonline.pbworks.com/w/page/1286730/Message%20L
 	keywordstyle = \bfseries,       % Font for keywords
 }
 ```
+
+### LaTeX: undertilde package (for matrix notation)
+
+Installation:
+```sh
+wget http://mirrors.ctan.org/macros/latex/contrib/undertilde/undertilde.dtx
+wget http://mirrors.ctan.org/macros/latex/contrib/undertilde/undertilde.ins
+latex undertilde.ins # generate "undertilde.sty"
+```
+
+Usage:
+```latex
+\usepackage{undertilde}
+
+...
+
+\[
+	\underline{\dot{x}}(t) = \utilde{A}\cdot\underline{x}(t) + \underline{b}\cdot u(t)
+\]
+```
