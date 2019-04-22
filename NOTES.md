@@ -220,9 +220,13 @@ ACARS message labels: <http://acarsonline.pbworks.com/w/page/1286730/Message%20L
 		.option,
 		.options,
 		.measure,
+		.meas,
 		% Misc
 		.include,
-		.end
+		.end,
+		.subckt,
+		.ends,
+		.global
 	},
 	alsoletter = {.},
 	% Keywords are not case sensitive
