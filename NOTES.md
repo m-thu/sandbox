@@ -214,6 +214,10 @@ ACARS message labels: <http://acarsonline.pbworks.com/w/page/1286730/Message%20L
 		.tran,
 		.ic,
 		.if,
+		.nodeset,
+		.temp,
+		.param,
+		.step,
 		% Output statements
 		.print,
 		.plot,
@@ -248,6 +252,7 @@ ACARS message labels: <http://acarsonline.pbworks.com/w/page/1286730/Message%20L
 	commentstyle = \em\color{gray}, % Font for comments
 	keywordstyle = \bfseries,       % Font for keywords
 }
+
 ```
 
 ### LaTeX: undertilde package (for matrix notation)
