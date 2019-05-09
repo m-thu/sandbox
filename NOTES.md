@@ -236,7 +236,7 @@ ACARS message labels: <http://acarsonline.pbworks.com/w/page/1286730/Message%20L
 	% Keywords are not case sensitive
 	sensitive = false,
 	% Comments
-	morecomment = [l]{*},
+	morecomment = [f][\em\color{gray}][0]{*},
 	morecomment = [l]{;} % LTSpice extension
 }
 \lstset{
