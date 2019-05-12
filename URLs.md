@@ -191,6 +191,7 @@
 * [Gnuplot](http://www.gnuplot.info/)
 * [Maxima, a Computer Algebra System](http://maxima.sourceforge.net/)
 * [wxMaxima](http://andrejv.github.io/wxmaxima/)
+* [Mathics](https://mathics.github.io/), <https://mathics.github.io/>
 * [SciPy](https://www.scipy.org/), [NumPy](http://www.numpy.org/), [SymPy](http://www.sympy.org/en/index.html), [matplotlib](https://matplotlib.org/)
 * [The R Project for Statistical Computing](https://www.r-project.org/)
 * [OpenSCAD: The Programmers Solid 3D CAD Modeller](http://www.openscad.org/)
