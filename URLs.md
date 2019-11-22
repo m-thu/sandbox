@@ -307,6 +307,7 @@
 * [Google Scholar](https://scholar.google.com)
 * [Google Books](https://books.google.com/)
 * [IEEE Xplore Digital Library](http://ieeexplore.ieee.org/Xplore/home.jsp)
+* [TechRxiv](https://www.techrxiv.org/)
 * [arXiv.org e-Print archive](https://arxiv.org/)
 * [Microsoft Academic Search](https://academic.microsoft.com/)
 * [BASE (Bielefeld Academic Search Engine)](https://www.base-search.net/about/en/)
