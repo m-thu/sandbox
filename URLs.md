@@ -150,6 +150,7 @@
 * [Semiconductor Radioactivity Detector: Part II](https://robertgawron.blogspot.com/2019/02/semiconductor-radioactivity-detector.html)
 * [Airbus Notes](https://hursts.org.uk/)
 * [How I'm able to take notes in mathematics lectures using LaTeX and Vim](https://castel.dev/post/lecture-notes-1/)
+* [Matters Computational](https://jjj.de/fxt/fxtbook.pdf)
 
 ### EDA
 
