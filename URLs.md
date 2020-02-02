@@ -202,6 +202,7 @@
 * [GDL - GNU Data Language](http://gnudatalanguage.sourceforge.net/)
 * [ROOT Data Analysis Framework](https://root.cern/)
 * [Degate](http://www.degate.org/)
+* [SapWin](http://www.prodid.it/Sapwin4/)
 
 ### NFC, RFID, Smartcards
 
