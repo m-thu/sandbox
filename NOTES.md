@@ -274,3 +274,8 @@ Usage:
 	\underline{\dot{x}}(t) = \utilde{A}\cdot\underline{x}(t) + \underline{b}\cdot u(t)
 \]
 ```
+
+### LaTeX
+#### Size of brackets (parentheses)
+
+Manually adjust size of parentheses: `\big`, `\Big`, `\bigg` and `\Bigg`
