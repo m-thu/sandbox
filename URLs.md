@@ -151,6 +151,7 @@
 * [Airbus Notes](https://hursts.org.uk/)
 * [How I'm able to take notes in mathematics lectures using LaTeX and Vim](https://castel.dev/post/lecture-notes-1/)
 * [Matters Computational](https://jjj.de/fxt/fxtbook.pdf)
+* [Smartphone and Tablet-Based Sensing of Environmental Radioactivity: Mobile Low-Cost Measurements for Monitoring, Citizen Science, and Educational Purposes](https://www.mdpi.com/1424-8220/19/19/4264)
 
 ### EDA
 
