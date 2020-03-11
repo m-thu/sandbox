@@ -279,3 +279,66 @@ Usage:
 #### Size of brackets (parentheses)
 
 Manually adjust size of parentheses: `\big`, `\Big`, `\bigg` and `\Bigg`
+
+#### epstopdf error due to missing "helvetic" package
+
+Error message:
+```
+$ epstopdf.exe XXX.eps
+Error: /invalidfont in /findfont
+Operand stack:
+   Helvetica-Oblique
+Execution stack:
+   %interp_exit   .runexec2   --nostringval--   --nostringval--   --nostringval--   2   %stopped_push   --nostringval--   --nostringval--   --nostringval--   false   1   %stopped_push   2015   1   3   %oparray_pop   2014   1   3   %oparray_pop   --nostringval--   1998   1   3   %oparray_pop   1884   1   3   %oparray_pop   --nostringval--   %errorexec_pop   .runexec2   --nostringval--   --nostringval--   --nostringval--   2   %stopped_push   --nostringval--   1967   1   3   %oparray_pop
+Dictionary stack:
+   --dict:973/1684(ro)(G)--   --dict:0/20(G)--   --dict:123/200(L)--
+Current allocation mode is local
+Last OS error: No such file or directory
+MiKTeX GPL Ghostscript 9.25: Unrecoverable error, exit code 1
+
+Sorry, but "MiKTeX EPS-to-PDF Converter" did not succeed.
+
+The log file hopefully contains the information to get MiKTeX going again:
+
+  C:\Users\matth\AppData\Local\MiKTeX\2.9\miktex\log\epstopdf.log
+```
+
+Solution: install the "helvetic" package using the MiKTeX Console
+
+#### Acronyms using the "glossary" package
+
+Package:
+```latex
+\usepackage[acronym]{glossaries}
+\makeglossaries
+```
+
+Defining new acronyms:
+```latex
+\newacronym{fft}{FFT}{Fast Fourier Transform}
+```
+
+Using the full version + abbreviation:
+```latex
+\acrfull{fft}
+```
+
+Short version:
+```latex
+\acrshort{fft}
+```
+
+Full version:
+```latex
+\acrlong{fft}
+```
+
+Printing the list of acronyms in the document:
+```latex
+\printglossary[type=\acronymtype]
+```
+
+Compiling the glossary in TeXworks:
+* Install Strawberry Perl for Windows: <http://strawberryperl.com/>
+* TeXworks Preferences -> Processing Tools -> makeglosseries
+* Program: "makeglossaries", Arguments: "$basename"
