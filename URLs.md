@@ -154,6 +154,7 @@
 * [Smartphone and Tablet-Based Sensing of Environmental Radioactivity: Mobile Low-Cost Measurements for Monitoring, Citizen Science, and Educational Purposes](https://www.mdpi.com/1424-8220/19/19/4264)
 * [Adrian's CMOS System-on-Chip Website - Home](http://sadcircuitdesigner.com/index.html)
 * [Snow Crystals](https://arxiv.org/abs/1910.06389)
+* [Stabdosimeter FH 39](http://www.uranmaschine.de/80180.Stabdosimeter_FH39/)
 
 ### EDA
 
