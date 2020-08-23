@@ -156,6 +156,7 @@
 * [Snow Crystals](https://arxiv.org/abs/1910.06389)
 * [Stabdosimeter FH 39](http://www.uranmaschine.de/80180.Stabdosimeter_FH39/)
 * [Computational Science and Engineering](http://math.mit.edu/~gs/cse/)
+* [PRACTICAL SUGGESTIONS FOR MATHEMATICAL WRITING](http://www-math.mit.edu/~poonen/papers/writing.pdf)
 
 ### EDA
 
