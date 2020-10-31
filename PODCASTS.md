@@ -21,6 +21,7 @@ Still active
 * [Airline Pilot Guy ](http://airlinepilotguy.com/)
 * [Fingers elektrische Welt (Podcast)](https://www.fingers-welt.de/podcast/podcast.htm), <https://anchor.fm/fingers-welt>
 * [The Contextual Electronics Podcast](https://contextualelectronics.com/category/podcast/)
+* [CLEANELECTRIC](https://www.cleanelectric.de/)
 
 Inactive
 --------
