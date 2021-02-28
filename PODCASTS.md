@@ -10,7 +10,6 @@ Still active
 * [Unnamed Reverse Engineering Podcast (UREP)](https://unnamedre.com/)
 * [Methodisch inkorrekt](http://minkorrekt.de/)
 * [Binärgewitter](http://blog.binaergewitter.de/)
-* [Mandelbrot Talks](http://mandelbrot-talks.de/)
 * [Pentaradio 24](https://www.c3d2.de/radio.html)
 * [Pentacast](https://www.c3d2.de/podcast.html)
 * [Robotiklabor](https://robotiklabor.de/)
@@ -22,6 +21,7 @@ Still active
 * [Fingers elektrische Welt (Podcast)](https://www.fingers-welt.de/podcast/podcast.htm), <https://anchor.fm/fingers-welt>
 * [The Contextual Electronics Podcast](https://contextualelectronics.com/category/podcast/)
 * [CLEANELECTRIC](https://www.cleanelectric.de/)
+* <https://saftschubsenundautopiloten.libsyn.com/>
 
 Inactive
 --------
@@ -31,3 +31,4 @@ Inactive
 * [Chaosradio München](http://radio.muc.ccc.de/)
 * [Software Defined Radio](https://sdr.entropia.de/)
 * [/dev/radio](https://ulm.ccc.de/dev/radio/)
+* [Mandelbrot Talks](http://mandelbrot-talks.de/)
