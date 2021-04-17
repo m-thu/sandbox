@@ -158,6 +158,8 @@
 * [Computational Science and Engineering](http://math.mit.edu/~gs/cse/)
 * [PRACTICAL SUGGESTIONS FOR MATHEMATICAL WRITING](http://www-math.mit.edu/~poonen/papers/writing.pdf)
 * <https://www.bagaluten-werkstatt.de/blog/>
+* [Modelica by Example](https://mbe.modelica.university/)
+* [PhysicsOpenLab](https://physicsopenlab.org/)
 
 ### EDA
 
