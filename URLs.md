@@ -212,6 +212,7 @@
 * [ROOT Data Analysis Framework](https://root.cern/)
 * [Degate](http://www.degate.org/)
 * [SapWin](http://www.prodid.it/Sapwin4/)
+* [Logisim](https://github.com/reds-heig/logisim-evolution)
 
 ### NFC, RFID, Smartcards
 
