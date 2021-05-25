@@ -160,6 +160,7 @@
 * <https://www.bagaluten-werkstatt.de/blog/>
 * [Modelica by Example](https://mbe.modelica.university/)
 * [PhysicsOpenLab](https://physicsopenlab.org/)
+* <http://wunderkis.de/en.html>, <http://wunderkis.de/de.html>
 
 ### EDA
 
