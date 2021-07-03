@@ -1,0 +1,4 @@
+*.o
+hello
+logistic-map
+mandelbrot
