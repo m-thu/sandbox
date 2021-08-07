@@ -21,6 +21,7 @@ Still active
 * [Nature Podcast](https://www.nature.com/nature/articles?type=nature-podcast)
 * [Science Podcasts](https://www.sciencemag.org/podcasts)
 * [Daniel and Jorge Explain the Universe](https://www.iheart.com/podcast/105-daniel-and-jorge-explain-t-29862087/)
+* [Lex Fridman Podcast](https://lexfridman.com/podcast/)
 
 Inactive
 --------
