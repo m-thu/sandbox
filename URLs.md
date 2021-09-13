@@ -162,6 +162,8 @@
 * [PhysicsOpenLab](https://physicsopenlab.org/)
 * <http://wunderkis.de/en.html>, <http://wunderkis.de/de.html>
 * <http://www.quiss.org/freespin/>
+* <https://www.richis-lab.de/index.htm>
+* <http://www.afug-info.de/Schaltungen-Eigenbau/IR-Tester/>
 
 ### EDA
 
