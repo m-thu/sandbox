@@ -5,7 +5,7 @@
 - [NFC, RFID, Smartcards](#nfc-rfid-smartcards)
 - [Verilog](#verilog)
 - [VHDL](#vhdl)
-- [Linux](#linux)
+- [Linux, Unix](#linux-unix)
 - [Formal Verification](#formal-verification)
 - [RF, SDR](#rf-sdr)
 - [Search engines](#search-engines)
@@ -258,7 +258,7 @@
 * [Application-Specific Integrated Circuits](https://dl.acm.org/citation.cfm?id=1502318)
 * [VHDL-AMS and Verilog-AMS as Alternative Hardware Description Languages for Efficient Modeling of Multidiscipline Systems](http://ieeexplore.ieee.org/abstract/document/1386377/)
 
-### Linux
+### Linux, Unix
 
 * [Linux Device Drivers, Third Edition](https://lwn.net/Kernel/LDD3/)
 * [Linux Kernel Development (3rd Edition)](https://www.rlove.org)
@@ -284,6 +284,7 @@
 * [In-Memory-Only ELF Execution (Without tmpfs)](https://magisterquis.github.io/2018/03/31/in-memory-only-elf-execution.html)
 * [Making a low level (Linux) debugger](https://blog.asrpo.com/making_a_low_level_debugger), <https://blog.asrpo.com/making_a_low_level_debugger_part_2>, <https://blog.asrpo.com/making_a_low_level_debugger_part_3>
 * [Learning KVM - implement your own Linux kernel](https://david942j.blogspot.com/2018/10/note-learning-kvm-implement-your-own.html)
+* [Sys Admin Pocket Survival Guide](http://psg.skinforum.org/)
 
 ### Formal Verification
 
