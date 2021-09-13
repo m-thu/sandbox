@@ -342,3 +342,16 @@ Compiling the glossary in TeXworks:
 * Install Strawberry Perl for Windows: <http://strawberryperl.com/>
 * TeXworks Preferences -> Processing Tools -> makeglosseries
 * Program: "makeglossaries", Arguments: "$basename"
+
+### SSH
+
+Unable to negotiate with 10.0.0.1 port 22: no matching key exchange method found. Their offer: diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
+
+`.ssh/config`:
+```
+KeepAlive yes
+ServerAliveInterval 60
+
+Host 10.0.0.1 10.1
+    KexAlgorithms +diffie-hellman-group1-sha1
+```
