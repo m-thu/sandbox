@@ -355,3 +355,11 @@ ServerAliveInterval 60
 Host 10.0.0.1 10.1
     KexAlgorithms +diffie-hellman-group1-sha1
 ```
+
+### Windows 10: delete all partitions on USB flash drive including EFI partitions
+```
+diskpart
+list disk
+select disk XX
+clean
+```
