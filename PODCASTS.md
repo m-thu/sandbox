@@ -22,6 +22,7 @@ Still active
 * [Science Podcasts](https://www.sciencemag.org/podcasts)
 * [Daniel and Jorge Explain the Universe](https://www.iheart.com/podcast/105-daniel-and-jorge-explain-t-29862087/)
 * [Lex Fridman Podcast](https://lexfridman.com/podcast/)
+* [Welt der Werkstoffe - talk](https://anchor.fm/martin-bonnet), <https://www.youtube.com/playlist?list=PLvD7aACQijhFHkphPYOkXph2pjiIuLM1w>
 
 Inactive
 --------
