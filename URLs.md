@@ -9,6 +9,7 @@
 - [Formal Verification](#formal-verification)
 - [RF, SDR](#rf-sdr)
 - [Search engines](#search-engines)
+- [STM](#stm)
 
 ### Unsorted
 
@@ -330,3 +331,25 @@
 * [Microsoft Academic Search](https://academic.microsoft.com/)
 * [BASE (Bielefeld Academic Search Engine)](https://www.base-search.net/about/en/)
 * [PubMed Central](https://www.ncbi.nlm.nih.gov/pmc/about/intro/)
+
+### STM
+
+German:
+* <https://web.archive.org/web/20150223192106/http://sxm4.uni-muenster.de/>
+* <https://www.dgzfp.de/Portals/24/IZ/Langfassung%20Rheinland-Pfalz%202010.pdf?ver=QIifjI8VwUFeVHmgtQMhhw%3d%3d>
+* <http://www.thomas-wilhelm.net/arbeiten/Rastertunnelmikroskop.pdf>
+* <https://juser.fz-juelich.de/record/819717/files/Schluesseltech_55.pdf>
+* <https://edoc.ub.uni-muenchen.de/27561/1/Kloft_Stephan.pdf>
+* <https://onlinelibrary.wiley.com/doi/abs/10.1002/piuz.200490080>
+* <https://duepublico2.uni-due.de/servlets/MCRFileNodeServlet/duepublico_derivate_00036840/Lange_Diss.pdf>
+* <http://www.ralf-wehling.de/html/rastertunnelmikroskop.htm>
+* <https://web.archive.org/web/20081009060818/http://www.iqo.uni-hannover.de/ap/40.html>
+
+English:
+* <https://dberard.com/home-built-stm/>
+* <http://web.archive.org/web/20121107205242/http://www.geocities.com/spm_stm/Project.html>
+* <http://www.e-basteln.de/other/stm/overview/>
+* <https://www.media.mit.edu/nanoscale/courses/AFMsite/index.html>
+* <https://www.angelfire.com/electronic2/spm/index.html>
+* <http://web.archive.org/web/20090304013944/http://www.bsc.ustc.edu.cn/~jlyang/research/STMWebPage.html>
+* <http://web.archive.org/web/20010810000325/http://nemesis.com.au/alfa/mystm.htm>
