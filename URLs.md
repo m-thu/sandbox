@@ -286,6 +286,7 @@
 * [Making a low level (Linux) debugger](https://blog.asrpo.com/making_a_low_level_debugger), <https://blog.asrpo.com/making_a_low_level_debugger_part_2>, <https://blog.asrpo.com/making_a_low_level_debugger_part_3>
 * [Learning KVM - implement your own Linux kernel](https://david942j.blogspot.com/2018/10/note-learning-kvm-implement-your-own.html)
 * [Sys Admin Pocket Survival Guide](http://psg.skinforum.org/)
+* [Tilck (Tiny Linux-Compatible Kernel)](https://github.com/vvaltchev/tilck)
 
 ### Formal Verification
 
