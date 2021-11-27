@@ -165,6 +165,7 @@
 * <http://www.quiss.org/freespin/>
 * <https://www.richis-lab.de/index.htm>
 * <http://www.afug-info.de/Schaltungen-Eigenbau/IR-Tester/>
+* [Configuring SPA122 ATA For Dial-Through](https://gekk.info/articles/ata-config.html)
 
 ### EDA
 
