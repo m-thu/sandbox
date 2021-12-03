@@ -166,6 +166,7 @@
 * <https://www.richis-lab.de/index.htm>
 * <http://www.afug-info.de/Schaltungen-Eigenbau/IR-Tester/>
 * [Configuring SPA122 ATA For Dial-Through](https://gekk.info/articles/ata-config.html)
+* [Down the Rabbit Hole: A Close Look At Ethernet](https://www.antikernel.net/temp/down-the-rabbit-hole.pdf)
 
 ### EDA
 
