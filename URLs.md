@@ -168,6 +168,7 @@
 * [Configuring SPA122 ATA For Dial-Through](https://gekk.info/articles/ata-config.html)
 * [Down the Rabbit Hole: A Close Look At Ethernet](https://www.antikernel.net/temp/down-the-rabbit-hole.pdf)
 * [11 GHz Solar Intensity Interferometer w/rtl-sdr and GNU Radio](http://superkuh.com/rtlsdrinterferometer.html)
+* <https://olegkutkov.me/>
 
 ### EDA
 
