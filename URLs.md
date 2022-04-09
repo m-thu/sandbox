@@ -291,6 +291,7 @@
 * [Learning KVM - implement your own Linux kernel](https://david942j.blogspot.com/2018/10/note-learning-kvm-implement-your-own.html)
 * [Sys Admin Pocket Survival Guide](http://psg.skinforum.org/)
 * [Tilck (Tiny Linux-Compatible Kernel)](https://github.com/vvaltchev/tilck)
+* [The Raspberry Pi GPIB Shield](http://elektronomikon.org/), <http://elektronomikon.org/Bakkarbeit%20RasPi-GPIB%20Thomas%20Klima.pdf>
 
 ### Formal Verification
 
