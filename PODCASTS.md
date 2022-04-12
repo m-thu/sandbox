@@ -15,7 +15,6 @@ Still active
 * [Come Fly With Us](https://www.comeflywithus.de/)
 * [Airline Pilot Guy ](http://airlinepilotguy.com/)
 * [Fingers elektrische Welt (Podcast)](https://www.fingers-welt.de/podcast/podcast.htm), <https://anchor.fm/fingers-welt>
-* [The Contextual Electronics Podcast](https://contextualelectronics.com/category/podcast/)
 * [CLEANELECTRIC](https://www.cleanelectric.de/)
 * <https://saftschubsenundautopiloten.libsyn.com/>
 * [Nature Podcast](https://www.nature.com/nature/articles?type=nature-podcast)
@@ -34,3 +33,4 @@ Inactive
 * [/dev/radio](https://ulm.ccc.de/dev/radio/)
 * [Mandelbrot Talks](http://mandelbrot-talks.de/)
 * [The Titanium Physicists Podcast](http://titaniumphysicists.brachiolopemedia.com/)
+* [The Contextual Electronics Podcast](https://contextualelectronics.com/category/podcast/)
