@@ -169,6 +169,7 @@
 * [Down the Rabbit Hole: A Close Look At Ethernet](https://www.antikernel.net/temp/down-the-rabbit-hole.pdf)
 * [11 GHz Solar Intensity Interferometer w/rtl-sdr and GNU Radio](http://superkuh.com/rtlsdrinterferometer.html)
 * <https://olegkutkov.me/>
+* [Algorithmica](https://en.algorithmica.org/)
 
 ### EDA
 
