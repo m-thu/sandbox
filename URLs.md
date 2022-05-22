@@ -169,6 +169,7 @@
 * [Down the Rabbit Hole: A Close Look At Ethernet](https://www.antikernel.net/temp/down-the-rabbit-hole.pdf)
 * [11 GHz Solar Intensity Interferometer w/rtl-sdr and GNU Radio](http://superkuh.com/rtlsdrinterferometer.html)
 * <https://olegkutkov.me/>
+* [Algorithmica](https://en.algorithmica.org/)
 
 ### EDA
 
@@ -291,6 +292,7 @@
 * [Learning KVM - implement your own Linux kernel](https://david942j.blogspot.com/2018/10/note-learning-kvm-implement-your-own.html)
 * [Sys Admin Pocket Survival Guide](http://psg.skinforum.org/)
 * [Tilck (Tiny Linux-Compatible Kernel)](https://github.com/vvaltchev/tilck)
+* [The Raspberry Pi GPIB Shield](http://elektronomikon.org/), <http://elektronomikon.org/Bakkarbeit%20RasPi-GPIB%20Thomas%20Klima.pdf>
 
 ### Formal Verification
 
