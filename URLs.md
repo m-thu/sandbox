@@ -293,6 +293,7 @@
 * [Sys Admin Pocket Survival Guide](http://psg.skinforum.org/)
 * [Tilck (Tiny Linux-Compatible Kernel)](https://github.com/vvaltchev/tilck)
 * [The Raspberry Pi GPIB Shield](http://elektronomikon.org/), <http://elektronomikon.org/Bakkarbeit%20RasPi-GPIB%20Thomas%20Klima.pdf>
+* [Lotus 1-2-3 For Linux](https://lock.cmpxchg8b.com/linux123.html)
 
 ### Formal Verification
 
