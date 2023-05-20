@@ -14,7 +14,6 @@ Still active
 * [Come Fly With Us](https://www.comeflywithus.de/)
 * [Airline Pilot Guy ](http://airlinepilotguy.com/)
 * [Fingers elektrische Welt (Podcast)](https://www.fingers-welt.de/podcast/podcast.htm), <https://anchor.fm/fingers-welt>
-* <https://saftschubsenundautopiloten.libsyn.com/>
 * [Lex Fridman Podcast](https://lexfridman.com/podcast/)
 * [Welt der Werkstoffe - talk](https://anchor.fm/martin-bonnet), <https://www.youtube.com/playlist?list=PLvD7aACQijhFHkphPYOkXph2pjiIuLM1w>
 
@@ -29,6 +28,7 @@ Inactive
 * [Mandelbrot Talks](http://mandelbrot-talks.de/)
 * [The Titanium Physicists Podcast](http://titaniumphysicists.brachiolopemedia.com/)
 * [The Contextual Electronics Podcast](https://contextualelectronics.com/category/podcast/)
+* <https://saftschubsenundautopiloten.libsyn.com/>
 
 Removed
 -------
